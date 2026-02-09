@@ -3,7 +3,7 @@
     <div class="outerGrpPwr item" data-item-id="{{key._id}}"">
         <header class="grpSep js-toggler" >
             <span class="deploy "><i class="minus"></i></span>
-            <h1>{{localize "MM3.POUVOIR.Eventail"}} : {{key.name}}</h1>
+            <h1>{{localize "MM4.POUVOIR.Eventail"}} : {{key.name}}</h1>
         </header>
 
         <div class="grpPwr {{#if (hasLink key._id @root/actor)}}link{{/if}}" ">
@@ -12,7 +12,7 @@
         <div class="outerGrpPwr item" data-item-id="{{key._id}}">
             <header class="grpSep js-toggler" >
                 <span class="deploy "><i class="minus"></i></span>
-                <h1>{{localize "MM3.POUVOIR.Eventail"}} : {{key.name}}</h1>
+                <h1>{{localize "MM4.POUVOIR.Eventail"}} : {{key.name}}</h1>
             </header>
             <div class="grpPwrAlt">
         {{/if}}
@@ -28,7 +28,7 @@
             {{#if (eq ../actor.type 'personnage')}}
             {{#unless (ObjectIsEmpty system.listEffectsVariantes)}}
             <a class="btn btnHeader pwrActivate {{#if key.system.activate}}selected{{/if}}">
-                {{localize "MM3.BTN.Activer"}}
+                {{localize "MM4.BTN.Activer"}}
             </a>
 
             <select class="variantepwr">
@@ -66,8 +66,8 @@
             {{/if}} {{/if}}
             <div class="data black">
                 <span>{{translate 'pouvoirs.factions' key.system.action}}</span>
-                <span>{{localize "MM3.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' key.system.portee}}</span>
-                <span>{{localize "MM3.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' key.system.duree}}</span>
+                <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' key.system.portee}}</span>
+                <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' key.system.duree}}</span>
                 <a class="rollPwr oneRoll draggable" data-id="{{key._id}}" data-type="pouvoir" data-name="{{key.name}}">
                     <i class="fa-solid fa-dice-d20"></i>
                 </a>
@@ -75,24 +75,24 @@
             {{#if (isValue key.system.special 'dynamique')}}
             <div class="dataSpecial black">
                 {{#if (isValue key.system.special 'dynamique')}}
-                    <span>{{localize "MM3.Rang"}} : </span>
+                    <span>{{localize "MM4.Rang"}} : </span>
                     <input class="rangDyn" type="number" name="system.pwr.{{key._id}}.cout.rang" value="{{getPwr @root key._id 'rang'}}" min="0" max="{{key.system.cout.rangDynMax}}" />
-                    <span>({{localize "MM3.Max-short"}} {{key.system.cout.rangDynMax}}) / {{localize "MM3.Coutactuel"}} : {{ifThen (gte (getPwr @root key._id 'rang') 1) (getPwr @root key._id 'actuel') '0'}}</span>
+                    <span>({{localize "MM4.Max-short"}} {{key.system.cout.rangDynMax}}) / {{localize "MM4.Coutactuel"}} : {{ifThen (gte (getPwr @root key._id 'rang') 1) (getPwr @root key._id 'actuel') '0'}}</span>
                 {{/if}}
                 </div>
             {{/if}}
         </header>
         <div class="allData">
             <div class="data">
-                <span class="typePwr">{{localize "MM3.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
+                <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
                 {{#unless (isValue key.system.special 'dynamique')}}
-                    <span class="col4">{{localize "MM3.Rang"}} : {{key.system.cout.rang}} / {{localize "MM3.Couttotal"}} : {{key.system.cout.total}}</span>
+                    <span class="col4">{{localize "MM4.Rang"}} : {{key.system.cout.rang}} / {{localize "MM4.Couttotal"}} : {{key.system.cout.total}}</span>
                     {{else}}
                     {{#if (isValue key.system.special 'dynamique')}}
                     {{#if (isValue key.system.link '')}}
-                        <span class="col4">{{localize "MM3.Couttotal"}} : {{key.system.cout.totalTheorique}}</span>
+                        <span class="col4">{{localize "MM4.Couttotal"}} : {{key.system.cout.totalTheorique}}</span>
                     {{else}}
-                        <span class="col4">{{localize "MM3.Couttotal"}} : {{key.system.cout.total}}</span>
+                        <span class="col4">{{localize "MM4.Couttotal"}} : {{key.system.cout.total}}</span>
                     {{/if}}
                     {{/if}}
                 {{/unless}}
@@ -104,7 +104,7 @@
                 </div>
                 <div class="details">
                     <span class="label">
-                        {{localize "MM3.Description"}}
+                        {{localize "MM4.Description"}}
                     </span>
                     <span class="text">
                         {{{key.system.notes}}}
@@ -112,7 +112,7 @@
                 </div>
                 <div class="details">
                     <span class="label">
-                        {{localize "MM3.Details"}}
+                        {{localize "MM4.Details"}}
                     </span>
                     <span class="text">
                         {{{key.system.effets}}}
@@ -120,7 +120,7 @@
                 </div>
                 <div class="mod borderLeft">
                     <span class="label">
-                        {{localize "MM3.Extras"}}
+                        {{localize "MM4.Extras"}}
                     </span>
                     {{#each key.system.extras as | kExt ext |}}
                     <span class="text">
@@ -133,7 +133,7 @@
                 </div>
                 <div class="mod borderRight borderLightLeft">
                     <span class="label">
-                        {{localize "MM3.Defauts"}}
+                        {{localize "MM4.Defauts"}}
                     </span>
                     {{#each key.system.defauts as | kExt ext |}}
                     <span class="text">
@@ -159,7 +159,7 @@
                 {{#if (eq ../../actor.type 'personnage')}}
                 {{#unless (ObjectIsEmpty kPA.system.listEffectsVariantes)}}
                 <a class="btn btnHeader pwrActivate {{#if kPA.system.activate}}selected{{/if}}">
-                    {{localize "MM3.BTN.Activer"}}
+                    {{localize "MM4.BTN.Activer"}}
                 </a>
 
                 <select class="variantepwr">
@@ -195,8 +195,8 @@
                 {{/if}} {{/if}}
                 <div class="data black">
                     <span>{{translate 'pouvoirs.factions' kPA.system.action}}</span>
-                    <span>{{localize "MM3.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' kPA.system.portee}}</span>
-                    <span>{{localize "MM3.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' kPA.system.duree}}</span>
+                    <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' kPA.system.portee}}</span>
+                    <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' kPA.system.duree}}</span>
                     <a class="rollPwr oneRoll draggable" data-id="{{kPA._id}}" data-type="pouvoir" data-name="{{kPA.name}}">
                         <i class="fa-solid fa-dice-d20"></i>
                     </a>
@@ -204,8 +204,8 @@
             </header>
             <div class="allData">
                 <div class="data">
-                    <span class="typePwr">{{localize "MM3.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
-                    <span class="col4">{{localize "MM3.Rang"}} : {{kPA.system.cout.rang}} / {{localize "MM3.Couttotal"}} : {{kPA.system.cout.total}}</span>
+                    <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
+                    <span class="col4">{{localize "MM4.Rang"}} : {{kPA.system.cout.rang}} / {{localize "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span>
                     </div>
                     <div class="descripteurs">
                         {{#each kPA.system.descripteurs as | kDesc desc |}}
@@ -214,7 +214,7 @@
                     </div>
                     <div class="details">
                         <span class="label">
-                            {{localize "MM3.Description"}}
+                            {{localize "MM4.Description"}}
                         </span>
                         <span class="text">
                             {{{kPA.system.notes}}}
@@ -222,7 +222,7 @@
                     </div>
                     <div class="details">
                         <span class="label">
-                            {{localize "MM3.Details"}}
+                            {{localize "MM4.Details"}}
                         </span>
                         <span class="text">
                             {{{kPA.system.effets}}}
@@ -230,7 +230,7 @@
                     </div>
                     <div class="mod borderLeft">
                         <span class="label">
-                            {{localize "MM3.Extras"}}
+                            {{localize "MM4.Extras"}}
                         </span>
                         {{#each kPA.system.extras as | kExt ext |}}
                         <span class="text">
@@ -243,7 +243,7 @@
                     </div>
                     <div class="mod borderRight borderLightLeft">
                         <span class="label">
-                            {{localize "MM3.Defauts"}}
+                            {{localize "MM4.Defauts"}}
                         </span>
                         {{#each kPA.system.defauts as | kExt ext |}}
                         <span class="text">
@@ -270,7 +270,7 @@
                 {{#if (eq ../../actor.type 'personnage')}}
                 {{#unless (ObjectIsEmpty kPA.system.listEffectsVariantes)}}
                 <a class="btn btnHeader pwrActivate {{#if kPA.system.activate}}selected{{/if}}">
-                    {{localize "MM3.BTN.Activer"}}
+                    {{localize "MM4.BTN.Activer"}}
                 </a>
 
                 <select class="variantepwr">
@@ -302,8 +302,8 @@
                 {{/if}} {{/if}}
                 <div class="data black">
                     <span>{{translate 'pouvoirs.factions' kPA.system.action}}</span>
-                    <span>{{localize "MM3.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' kPA.system.portee}}</span>
-                    <span>{{localize "MM3.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' kPA.system.duree}}</span>
+                    <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' kPA.system.portee}}</span>
+                    <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' kPA.system.duree}}</span>
                     <a class="rollPwr oneRoll draggable" data-id="{{kPA._id}}" data-type="pouvoir" data-name="{{kPA.name}}">
                         <i class="fa-solid fa-dice-d20"></i>
                     </a>
@@ -311,8 +311,8 @@
             </header>
             <div class="allData">
                 <div class="data">
-                    <span class="typePwr">{{localize "MM3.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
-                    <span class="col4">{{localize "MM3.Rang"}} : {{kPA.system.cout.rang}} / {{localize "MM3.Couttotal"}} : {{kPA.system.cout.total}}</span>
+                    <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
+                    <span class="col4">{{localize "MM4.Rang"}} : {{kPA.system.cout.rang}} / {{localize "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span>
                 </div>
                     <div class="descripteurs">
                         {{#each kPA.system.descripteurs as | kDesc desc |}}
@@ -321,7 +321,7 @@
                     </div>
                     <div class="details">
                         <span class="label">
-                            {{localize "MM3.Description"}}
+                            {{localize "MM4.Description"}}
                         </span>
                         <span class="text">
                             {{{kPA.system.notes}}}
@@ -329,7 +329,7 @@
                     </div>
                     <div class="details">
                         <span class="label">
-                            {{localize "MM3.Details"}}
+                            {{localize "MM4.Details"}}
                         </span>
                         <span class="text">
                             {{{kPA.system.effets}}}
@@ -337,7 +337,7 @@
                     </div>
                     <div class="mod borderLeft">
                         <span class="label">
-                            {{localize "MM3.Extras"}}
+                            {{localize "MM4.Extras"}}
                         </span>
                         {{#each kPA.system.extras as | kExt ext |}}
                         <span class="text">
@@ -350,7 +350,7 @@
                     </div>
                     <div class="mod borderRight borderLightLeft">
                         <span class="label">
-                            {{localize "MM3.Defauts"}}
+                            {{localize "MM4.Defauts"}}
                         </span>
                         {{#each kPA.system.defauts as | kExt ext |}}
                         <span class="text">
@@ -377,7 +377,7 @@
                 {{#if (eq ../../actor.type 'personnage')}}
                 {{#unless (ObjectIsEmpty kPA.system.listEffectsVariantes)}}
                 <a class="btn btnHeader pwrActivate {{#if kPA.system.activate}}selected{{/if}}">
-                    {{localize "MM3.BTN.Activer"}}
+                    {{localize "MM4.BTN.Activer"}}
                 </a>
 
                 <select class="variantepwr">
@@ -409,8 +409,8 @@
                 {{/if}} {{/if}}
                 <div class="data black">
                     <span>{{translate 'pouvoirs.factions' kPA.system.action}}</span>
-                    <span>{{localize "MM3.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' kPA.system.portee}}</span>
-                    <span>{{localize "MM3.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' kPA.system.duree}}</span>
+                    <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' kPA.system.portee}}</span>
+                    <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' kPA.system.duree}}</span>
                     <a class="rollPwr oneRoll draggable" data-id="{{kPA._id}}" data-type="pouvoir" data-name="{{kPA.name}}">
                         <i class="fa-solid fa-dice-d20"></i>
                     </a>
@@ -418,10 +418,10 @@
                 {{#if (isValue kPA.system.special 'dynamique')}}
                 <div class="dataSpecial black">
                     {{#if (isValue kPA.system.special 'dynamique')}}
-                        <span>{{localize "MM3.Rang"}} : </span>
+                        <span>{{localize "MM4.Rang"}} : </span>
                         <input class="rangDyn" type="number" name="system.pwr.{{kPA._id}}.cout.rang" value="{{getPwr @root kPA._id 'rang'}}" min="0" max="{{kPA.system.cout.rangDynMax}}" />
                         {{log (getPwr @root kPA._id 'rang')}}
-                    <span>({{localize "MM3.Max-short"}} {{kPA.system.cout.rangDynMax}})  / {{localize "MM3.Coutactuel"}} : {{ifThen (gte (getPwr @root kPA._id 'rang') 1) (getPwr @root kPA._id 'actuel') '0'}}</span>
+                    <span>({{localize "MM4.Max-short"}} {{kPA.system.cout.rangDynMax}})  / {{localize "MM4.Coutactuel"}} : {{ifThen (gte (getPwr @root kPA._id 'rang') 1) (getPwr @root kPA._id 'actuel') '0'}}</span>
                     {{/if}}
                     </div>
                 {{/if}}
@@ -429,12 +429,12 @@
             <div class="allData">
                 {{#unless (isValue kPA.system.special 'dynamique')}}
                 <div class="data">
-                    <span class="typePwr">{{localize "MM3.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
-                    <span class="col4">{{localize "MM3.Rang"}} : {{kPA.system.cout.rang}} / {{localize "MM3.Couttotal"}} : {{kPA.system.cout.total}}</span>
+                    <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
+                    <span class="col4">{{localize "MM4.Rang"}} : {{kPA.system.cout.rang}} / {{localize "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span>
                     </div>
                     {{else}}
                     {{#if (isValue kPA.system.special 'dynamique')}}
-                    <div class="data"><span class="col4">{{localize "MM3.Couttotal"}} : {{kPA.system.cout.total}}</span></div>
+                    <div class="data"><span class="col4">{{localize "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span></div>
                     {{/if}}
                 {{/unless}}
 
@@ -445,7 +445,7 @@
                     </div>
                     <div class="details">
                         <span class="label">
-                            {{localize "MM3.Description"}}
+                            {{localize "MM4.Description"}}
                         </span>
                         <span class="text">
                             {{{kPA.system.notes}}}
@@ -453,7 +453,7 @@
                     </div>
                     <div class="details">
                         <span class="label">
-                            {{localize "MM3.Details"}}
+                            {{localize "MM4.Details"}}
                         </span>
                         <span class="text">
                             {{{kPA.system.effets}}}
@@ -461,7 +461,7 @@
                     </div>
                     <div class="mod borderLeft">
                         <span class="label">
-                            {{localize "MM3.Extras"}}
+                            {{localize "MM4.Extras"}}
                         </span>
                         {{#each kPA.system.extras as | kExt ext |}}
                         <span class="text">
@@ -474,7 +474,7 @@
                     </div>
                     <div class="mod borderRight borderLightLeft">
                         <span class="label">
-                            {{localize "MM3.Defauts"}}
+                            {{localize "MM4.Defauts"}}
                         </span>
                         {{#each kPA.system.defauts as | kExt ext |}}
                         <span class="text">
@@ -499,4 +499,4 @@
     {{/if}}
 {{/each}}
 
-<a class="item-create" data-type="pouvoir">{{localize "MM3.BTN.AddPwr"}}</a>
+<a class="item-create" data-type="pouvoir">{{localize "MM4.BTN.AddPwr"}}</a>

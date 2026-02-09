@@ -1,66 +1,72 @@
 {
-  "id": "mutants-and-masterminds-3e",
-  "title": "Mutants and Masterminds 3E",
-  "description": "Fiche non officielle Mutants & Masterminds 3E",
-  "version": "#{VERSION}#",
-  "esmodules": [
-    "module/mm.mjs"
-  ],
-  "styles": [
-    "styles/mm.css"
-  ],
-  "languages": [
-    {
-      "lang": "fr",
-      "name": "French",
-      "path": "lang/fr.json",
-      "flags": {}
+    "id": "mutants-and-masterminds-4e",
+    "title": "Mutants and Masterminds 4E",
+    "description": "Fiche non officielle Mutants & Masterminds 4E",
+    "version": "#{VERSION}#",
+    "esmodules": [
+        "module/mm.mjs"
+    ],
+    "styles": [
+        "styles/mm.css"
+    ],
+    "languages": [
+        {
+            "lang": "fr",
+            "name": "French",
+            "path": "lang/fr.json",
+            "flags": {}
+        },
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json",
+            "flags": {}
+        },
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "lang/es.json",
+            "flags": {}
+        },
+        {
+            "lang": "it",
+            "name": "Italian",
+            "path": "lang/it.json",
+            "flags": {}
+        },
+        {
+            "lang": "pt-BR",
+            "name": "Português (Brasil)",
+            "path": "lang/ptbr.json",
+            "flags": {}
+        }
+    ],
+    "authors": [
+        {
+            "name": "Zakarik",
+            "url": "https://fr.tipeee.com/zakarik",
+            "discord": "Zakarik#9006",
+            "flags": {}
+        },
+        {
+            "name": "jagoe",
+            "url": "https://github.com/jagoe",
+            "discord": "celtsfightnude",
+            "flags": {}
+        }
+    ],
+    "compatibility": {
+        "minimum": "13",
+        "verified": "13"
     },
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json",
-      "flags": {}
+    "grid": {
+        "distance": 1.5,
+        "units": "m"
     },
-    {
-      "lang": "es",
-      "name": "Español",
-      "path": "lang/es.json",
-      "flags": {}
-    },
-    {
-      "lang": "it",
-      "name": "Italian",
-      "path": "lang/it.json",
-      "flags": {}
-    },
-    {
-      "lang": "pt-BR",
-      "name": "Português (Brasil)",
-      "path": "lang/ptbr.json",
-      "flags": {}
-    }
-  ],
-  "authors": [
-    {
-      "name": "Zakarik",
-      "url": "https://fr.tipeee.com/zakarik",
-      "discord": "Zakarik#9006",
-      "flags": {}
-    }
-  ],
-  "compatibility": {
-    "minimum": "12",
-    "verified": "13"
-  },
-  "grid": {
-    "distance": 1.5,
-    "units": "m"
-  },
-  "primaryTokenAttribute": "blessure",
-  "url": "#{URL}#",
-  "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#",
-  "changelog": "https://raw.githubusercontent.com/Zakarik/foundry-knight/main/changelog.md",
-  "readme": "https://raw.githubusercontent.com/Zakarik/foundry-mm3/main/readme.md"
+    "primaryTokenAttribute": "blessure",
+    "url": "#{URL}#",
+    "manifest": "#{MANIFEST}#",
+    "download": "#{DOWNLOAD}#",
+    "changelog": "https://raw.githubusercontent.com/jagoe/foundry-system-mutants-and-masterminds-4e/main/changelog.md",
+    "readme": "https://raw.githubusercontent.com/jagoe/foundry-system-mutants-and-masterminds-4e/main/readme.md"
 }

@@ -1,11 +1,11 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <input name="name" class="mainName" type="text" value="{{data.name}}" placeholder="{{localize "MM3.Nom"}}" />
+    <input name="name" class="mainName" type="text" value="{{data.name}}" placeholder="{{localize "MM4.Nom"}}" />
 
     <section class="sheet-body">
         {{!-- Sheet Tab Navigation --}}
         <nav class="sheet-tabs tabs" data-group="primary">
             <a class="item" data-tab="equipement">{{localize "TYPES.Item.equipement"}}</a>
-            <a class="item" data-tab="options">{{localize "MM3.TABS.Options"}}</a>
+            <a class="item" data-tab="options">{{localize "MM4.TABS.Options"}}</a>
         </nav>
 
         <div class="tab equipement" data-group="primary" data-tab="equipement">
@@ -15,7 +15,7 @@
 
                     <div class="cout">
                         <label>
-                            <span>{{localize "MM3.Cout"}}</span>
+                            <span>{{localize "MM4.Cout"}}</span>
 
                             <input type="number" name="system.cout" value="{{systemData.cout}}" min="0"/>
                         </label>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="description">
-                    <span class="label">{{localize "MM3.Description"}}</span>
+                    <span class="label">{{localize "MM4.Description"}}</span>
                     {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
                 </div>
             </div>
@@ -32,10 +32,10 @@
         <div class="tab options" data-group="primary" data-tab="options">
             <div class="inner">
                 <div class="block accessibility">
-                    <span>{{localize "MM3.ACCESSIBILITE.Label"}}</span>
+                    <span>{{localize "MM4.ACCESSIBILITE.Label"}}</span>
                     <div class="innerBlock">
                         <label>
-                            <span>{{localize "MM3.ACCESSIBILITE.Font"}}</span>
+                            <span>{{localize "MM4.ACCESSIBILITE.Font"}}</span>
                             <select name="system.accessibility.font">
                                 {{selectOptions (listfont) selected=systemData.accessibility.font localize=true}}
                             </select>

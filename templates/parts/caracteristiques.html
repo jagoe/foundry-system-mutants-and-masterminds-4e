@@ -2,12 +2,12 @@
     <div class="inner">
         <div class="col">
             <div class="carac">
-                <span class="title">{{localize "MM3.Caracteristiques"}}</span>
+                <span class="title">{{localize "MM4.Caracteristiques"}}</span>
 
-                <span class="header">{{localize "MM3.Nom"}}</span>
-                <span class="header">{{localize "MM3.Total"}}</span>
-                <span class="header">{{localize "MM3.Base"}}</span>
-                <span class="header">{{localize "MM3.Divers"}}</span>
+                <span class="header">{{localize "MM4.Nom"}}</span>
+                <span class="header">{{localize "MM4.Total"}}</span>
+                <span class="header">{{localize "MM4.Base"}}</span>
+                <span class="header">{{localize "MM4.Divers"}}</span>
 
                 {{#each systemData.caracteristique as | key carac |}}
 
@@ -24,21 +24,21 @@
 
             <div class="points">
                 <div>
-                    <span>{{localize "MM3.PP.Depart"}}</span>
-                    <span>{{localize "MM3.PP.Gagner"}}</span>
+                    <span>{{localize "MM4.PP.Depart"}}</span>
+                    <span>{{localize "MM4.PP.Gagner"}}</span>
                     <input type="number" name="system.pp.base" value="{{systemData.pp.base}}" min="0" />
                     <input type="number" name="system.pp.gain" value="{{systemData.pp.gain}}" min="0" />
                 </div>
                 <div>
-                    <span>{{localize "MM3.Heroisme"}}</span>
-                    <span>{{localize (ifThen systemData.stackeddmg "MM3.BlessuresStacked" "MM3.Blessures")}}</span>
+                    <span>{{localize "MM4.Heroisme"}}</span>
+                    <span>{{localize (ifThen systemData.stackeddmg "MM4.BlessuresStacked" "MM4.Blessures")}}</span>
                     <input type="number" name="system.heroisme" value="{{systemData.heroisme}}" min="0" />
 
                     {{#if systemData.stackeddmg}}
                     <div class="double">
-                        <input type="number" name="system.blessure" value="{{systemData.blessure}}" min="0" title="{{localize "MM3.BlessuresL"}}" />
+                        <input type="number" name="system.blessure" value="{{systemData.blessure}}" min="0" title="{{localize "MM4.BlessuresL"}}" />
                         <span>/</span>
-                        <input type="number" name="system.blessureNL" value="{{systemData.blessureNL}}" min="0" title="{{localize "MM3.BlessuresNL"}}" />
+                        <input type="number" name="system.blessureNL" value="{{systemData.blessureNL}}" min="0" title="{{localize "MM4.BlessuresNL"}}" />
                     </div>
                     {{else}}
                     <input type="number" name="system.blessure" value="{{systemData.blessure}}" min="0" />
@@ -48,26 +48,26 @@
 
             <div class="defense">
                 <div class="line">
-                    <span>{{localize "MM3.DEFENSE.DDEsquive"}}</span>
+                    <span>{{localize "MM4.DEFENSE.DDEsquive"}}</span>
                     <span class="score">{{systemData.ddesquive}}</span>
-                    <span class="title">{{localize "MM3.Defenses"}}</span>
-                    <span>{{localize "MM3.DEFENSE.DDParade"}}</span>
+                    <span class="title">{{localize "MM4.Defenses"}}</span>
+                    <span>{{localize "MM4.DEFENSE.DDParade"}}</span>
                     <span class="score">{{systemData.ddparade}}</span>
                 </div>
 
-                <span class="header">{{localize "MM3.Nom"}}</span>
+                <span class="header">{{localize "MM4.Nom"}}</span>
                 <span class="header"></span>
 
-                <span class="header">{{localize "MM3.Total"}}</span>
+                <span class="header">{{localize "MM4.Total"}}</span>
                 <span class="header">=</span>
 
-                <span class="header">{{localize "MM3.Points"}}</span>
+                <span class="header">{{localize "MM4.Points"}}</span>
                 <span class="header">+</span>
 
-                <span class="header">{{localize "MM3.Carac"}}</span>
+                <span class="header">{{localize "MM4.Carac"}}</span>
                 <span class="header">+</span>
 
-                <span class="header">{{localize "MM3.Divers"}}</span>
+                <span class="header">{{localize "MM4.Divers"}}</span>
 
                 {{#each systemData.defense as | key def |}}
                     <a class="roll draggable" data-what="{{def}}" data-type="defense" data-name="{{translate 'defenses' def}}" data-total="{{key.total}}">
@@ -84,31 +84,31 @@
                 {{/each}}
             </div>
 
-{{> systems/mutants-and-masterminds-3e/templates/parts/attaque.html}}
-{{> systems/mutants-and-masterminds-3e/templates/parts/strategie.html}}
+{{> (template 'parts/attaque.html' )}}
+{{> (template 'parts/strategie.html' )}}
         </div>
 
         <div class="col">
-{{> systems/mutants-and-masterminds-3e/templates/parts/vitesse.html}}
+{{> (template 'parts/vitesse.html' )}}
             <div class="comp">
-                <span class="title">{{localize "MM3.Competences"}}</span>
+                <span class="title">{{localize "MM4.Competences"}}</span>
 
-                <span class="header htwo">{{localize "MM3.Nom"}}</span>
+                <span class="header htwo">{{localize "MM4.Nom"}}</span>
                 <span></span>
-                <span class="header">{{localize "MM3.Total"}}</span>
-                <span class="header">{{localize "MM3.Carac"}}</span>
-                <span class="header">{{localize "MM3.Rang"}}</span>
-                <span class="header">{{localize "MM3.Autre"}}</span>
+                <span class="header">{{localize "MM4.Total"}}</span>
+                <span class="header">{{localize "MM4.Carac"}}</span>
+                <span class="header">{{localize "MM4.Rang"}}</span>
+                <span class="header">{{localize "MM4.Autre"}}</span>
                  <span></span>
 
-                {{#each systemData.competence.list as | key comp |}}                   
+                {{#each systemData.competence.list as | key comp |}}
                     {{#if key.canAdd}}
                         <div class="competence-h4">
-                            <h4>{{key.label}}</h4>                        
+                            <h4>{{key.label}}</h4>
                         </div>
                         {{#each key.list as | kscomp subcomp |}}
                             <div class="list {{#if key.new}}reorderDrop{{/if}}" {{#if key.new}}data-type="basecompetence" data-sort="{{subcomp}}"{{/if}}  data-comp="{{comp}}">
-                            
+
                                 <a class="roll twoRoll draggable" data-what="{{comp}}" data-id="{{subcomp}}" data-type="competence" data-name="{{kscomp.label}}" data-total="{{kscomp.total}}">
                                     <i class="fa-solid fa-dice-d20"></i>
                                     <input type="text" name="system.competence.{{comp}}.list.{{subcomp}}.label" value="{{kscomp.label}}" />
@@ -133,10 +133,10 @@
                         {{/each}}
 
                             <a class="add" data-type="competence" data-what="{{comp}}">
-                                {{localize "MM3.BTN.Add"}}
+                                {{localize "MM4.BTN.Add"}}
                             </a>
                     {{else}}
-                         
+
                         {{#if key.new}}
                             {{#each key.list as | kscomp subcomp |}}
                                 <div class="list" {{#if key.new}}data-type="basecompetence" data-sort="{{comp}}"{{/if}}>
@@ -179,12 +179,12 @@
                     {{/if}}
                 {{/each}}
                 <a class="add" data-type="competence" data-what="new">
-                    {{localize "MM3.BTN.AddCmp"}}
+                    {{localize "MM4.BTN.AddCmp"}}
                 </a>
             </div>
 
             <div class="etats">
-                <span>{{localize "MM3.Etats"}}</span>
+                <span>{{localize "MM4.Etats"}}</span>
                 <textarea name="system.etats">{{systemData.etats}}</textarea>
             </div>
         </div>

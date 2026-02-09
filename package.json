@@ -1,0 +1,30 @@
+{
+    "name": "mutants-and-masterminds-4e",
+    "version": "1.0.0",
+    "description": "This is an unofficial Mutants & Masterminds 4E sheet.",
+    "homepage": "https://github.com/jagoe/foundry-system-mutants-and-masterminds-4e#readme",
+    "bugs": {
+        "url": "https://github.com/jagoe/foundry-system-mutants-and-masterminds-4e/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jagoe/foundry-system-mutants-and-masterminds-4e.git"
+    },
+    "license": "ISC",
+    "author": "jagoe",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "lint": "eslint",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "@eslint/css": "^0.14.1",
+        "@eslint/js": "^10.0.1",
+        "@eslint/json": "^1.0.0",
+        "@eslint/markdown": "^7.5.1",
+        "eslint": "^10.0.0",
+        "eslint-config-prettier": "^10.1.8",
+        "globals": "^17.3.0"
+    }
+}

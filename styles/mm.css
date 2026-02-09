@@ -24,14 +24,14 @@
 div.personnage section.window-content {
   background: #EBEBEB;
   color: #363B44;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: bold;
 }
 div.personnage section.window-content form {
   min-width: min-content;
 }
 div.personnage section.window-content div.editor-content {
-  font-family: "Kalam";
+  font-family: Kalam, sans-serif;
   letter-spacing: 0.5px;
 }
 div.personnage header.sheet-header {
@@ -56,7 +56,7 @@ div.personnage header.sheet-header > input[type=number] {
   border: 2px solid #363B44;
   font-size: 48px;
   margin-right: 5px;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.personnage header.sheet-header > input.identite {
   background: linear-gradient(60deg, #363B44 60%, rgba(0, 0, 0, 0) 90%);
@@ -64,7 +64,7 @@ div.personnage header.sheet-header > input.identite {
   border-radius: 10px 0px 0px 0px;
   border: none;
   border-bottom: 1px solid #333;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
   font-size: 20px;
 }
@@ -78,7 +78,7 @@ div.personnage header.sheet-header > input.hero {
   background: none;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
 }
 div.personnage header.sheet-header > input.hero::placeholder {
@@ -233,7 +233,7 @@ div.personnage div.totalpp div.btnOC a {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 15px;
   font-weight: normal;
   line-height: 18px;
@@ -272,7 +272,7 @@ div.personnage section.sheet-body nav.tabs a {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -394,7 +394,7 @@ div.personnage section.sheet-body div.informations div.complications a.add {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -470,7 +470,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque a.r
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -517,7 +517,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque a.n
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -564,7 +564,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque > d
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.attaque > div.line span.score {
   padding-right: 0px;
@@ -591,7 +591,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque inp
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -609,7 +609,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque > a
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -659,7 +659,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -691,7 +691,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div.reorderDrop div.line span.score {
   padding-right: 0px;
@@ -719,7 +719,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div
   font-weight: bold;
   justify-content: right;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   white-space: nowrap;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div.reorderDrop div.specialline span.labelDefense {
@@ -729,7 +729,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div
   font-weight: bold;
   justify-content: right;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div.reorderDrop div.specialline span.labelDefense.hide {
   display: none;
@@ -761,7 +761,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   text-transform: uppercase;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div.reorderDrop > span.score {
@@ -772,7 +772,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div
   justify-content: center;
   text-align: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: normal;
   height: 100%;
   background: transparent;
@@ -798,11 +798,12 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div
 div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div.reorderDrop textarea {
   grid-column-start: 1;
   grid-column-end: 6;
+
   resize: vertical;
   width: 100%;
   max-width: 100%;
   min-height: 40px;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-size: 0.8em;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.attaque div.reorderDrop textarea.hide {
@@ -849,7 +850,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.strategie a
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -911,7 +912,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.strategie >
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.strategie > span.separator {
   grid-column: 1/5;
@@ -924,7 +925,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.strategie i
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -959,7 +960,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.speed a.btn
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -1054,7 +1055,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.speed span.
   padding-left: 0px;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border: 1px solid #7a7971;
@@ -1066,7 +1067,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.speed input
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -1080,7 +1081,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.speed a.add
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -1109,7 +1110,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner a.resetStrategi
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -1171,7 +1172,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.carac a.rol
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -1227,7 +1228,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.carac span.
   padding-left: 0px;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border: 1px solid #7a7971;
@@ -1238,7 +1239,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.carac input
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -1263,7 +1264,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.comp a.roll
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -1340,7 +1341,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.comp span.c
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   text-transform: uppercase;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.comp span.score {
@@ -1350,7 +1351,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.comp span.s
   padding-left: 0px;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: normal;
   height: 100%;
   background: transparent;
@@ -1370,7 +1371,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.comp a.add 
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -1393,7 +1394,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.comp input 
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -1470,7 +1471,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.comp div.li
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   text-transform: uppercase;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.comp div.subcomp span.score,
@@ -1481,7 +1482,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.comp div.li
   padding-left: 0px;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: normal;
   height: 100%;
   background: transparent;
@@ -1503,7 +1504,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.comp div.li
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -1528,7 +1529,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.comp div.li
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -1588,7 +1589,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.etats texta
   border-top-style: dashed;
   border-radius: 0px;
   min-height: 100px;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.etats textarea:last-of-type {
   border-bottom: 1px solid;
@@ -1613,7 +1614,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.points inpu
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -1659,7 +1660,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.defense a.r
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -1707,7 +1708,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.defense div
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.defense div.line span.score {
   padding-right: 0px;
@@ -1737,7 +1738,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.defense > s
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   text-transform: uppercase;
 }
 div.personnage section.sheet-body div.caracteristiques div.inner div.defense > span.score {
@@ -1747,7 +1748,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.defense > s
   padding-left: 0px;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: normal;
   height: 100%;
   background: transparent;
@@ -1762,7 +1763,7 @@ div.personnage section.sheet-body div.caracteristiques div.inner div.defense inp
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -1784,7 +1785,7 @@ div.personnage section.sheet-body div.pouvoirs div.submenu a.filtre {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -1843,7 +1844,7 @@ div.personnage section.sheet-body div.pouvoirs div.lPouvoirs a.item-create {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -1890,7 +1891,7 @@ div.personnage section.sheet-body div.pouvoirs div.lPouvoirs a.btnHeader {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -2017,7 +2018,7 @@ div.personnage section.sheet-body div.pouvoirs div.lPouvoirs div.pwr div.pwrhead
   position: relative;
   width: 100%;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   border-width: 2px;
   border-radius: 0px 0px 0px 0px;
   background-blend-mode: overlay, multiply;
@@ -2054,7 +2055,7 @@ div.personnage section.sheet-body div.pouvoirs div.lPouvoirs div.pwr div.pwreffe
   grid-column-end: 3;
   position: relative;
   width: 100%;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   border-width: 2px;
   background: #363B44;
   background-blend-mode: overlay, multiply;
@@ -2284,7 +2285,7 @@ div.personnage section.sheet-body div.pouvoirs div.lPouvoirs div.data a {
   height: 100%;
   border: 1px solid #aaa;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -2329,7 +2330,7 @@ div.personnage section.sheet-body div.pouvoirs div.lPouvoirs div.dataSpecial inp
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border-top: 0px;
@@ -2356,7 +2357,7 @@ div.personnage section.sheet-body div.pouvoirs div.lPouvoirs div.dataSpecial a {
   height: 100%;
   border: 1px solid #aaa;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -2378,7 +2379,7 @@ div.personnage section.sheet-body div.pouvoirs div.lPouvoirs div select.link {
   grid-column-end: 5;
   width: 100%;
   color: #EBEBEB;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
   border-bottom: 1px solid var(--color-border-light-tertiary);
   background: #363B44;
@@ -2481,7 +2482,7 @@ div.personnage section.sheet-body div.pouvoirs div.lPouvoirs div.mod span.text i
   border-radius: 5px;
   background: #4E7FC8;
   color: #EBEBEB;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   line-height: 12px;
   text-shadow: none;
   font-weight: normal;
@@ -2536,7 +2537,7 @@ div.personnage section.sheet-body div.pouvoirs div.lTalents a.item-create {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -2617,7 +2618,7 @@ div.personnage section.sheet-body div.pouvoirs div.lTalents div.talent header a.
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -2656,7 +2657,7 @@ div.personnage section.sheet-body div.pouvoirs div.lTalents div.talent header sp
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 29px;
   background: transparent;
   border: 1px solid black;
@@ -2667,7 +2668,7 @@ div.personnage section.sheet-body div.pouvoirs div.lTalents div.talent header sp
   padding-right: 0px;
   padding-left: 0px;
   text-align: left;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 29px;
   background: transparent;
   border-bottom: 1px solid black;
@@ -2726,7 +2727,7 @@ div.personnage section.sheet-body div.pouvoirs div.lEquipements a.item-create {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -2819,7 +2820,7 @@ div.personnage section.sheet-body div.pouvoirs div.lEquipements div.talent a.sen
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -2863,7 +2864,7 @@ div.personnage section.sheet-body div.pouvoirs div.lEquipements div.talent heade
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 29px;
   background: transparent;
   border: 1px solid black;
@@ -2874,7 +2875,7 @@ div.personnage section.sheet-body div.pouvoirs div.lEquipements div.talent heade
   padding-right: 0px;
   padding-left: 0px;
   text-align: left;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 29px;
   background: transparent;
   border-bottom: 1px solid black;
@@ -2979,7 +2980,7 @@ div.personnage section.sheet-body div.options div div.strategie span.label {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.personnage section.sheet-body div.options div div.strategie span.score {
   display: block;
@@ -2999,7 +3000,7 @@ div.personnage section.sheet-body div.options div div.strategie input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -3033,7 +3034,7 @@ div.personnage section.sheet-body div.options div.caracteristique a.btnAbs {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -3118,7 +3119,7 @@ div.modificateur img.profile-img {
 div.modificateur section.window-content {
   background: #EBEBEB;
   color: #363B44;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: bold;
 }
 div.modificateur section.window-content form {
@@ -3136,7 +3137,7 @@ div.modificateur section.window-content form input.mainName {
   height: 4rem;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
 }
 div.modificateur section.window-content form input.mainName::placeholder {
@@ -3146,7 +3147,7 @@ div.modificateur section.window-content form #mseItemSound {
   position: absolute;
 }
 div.modificateur section.window-content div.editor-content {
-  font-family: "Kalam";
+  font-family: Kalam, sans-serif;
 }
 div.modificateur section.sheet-body div.tab > div.inner {
   display: grid;
@@ -3174,7 +3175,7 @@ div.modificateur section.sheet-body nav.tabs a {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -3257,7 +3258,7 @@ div.modificateur section.sheet-body div.options div div.strategie span.label {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.modificateur section.sheet-body div.options div div.strategie span.score {
   display: block;
@@ -3277,7 +3278,7 @@ div.modificateur section.sheet-body div.options div div.strategie input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -3311,7 +3312,7 @@ div.modificateur section.sheet-body div.options div.caracteristique a.btnAbs {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -3408,7 +3409,7 @@ div.modificateur section.sheet-body div.details a.btn {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -3511,7 +3512,7 @@ div.modificateur section.sheet-body div.details div.cout label input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -3558,14 +3559,14 @@ div.pouvoir img.profile-img {
 div.pouvoir section.window-content {
   background: #EBEBEB;
   color: #363B44;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: bold;
 }
 div.pouvoir section.window-content form {
   min-width: min-content;
 }
 div.pouvoir section.window-content div.editor-content {
-  font-family: "Kalam";
+  font-family: Kalam, sans-serif;
   letter-spacing: 0.5px;
 }
 div.pouvoir section.header {
@@ -3592,7 +3593,7 @@ div.pouvoir section.header input {
   height: 4rem;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
   border: 0px;
 }
@@ -3604,7 +3605,7 @@ div.pouvoir section.header select {
   height: 4rem;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
   border: 0px;
   border-left: 2px solid #363B44;
@@ -3658,7 +3659,7 @@ div.pouvoir section.sheet-body nav.tabs a {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -3741,7 +3742,7 @@ div.pouvoir section.sheet-body div.options div div.strategie span.label {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.pouvoir section.sheet-body div.options div div.strategie span.score {
   display: block;
@@ -3761,7 +3762,7 @@ div.pouvoir section.sheet-body div.options div div.strategie input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -3795,7 +3796,7 @@ div.pouvoir section.sheet-body div.options div.caracteristique a.btnAbs {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -3907,7 +3908,7 @@ div.pouvoir section.sheet-body div.special a.special {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -4007,7 +4008,7 @@ div.pouvoir section.sheet-body div.cout span.score {
   padding-left: 0px;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: normal;
   height: 100%;
   background: transparent;
@@ -4022,7 +4023,7 @@ div.pouvoir section.sheet-body div.cout input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -4103,7 +4104,7 @@ div.pouvoir section.sheet-body div.descripteurs input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: #4E7FC8;
   color: #EBEBEB;
@@ -4123,7 +4124,7 @@ div.pouvoir section.sheet-body div.descripteurs a.add {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -4250,7 +4251,7 @@ div.pouvoir section.sheet-body div.modificateurs div.extras > details summary > 
   height: 2rem;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
 }
 div.pouvoir section.sheet-body div.modificateurs div.extras > details summary > input::placeholder, div.pouvoir section.sheet-body div.modificateurs div.defauts > details summary > input::placeholder {
@@ -4319,7 +4320,7 @@ div.pouvoir section.sheet-body div.modificateurs div.extras > details section di
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -4392,7 +4393,7 @@ div.pouvoir section.sheet-body div.modificateurs div.defauts > details section d
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -4439,7 +4440,7 @@ div.talent img.profile-img {
 div.talent section.window-content {
   background: #EBEBEB;
   color: #363B44;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: bold;
 }
 div.talent section.window-content form {
@@ -4457,7 +4458,7 @@ div.talent section.window-content form input.mainName {
   height: 4rem;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
 }
 div.talent section.window-content form input.mainName::placeholder {
@@ -4467,7 +4468,7 @@ div.talent section.window-content form #mseItemSound {
   position: absolute;
 }
 div.talent section.window-content div.editor-content {
-  font-family: "Kalam";
+  font-family: Kalam, sans-serif;
   letter-spacing: 0.5px;
 }
 div.talent section.sheet-body div.tab > div.inner {
@@ -4496,7 +4497,7 @@ div.talent section.sheet-body nav.tabs a {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -4579,7 +4580,7 @@ div.talent section.sheet-body div.options div div.strategie span.label {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.talent section.sheet-body div.options div div.strategie span.score {
   display: block;
@@ -4599,7 +4600,7 @@ div.talent section.sheet-body div.options div div.strategie input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -4633,7 +4634,7 @@ div.talent section.sheet-body div.options div.caracteristique a.btnAbs {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -4730,7 +4731,7 @@ div.talent section.sheet-body div.details a.btn {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -4799,7 +4800,7 @@ div.talent section.sheet-body div.details div.cout label input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -4843,7 +4844,7 @@ div.talent section.sheet-body div.description div.editor div.tox-tinymce {
 div.equipement section.window-content {
   background: #EBEBEB;
   color: #363B44;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: bold;
 }
 div.equipement section.window-content form {
@@ -4861,7 +4862,7 @@ div.equipement section.window-content form input.mainName {
   height: 4rem;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
 }
 div.equipement section.window-content form input.mainName::placeholder {
@@ -4871,7 +4872,7 @@ div.equipement section.window-content form #mseItemSound {
   position: absolute;
 }
 div.equipement section.window-content div.editor-content {
-  font-family: "Kalam";
+  font-family: Kalam, sans-serif;
   letter-spacing: 0.5px;
 }
 div.equipement section.sheet-body div.tab > div.inner {
@@ -4900,7 +4901,7 @@ div.equipement section.sheet-body nav.tabs a {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -4983,7 +4984,7 @@ div.equipement section.sheet-body div.options div div.strategie span.label {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.equipement section.sheet-body div.options div div.strategie span.score {
   display: block;
@@ -5003,7 +5004,7 @@ div.equipement section.sheet-body div.options div div.strategie input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -5037,7 +5038,7 @@ div.equipement section.sheet-body div.options div.caracteristique a.btnAbs {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -5151,7 +5152,7 @@ div.equipement section.sheet-body div.details div.cout label input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -5194,14 +5195,14 @@ div.equipement section.sheet-body div.description div.editor div.tox-tinymce {
 div.vehicule section.window-content {
   background: #EBEBEB;
   color: #363B44;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: bold;
 }
 div.vehicule section.window-content form {
   min-width: min-content;
 }
 div.vehicule section.window-content div.editor-content {
-  font-family: "Kalam";
+  font-family: Kalam, sans-serif;
   letter-spacing: 0.5px;
 }
 div.vehicule header.sheet-header {
@@ -5222,7 +5223,7 @@ div.vehicule header.sheet-header > input {
   background: none;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
 }
 div.vehicule header.sheet-header > input::placeholder {
@@ -5339,7 +5340,7 @@ div.vehicule div.totalpp div.btnOC a {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 15px;
   font-weight: normal;
   line-height: 18px;
@@ -5378,7 +5379,7 @@ div.vehicule section.sheet-body nav.tabs a {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -5461,7 +5462,7 @@ div.vehicule section.sheet-body div.options div div.strategie span.label {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.vehicule section.sheet-body div.options div div.strategie span.score {
   display: block;
@@ -5481,7 +5482,7 @@ div.vehicule section.sheet-body div.options div div.strategie input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -5515,7 +5516,7 @@ div.vehicule section.sheet-body div.options div.caracteristique a.btnAbs {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -5609,7 +5610,7 @@ div.vehicule section.sheet-body div div.attaque a.roll {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -5656,7 +5657,7 @@ div.vehicule section.sheet-body div div.attaque a.noAtk {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -5703,7 +5704,7 @@ div.vehicule section.sheet-body div div.attaque > div.line span {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.vehicule section.sheet-body div div.attaque > div.line span.score {
   padding-right: 0px;
@@ -5730,7 +5731,7 @@ div.vehicule section.sheet-body div div.attaque input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -5748,7 +5749,7 @@ div.vehicule section.sheet-body div div.attaque > a.add {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -5798,7 +5799,7 @@ div.vehicule section.sheet-body div div.attaque div.reorderDrop a.add {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -5830,7 +5831,7 @@ div.vehicule section.sheet-body div div.attaque div.reorderDrop div.line span {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.vehicule section.sheet-body div div.attaque div.reorderDrop div.line span.score {
   padding-right: 0px;
@@ -5858,7 +5859,7 @@ div.vehicule section.sheet-body div div.attaque div.reorderDrop div.specialline 
   font-weight: bold;
   justify-content: right;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   white-space: nowrap;
 }
 div.vehicule section.sheet-body div div.attaque div.reorderDrop div.specialline span.labelDefense {
@@ -5868,7 +5869,7 @@ div.vehicule section.sheet-body div div.attaque div.reorderDrop div.specialline 
   font-weight: bold;
   justify-content: right;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.vehicule section.sheet-body div div.attaque div.reorderDrop div.specialline span.labelDefense.hide {
   display: none;
@@ -5900,7 +5901,7 @@ div.vehicule section.sheet-body div div.attaque div.reorderDrop > span.carac {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   text-transform: uppercase;
 }
 div.vehicule section.sheet-body div div.attaque div.reorderDrop > span.score {
@@ -5911,7 +5912,7 @@ div.vehicule section.sheet-body div div.attaque div.reorderDrop > span.score {
   justify-content: center;
   text-align: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: normal;
   height: 100%;
   background: transparent;
@@ -5941,7 +5942,7 @@ div.vehicule section.sheet-body div div.attaque div.reorderDrop textarea {
   width: 100%;
   max-width: 100%;
   min-height: 40px;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-size: 0.8em;
 }
 div.vehicule section.sheet-body div div.attaque div.reorderDrop textarea.hide {
@@ -5988,7 +5989,7 @@ div.vehicule section.sheet-body div div.strategie a.str {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -6050,7 +6051,7 @@ div.vehicule section.sheet-body div div.strategie > span.label {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.vehicule section.sheet-body div div.strategie > span.separator {
   grid-column: 1/5;
@@ -6063,7 +6064,7 @@ div.vehicule section.sheet-body div div.strategie input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -6098,7 +6099,7 @@ div.vehicule section.sheet-body div div.speed a.btn {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -6193,7 +6194,7 @@ div.vehicule section.sheet-body div div.speed span.score {
   padding-left: 0px;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border: 1px solid #7a7971;
@@ -6205,7 +6206,7 @@ div.vehicule section.sheet-body div div.speed input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -6219,7 +6220,7 @@ div.vehicule section.sheet-body div div.speed a.add {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -6248,7 +6249,7 @@ div.vehicule section.sheet-body div a.resetStrategie {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -6362,7 +6363,7 @@ div.vehicule section.sheet-body div.carac a.roll {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -6422,7 +6423,7 @@ div.vehicule section.sheet-body div.carac span.label {
   line-height: 18px;
   padding: 2px 5px;
   text-transform: uppercase;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
 }
 div.vehicule section.sheet-body div.carac span.score {
   display: grid;
@@ -6431,7 +6432,7 @@ div.vehicule section.sheet-body div.carac span.score {
   padding-left: 0px;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border: 1px solid #7a7971;
@@ -6442,7 +6443,7 @@ div.vehicule section.sheet-body div.carac input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -6495,7 +6496,7 @@ div.vehicule section.sheet-body div.vitesse input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -6526,7 +6527,7 @@ div.vehicule section.sheet-body div.particularite input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border-top: 0px;
@@ -6572,7 +6573,7 @@ div.vehicule section.sheet-body div.listpouvoir a.item-create {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -6703,7 +6704,7 @@ div.vehicule section.sheet-body div.listpouvoir div.pwr div.pwrheader {
   background-size: 500px;
   background-repeat: no-repeat;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
 }
 div.vehicule section.sheet-body div.listpouvoir div.pwr div.pwrheader i {
   position: absolute;
@@ -6901,7 +6902,7 @@ div.vehicule section.sheet-body div.listpouvoir div.data a {
   height: 100%;
   border: 1px solid #aaa;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -6946,7 +6947,7 @@ div.vehicule section.sheet-body div.listpouvoir div.dataSpecial input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border-top: 0px;
@@ -6973,7 +6974,7 @@ div.vehicule section.sheet-body div.listpouvoir div.dataSpecial a {
   height: 100%;
   border: 1px solid #aaa;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -6995,7 +6996,7 @@ div.vehicule section.sheet-body div.listpouvoir div select.link {
   grid-column-end: 5;
   width: 100%;
   color: #EBEBEB;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
   border-bottom: 1px solid var(--color-border-light-tertiary);
   background: #363B44;
@@ -7097,7 +7098,7 @@ div.vehicule section.sheet-body div.listpouvoir div.mod span.text i div.infoExt 
   border-radius: 5px;
   background: #4E7FC8;
   color: #EBEBEB;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   line-height: 12px;
   text-shadow: none;
   font-weight: normal;
@@ -7132,14 +7133,14 @@ div.vehicule section.sheet-body div.listpouvoir div.descripteurs {
 div.qg section.window-content {
   background: #EBEBEB;
   color: #363B44;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: bold;
 }
 div.qg section.window-content form {
   min-width: min-content;
 }
 div.qg section.window-content div.editor-content {
-  font-family: "Kalam";
+  font-family: Kalam, sans-serif;
   letter-spacing: 0.5px;
 }
 div.qg header.sheet-header {
@@ -7160,7 +7161,7 @@ div.qg header.sheet-header > input {
   background: none;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
 }
 div.qg header.sheet-header > input::placeholder {
@@ -7277,7 +7278,7 @@ div.qg div.totalpp div.btnOC a {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 15px;
   font-weight: normal;
   line-height: 18px;
@@ -7316,7 +7317,7 @@ div.qg section.sheet-body nav.tabs a {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -7399,7 +7400,7 @@ div.qg section.sheet-body div.options div div.strategie span.label {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.qg section.sheet-body div.options div div.strategie span.score {
   display: block;
@@ -7419,7 +7420,7 @@ div.qg section.sheet-body div.options div div.strategie input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -7453,7 +7454,7 @@ div.qg section.sheet-body div.options div.caracteristique a.btnAbs {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -7547,7 +7548,7 @@ div.qg section.sheet-body div div.attaque a.roll {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -7594,7 +7595,7 @@ div.qg section.sheet-body div div.attaque a.noAtk {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -7641,7 +7642,7 @@ div.qg section.sheet-body div div.attaque > div.line span {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.qg section.sheet-body div div.attaque > div.line span.score {
   padding-right: 0px;
@@ -7668,7 +7669,7 @@ div.qg section.sheet-body div div.attaque input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -7686,7 +7687,7 @@ div.qg section.sheet-body div div.attaque > a.add {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -7736,7 +7737,7 @@ div.qg section.sheet-body div div.attaque div.reorderDrop a.add {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -7768,7 +7769,7 @@ div.qg section.sheet-body div div.attaque div.reorderDrop div.line span {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.qg section.sheet-body div div.attaque div.reorderDrop div.line span.score {
   padding-right: 0px;
@@ -7796,7 +7797,7 @@ div.qg section.sheet-body div div.attaque div.reorderDrop div.specialline span.l
   font-weight: bold;
   justify-content: right;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   white-space: nowrap;
 }
 div.qg section.sheet-body div div.attaque div.reorderDrop div.specialline span.labelDefense {
@@ -7806,7 +7807,7 @@ div.qg section.sheet-body div div.attaque div.reorderDrop div.specialline span.l
   font-weight: bold;
   justify-content: right;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.qg section.sheet-body div div.attaque div.reorderDrop div.specialline span.labelDefense.hide {
   display: none;
@@ -7838,7 +7839,7 @@ div.qg section.sheet-body div div.attaque div.reorderDrop > span.carac {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   text-transform: uppercase;
 }
 div.qg section.sheet-body div div.attaque div.reorderDrop > span.score {
@@ -7849,7 +7850,7 @@ div.qg section.sheet-body div div.attaque div.reorderDrop > span.score {
   justify-content: center;
   text-align: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: normal;
   height: 100%;
   background: transparent;
@@ -7879,7 +7880,7 @@ div.qg section.sheet-body div div.attaque div.reorderDrop textarea {
   width: 100%;
   max-width: 100%;
   min-height: 40px;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-size: 0.8em;
 }
 div.qg section.sheet-body div div.attaque div.reorderDrop textarea.hide {
@@ -7926,7 +7927,7 @@ div.qg section.sheet-body div div.strategie a.str {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -7988,7 +7989,7 @@ div.qg section.sheet-body div div.strategie > span.label {
   font-weight: bold;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.qg section.sheet-body div div.strategie > span.separator {
   grid-column: 1/5;
@@ -8001,7 +8002,7 @@ div.qg section.sheet-body div div.strategie input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -8036,7 +8037,7 @@ div.qg section.sheet-body div div.speed a.btn {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -8131,7 +8132,7 @@ div.qg section.sheet-body div div.speed span.score {
   padding-left: 0px;
   justify-content: center;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border: 1px solid #7a7971;
@@ -8143,7 +8144,7 @@ div.qg section.sheet-body div div.speed input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -8157,7 +8158,7 @@ div.qg section.sheet-body div div.speed a.add {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -8186,7 +8187,7 @@ div.qg section.sheet-body div a.resetStrategie {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -8330,7 +8331,7 @@ div.qg section.sheet-body div.robustesse input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -8363,7 +8364,7 @@ div.qg section.sheet-body div.particularite input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border-top: 0px;
@@ -8409,7 +8410,7 @@ div.qg section.sheet-body div.listpouvoirs a.item-create {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -8540,7 +8541,7 @@ div.qg section.sheet-body div.listpouvoirs div.pwr div.pwrheader {
   background-size: 500px;
   background-repeat: no-repeat;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
 }
 div.qg section.sheet-body div.listpouvoirs div.pwr div.pwrheader i {
   position: absolute;
@@ -8738,7 +8739,7 @@ div.qg section.sheet-body div.listpouvoirs div.data a {
   height: 100%;
   border: 1px solid #aaa;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -8783,7 +8784,7 @@ div.qg section.sheet-body div.listpouvoirs div.dataSpecial input {
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
   border-top: 0px;
@@ -8810,7 +8811,7 @@ div.qg section.sheet-body div.listpouvoirs div.dataSpecial a {
   height: 100%;
   border: 1px solid #aaa;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -8832,7 +8833,7 @@ div.qg section.sheet-body div.listpouvoirs div select.link {
   grid-column-end: 5;
   width: 100%;
   color: #EBEBEB;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
   border-bottom: 1px solid var(--color-border-light-tertiary);
   background: #363B44;
@@ -8934,7 +8935,7 @@ div.qg section.sheet-body div.listpouvoirs div.mod span.text i div.infoExt {
   border-radius: 5px;
   background: #4E7FC8;
   color: #EBEBEB;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   line-height: 12px;
   text-shadow: none;
   font-weight: normal;
@@ -8975,17 +8976,17 @@ section.sheet-bottom {
   margin-top: 5px;
 }
 
-.mm3-roll {
+.mm4-roll {
   cursor: pointer;
   background: #EBEBEB;
 }
-.mm3-roll h4 {
+.mm4-roll h4 {
   line-height: 24px;
 }
-.mm3-roll h4.flavor {
+.mm4-roll h4.flavor {
   box-shadow: none;
   background: url("../assets/fond.webp") #4E7FC8;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   text-align: center;
   line-height: 36px;
   background-blend-mode: overlay, multiply;
@@ -9000,9 +9001,9 @@ section.sheet-bottom {
   border-radius: 15px 15px 0px 0px;
   letter-spacing: 1px;
 }
-.mm3-roll h4.formula {
+.mm4-roll h4.formula {
   box-shadow: none;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   font-size: 1em;
   border: 0px;
   border-radius: 0px;
@@ -9010,13 +9011,13 @@ section.sheet-bottom {
   color: #EBEBEB;
   letter-spacing: 1px;
 }
-.mm3-roll h4.tgtName {
+.mm4-roll h4.tgtName {
   border-bottom: 1px solid #a8a8a8;
   font-size: 10px;
 }
-.mm3-roll h4.result {
+.mm4-roll h4.result {
   box-shadow: none;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   font-size: 1em;
   border: 0px;
   border-radius: 0px;
@@ -9028,9 +9029,9 @@ section.sheet-bottom {
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-.mm3-roll h4.attack {
+.mm4-roll h4.attack {
   box-shadow: none;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   font-size: 1em;
   border: 0px;
   border-radius: 0px;
@@ -9043,10 +9044,10 @@ section.sheet-bottom {
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-.mm3-roll h4.bottom {
+.mm4-roll h4.bottom {
   margin: 0px;
 }
-.mm3-roll h4.bottom::after {
+.mm4-roll h4.bottom::after {
   content: "";
   display: grid;
   grid-template-columns: 1fr;
@@ -9057,38 +9058,38 @@ section.sheet-bottom {
   background-blend-mode: overlay, multiply;
   background: url("../assets/fond.webp") #4E7FC8;
 }
-.mm3-roll h4.critique {
+.mm4-roll h4.critique {
   border-top: 1px solid black;
   color: #0fb002;
 }
-.mm3-roll div.dice-tooltip {
+.mm4-roll div.dice-tooltip {
   grid-template-rows: auto;
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-.mm3-roll div.dice-tooltip header {
+.mm4-roll div.dice-tooltip header {
   padding-left: 5px;
 }
-.mm3-roll div.dice-tooltip ol {
+.mm4-roll div.dice-tooltip ol {
   margin-bottom: 0px;
   padding-bottom: 5px;
   padding-left: 5px;
   border-bottom: 1px solid var(--color-border-light-primary);
 }
-.mm3-roll div.dice-tooltip span.part-total {
+.mm4-roll div.dice-tooltip span.part-total {
   border-right: 0px;
   border-top: 0px;
   border-bottom: 0px;
 }
-.mm3-roll div.dataAttack div.inner {
+.mm4-roll div.dataAttack div.inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-left: 5px;
   padding-right: 5px;
 }
-.mm3-roll div.dataAttack div.inner span {
+.mm4-roll div.dataAttack div.inner span {
   box-shadow: none;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   font-size: 0.8em;
   border: 0px;
   border-radius: 0px;
@@ -9096,9 +9097,9 @@ section.sheet-bottom {
   color: #363B44;
   letter-spacing: 1px;
 }
-.mm3-roll div.btn {
+.mm4-roll div.btn {
   box-shadow: none;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   font-size: 1em;
   border: 0px;
   border-radius: 0px;
@@ -9112,7 +9113,7 @@ section.sheet-bottom {
   border-right: 1px solid black;
   text-align: center;
 }
-.mm3-roll div.btn button {
+.mm4-roll div.btn button {
   box-shadow: none;
   width: max-content;
   border: 0px;
@@ -9122,7 +9123,7 @@ section.sheet-bottom {
   margin-bottom: 2px;
   font-variant: small-caps;
   font-size: 1em;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   color: #EBEBEB;
   letter-spacing: 1px;
   background: url("../assets/fond.webp") #4E7FC8;
@@ -9130,16 +9131,16 @@ section.sheet-bottom {
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
   background-size: 500px;
 }
-.mm3-roll div.btn.special {
+.mm4-roll div.btn.special {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
 }
-.mm3-roll div.btn.special button {
+.mm4-roll div.btn.special button {
   width: 100%;
   padding: 0px;
 }
-.mm3-roll span.text {
+.mm4-roll span.text {
   display: block;
   text-align: justify;
   width: 100%;
@@ -9147,21 +9148,21 @@ section.sheet-bottom {
   border-right: 1px solid black;
   padding-left: 5px;
   padding-right: 5px;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   border-top: 1px solid black;
 }
 
-.mm3-rollpwr {
+.mm4-rollpwr {
   cursor: pointer;
   background: #EBEBEB;
 }
-.mm3-rollpwr h4 {
+.mm4-rollpwr h4 {
   line-height: 24px;
 }
-.mm3-rollpwr h4.flavor {
+.mm4-rollpwr h4.flavor {
   box-shadow: none;
   background: url("../assets/fond.webp") #4E7FC8;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   text-align: center;
   line-height: 36px;
   background-blend-mode: overlay, multiply;
@@ -9176,9 +9177,9 @@ section.sheet-bottom {
   border-radius: 15px 15px 0px 0px;
   letter-spacing: 1px;
 }
-.mm3-rollpwr h4.formula {
+.mm4-rollpwr h4.formula {
   box-shadow: none;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   font-size: 1em;
   border: 0px;
   border-radius: 0px;
@@ -9186,9 +9187,9 @@ section.sheet-bottom {
   color: #EBEBEB;
   letter-spacing: 1px;
 }
-.mm3-rollpwr h4.result {
+.mm4-rollpwr h4.result {
   box-shadow: none;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   font-size: 1em;
   border: 0px;
   border-radius: 0px;
@@ -9200,9 +9201,9 @@ section.sheet-bottom {
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-.mm3-rollpwr h4.header {
+.mm4-rollpwr h4.header {
   box-shadow: none;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   font-size: 1.2em;
   border: 0px;
   border-radius: 0px;
@@ -9218,10 +9219,10 @@ section.sheet-bottom {
   text-align: center;
   margin: 0px;
 }
-.mm3-rollpwr h4.bottom {
+.mm4-rollpwr h4.bottom {
   margin: 0px;
 }
-.mm3-rollpwr h4.bottom::after {
+.mm4-rollpwr h4.bottom::after {
   content: "";
   display: grid;
   grid-template-columns: 1fr;
@@ -9232,30 +9233,30 @@ section.sheet-bottom {
   background-blend-mode: overlay, multiply;
   background: url("../assets/fond.webp") #4E7FC8;
 }
-.mm3-rollpwr h4.critique {
+.mm4-rollpwr h4.critique {
   border-top: 1px solid black;
   color: #0fb002;
 }
-.mm3-rollpwr div.dice-tooltip {
+.mm4-rollpwr div.dice-tooltip {
   grid-template-rows: auto;
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
-.mm3-rollpwr div.dice-tooltip header {
+.mm4-rollpwr div.dice-tooltip header {
   padding-left: 5px;
 }
-.mm3-rollpwr div.dice-tooltip ol {
+.mm4-rollpwr div.dice-tooltip ol {
   margin-bottom: 0px;
   padding-bottom: 5px;
   padding-left: 5px;
   border-bottom: 1px solid var(--color-border-light-primary);
 }
-.mm3-rollpwr div.dice-tooltip span.part-total {
+.mm4-rollpwr div.dice-tooltip span.part-total {
   border-right: 0px;
   border-top: 0px;
   border-bottom: 0px;
 }
-.mm3-rollpwr div.data {
+.mm4-rollpwr div.data {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-left: 5px;
@@ -9266,15 +9267,15 @@ section.sheet-bottom {
   border-top: 1px solid black;
   grid-gap: 2px;
 }
-.mm3-rollpwr div.data span {
-  font-family: "Sriracha";
+.mm4-rollpwr div.data span {
+  font-family: Sriracha, sans-serif;
 }
-.mm3-rollpwr div.data span:first-of-type {
+.mm4-rollpwr div.data span:first-of-type {
   grid-column-start: 1;
   grid-column-end: 3;
   text-align: center;
 }
-.mm3-rollpwr div.descripteurs {
+.mm4-rollpwr div.descripteurs {
   display: block;
   grid-template-columns: 1fr 1fr;
   padding-left: 5px;
@@ -9287,10 +9288,10 @@ section.sheet-bottom {
   min-height: 10px;
   text-align: justify;
 }
-.mm3-rollpwr div.descripteurs span {
-  font-family: "Sriracha";
+.mm4-rollpwr div.descripteurs span {
+  font-family: Sriracha, sans-serif;
 }
-.mm3-rollpwr span.text {
+.mm4-rollpwr span.text {
   display: block;
   text-align: justify;
   width: 100%;
@@ -9299,19 +9300,19 @@ section.sheet-bottom {
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 1px;
-  font-family: "Kalam";
+  font-family: Kalam, sans-serif;
   letter-spacing: 0.5px;
   border-top: 1px solid black;
   min-height: 10px;
 }
 
-.mm3-msgdata {
+.mm4-msgdata {
   background: #EBEBEB;
 }
-.mm3-msgdata h4.flavor {
+.mm4-msgdata h4.flavor {
   box-shadow: none;
   background: url("../assets/fond.webp") #4E7FC8;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   text-align: center;
   line-height: 36px;
   background-blend-mode: overlay, multiply;
@@ -9327,9 +9328,9 @@ section.sheet-bottom {
   letter-spacing: 1px;
   margin: 0px;
 }
-.mm3-msgdata h4.rank {
+.mm4-msgdata h4.rank {
   box-shadow: none;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   font-size: 1em;
   border: 0px;
   border-radius: 0px;
@@ -9339,10 +9340,10 @@ section.sheet-bottom {
   margin: 0px;
   text-align: center;
 }
-.mm3-msgdata h4.bottom {
+.mm4-msgdata h4.bottom {
   margin: 0px;
 }
-.mm3-msgdata h4.bottom::after {
+.mm4-msgdata h4.bottom::after {
   content: "";
   display: grid;
   grid-template-columns: 1fr;
@@ -9353,7 +9354,7 @@ section.sheet-bottom {
   background-blend-mode: overlay, multiply;
   background: url("../assets/fond.webp") #4E7FC8;
 }
-.mm3-msgdata span.text {
+.mm4-msgdata span.text {
   display: block;
   text-align: justify;
   width: 100%;
@@ -9362,7 +9363,7 @@ section.sheet-bottom {
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 1px;
-  font-family: "Kalam";
+  font-family: Kalam, sans-serif;
   letter-spacing: 0.5px;
   border-top: 1px solid black;
   min-height: 10px;
@@ -9382,27 +9383,27 @@ section.sheet-bottom {
   z-index: 999;
 }
 
-div.mm3-dialog section.window-content {
+div.mm4-dialog section.window-content {
   background: #EBEBEB;
   color: #363B44;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: bold;
 }
-div.mm3-dialog section.window-content div.dialog-content {
+div.mm4-dialog section.window-content div.dialog-content {
   display: grid;
   grid-template-columns: 1fr 100px;
   grid-gap: 5px;
 }
-div.mm3-dialog section.window-content div.dialog-content input {
+div.mm4-dialog section.window-content div.dialog-content input {
   width: 100%;
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
-div.mm3-dialog section.window-content div.dialog-buttons button {
+div.mm4-dialog section.window-content div.dialog-buttons button {
   box-shadow: none;
   width: 100%;
   border: 0px;
@@ -9412,7 +9413,7 @@ div.mm3-dialog section.window-content div.dialog-buttons button {
   margin-bottom: 2px;
   font-variant: small-caps;
   font-size: 1em;
-  font-family: "Sriracha";
+  font-family: Sriracha, sans-serif;
   color: #EBEBEB;
   letter-spacing: 1px;
   background: url("../assets/fond.webp") #4E7FC8;
@@ -9420,39 +9421,39 @@ div.mm3-dialog section.window-content div.dialog-buttons button {
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
   background-size: 500px;
 }
-div.mm3-dialog section.window-content div.dialog-buttons button:hover {
+div.mm4-dialog section.window-content div.dialog-buttons button:hover {
   color: #fe8412;
 }
 
-div.mm3-import-all section.window-content {
+div.mm4-import-all section.window-content {
   background: #EBEBEB;
   color: #363B44;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   font-weight: bold;
 }
-div.mm3-import-all section.window-content div.dialog-content {
+div.mm4-import-all section.window-content div.dialog-content {
   display: grid;
   grid-template-columns: 1fr;
 }
-div.mm3-import-all section.window-content div.dialog-content label {
+div.mm4-import-all section.window-content div.dialog-content label {
   letter-spacing: 1px;
   text-align: center;
 }
-div.mm3-import-all section.window-content div.dialog-content input {
+div.mm4-import-all section.window-content div.dialog-content input {
   margin-left: auto;
   margin-right: auto;
 }
-div.mm3-import-all section.window-content div.dialog-buttons {
+div.mm4-import-all section.window-content div.dialog-buttons {
   margin-top: 5px;
 }
-div.mm3-import-all section.window-content div.dialog-buttons button {
+div.mm4-import-all section.window-content div.dialog-buttons button {
   position: relative;
   border-bottom: 2px solid #666;
   border-color: #aaa;
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -9467,86 +9468,86 @@ div.mm3-import-all section.window-content div.dialog-buttons button {
   padding-right: 5px;
   letter-spacing: 1px;
 }
-div.mm3-import-all.bleuclair {
+div.mm4-import-all.bleuclair {
   background: url("../assets/menu/bleuclair.png") repeat;
 }
-div.mm3-import-all.violetclair {
+div.mm4-import-all.violetclair {
   background: url("../assets/menu/violetclair.png") repeat;
 }
-div.mm3-import-all.violet {
+div.mm4-import-all.violet {
   background: url("../assets/menu/violet.png") repeat;
 }
-div.mm3-import-all.bleufonce {
+div.mm4-import-all.bleufonce {
   background: url("../assets/menu/bleufonce.png") repeat;
 }
-div.mm3-import-all.Bangers button {
-  font-family: "Bangers" !important;
+div.mm4-import-all.Bangers button {
+  font-family: "Bangers", sans-serif !important;
 }
-div.mm3-import-all.Sriracha button {
-  font-family: "Sriracha" !important;
+div.mm4-import-all.Sriracha button {
+  font-family: "Sriracha", sans-serif !important;
 }
-div.mm3-import-all.Kalam button {
-  font-family: "Kalam" !important;
+div.mm4-import-all.Kalam button {
+  font-family: "Kalam", sans-serif !important;
 }
-div.mm3-import-all.Creepster button {
-  font-family: "Creepster" !important;
+div.mm4-import-all.Creepster button {
+  font-family: "Creepster", sans-serif !important;
 }
-div.mm3-import-all.Poppins button {
-  font-family: "Poppins" !important;
+div.mm4-import-all.Poppins button {
+  font-family: "Poppins", sans-serif !important;
 }
-div.mm3-import-all.Roboto button {
-  font-family: "Roboto" !important;
+div.mm4-import-all.Roboto button {
+  font-family: "Roboto", sans-serif !important;
 }
-div.mm3-import-all.RobotoCondensed button {
-  font-family: "Roboto Condensed" !important;
+div.mm4-import-all.RobotoCondensed button {
+  font-family: "Roboto Condensed", sans-serif !important;
 }
-div.mm3-import-all.RobotoMono button {
-  font-family: "Roboto Mono" !important;
+div.mm4-import-all.RobotoMono button {
+  font-family: "Roboto Mono", sans-serif !important;
 }
-div.mm3-import-all.Tektur button {
-  font-family: "Tektur" !important;
+div.mm4-import-all.Tektur button {
+  font-family: "Tektur", sans-serif !important;
 }
-div.mm3-import-all.JosefinSans button {
-  font-family: "Josefin Sans" !important;
+div.mm4-import-all.JosefinSans button {
+  font-family: "Josefin Sans", sans-serif !important;
 }
-div.mm3-import-all.BebasNeue button {
-  font-family: "Bebas Neue" !important;
+div.mm4-import-all.BebasNeue button {
+  font-family: "Bebas Neue", sans-serif !important;
 }
-div.mm3-import-all.Goldman button {
-  font-family: "Goldman" !important;
+div.mm4-import-all.Goldman button {
+  font-family: "Goldman", sans-serif !important;
 }
-div.mm3-import-all.Anton button {
-  font-family: "Anton" !important;
+div.mm4-import-all.Anton button {
+  font-family: "Anton", sans-serif !important;
 }
-div.mm3-import-all.PatrickHandSC button {
-  font-family: "Patrick Hand SC" !important;
+div.mm4-import-all.PatrickHandSC button {
+  font-family: "Patrick Hand SC", sans-serif !important;
 }
-div.mm3-import-all.PirataOne button {
-  font-family: "Pirata One" !important;
+div.mm4-import-all.PirataOne button {
+  font-family: "Pirata One", sans-serif !important;
 }
-div.mm3-import-all.Prompt button {
-  font-family: "Prompt" !important;
+div.mm4-import-all.Prompt button {
+  font-family: "Prompt", sans-serif !important;
 }
-div.mm3-import-all.Teko button {
-  font-family: "Teko" !important;
+div.mm4-import-all.Teko button {
+  font-family: "Teko", sans-serif !important;
 }
-div.mm3-import-all.RussoOne button {
-  font-family: "Russo One" !important;
+div.mm4-import-all.RussoOne button {
+  font-family: "Russo One", sans-serif !important;
 }
-div.mm3-import-all.Righteous button {
-  font-family: "Righteous" !important;
+div.mm4-import-all.Righteous button {
+  font-family: "Righteous", sans-serif !important;
 }
-div.mm3-import-all.PathwayGothicOne button {
-  font-family: "Pathway Gothic One" !important;
+div.mm4-import-all.PathwayGothicOne button {
+  font-family: "Pathway Gothic One", sans-serif !important;
 }
-div.mm3-import-all.Quantico button {
-  font-family: "Quantico" !important;
+div.mm4-import-all.Quantico button {
+  font-family: "Quantico", sans-serif !important;
 }
-div.mm3-import-all.Staatliches button {
-  font-family: "Staatliches" !important;
+div.mm4-import-all.Staatliches button {
+  font-family: "Staatliches", sans-serif !important;
 }
-div.mm3-import-all.SecularOne button {
-  font-family: "Secular One" !important;
+div.mm4-import-all.SecularOne button {
+  font-family: "Secular One", sans-serif !important;
 }
 
 div.dialog-edit section.window-content {
@@ -9577,7 +9578,7 @@ div.dialog-edit section.window-content section.header span {
   line-height: 3rem;
   color: #EBEBEB;
   text-shadow: 2px 2px 0px #DA3A2F, 1px 1px 0px #363B44;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   text-align: center;
   border: 0px;
 }
@@ -9609,7 +9610,7 @@ div.dialog-edit section.window-content section.body a.btn {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -9687,14 +9688,14 @@ div.dialog-edit section.window-content section.body span {
   font-weight: bold;
   justify-content: right;
   align-items: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
 }
 div.dialog-edit section.window-content section.body input[type=number] {
   width: 100%;
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-  font-family: Sriracha;
+  font-family: Sriracha, sans-serif;
   height: 100%;
   background: transparent;
 }
@@ -9843,7 +9844,7 @@ div.dialog-edit section.window-content div.dialog-buttons button {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 15px;
   font-weight: normal;
   line-height: 18px;
@@ -9876,7 +9877,7 @@ div.tabeffects a.btn {
   border-right: 2px solid #999;
   border-radius: 5px;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -10115,7 +10116,7 @@ section#actors footer.action-buttons button {
   border-radius: 5px;
   border-right: 3px solid #999;
   border-style: outset;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 16px;
   font-weight: normal;
   line-height: 18px;
@@ -10134,23 +10135,23 @@ section#actors footer.action-buttons button {
   background: rgba(255, 255, 240, 0.8);
 }
 
-div.mm3-dialog-delete .window-content {
+div.mm4-dialog-delete .window-content {
   background: #EBEBEB;
 }
-div.mm3-dialog-delete div.dialog-content {
+div.mm4-dialog-delete div.dialog-content {
   text-align: center;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   margin-bottom: 5px;
 }
-div.mm3-dialog-delete button {
+div.mm4-dialog-delete button {
   text-align: center;
   border-bottom: 2px solid #666 !important;
   border-color: #aaa !important;
   border-radius: 5px;
   border-right: 3px solid #999 !important;
   border-style: outset !important;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -10160,180 +10161,180 @@ div.mm3-dialog-delete button {
   padding: 2px 5px;
   margin: 2px;
 }
-div.mm3-dialog-delete button:hover {
+div.mm4-dialog-delete button:hover {
   color: #fe8412;
   border-color: #fe1611;
   letter-spacing: 1px;
   text-shadow: none;
 }
-div.mm3-dialog-delete.adaptedFont div.dialog-content {
+div.mm4-dialog-delete.adaptedFont div.dialog-content {
   font-size: 11px;
 }
-div.mm3-dialog-delete.adaptedFont button {
+div.mm4-dialog-delete.adaptedFont button {
   font-size: 11px;
 }
-div.mm3-dialog-delete.Bangers div.dialog-content {
-  font-family: "Bangers";
+div.mm4-dialog-delete.Bangers div.dialog-content {
+  font-family: Bangers, sans-serif;
 }
-div.mm3-dialog-delete.Bangers button {
-  font-family: "Bangers";
+div.mm4-dialog-delete.Bangers button {
+  font-family: Bangers, sans-serif;
 }
-div.mm3-dialog-delete.Sriracha div.dialog-content {
-  font-family: "Sriracha";
+div.mm4-dialog-delete.Sriracha div.dialog-content {
+  font-family: Sriracha, sans-serif;
 }
-div.mm3-dialog-delete.Sriracha button {
-  font-family: "Sriracha";
+div.mm4-dialog-delete.Sriracha button {
+  font-family: Sriracha, sans-serif;
 }
-div.mm3-dialog-delete.Kalam div.dialog-content {
-  font-family: "Kalam";
+div.mm4-dialog-delete.Kalam div.dialog-content {
+  font-family: Kalam, sans-serif;
 }
-div.mm3-dialog-delete.Kalam button {
-  font-family: "Kalam";
+div.mm4-dialog-delete.Kalam button {
+  font-family: Kalam, sans-serif;
 }
-div.mm3-dialog-delete.Creepster div.dialog-content {
-  font-family: "Creepster";
+div.mm4-dialog-delete.Creepster div.dialog-content {
+  font-family: "Creepster", sans-serif;
 }
-div.mm3-dialog-delete.Creepster button {
-  font-family: "Creepster";
+div.mm4-dialog-delete.Creepster button {
+  font-family: "Creepster", sans-serif;
 }
-div.mm3-dialog-delete.Poppins div.dialog-content {
-  font-family: "Poppins";
+div.mm4-dialog-delete.Poppins div.dialog-content {
+  font-family: "Poppins", sans-serif;
 }
-div.mm3-dialog-delete.Poppins button {
-  font-family: "Poppins";
+div.mm4-dialog-delete.Poppins button {
+  font-family: "Poppins", sans-serif;
 }
-div.mm3-dialog-delete.Roboto div.dialog-content {
-  font-family: "Roboto";
+div.mm4-dialog-delete.Roboto div.dialog-content {
+  font-family: "Roboto", sans-serif;
 }
-div.mm3-dialog-delete.Roboto button {
-  font-family: "Roboto";
+div.mm4-dialog-delete.Roboto button {
+  font-family: "Roboto", sans-serif;
 }
-div.mm3-dialog-delete.RobotoCondensed div.dialog-content {
-  font-family: "Roboto Condensed";
+div.mm4-dialog-delete.RobotoCondensed div.dialog-content {
+  font-family: "Roboto Condensed", sans-serif;
 }
-div.mm3-dialog-delete.RobotoCondensed button {
-  font-family: "Roboto Condensed";
+div.mm4-dialog-delete.RobotoCondensed button {
+  font-family: "Roboto Condensed", sans-serif;
 }
-div.mm3-dialog-delete.RobotoMono div.dialog-content {
-  font-family: "Roboto Mono";
+div.mm4-dialog-delete.RobotoMono div.dialog-content {
+  font-family: "Roboto Mono", sans-serif;
 }
-div.mm3-dialog-delete.RobotoMono button {
-  font-family: "Roboto Mono";
+div.mm4-dialog-delete.RobotoMono button {
+  font-family: "Roboto Mono", sans-serif;
 }
-div.mm3-dialog-delete.Tektur div.dialog-content {
-  font-family: "Tektur";
+div.mm4-dialog-delete.Tektur div.dialog-content {
+  font-family: "Tektur", sans-serif;
 }
-div.mm3-dialog-delete.Tektur button {
-  font-family: "Tektur";
+div.mm4-dialog-delete.Tektur button {
+  font-family: "Tektur", sans-serif;
 }
-div.mm3-dialog-delete.JosefinSans div.dialog-content {
-  font-family: "Josefin Sans";
+div.mm4-dialog-delete.JosefinSans div.dialog-content {
+  font-family: "Josefin Sans", sans-serif;
 }
-div.mm3-dialog-delete.JosefinSans button {
-  font-family: "Josefin Sans";
+div.mm4-dialog-delete.JosefinSans button {
+  font-family: "Josefin Sans", sans-serif;
 }
-div.mm3-dialog-delete.BebasNeue div.dialog-content {
-  font-family: "Bebas Neue";
+div.mm4-dialog-delete.BebasNeue div.dialog-content {
+  font-family: "Bebas Neue", sans-serif;
 }
-div.mm3-dialog-delete.BebasNeue button {
-  font-family: "Bebas Neue";
+div.mm4-dialog-delete.BebasNeue button {
+  font-family: "Bebas Neue", sans-serif;
 }
-div.mm3-dialog-delete.Goldman div.dialog-content {
-  font-family: "Goldman";
+div.mm4-dialog-delete.Goldman div.dialog-content {
+  font-family: "Goldman", sans-serif;
 }
-div.mm3-dialog-delete.Goldman button {
-  font-family: "Goldman";
+div.mm4-dialog-delete.Goldman button {
+  font-family: "Goldman", sans-serif;
 }
-div.mm3-dialog-delete.Anton div.dialog-content {
-  font-family: "Anton";
+div.mm4-dialog-delete.Anton div.dialog-content {
+  font-family: "Anton", sans-serif;
 }
-div.mm3-dialog-delete.Anton button {
-  font-family: "Anton";
+div.mm4-dialog-delete.Anton button {
+  font-family: "Anton", sans-serif;
 }
-div.mm3-dialog-delete.PatrickHandSC div.dialog-content {
-  font-family: "Patrick Hand SC";
+div.mm4-dialog-delete.PatrickHandSC div.dialog-content {
+  font-family: "Patrick Hand SC", sans-serif;
 }
-div.mm3-dialog-delete.PatrickHandSC button {
-  font-family: "Patrick Hand SC";
+div.mm4-dialog-delete.PatrickHandSC button {
+  font-family: "Patrick Hand SC", sans-serif;
 }
-div.mm3-dialog-delete.PirataOne div.dialog-content {
-  font-family: "Pirata One";
+div.mm4-dialog-delete.PirataOne div.dialog-content {
+  font-family: "Pirata One", sans-serif;
 }
-div.mm3-dialog-delete.PirataOne button {
-  font-family: "Pirata One";
+div.mm4-dialog-delete.PirataOne button {
+  font-family: "Pirata One", sans-serif;
 }
-div.mm3-dialog-delete.Prompt div.dialog-content {
-  font-family: "Prompt";
+div.mm4-dialog-delete.Prompt div.dialog-content {
+  font-family: "Prompt", sans-serif;
 }
-div.mm3-dialog-delete.Prompt button {
-  font-family: "Prompt";
+div.mm4-dialog-delete.Prompt button {
+  font-family: "Prompt", sans-serif;
 }
-div.mm3-dialog-delete.Teko div.dialog-content {
-  font-family: "Teko";
+div.mm4-dialog-delete.Teko div.dialog-content {
+  font-family: "Teko", sans-serif;
 }
-div.mm3-dialog-delete.Teko button {
-  font-family: "Teko";
+div.mm4-dialog-delete.Teko button {
+  font-family: "Teko", sans-serif;
 }
-div.mm3-dialog-delete.RussoOne div.dialog-content {
-  font-family: "Russo One";
+div.mm4-dialog-delete.RussoOne div.dialog-content {
+  font-family: "Russo One", sans-serif;
 }
-div.mm3-dialog-delete.RussoOne button {
-  font-family: "Russo One";
+div.mm4-dialog-delete.RussoOne button {
+  font-family: "Russo One", sans-serif;
 }
-div.mm3-dialog-delete.Righteous div.dialog-content {
-  font-family: "Righteous";
+div.mm4-dialog-delete.Righteous div.dialog-content {
+  font-family: "Righteous", sans-serif;
 }
-div.mm3-dialog-delete.Righteous button {
-  font-family: "Righteous";
+div.mm4-dialog-delete.Righteous button {
+  font-family: "Righteous", sans-serif;
 }
-div.mm3-dialog-delete.PathwayGothicOne div.dialog-content {
-  font-family: "Pathway Gothic One";
+div.mm4-dialog-delete.PathwayGothicOne div.dialog-content {
+  font-family: "Pathway Gothic One", sans-serif;
 }
-div.mm3-dialog-delete.PathwayGothicOne button {
-  font-family: "Pathway Gothic One";
+div.mm4-dialog-delete.PathwayGothicOne button {
+  font-family: "Pathway Gothic One", sans-serif;
 }
-div.mm3-dialog-delete.Quantico div.dialog-content {
-  font-family: "Quantico";
+div.mm4-dialog-delete.Quantico div.dialog-content {
+  font-family: "Quantico", sans-serif;
 }
-div.mm3-dialog-delete.Quantico button {
-  font-family: "Quantico";
+div.mm4-dialog-delete.Quantico button {
+  font-family: "Quantico", sans-serif;
 }
-div.mm3-dialog-delete.Staatliches div.dialog-content {
-  font-family: "Staatliches";
+div.mm4-dialog-delete.Staatliches div.dialog-content {
+  font-family: "Staatliches", sans-serif;
 }
-div.mm3-dialog-delete.Staatliches button {
-  font-family: "Staatliches";
+div.mm4-dialog-delete.Staatliches button {
+  font-family: "Staatliches", sans-serif;
 }
-div.mm3-dialog-delete.SecularOne div.dialog-content {
-  font-family: "Secular One";
+div.mm4-dialog-delete.SecularOne div.dialog-content {
+  font-family: "Secular One", sans-serif;
 }
-div.mm3-dialog-delete.SecularOne button {
-  font-family: "Secular One";
+div.mm4-dialog-delete.SecularOne button {
+  font-family: "Secular One", sans-serif;
 }
 
-div.mm3-dialog-mod .window-content {
+div.mm4-dialog-mod .window-content {
   background: #EBEBEB;
 }
-div.mm3-dialog-mod div.dialog-content {
+div.mm4-dialog-mod div.dialog-content {
   text-align: center;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   margin-bottom: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
 }
-div.mm3-dialog-mod div.dialog-content span {
+div.mm4-dialog-mod div.dialog-content span {
   line-height: 26.5px;
 }
-div.mm3-dialog-mod button {
+div.mm4-dialog-mod button {
   text-align: center;
   border-bottom: 2px solid #666 !important;
   border-color: #aaa !important;
   border-radius: 5px;
   border-right: 3px solid #999 !important;
   border-style: outset !important;
-  font-family: "Bangers";
+  font-family: Bangers, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -10343,155 +10344,155 @@ div.mm3-dialog-mod button {
   padding: 2px 5px;
   margin: 2px;
 }
-div.mm3-dialog-mod button:hover {
+div.mm4-dialog-mod button:hover {
   color: #fe8412;
   border-color: #fe1611;
   letter-spacing: 1px;
   text-shadow: none;
 }
-div.mm3-dialog-mod.adaptedFont div.dialog-content {
+div.mm4-dialog-mod.adaptedFont div.dialog-content {
   font-size: 11px;
 }
-div.mm3-dialog-mod.adaptedFont button {
+div.mm4-dialog-mod.adaptedFont button {
   font-size: 11px;
 }
-div.mm3-dialog-mod.Bangers div.dialog-content {
-  font-family: "Bangers";
+div.mm4-dialog-mod.Bangers div.dialog-content {
+  font-family: Bangers, sans-serif;
 }
-div.mm3-dialog-mod.Bangers button {
-  font-family: "Bangers";
+div.mm4-dialog-mod.Bangers button {
+  font-family: Bangers, sans-serif;
 }
-div.mm3-dialog-mod.Sriracha div.dialog-content {
-  font-family: "Sriracha";
+div.mm4-dialog-mod.Sriracha div.dialog-content {
+  font-family: Sriracha, sans-serif;
 }
-div.mm3-dialog-mod.Sriracha button {
-  font-family: "Sriracha";
+div.mm4-dialog-mod.Sriracha button {
+  font-family: Sriracha, sans-serif;
 }
-div.mm3-dialog-mod.Kalam div.dialog-content {
-  font-family: "Kalam";
+div.mm4-dialog-mod.Kalam div.dialog-content {
+  font-family: Kalam, sans-serif;
 }
-div.mm3-dialog-mod.Kalam button {
-  font-family: "Kalam";
+div.mm4-dialog-mod.Kalam button {
+  font-family: Kalam, sans-serif;
 }
-div.mm3-dialog-mod.Creepster div.dialog-content {
-  font-family: "Creepster";
+div.mm4-dialog-mod.Creepster div.dialog-content {
+  font-family: "Creepster", sans-serif;
 }
-div.mm3-dialog-mod.Creepster button {
-  font-family: "Creepster";
+div.mm4-dialog-mod.Creepster button {
+  font-family: "Creepster", sans-serif;
 }
-div.mm3-dialog-mod.Poppins div.dialog-content {
-  font-family: "Poppins";
+div.mm4-dialog-mod.Poppins div.dialog-content {
+  font-family: "Poppins", sans-serif;
 }
-div.mm3-dialog-mod.Poppins button {
-  font-family: "Poppins";
+div.mm4-dialog-mod.Poppins button {
+  font-family: "Poppins", sans-serif;
 }
-div.mm3-dialog-mod.Roboto div.dialog-content {
-  font-family: "Roboto";
+div.mm4-dialog-mod.Roboto div.dialog-content {
+  font-family: "Roboto", sans-serif;
 }
-div.mm3-dialog-mod.Roboto button {
-  font-family: "Roboto";
+div.mm4-dialog-mod.Roboto button {
+  font-family: "Roboto", sans-serif;
 }
-div.mm3-dialog-mod.RobotoCondensed div.dialog-content {
-  font-family: "Roboto Condensed";
+div.mm4-dialog-mod.RobotoCondensed div.dialog-content {
+  font-family: "Roboto Condensed", sans-serif;
 }
-div.mm3-dialog-mod.RobotoCondensed button {
-  font-family: "Roboto Condensed";
+div.mm4-dialog-mod.RobotoCondensed button {
+  font-family: "Roboto Condensed", sans-serif;
 }
-div.mm3-dialog-mod.RobotoMono div.dialog-content {
-  font-family: "Roboto Mono";
+div.mm4-dialog-mod.RobotoMono div.dialog-content {
+  font-family: "Roboto Mono", sans-serif;
 }
-div.mm3-dialog-mod.RobotoMono button {
-  font-family: "Roboto Mono";
+div.mm4-dialog-mod.RobotoMono button {
+  font-family: "Roboto Mono", sans-serif;
 }
-div.mm3-dialog-mod.Tektur div.dialog-content {
-  font-family: "Tektur";
+div.mm4-dialog-mod.Tektur div.dialog-content {
+  font-family: "Tektur", sans-serif;
 }
-div.mm3-dialog-mod.Tektur button {
-  font-family: "Tektur";
+div.mm4-dialog-mod.Tektur button {
+  font-family: "Tektur", sans-serif;
 }
-div.mm3-dialog-mod.JosefinSans div.dialog-content {
-  font-family: "Josefin Sans";
+div.mm4-dialog-mod.JosefinSans div.dialog-content {
+  font-family: "Josefin Sans", sans-serif;
 }
-div.mm3-dialog-mod.JosefinSans button {
-  font-family: "Josefin Sans";
+div.mm4-dialog-mod.JosefinSans button {
+  font-family: "Josefin Sans", sans-serif;
 }
-div.mm3-dialog-mod.BebasNeue div.dialog-content {
-  font-family: "Bebas Neue";
+div.mm4-dialog-mod.BebasNeue div.dialog-content {
+  font-family: "Bebas Neue", sans-serif;
 }
-div.mm3-dialog-mod.BebasNeue button {
-  font-family: "Bebas Neue";
+div.mm4-dialog-mod.BebasNeue button {
+  font-family: "Bebas Neue", sans-serif;
 }
-div.mm3-dialog-mod.Goldman div.dialog-content {
-  font-family: "Goldman";
+div.mm4-dialog-mod.Goldman div.dialog-content {
+  font-family: "Goldman", sans-serif;
 }
-div.mm3-dialog-mod.Goldman button {
-  font-family: "Goldman";
+div.mm4-dialog-mod.Goldman button {
+  font-family: "Goldman", sans-serif;
 }
-div.mm3-dialog-mod.Anton div.dialog-content {
-  font-family: "Anton";
+div.mm4-dialog-mod.Anton div.dialog-content {
+  font-family: "Anton", sans-serif;
 }
-div.mm3-dialog-mod.Anton button {
-  font-family: "Anton";
+div.mm4-dialog-mod.Anton button {
+  font-family: "Anton", sans-serif;
 }
-div.mm3-dialog-mod.PatrickHandSC div.dialog-content {
-  font-family: "Patrick Hand SC";
+div.mm4-dialog-mod.PatrickHandSC div.dialog-content {
+  font-family: "Patrick Hand SC", sans-serif;
 }
-div.mm3-dialog-mod.PatrickHandSC button {
-  font-family: "Patrick Hand SC";
+div.mm4-dialog-mod.PatrickHandSC button {
+  font-family: "Patrick Hand SC", sans-serif;
 }
-div.mm3-dialog-mod.PirataOne div.dialog-content {
-  font-family: "Pirata One";
+div.mm4-dialog-mod.PirataOne div.dialog-content {
+  font-family: "Pirata One", sans-serif;
 }
-div.mm3-dialog-mod.PirataOne button {
-  font-family: "Pirata One";
+div.mm4-dialog-mod.PirataOne button {
+  font-family: "Pirata One", sans-serif;
 }
-div.mm3-dialog-mod.Prompt div.dialog-content {
-  font-family: "Prompt";
+div.mm4-dialog-mod.Prompt div.dialog-content {
+  font-family: "Prompt", sans-serif;
 }
-div.mm3-dialog-mod.Prompt button {
-  font-family: "Prompt";
+div.mm4-dialog-mod.Prompt button {
+  font-family: "Prompt", sans-serif;
 }
-div.mm3-dialog-mod.Teko div.dialog-content {
-  font-family: "Teko";
+div.mm4-dialog-mod.Teko div.dialog-content {
+  font-family: "Teko", sans-serif;
 }
-div.mm3-dialog-mod.Teko button {
-  font-family: "Teko";
+div.mm4-dialog-mod.Teko button {
+  font-family: "Teko", sans-serif;
 }
-div.mm3-dialog-mod.RussoOne div.dialog-content {
-  font-family: "Russo One";
+div.mm4-dialog-mod.RussoOne div.dialog-content {
+  font-family: "Russo One", sans-serif;
 }
-div.mm3-dialog-mod.RussoOne button {
-  font-family: "Russo One";
+div.mm4-dialog-mod.RussoOne button {
+  font-family: "Russo One", sans-serif;
 }
-div.mm3-dialog-mod.Righteous div.dialog-content {
-  font-family: "Righteous";
+div.mm4-dialog-mod.Righteous div.dialog-content {
+  font-family: "Righteous", sans-serif;
 }
-div.mm3-dialog-mod.Righteous button {
-  font-family: "Righteous";
+div.mm4-dialog-mod.Righteous button {
+  font-family: "Righteous", sans-serif;
 }
-div.mm3-dialog-mod.PathwayGothicOne div.dialog-content {
-  font-family: "Pathway Gothic One";
+div.mm4-dialog-mod.PathwayGothicOne div.dialog-content {
+  font-family: "Pathway Gothic One", sans-serif;
 }
-div.mm3-dialog-mod.PathwayGothicOne button {
-  font-family: "Pathway Gothic One";
+div.mm4-dialog-mod.PathwayGothicOne button {
+  font-family: "Pathway Gothic One", sans-serif;
 }
-div.mm3-dialog-mod.Quantico div.dialog-content {
-  font-family: "Quantico";
+div.mm4-dialog-mod.Quantico div.dialog-content {
+  font-family: "Quantico", sans-serif;
 }
-div.mm3-dialog-mod.Quantico button {
-  font-family: "Quantico";
+div.mm4-dialog-mod.Quantico button {
+  font-family: "Quantico", sans-serif;
 }
-div.mm3-dialog-mod.Staatliches div.dialog-content {
-  font-family: "Staatliches";
+div.mm4-dialog-mod.Staatliches div.dialog-content {
+  font-family: "Staatliches", sans-serif;
 }
-div.mm3-dialog-mod.Staatliches button {
-  font-family: "Staatliches";
+div.mm4-dialog-mod.Staatliches button {
+  font-family: "Staatliches", sans-serif;
 }
-div.mm3-dialog-mod.SecularOne div.dialog-content {
-  font-family: "Secular One";
+div.mm4-dialog-mod.SecularOne div.dialog-content {
+  font-family: "Secular One", sans-serif;
 }
-div.mm3-dialog-mod.SecularOne button {
-  font-family: "Secular One";
+div.mm4-dialog-mod.SecularOne button {
+  font-family: "Secular One", sans-serif;
 }
 
 section#combat > header:first-of-type:before {

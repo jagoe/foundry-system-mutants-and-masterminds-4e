@@ -1,7 +1,7 @@
 <div class="tab options" data-group="primary" data-tab="options">
     <div class="inner">
         <div class="block caracteristique">
-            <span>{{localize "MM3.SETTING.CaractéristiquesAbsentes"}}</span>
+            <span>{{localize "MM4.SETTING.CaractéristiquesAbsentes"}}</span>
             <div class="innerBlock">
                 {{#each systemData.caracteristique as | key carac |}}
                     <a class="btnAbs {{#if key.absente}}selected{{/if}}" data-type="caracteristique" data-what="{{carac}}" data-value="{{key.absente}}">
@@ -12,10 +12,10 @@
         </div>
 
         <div class="block accessibility">
-            <span>{{localize "MM3.ACCESSIBILITE.Label"}}</span>
+            <span>{{localize "MM4.ACCESSIBILITE.Label"}}</span>
             <div class="innerBlock accessibilityFont">
                 <label>
-                    <span>{{localize "MM3.ACCESSIBILITE.Font"}}</span>
+                    <span>{{localize "MM4.ACCESSIBILITE.Font"}}</span>
                     <select name="system.accessibility.font">
                         {{selectOptions (listfont) selected=systemData.accessibility.font localize=true}}
                     </select>
@@ -24,7 +24,7 @@
 
             <div class="innerBlock accessibilityFont">
                 <label>
-                    <span>{{localize "MM3.ACCESSIBILITE.FontOther"}}</span>
+                    <span>{{localize "MM4.ACCESSIBILITE.FontOther"}}</span>
                     <select name="system.accessibility.fontOther">
                         {{selectOptions (listfontother) selected=systemData.accessibility.fontOther localize=true}}
                     </select>
@@ -35,21 +35,21 @@
         {{#if (isOwner this)}}
             {{#if (isTrusted)}}
             <div class="block limite">
-                <span class="title">{{localize "MM3.STRATEGIE.Limite"}}</span>
+                <span class="title">{{localize "MM4.STRATEGIE.Limite"}}</span>
                 <div class="strategie">
-                    <span class="header">{{localize "MM3.Nom"}}</span>
-                    <span class="header">{{localize "MM3.ATTAQUE.Label"}}</span>
-                    <span class="header">{{localize "MM3.DEFENSE.Label"}}</span>
-                    <span class="header">{{localize "MM3.EFFET.Label"}}</span>
+                    <span class="header">{{localize "MM4.Nom"}}</span>
+                    <span class="header">{{localize "MM4.ATTAQUE.Label"}}</span>
+                    <span class="header">{{localize "MM4.DEFENSE.Label"}}</span>
+                    <span class="header">{{localize "MM4.EFFET.Label"}}</span>
 
                     <span class="label">
-                        {{localize "MM3.STRATEGIE.Attaqueoutrance"}}
+                        {{localize "MM4.STRATEGIE.Attaqueoutrance"}}
                     </span>
                     <div class="bLimite">
                         <input
                             data-type="attaqueoutrance" data-value="atk"
                             type="number" name="system.strategie.limite.attaqueoutrance.atk.base" value="{{systemData.strategie.limite.attaqueoutrance.atk.base}}"
-                            title="{{localize "MM3.BONUS.Attaque"}}"
+                            title="{{localize "MM4.BONUS.Attaque"}}"
                             min="0"
                         />
                         <span class="separator">+</span>
@@ -61,7 +61,7 @@
                         <input
                             data-type="attaqueoutrance" data-value="def"
                             type="number" name="system.strategie.limite.attaqueoutrance.def.base" value="{{systemData.strategie.limite.attaqueoutrance.def.base}}"
-                            title="{{localize "MM3.MALUS.Defense"}}"
+                            title="{{localize "MM4.MALUS.Defense"}}"
                             max="0"
                         />
                         <span class="separator">+</span>
@@ -72,13 +72,13 @@
                     <div class="bLimite"></div>
 
                     <span class="label">
-                        {{localize "MM3.STRATEGIE.Attaquedefensive"}}
+                        {{localize "MM4.STRATEGIE.Attaquedefensive"}}
                     </span>
                     <div class="bLimite">
                         <input
                             data-type="attaquedefensive" data-value="atk"
                             type="number" name="system.strategie.limite.attaquedefensive.atk.base" value="{{systemData.strategie.limite.attaquedefensive.atk.base}}"
-                            title="{{localize "MM3.MALUS.Attaque"}}"
+                            title="{{localize "MM4.MALUS.Attaque"}}"
                             max="0"
                         />
                         <span class="separator">+</span>
@@ -90,7 +90,7 @@
                         <input
                             data-type="attaquedefensive" data-value="def"
                             type="number" name="system.strategie.limite.attaquedefensive.def.base" value="{{systemData.strategie.limite.attaquedefensive.def.base}}"
-                            title="{{localize "MM3.BONUS.Defense"}}"
+                            title="{{localize "MM4.BONUS.Defense"}}"
                             min="0"
                         />
                         <span class="separator">+</span>
@@ -101,13 +101,13 @@
                     <div class="bLimite"></div>
 
                     <span class="label">
-                        {{localize "MM3.STRATEGIE.Attaqueprecision"}}
+                        {{localize "MM4.STRATEGIE.Attaqueprecision"}}
                     </span>
                     <div class="bLimite">
                         <input
                             data-type="attaqueprecision" data-value="atk"
                             type="number" name="system.strategie.limite.attaqueprecision.atk.base" value="{{systemData.strategie.limite.attaqueprecision.atk.base}}"
-                            title="{{localize "MM3.BONUS.Attaque"}}"
+                            title="{{localize "MM4.BONUS.Attaque"}}"
                             min="0"
                         />
                         <span class="separator">+</span>
@@ -122,7 +122,7 @@
                         <input
                             data-type="attaqueprecision"data-value="eff"
                             type="number" name="system.strategie.limite.attaqueprecision.eff.base" value="{{systemData.strategie.limite.attaqueprecision.eff.base}}"
-                            title="{{localize "MM3.MALUS.Effet"}}"
+                            title="{{localize "MM4.MALUS.Effet"}}"
                             max="0"
                         />
                         <span class="separator">+</span>
@@ -132,14 +132,14 @@
                     </div>
 
                     <span class="label">
-                        {{localize "MM3.STRATEGIE.Attaquepuissance"}}
+                        {{localize "MM4.STRATEGIE.Attaquepuissance"}}
                     </span>
 
                     <div class="bLimite">
                         <input
                             data-type="attaquepuissance" data-value="atk"
                             type="number" name="system.strategie.limite.attaquepuissance.atk.base" value="{{systemData.strategie.limite.attaquepuissance.atk.base}}"
-                            title="{{localize "MM3.MALUS.Attaque"}}"
+                            title="{{localize "MM4.MALUS.Attaque"}}"
                             max="0"
                         />
                         <span class="separator">+</span>
@@ -152,7 +152,7 @@
                         <input
                             data-type="attaquepuissance"data-value="eff"
                             type="number" name="system.strategie.limite.attaquepuissance.eff.base" value="{{systemData.strategie.limite.attaquepuissance.eff.base}}"
-                            title="{{localize "MM3.BONUS.Effet"}}"
+                            title="{{localize "MM4.BONUS.Effet"}}"
                             min="0"
                         />
                         <span class="separator">+</span>
