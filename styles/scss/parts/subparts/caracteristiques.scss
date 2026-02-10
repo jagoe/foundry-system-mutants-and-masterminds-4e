@@ -378,6 +378,13 @@ div {
                                 text-align: center;
                             }
                         }
+
+                        .competence-h4 {
+                            display: flex;
+                            grid-column: 1 / 9;
+                            justify-content: center;
+                            align-items: center;
+                        }
                     }
 
                     &.etats {
