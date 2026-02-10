@@ -66,7 +66,7 @@ div {
             &.lPouvoirs {
                 display: none;
                 grid-template-columns: 1fr 1fr;
-                align-items: flex-start;
+                align-items: flex-end;
                 align-content: flex-start;
                 padding-top: 5px;
                 gap: 5px;
@@ -88,7 +88,7 @@ div {
 
                     span.deploy {
                         position: absolute;
-                        top: 0;
+                        top: 5px;
                         left: 10px;
                         z-index: 999;
 
@@ -178,7 +178,7 @@ div {
                         grid-column: 1 / 3;
                         display: grid;
                         grid-template-columns: 1fr 1fr;
-                        align-items: flex-start;
+                        align-items: flex-end;
                         align-content: flex-start;
                         gap: 5px;
                         padding: 5px;
@@ -196,7 +196,7 @@ div {
                                     1px 1px 0 $color;
                                 font-family: Bangers, sans-serif;
                                 border-width: 2px;
-                                border-radius: 0;
+                                border-radius: 15px 15px 0 0;
                                 background-blend-mode: overlay, multiply;
                                 background-size: 500px;
                                 background-repeat: no-repeat;
@@ -231,6 +231,10 @@ div {
 
                                 &.violet {
                                     background: $imgbg $violet;
+                                }
+
+                                &.light-orange {
+                                    background: $imgbg $lightOrange;
                                 }
                             }
 
@@ -285,7 +289,7 @@ div {
                             span {
                                 &.deploy {
                                     position: absolute;
-                                    top: 27px;
+                                    top: 5px;
                                     left: 10px;
                                     z-index: 999;
 
@@ -318,13 +322,23 @@ div {
                                 }
                             }
 
-                            &.withoutVariante {
+                            &.withVariante {
                                 div.pwrheader {
-                                    border-radius: 15px 15px 0 0;
+                                    border-top-right-radius: 0;
                                 }
 
                                 span.deploy {
-                                    top: 3px;
+                                    top: 29px;
+                                }
+                            }
+
+                            &.withActiver {
+                                div.pwrheader {
+                                    border-top-left-radius: 0;
+                                }
+
+                                span.deploy {
+                                    top: 29px;
                                 }
                             }
                         }
@@ -380,6 +394,24 @@ div {
                                 border-radius: 0 0 15px 15px;
                                 background-blend-mode: overlay, multiply;
                                 background: $imgbg $violet;
+                            }
+                        }
+
+                        &.light-orange {
+                            div.pwrheader {
+                                background: $imgbg $lightOrange;
+                            }
+
+                            &::after {
+                                content: '';
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                height: 0.5rem;
+                                width: 100%;
+                                border-width: 2px;
+                                border-radius: 0 0 15px 15px;
+                                background-blend-mode: overlay, multiply;
+                                background: $imgbg $lightOrange;
                             }
                         }
 
@@ -455,6 +487,10 @@ div {
 
                         &.violet {
                             background: $imgbg $violet;
+                        }
+
+                        &.light-orange {
+                            background: $imgbg $lightOrange;
                         }
                     }
 

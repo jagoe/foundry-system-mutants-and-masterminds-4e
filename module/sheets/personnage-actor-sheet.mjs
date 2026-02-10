@@ -123,17 +123,16 @@ export class PersonnageActorSheet extends ActorSheet {
             const isActive = item.system?.activate ?? false;
             const value = isActive ? false : true;
             const link = item.system?.link ?? '';
-            let linksFilter;
 
             if (value) {
-                linksFilter = this.actor.items.filter(
-                    (itm) =>
-                        (itm.system.link === link &&
-                            itm._id !== id &&
+                const linksFilter = this.actor.items.filter(
+                    (linked) =>
+                        (linked.system.link === link &&
+                            linked._id !== id &&
                             link !== '' &&
-                            (item.system.special === 'alternatif' || itm.system.special === 'alternatif')) ||
-                        (itm._id === item.system.link && item.system.special === 'alternatif') ||
-                        (itm.system.link === item._id && itm.system.special === 'alternatif'),
+                            (item.system.special === 'alternatif' || linked.system.special === 'alternatif')) ||
+                        (linked._id === item.system.link && item.system.special === 'alternatif') ||
+                        (linked.system.link === item._id && linked.system.special === 'alternatif'),
                 );
 
                 for (let l of linksFilter) {
@@ -224,7 +223,8 @@ export class PersonnageActorSheet extends ActorSheet {
                     if (
                         (data.special === 'standard' && data.link === '') ||
                         (data.special === 'alternatif' && data.link === '') ||
-                        (data.special === 'dynamique' && data.link === '')
+                        (data.special === 'dynamique' && data.link === '') ||
+                        (data.special === 'prepare' && data.link === '')
                     )
                         pwr.push(i);
                     else if (data.special === 'standard' && data.link !== '') {
@@ -242,6 +242,11 @@ export class PersonnageActorSheet extends ActorSheet {
                             data.link = '';
                             pwr.push(i);
                         } else pwrDynamique[data.link].push(i);
+                    } else if (data.special === 'prepare' && data.link !== '') {
+                        if (!pwrLink?.[data.link]) {
+                            data.link = '';
+                            pwr.push(i);
+                        } else pwrLink[data.link].push(i);
                     }
 
                     if (

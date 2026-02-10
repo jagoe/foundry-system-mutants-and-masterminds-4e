@@ -26,6 +26,7 @@ Feel free to try and use the system yourself, but there will be no release and n
 * Skill checkbox: Untrained?
   * If not set & no ranks, deactive rolling
 * Add effects capability w/ pre-defined effects for the conditions?
+* Deleting effect variants removes them from owner's tracker
 
 I'll leave the rest of the readme as I found it.
 

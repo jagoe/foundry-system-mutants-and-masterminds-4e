@@ -308,4 +308,37 @@ export const RegisterHandlebars = function () {
     Handlebars.registerHelper('log', function (element) {
         console.log(element);
     });
+
+    Handlebars.registerHelper('pwrCanBeActivated', (ownerEffectVariantList, power, actor) => {
+        const hasVariants = Object.keys(ownerEffectVariantList).length > 0;
+        const isPreparedEffect = power.system.special === 'prepare';
+        const hasDuration = power.system.duree !== 'instantane' && power.system.duree !== 'permanent';
+        const actorIsCharacter = actor.type;
+
+        const isArray = power.system.special === 'alternatif';
+        const hasAlternateEffects = actor.items.filter(
+            (linked) =>
+                (linked.system.link === power.system?.link &&
+                    linked._id !== power._id &&
+                    power.system?.link !== '' &&
+                    (power.system.special === 'alternatif' || linked.system.special === 'alternatif')) ||
+                (linked._id === power.system.link && power.system.special === 'alternatif') ||
+                (linked.system.link === power._id && linked.system.special === 'alternatif'),
+        );
+
+        return ((hasVariants || isPreparedEffect || hasDuration) && actorIsCharacter) || isArray || hasAlternateEffects;
+    });
+
+    Handlebars.registerHelper('pwrHasVariants', (ownerEffectVariantList, actor) => {
+        const hasVariants = Object.keys(ownerEffectVariantList).length > 0;
+        const actorIsCharacter = actor.type;
+
+        return hasVariants && actorIsCharacter;
+    });
+
+    Handlebars.registerHelper('actorIsCharacter', (actor) => {
+        const actorIsCharacter = actor.type;
+
+        return actorIsCharacter;
+    });
 };

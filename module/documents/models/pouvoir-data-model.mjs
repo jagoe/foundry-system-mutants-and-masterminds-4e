@@ -142,6 +142,8 @@ export class PouvoirDataModel extends foundry.abstract.TypeDataModel {
         else if (this.special === 'alternatif') total = 1;
         else if (this.special === 'dynamique') {
             total = 2;
+        } else if (this.special === 'prepare') {
+            total = 0;
         }
 
         Object.defineProperty(cout, 'parrangtotal', {

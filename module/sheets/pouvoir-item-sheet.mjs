@@ -18,7 +18,7 @@ export class PouvoirItemSheet extends ItemSheet {
             classes: ['mm4', 'sheet', 'item', 'pouvoir'],
             template: `${templatesPath}/pouvoir-item-sheet.html`,
             width: 1100,
-            height: 920,
+            height: 970,
             tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'pouvoirs' }],
             dragDrop: [{ dragSelector: ['.draggable'], dropSelector: null }],
         });

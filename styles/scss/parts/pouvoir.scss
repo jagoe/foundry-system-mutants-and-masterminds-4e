@@ -47,6 +47,10 @@ div.pouvoir {
             background: $imgbg $violet;
         }
 
+        &.light-orange {
+            background: $imgbg $lightOrange;
+        }
+
         input {
             font-size: 4rem;
             height: 4rem;

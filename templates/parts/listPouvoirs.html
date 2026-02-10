@@ -1,446 +1,242 @@
-{{#each actor.pouvoirs as | key pwr |}}
-    {{#if (hasLink key._id @root/actor)}}
-    <div class="outerGrpPwr item" data-item-id="{{key._id}}"">
-        <header class="grpSep js-toggler" >
-            <span class="deploy "><i class="minus"></i></span>
-            <h1>{{localize "MM4.POUVOIR.Eventail"}} : {{key.name}}</h1>
-        </header>
+{{#each actor.pouvoirs as | pwr key |}}
+{{#if (hasLink pwr._id @root/actor)}}
+<div class="outerGrpPwr item" data-item-id="{{pwr._id}}"">
+        <header class=" grpSep js-toggler">
+    <span class="deploy "><i class="minus"></i></span>
+    <h1>{{localize "MM4.POUVOIR.Eventail"}} : {{pwr.name}}</h1>
+    </header>
 
-        <div class="grpPwr {{#if (hasLink key._id @root/actor)}}link{{/if}}" ">
-    {{else}}
-        {{#if (hasAlt key._id @root/actor)}}
-        <div class="outerGrpPwr item" data-item-id="{{key._id}}">
-            <header class="grpSep js-toggler" >
-                <span class="deploy "><i class="minus"></i></span>
-                <h1>{{localize "MM4.POUVOIR.Eventail"}} : {{key.name}}</h1>
-            </header>
-            <div class="grpPwrAlt">
-        {{/if}}
-    {{/if}}
-        <div class="pwr summary
-    {{#if (isValue key.system.special 'standard')}}blue{{/if}}
-    {{#if (isValue key.system.special 'alternatif')}}red{{/if}}
-    {{#if (isValue key.system.special 'dynamique')}}violet{{/if}}
-    {{#unless (hasLinkAndAlt key._id @root/actor)}}item{{/unless}}
-    " data-item-id="{{key._id}}">
-        <header class="js-toggler
-        {{#if (ObjectIsEmpty system.listEffectsVariantes)}}withoutVariante{{/if}}" >
-            {{#if (eq ../actor.type 'personnage')}}
-            {{#unless (ObjectIsEmpty system.listEffectsVariantes)}}
-            <a class="btn btnHeader pwrActivate {{#if key.system.activate}}selected{{/if}}">
-                {{localize "MM4.BTN.Activer"}}
-            </a>
-
-            <select class="variantepwr">
-                {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
-            </select>
-            {{/unless}}
-            {{/if}}
-            <span class="deploy "><i class="minus"></i></span>
-            <div class="pwrheader">
-                <span class="header">{{key.name}}</span>
-
-                <i class="fa-solid fa-pen-to-square item-edit"></i>
-                <i class="fa-solid fa-trash-xmark item-delete"></i>
-            </div>
-            {{#if key.system.effetsprincipaux}}
-            <div class="pwreffects">
-                <span class="header">{{key.system.effetsprincipaux}}</span>
-            </div>
-            {{/if}}
-
-
-            {{#if (isValue key.system.special 'alternatif')}}
-                <select class="link" data-cout="{{key.system.cout.totalTheorique}}" data-type="{{key.system.special}}">
-                    {{selectOptions (listpwr @root/actor/pwrStandard key._id) selected=key.system.link localize=true}}
-                </select>
-            {{else}} {{#if (isValue key.system.special 'dynamique')}}
-                <select class="link" data-cout="{{key.system.cout.totalTheorique}}" data-type="{{key.system.special}}">
-                    {{selectOptions (listpwr @root/actor/pwrStandard key._id) selected=key.system.link localize=true}}
-                </select>
+    <div class="grpPwr {{#if (hasLink pwr._id @root/actor)}}link{{/if}}" ">
             {{else}}
-
-            <select class="link" data-cout="0" data-type="{{key.system.special}}">
-                {{selectOptions (listpwr @root/actor/pwrStandard key._id) selected=key.system.link localize=true}}
-            </select>
-            {{/if}} {{/if}}
-            <div class="data black">
-                <span>{{translate 'pouvoirs.factions' key.system.action}}</span>
-                <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' key.system.portee}}</span>
-                <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' key.system.duree}}</span>
-                <a class="rollPwr oneRoll draggable" data-id="{{key._id}}" data-type="pouvoir" data-name="{{key.name}}">
-                    <i class="fa-solid fa-dice-d20"></i>
-                </a>
-            </div>
-            {{#if (isValue key.system.special 'dynamique')}}
-            <div class="dataSpecial black">
-                {{#if (isValue key.system.special 'dynamique')}}
-                    <span>{{localize "MM4.Rang"}} : </span>
-                    <input class="rangDyn" type="number" name="system.pwr.{{key._id}}.cout.rang" value="{{getPwr @root key._id 'rang'}}" min="0" max="{{key.system.cout.rangDynMax}}" />
-                    <span>({{localize "MM4.Max-short"}} {{key.system.cout.rangDynMax}}) / {{localize "MM4.Coutactuel"}} : {{ifThen (gte (getPwr @root key._id 'rang') 1) (getPwr @root key._id 'actuel') '0'}}</span>
-                {{/if}}
-                </div>
-            {{/if}}
+            {{#if (hasAlt pwr._id @root/actor)}}
+            <div class=" outerGrpPwr item" data-item-id="{{pwr._id}}">
+        <header class="grpSep js-toggler">
+            <span class="deploy "><i class="minus"></i></span>
+            <h1>{{localize "MM4.POUVOIR.Eventail"}} : {{pwr.name}}</h1>
         </header>
-        <div class="allData">
-            <div class="data">
-                <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
-                {{#unless (isValue key.system.special 'dynamique')}}
-                    <span class="col4">{{localize "MM4.Rang"}} : {{key.system.cout.rang}} / {{localize "MM4.Couttotal"}} : {{key.system.cout.total}}</span>
-                    {{else}}
-                    {{#if (isValue key.system.special 'dynamique')}}
-                    {{#if (isValue key.system.link '')}}
-                        <span class="col4">{{localize "MM4.Couttotal"}} : {{key.system.cout.totalTheorique}}</span>
-                    {{else}}
-                        <span class="col4">{{localize "MM4.Couttotal"}} : {{key.system.cout.total}}</span>
+        <div class="grpPwrAlt">
+            {{/if}}
+            {{/if}}
+            <div class="pwr summary
+    {{#if (isValue pwr.system.special 'standard')}}blue{{/if}}
+    {{#if (isValue pwr.system.special 'alternatif')}}red{{/if}}
+    {{#if (isValue pwr.system.special 'dynamique')}}violet{{/if}}
+    {{#if (isValue pwr.system.special 'prepare')}}light-orange{{/if}}
+    {{#unless (hasLinkAndAlt pwr._id @root/actor)}}item{{/unless}}
+    " data-item-id="{{pwr._id}}">
+                <header
+                    class="js-toggler {{#if (pwrCanBeActivated system.listEffectsVariantes pwr ../actor)}}withActiver{{/if}} {{#if (pwrHasVariants system.listEffectsVariantes ../actor)}}withVariante{{/if}}">
+                    {{#if (actorIsCharacter ../actor)}}
+                    {{#if (pwrCanBeActivated system.listEffectsVariantes pwr ../actor)}}
+                    <a class="btn btnHeader pwrActivate {{#if pwr.system.activate}}selected{{/if}}">
+                        {{localize "MM4.BTN.Activer"}}
+                    </a>
+                    {{/if}}
+                    {{#if (pwrHasVariants system.listEffectsVariantes)}}
+                    <select class="variantepwr">
+                        {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
+                    </select>
                     {{/if}}
                     {{/if}}
-                {{/unless}}
-                </div>
-                <div class="descripteurs">
-                    {{#each key.system.descripteurs as | kDesc desc |}}
-                        <span>{{#unless @first}}/{{/unless}} {{kDesc}}</span>
-                    {{/each}}
-                </div>
-                <div class="details">
-                    <span class="label">
-                        {{localize "MM4.Description"}}
-                    </span>
-                    <span class="text">
-                        {{{key.system.notes}}}
-                    </span>
-                </div>
-                <div class="details">
-                    <span class="label">
-                        {{localize "MM4.Details"}}
-                    </span>
-                    <span class="text">
-                        {{{key.system.effets}}}
-                    </span>
-                </div>
-                <div class="mod borderLeft">
-                    <span class="label">
-                        {{localize "MM4.Extras"}}
-                    </span>
-                    {{#each key.system.extras as | kExt ext |}}
-                    <span class="text">
-                    {{kExt.name}}
-                    <i class="fa-solid fa-circle-info">
-                        <div class="infoExt">{{{kExt.data.description}}}</div>
-                    </i>
-                </span>
-                    {{/each}}
-                </div>
-                <div class="mod borderRight borderLightLeft">
-                    <span class="label">
-                        {{localize "MM4.Defauts"}}
-                    </span>
-                    {{#each key.system.defauts as | kExt ext |}}
-                    <span class="text">
-                    {{kExt.name}}
-                    <i class="fa-solid fa-circle-info">
-                        <div class="infoExt">{{{kExt.data.description}}}</div>
-                    </i>
-                </span>
-                    {{/each}}
-                </div>
-            </div>
-        </div>
+                    <span class="deploy"><i class="minus"></i></span>
+                    <div class="pwrheader">
+                        <span class="header">{{pwr.name}}</span>
 
-        {{#each (getPwrAlt @root 'pwrLink' key._id) as | kPA pwrAlt |}}
-        <div class="pwr summary
-        {{#if (isValue kPA.system.special 'standard')}}blue{{/if}}
-        {{#if (isValue kPA.system.special 'alternatif')}}red{{/if}}
-        {{#if (isValue kPA.system.special 'dynamique')}}violet{{/if}}
-        {{#unless (hasLinkAndAlt key._id @root/actor)}}item{{/unless}}
-        " data-item-id="{{kPA._id}}">
-            <header class="js-toggler
-            {{#if (ObjectIsEmpty kPA.system.listEffectsVariantes)}}withoutVariante{{/if}}" >
-                {{#if (eq ../../actor.type 'personnage')}}
-                {{#unless (ObjectIsEmpty kPA.system.listEffectsVariantes)}}
-                <a class="btn btnHeader pwrActivate {{#if kPA.system.activate}}selected{{/if}}">
-                    {{localize "MM4.BTN.Activer"}}
-                </a>
-
-                <select class="variantepwr">
-                    {{selectOptions kPA.system.listEffectsVariantes selected=kPA.system.effectsVarianteSelected}}
-                </select>
-                {{/unless}}
-                {{/if}}
-                <span class="deploy "><i class="minus"></i></span>
-                <div class="pwrheader">
-                    <span class="header">{{kPA.name}}</span>
-
-                    <i class="fa-solid fa-pen-to-square item-edit"></i>
-                    <i class="fa-solid fa-trash-xmark item-delete"></i>
-                </div>
-                {{#if kPA.system.effetsprincipaux}}
+                        <i class="fa-solid fa-pen-to-square item-edit"></i>
+                        <i class="fa-solid fa-trash-xmark item-delete"></i>
+                    </div>
+                    {{#if pwr.system.effetsprincipaux}}
                     <div class="pwreffects">
-                        <span class="header">{{kPA.system.effetsprincipaux}}</span>
+                        <span class="header">{{pwr.system.effetsprincipaux}}</span>
                     </div>
-                {{/if}}
+                    {{/if}}
 
-                {{#if (isValue kPA.system.special 'alternatif')}}
-                    <select class="link" data-cout="{{kPA.system.cout.totalTheorique}}" data-type="{{kPA.system.special}}">
-                        {{selectOptions (listpwr @root/actor/pwrStandard kPA._id true) selected=kPA.system.link localize=true}}
+
+                    {{#if (isValue pwr.system.special 'alternatif')}}
+                    <select class="link" data-cout="{{pwr.system.cout.totalTheorique}}"
+                        data-type="{{pwr.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwr._id) selected=pwr.system.link
+                        localize=true}}
                     </select>
-                {{else}} {{#if (isValue kPA.system.special 'dynamique')}}
-                    <select class="link" data-cout="{{kPA.system.cout.totalTheorique}}" data-type="{{kPA.system.special}}">
-                        {{selectOptions (listpwr @root/actor/pwrStandard kPA._id true) selected=kPA.system.link localize=true}}
+                    {{else}} {{#if (isValue pwr.system.special 'dynamique')}}
+                    <select class="link" data-cout="{{pwr.system.cout.totalTheorique}}"
+                        data-type="{{pwr.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwr._id) selected=pwr.system.link
+                        localize=true}}
                     </select>
-                {{else}}
-                <select class="link" data-cout="0" data-type="{{kPA.system.special}}">
-                    {{selectOptions (listpwr @root/actor/pwrStandard kPA._id true) selected=kPA.system.link localize=true}}
-                </select>
-                {{/if}} {{/if}}
-                <div class="data black">
-                    <span>{{translate 'pouvoirs.factions' kPA.system.action}}</span>
-                    <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' kPA.system.portee}}</span>
-                    <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' kPA.system.duree}}</span>
-                    <a class="rollPwr oneRoll draggable" data-id="{{kPA._id}}" data-type="pouvoir" data-name="{{kPA.name}}">
-                        <i class="fa-solid fa-dice-d20"></i>
-                    </a>
-                </div>
-            </header>
-            <div class="allData">
-                <div class="data">
-                    <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
-                    <span class="col4">{{localize "MM4.Rang"}} : {{kPA.system.cout.rang}} / {{localize "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span>
-                    </div>
-                    <div class="descripteurs">
-                        {{#each kPA.system.descripteurs as | kDesc desc |}}
-                            <span>{{#unless @first}}/{{/unless}} {{kDesc}}</span>
-                        {{/each}}
-                    </div>
-                    <div class="details">
-                        <span class="label">
-                            {{localize "MM4.Description"}}
-                        </span>
-                        <span class="text">
-                            {{{kPA.system.notes}}}
-                        </span>
-                    </div>
-                    <div class="details">
-                        <span class="label">
-                            {{localize "MM4.Details"}}
-                        </span>
-                        <span class="text">
-                            {{{kPA.system.effets}}}
-                        </span>
-                    </div>
-                    <div class="mod borderLeft">
-                        <span class="label">
-                            {{localize "MM4.Extras"}}
-                        </span>
-                        {{#each kPA.system.extras as | kExt ext |}}
-                        <span class="text">
-                        {{kExt.name}}
-                        <i class="fa-solid fa-circle-info">
-                            <div class="infoExt">{{{kExt.data.description}}}</div>
-                        </i>
-                    </span>
-                        {{/each}}
-                    </div>
-                    <div class="mod borderRight borderLightLeft">
-                        <span class="label">
-                            {{localize "MM4.Defauts"}}
-                        </span>
-                        {{#each kPA.system.defauts as | kExt ext |}}
-                        <span class="text">
-                        {{kExt.name}}
-                        <i class="fa-solid fa-circle-info">
-                            <div class="infoExt">{{{kExt.data.description}}}</div>
-                        </i>
-                    </span>
-                        {{/each}}
-                    </div>
-            </div>
-        </div>
-        {{/each}}
+                    {{else}}
 
-        {{#each (getPwrAlt @root 'pwrAlternatif' key._id) as | kPA pwrAlt |}}
-        <div class="pwr summary
-        {{#if (isValue kPA.system.special 'standard')}}blue{{/if}}
-        {{#if (isValue kPA.system.special 'alternatif')}}red{{/if}}
-        {{#if (isValue kPA.system.special 'dynamique')}}violet{{/if}}
-        {{#unless (hasLinkAndAlt key._id @root/actor)}}item{{/unless}}
-        " data-item-id="{{kPA._id}}">
-            <header class="js-toggler
-            {{#if (ObjectIsEmpty kPA.system.listEffectsVariantes)}}withoutVariante{{/if}}" >
-                {{#if (eq ../../actor.type 'personnage')}}
-                {{#unless (ObjectIsEmpty kPA.system.listEffectsVariantes)}}
-                <a class="btn btnHeader pwrActivate {{#if kPA.system.activate}}selected{{/if}}">
-                    {{localize "MM4.BTN.Activer"}}
-                </a>
-
-                <select class="variantepwr">
-                    {{selectOptions kPA.system.listEffectsVariantes selected=kPA.system.effectsVarianteSelected}}
-                </select>
-                {{/unless}}
-                {{/if}}
-                <span class="deploy "><i class="minus"></i></span>
-                <div class="pwrheader">
-                    <span class="header">{{kPA.name}}</span>
-
-                    <i class="fa-solid fa-pen-to-square item-edit"></i>
-                    <i class="fa-solid fa-trash-xmark item-delete"></i>
-                </div>
-                {{#if kPA.system.effetsprincipaux}}
-                    <div class="pwreffects">
-                        <span class="header">{{kPA.system.effetsprincipaux}}</span>
-                    </div>
-                {{/if}}
-
-                {{#if (isValue kPA.system.special 'alternatif')}}
-                    <select class="link" data-cout="{{kPA.system.cout.totalTheorique}}" data-type="{{kPA.system.special}}">
-                        {{selectOptions (listpwr @root/actor/pwrStandard kPA._id true) selected=kPA.system.link localize=true}}
+                    <select class="link" data-cout="0" data-type="{{pwr.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwr._id) selected=pwr.system.link
+                        localize=true}}
                     </select>
-                {{else}} {{#if (isValue kPA.system.special 'dynamique')}}
-                    <select class="link" data-cout="{{kPA.system.cout.totalTheorique}}" data-type="{{kPA.system.special}}">
-                        {{selectOptions (listpwr @root/actor/pwrStandard kPA._id true) selected=kPA.system.link localize=true}}
-                    </select>
-                {{/if}} {{/if}}
-                <div class="data black">
-                    <span>{{translate 'pouvoirs.factions' kPA.system.action}}</span>
-                    <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' kPA.system.portee}}</span>
-                    <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' kPA.system.duree}}</span>
-                    <a class="rollPwr oneRoll draggable" data-id="{{kPA._id}}" data-type="pouvoir" data-name="{{kPA.name}}">
-                        <i class="fa-solid fa-dice-d20"></i>
-                    </a>
-                </div>
-            </header>
-            <div class="allData">
-                <div class="data">
-                    <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
-                    <span class="col4">{{localize "MM4.Rang"}} : {{kPA.system.cout.rang}} / {{localize "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span>
-                </div>
-                    <div class="descripteurs">
-                        {{#each kPA.system.descripteurs as | kDesc desc |}}
-                            <span>{{#unless @first}}/{{/unless}} {{kDesc}}</span>
-                        {{/each}}
+                    {{/if}} {{/if}}
+                    <div class="data black">
+                        <span>{{translate 'pouvoirs.factions' pwr.system.action}}</span>
+                        <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees'
+                            pwr.system.portee}}</span>
+                        <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees'
+                            pwr.system.duree}}</span>
+                        <a class="rollPwr oneRoll draggable" data-id="{{pwr._id}}" data-type="pouvoir"
+                            data-name="{{pwr.name}}">
+                            <i class="fa-solid fa-dice-d20"></i>
+                        </a>
                     </div>
-                    <div class="details">
-                        <span class="label">
-                            {{localize "MM4.Description"}}
-                        </span>
-                        <span class="text">
-                            {{{kPA.system.notes}}}
-                        </span>
-                    </div>
-                    <div class="details">
-                        <span class="label">
-                            {{localize "MM4.Details"}}
-                        </span>
-                        <span class="text">
-                            {{{kPA.system.effets}}}
-                        </span>
-                    </div>
-                    <div class="mod borderLeft">
-                        <span class="label">
-                            {{localize "MM4.Extras"}}
-                        </span>
-                        {{#each kPA.system.extras as | kExt ext |}}
-                        <span class="text">
-                        {{kExt.name}}
-                        <i class="fa-solid fa-circle-info">
-                            <div class="infoExt">{{{kExt.data.description}}}</div>
-                        </i>
-                    </span>
-                        {{/each}}
-                    </div>
-                    <div class="mod borderRight borderLightLeft">
-                        <span class="label">
-                            {{localize "MM4.Defauts"}}
-                        </span>
-                        {{#each kPA.system.defauts as | kExt ext |}}
-                        <span class="text">
-                        {{kExt.name}}
-                        <i class="fa-solid fa-circle-info">
-                            <div class="infoExt">{{{kExt.data.description}}}</div>
-                        </i>
-                    </span>
-                        {{/each}}
-                    </div>
-            </div>
-        </div>
-        {{/each}}
-
-        {{#each (getPwrAlt @root 'pwrDynamique' key._id) as | kPA pwrAlt |}}
-        <div class="pwr summary
-        {{#if (isValue kPA.system.special 'standard')}}blue{{/if}}
-        {{#if (isValue kPA.system.special 'alternatif')}}red{{/if}}
-        {{#if (isValue kPA.system.special 'dynamique')}}violet{{/if}}
-        {{#unless (hasLinkAndAlt key._id @root/actor)}}item{{/unless}}
-        " data-item-id="{{kPA._id}}">
-            <header class="js-toggler
-            {{#if (ObjectIsEmpty kPA.system.listEffectsVariantes)}}withoutVariante{{/if}}" >
-                {{#if (eq ../../actor.type 'personnage')}}
-                {{#unless (ObjectIsEmpty kPA.system.listEffectsVariantes)}}
-                <a class="btn btnHeader pwrActivate {{#if kPA.system.activate}}selected{{/if}}">
-                    {{localize "MM4.BTN.Activer"}}
-                </a>
-
-                <select class="variantepwr">
-                    {{selectOptions kPA.system.listEffectsVariantes selected=kPA.system.effectsVarianteSelected}}
-                </select>
-                {{/unless}}
-                {{/if}}
-                <span class="deploy "><i class="minus"></i></span>
-                <div class="pwrheader">
-                    <span class="header">{{kPA.name}}</span>
-
-                    <i class="fa-solid fa-pen-to-square item-edit"></i>
-                    <i class="fa-solid fa-trash-xmark item-delete"></i>
-                </div>
-                {{#if kPA.system.effetsprincipaux}}
-                    <div class="pwreffects">
-                        <span class="header">{{kPA.system.effetsprincipaux}}</span>
-                    </div>
-                {{/if}}
-
-                {{#if (isValue kPA.system.special 'alternatif')}}
-                    <select class="link" data-cout="{{kPA.system.cout.totalTheorique}}" data-type="{{kPA.system.special}}">
-                        {{selectOptions (listpwr @root/actor/pwrStandard kPA._id true) selected=kPA.system.link localize=true}}
-                    </select>
-                {{else}} {{#if (isValue kPA.system.special 'dynamique')}}
-                    <select class="link" data-cout="{{kPA.system.cout.totalTheorique}}" data-type="{{kPA.system.special}}">
-                        {{selectOptions (listpwr @root/actor/pwrStandard kPA._id true) selected=kPA.system.link localize=true}}
-                    </select>
-                {{/if}} {{/if}}
-                <div class="data black">
-                    <span>{{translate 'pouvoirs.factions' kPA.system.action}}</span>
-                    <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees' kPA.system.portee}}</span>
-                    <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees' kPA.system.duree}}</span>
-                    <a class="rollPwr oneRoll draggable" data-id="{{kPA._id}}" data-type="pouvoir" data-name="{{kPA.name}}">
-                        <i class="fa-solid fa-dice-d20"></i>
-                    </a>
-                </div>
-                {{#if (isValue kPA.system.special 'dynamique')}}
-                <div class="dataSpecial black">
-                    {{#if (isValue kPA.system.special 'dynamique')}}
+                    {{#if (isValue pwr.system.special 'dynamique')}}
+                    <div class="dataSpecial black">
+                        {{#if (isValue pwr.system.special 'dynamique')}}
                         <span>{{localize "MM4.Rang"}} : </span>
-                        <input class="rangDyn" type="number" name="system.pwr.{{kPA._id}}.cout.rang" value="{{getPwr @root kPA._id 'rang'}}" min="0" max="{{kPA.system.cout.rangDynMax}}" />
-                        {{log (getPwr @root kPA._id 'rang')}}
-                    <span>({{localize "MM4.Max-short"}} {{kPA.system.cout.rangDynMax}})  / {{localize "MM4.Coutactuel"}} : {{ifThen (gte (getPwr @root kPA._id 'rang') 1) (getPwr @root kPA._id 'actuel') '0'}}</span>
-                    {{/if}}
+                        <input class="rangDyn" type="number" name="system.pwr.{{pwr._id}}.cout.rang"
+                            value="{{getPwr @root pwr._id 'rang'}}" min="0" max="{{pwr.system.cout.rangDynMax}}" />
+                        <span>({{localize "MM4.Max-short"}} {{pwr.system.cout.rangDynMax}}) / {{localize
+                            "MM4.Coutactuel"}} : {{ifThen (gte (getPwr @root pwr._id 'rang') 1) (getPwr @root pwr._id
+                            'actuel') '0'}}</span>
+                        {{/if}}
                     </div>
-                {{/if}}
-            </header>
-            <div class="allData">
-                {{#unless (isValue kPA.system.special 'dynamique')}}
-                <div class="data">
-                    <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types' key.system.type}}</span>
-                    <span class="col4">{{localize "MM4.Rang"}} : {{kPA.system.cout.rang}} / {{localize "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span>
-                    </div>
-                    {{else}}
-                    {{#if (isValue kPA.system.special 'dynamique')}}
-                    <div class="data"><span class="col4">{{localize "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span></div>
                     {{/if}}
-                {{/unless}}
+                </header>
+                <div class="allData">
+                    <div class="data">
+                        <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types'
+                            pwr.system.type}}</span>
+                        {{#unless (isValue pwr.system.special 'dynamique')}}
+                        <span class="col4">{{localize "MM4.Rang"}} : {{pwr.system.cout.rang}} / {{localize
+                            "MM4.Couttotal"}} : {{pwr.system.cout.total}}</span>
+                        {{else}}
+                        {{#if (isValue pwr.system.special 'dynamique')}}
+                        {{#if (isValue pwr.system.link '')}}
+                        <span class="col4">{{localize "MM4.Couttotal"}} : {{pwr.system.cout.totalTheorique}}</span>
+                        {{else}}
+                        <span class="col4">{{localize "MM4.Couttotal"}} : {{pwr.system.cout.total}}</span>
+                        {{/if}}
+                        {{/if}}
+                        {{/unless}}
+                    </div>
+                    <div class="descripteurs">
+                        {{#each pwr.system.descripteurs as | desc kDesc |}}
+                        <span>{{#unless @first}}/{{/unless}} {{desc}}</span>
+                        {{/each}}
+                    </div>
+                    <div class="details">
+                        <span class="label">
+                            {{localize "MM4.Description"}}
+                        </span>
+                        <span class="text">
+                            {{{pwr.system.notes}}}
+                        </span>
+                    </div>
+                    <div class="details">
+                        <span class="label">
+                            {{localize "MM4.Details"}}
+                        </span>
+                        <span class="text">
+                            {{{pwr.system.effets}}}
+                        </span>
+                    </div>
+                    <div class="mod borderLeft">
+                        <span class="label">
+                            {{localize "MM4.Extras"}}
+                        </span>
+                        {{#each pwr.system.extras as | ext kExt |}}
+                        <span class="text">
+                            {{ext.name}}
+                            <i class="fa-solid fa-circle-info">
+                                <div class="infoExt">{{{ext.data.description}}}</div>
+                            </i>
+                        </span>
+                        {{/each}}
+                    </div>
+                    <div class="mod borderRight borderLightLeft">
+                        <span class="label">
+                            {{localize "MM4.Defauts"}}
+                        </span>
+                        {{#each pwr.system.defauts as | ext kExt |}}
+                        <span class="text">
+                            {{ext.name}}
+                            <i class="fa-solid fa-circle-info">
+                                <div class="infoExt">{{{ext.data.description}}}</div>
+                            </i>
+                        </span>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
 
+            {{#each (getPwrAlt @root 'pwrLink' pwr._id) as | pwrAlt kPA |}}
+            <div class="pwr summary
+        {{#if (isValue pwrAlt.system.special 'standard')}}blue{{/if}}
+        {{#if (isValue pwrAlt.system.special 'alternatif')}}red{{/if}}
+        {{#if (isValue pwrAlt.system.special 'dynamique')}}violet{{/if}}
+        {{#if (isValue pwrAlt.system.special 'prepare')}}light-orange{{/if}}
+        {{#unless (hasLinkAndAlt pwr._id @root/actor)}}item{{/unless}}
+        " data-item-id="{{pwrAlt._id}}">
+                <header
+                    class="js-toggler {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}withActiver{{/if}} {{#if (pwrHasVariants system.listEffectsVariantes ../../actor)}}withVariante{{/if}}">
+                    {{#if (actorIsCharacter ../../actor)}}
+                    {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}
+                    <a class="btn btnHeader pwrActivate {{#if pwrAlt.system.activate}}selected{{/if}}">
+                        {{localize "MM4.BTN.Activer"}}
+                    </a>
+                    {{/if}}
+                    {{#if (pwrHasVariants system.listEffectsVariantes)}}
+                    <select class="variantepwr">
+                        {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
+                    </select>
+                    {{/if}}
+                    {{/if}}
+                    <span class="deploy "><i class="minus"></i></span>
+                    <div class="pwrheader">
+                        <span class="header">{{pwrAlt.name}}</span>
+
+                        <i class="fa-solid fa-pen-to-square item-edit"></i>
+                        <i class="fa-solid fa-trash-xmark item-delete"></i>
+                    </div>
+                    {{#if pwrAlt.system.effetsprincipaux}}
+                    <div class="pwreffects">
+                        <span class="header">{{pwrAlt.system.effetsprincipaux}}</span>
+                    </div>
+                    {{/if}}
+
+                    {{#if (isValue pwrAlt.system.special 'alternatif')}}
+                    <select class="link" data-cout="{{pwrAlt.system.cout.totalTheorique}}"
+                        data-type="{{pwrAlt.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwrAlt._id true) selected=pwrAlt.system.link
+                        localize=true}}
+                    </select>
+                    {{else}} {{#if (isValue pwrAlt.system.special 'dynamique')}}
+                    <select class="link" data-cout="{{pwrAlt.system.cout.totalTheorique}}"
+                        data-type="{{pwrAlt.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwrAlt._id true) selected=pwrAlt.system.link
+                        localize=true}}
+                    </select>
+                    {{else}}
+                    <select class="link" data-cout="0" data-type="{{pwrAlt.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwrAlt._id true) selected=pwrAlt.system.link
+                        localize=true}}
+                    </select>
+                    {{/if}} {{/if}}
+                    <div class="data black">
+                        <span>{{translate 'pouvoirs.factions' pwrAlt.system.action}}</span>
+                        <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees'
+                            pwrAlt.system.portee}}</span>
+                        <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees'
+                            pwrAlt.system.duree}}</span>
+                        <a class="rollPwr oneRoll draggable" data-id="{{pwrAlt._id}}" data-type="pouvoir"
+                            data-name="{{pwrAlt.name}}">
+                            <i class="fa-solid fa-dice-d20"></i>
+                        </a>
+                    </div>
+                </header>
+                <div class="allData">
+                    <div class="data">
+                        <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types'
+                            pwr.system.type}}</span>
+                        <span class="col4">{{localize "MM4.Rang"}} : {{kPA.system.cout.rang}} / {{localize
+                            "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span>
+                    </div>
                     <div class="descripteurs">
                         {{#each kPA.system.descripteurs as | kDesc desc |}}
-                            <span>{{#unless @first}}/{{/unless}} {{kDesc}}</span>
+                        <span>{{#unless @first}}/{{/unless}} {{kDesc}}</span>
                         {{/each}}
                     </div>
                     <div class="details">
@@ -465,11 +261,11 @@
                         </span>
                         {{#each kPA.system.extras as | kExt ext |}}
                         <span class="text">
-                        {{kExt.name}}
-                        <i class="fa-solid fa-circle-info">
-                            <div class="infoExt">{{{kExt.data.description}}}</div>
-                        </i>
-                    </span>
+                            {{kExt.name}}
+                            <i class="fa-solid fa-circle-info">
+                                <div class="infoExt">{{{kExt.data.description}}}</div>
+                            </i>
+                        </span>
                         {{/each}}
                     </div>
                     <div class="mod borderRight borderLightLeft">
@@ -478,25 +274,285 @@
                         </span>
                         {{#each kPA.system.defauts as | kExt ext |}}
                         <span class="text">
-                        {{kExt.name}}
-                        <i class="fa-solid fa-circle-info">
-                            <div class="infoExt">{{{kExt.data.description}}}</div>
-                        </i>
-                    </span>
+                            {{kExt.name}}
+                            <i class="fa-solid fa-circle-info">
+                                <div class="infoExt">{{{kExt.data.description}}}</div>
+                            </i>
+                        </span>
                         {{/each}}
                     </div>
+                </div>
             </div>
+            {{/each}}
+
+            {{#each (getPwrAlt @root 'pwrAlternatif' pwr._id) as | pwrAlt kPA |}}
+            <div class="pwr summary
+        {{#if (isValue pwrAlt.system.special 'standard')}}blue{{/if}}
+        {{#if (isValue pwrAlt.system.special 'alternatif')}}red{{/if}}
+        {{#if (isValue pwrAlt.system.special 'dynamique')}}violet{{/if}}
+        {{#if (isValue pwrAlt.system.special 'prepare')}}light-orange{{/if}}
+        {{#unless (hasLinkAndAlt pwr._id @root/actor)}}item{{/unless}}
+        " data-item-id="{{pwrAlt._id}}">
+                <header
+                    class="js-toggler {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}withActiver{{/if}} {{#if (pwrHasVariants system.listEffectsVariantes ../../actor)}}withVariante{{/if}}">
+                    {{#if (actorIsCharacter ../../actor)}}
+                    {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}
+                    <a class="btn btnHeader pwrActivate {{#if pwrAlt.system.activate}}selected{{/if}}">
+                        {{localize "MM4.BTN.Activer"}}
+                    </a>
+                    {{/if}}
+                    {{#if (pwrHasVariants system.listEffectsVariantes)}}
+                    <select class="variantepwr">
+                        {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
+                    </select>
+                    {{/if}}
+                    {{/if}}
+                    <span class="deploy "><i class="minus"></i></span>
+                    <div class="pwrheader">
+                        <span class="header">{{pwrAlt.name}}</span>
+
+                        <i class="fa-solid fa-pen-to-square item-edit"></i>
+                        <i class="fa-solid fa-trash-xmark item-delete"></i>
+                    </div>
+                    {{#if pwrAlt.system.effetsprincipaux}}
+                    <div class="pwreffects">
+                        <span class="header">{{pwrAlt.system.effetsprincipaux}}</span>
+                    </div>
+                    {{/if}}
+
+                    {{#if (isValue pwrAlt.system.special 'alternatif')}}
+                    <select class="link" data-cout="{{pwrAlt.system.cout.totalTheorique}}"
+                        data-type="{{pwrAlt.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwrAlt._id true) selected=pwrAlt.system.link
+                        localize=true}}
+                    </select>
+                    {{else}} {{#if (isValue pwrAlt.system.special 'dynamique')}}
+                    <select class="link" data-cout="{{pwrAlt.system.cout.totalTheorique}}"
+                        data-type="{{pwrAlt.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwrAlt._id true) selected=pwrAlt.system.link
+                        localize=true}}
+                    </select>
+                    {{/if}} {{/if}}
+                    <div class="data black">
+                        <span>{{translate 'pouvoirs.factions' pwrAlt.system.action}}</span>
+                        <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees'
+                            pwrAlt.system.portee}}</span>
+                        <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees'
+                            pwrAlt.system.duree}}</span>
+                        <a class="rollPwr oneRoll draggable" data-id="{{pwrAlt._id}}" data-type="pouvoir"
+                            data-name="{{pwrAlt.name}}">
+                            <i class="fa-solid fa-dice-d20"></i>
+                        </a>
+                    </div>
+                </header>
+                <div class="allData">
+                    <div class="data">
+                        <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types'
+                            pwr.system.type}}</span>
+                        <span class="col4">{{localize "MM4.Rang"}} : {{pwrAlt.system.cout.rang}} / {{localize
+                            "MM4.Couttotal"}} : {{pwrAlt.system.cout.total}}</span>
+                    </div>
+                    <div class="descripteurs">
+                        {{#each pwrAlt.system.descripteurs as | kDesc desc |}}
+                        <span>{{#unless @first}}/{{/unless}} {{kDesc}}</span>
+                        {{/each}}
+                    </div>
+                    <div class="details">
+                        <span class="label">
+                            {{localize "MM4.Description"}}
+                        </span>
+                        <span class="text">
+                            {{{pwrAlt.system.notes}}}
+                        </span>
+                    </div>
+                    <div class="details">
+                        <span class="label">
+                            {{localize "MM4.Details"}}
+                        </span>
+                        <span class="text">
+                            {{{pwrAlt.system.effets}}}
+                        </span>
+                    </div>
+                    <div class="mod borderLeft">
+                        <span class="label">
+                            {{localize "MM4.Extras"}}
+                        </span>
+                        {{#each pwrAlt.system.extras as | kExt ext |}}
+                        <span class="text">
+                            {{kExt.name}}
+                            <i class="fa-solid fa-circle-info">
+                                <div class="infoExt">{{{kExt.data.description}}}</div>
+                            </i>
+                        </span>
+                        {{/each}}
+                    </div>
+                    <div class="mod borderRight borderLightLeft">
+                        <span class="label">
+                            {{localize "MM4.Defauts"}}
+                        </span>
+                        {{#each pwrAlt.system.defauts as | kExt ext |}}
+                        <span class="text">
+                            {{kExt.name}}
+                            <i class="fa-solid fa-circle-info">
+                                <div class="infoExt">{{{kExt.data.description}}}</div>
+                            </i>
+                        </span>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+            {{#each (getPwrAlt @root 'pwrDynamique' pwr._id) as | pwrAlt kPA |}}
+            <div class="pwr summary
+        {{#if (isValue pwrAlt.system.special 'standard')}}blue{{/if}}
+        {{#if (isValue pwrAlt.system.special 'alternatif')}}red{{/if}}
+        {{#if (isValue pwrAlt.system.special 'dynamique')}}violet{{/if}}
+        {{#if (isValue pwrAlt.system.special 'prepare')}}light-orange{{/if}}
+        {{#unless (hasLinkAndAlt pwr._id @root/actor)}}item{{/unless}}
+        " data-item-id="{{pwrAlt._id}}">
+                <header
+                    class="js-toggler {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}withActiver{{/if}} {{#if (pwrHasVariants system.listEffectsVariantes ../../actor)}}withVariante{{/if}}">
+                    {{#if (actorIsCharacter ../../actor)}}
+                    {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}
+                    <a class="btn btnHeader pwrActivate {{#if pwrAlt.system.activate}}selected{{/if}}">
+                        {{localize "MM4.BTN.Activer"}}
+                    </a>
+                    {{/if}}
+                    {{#if (pwrHasVariants system.listEffectsVariantes)}}
+                    <select class="variantepwr">
+                        {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
+                    </select>
+                    {{/if}}
+                    {{/if}}
+                    <span class="deploy "><i class="minus"></i></span>
+                    <div class="pwrheader">
+                        <span class="header">{{pwrAlt.name}}</span>
+
+                        <i class="fa-solid fa-pen-to-square item-edit"></i>
+                        <i class="fa-solid fa-trash-xmark item-delete"></i>
+                    </div>
+                    {{#if pwrAlt.system.effetsprincipaux}}
+                    <div class="pwreffects">
+                        <span class="header">{{pwrAlt.system.effetsprincipaux}}</span>
+                    </div>
+                    {{/if}}
+
+                    {{#if (isValue pwrAlt.system.special 'alternatif')}}
+                    <select class="link" data-cout="{{pwrAlt.system.cout.totalTheorique}}"
+                        data-type="{{pwrAlt.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwrAlt._id true) selected=pwrAlt.system.link
+                        localize=true}}
+                    </select>
+                    {{else}} {{#if (isValue pwrAlt.system.special 'dynamique')}}
+                    <select class="link" data-cout="{{pwrAlt.system.cout.totalTheorique}}"
+                        data-type="{{pwrAlt.system.special}}">
+                        {{selectOptions (listpwr @root/actor/pwrStandard pwrAlt._id true) selected=pwrAlt.system.link
+                        localize=true}}
+                    </select>
+                    {{/if}} {{/if}}
+                    <div class="data black">
+                        <span>{{translate 'pouvoirs.factions' pwrAlt.system.action}}</span>
+                        <span>{{localize "MM4.POUVOIR.PORTEE.Label"}} : {{translate 'pouvoirs.portees'
+                            pwrAlt.system.portee}}</span>
+                        <span>{{localize "MM4.POUVOIR.DUREE.Label"}} : {{translate 'pouvoirs.durees'
+                            pwrAlt.system.duree}}</span>
+                        <a class="rollPwr oneRoll draggable" data-id="{{pwrAlt._id}}" data-type="pouvoir"
+                            data-name="{{pwrAlt.name}}">
+                            <i class="fa-solid fa-dice-d20"></i>
+                        </a>
+                    </div>
+                    {{#if (isValue pwrAlt.system.special 'dynamique')}}
+                    <div class="dataSpecial black">
+                        {{#if (isValue pwrAlt.system.special 'dynamique')}}
+                        <span>{{localize "MM4.Rang"}} : </span>
+                        <input class="rangDyn" type="number" name="system.pwr.{{pwrAlt._id}}.cout.rang"
+                            value="{{getPwr @root pwrAlt._id 'rang'}}" min="0"
+                            max="{{pwrAlt.system.cout.rangDynMax}}" />
+                        {{log (getPwr @root pwrAlt._id 'rang')}}
+                        <span>({{localize "MM4.Max-short"}} {{pwrAlt.system.cout.rangDynMax}}) / {{localize
+                            "MM4.Coutactuel"}} : {{ifThen (gte (getPwr @root pwrAlt._id 'rang') 1) (getPwr @root
+                            pwrAlt._id
+                            'actuel') '0'}}</span>
+                        {{/if}}
+                    </div>
+                    {{/if}}
+                </header>
+                <div class="allData">
+                    {{#unless (isValue pwrAlt.system.special 'dynamique')}}
+                    <div class="data">
+                        <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types'
+                            pwr.system.type}}</span>
+                        <span class="col4">{{localize "MM4.Rang"}} : {{pwrAlt.system.cout.rang}} / {{localize
+                            "MM4.Couttotal"}} : {{pwrAlt.system.cout.total}}</span>
+                    </div>
+                    {{else}}
+                    {{#if (isValue pwrAlt.system.special 'dynamique')}}
+                    <div class="data"><span class="col4">{{localize "MM4.Couttotal"}} :
+                            {{pwrAlt.system.cout.total}}</span>
+                    </div>
+                    {{/if}}
+                    {{/unless}}
+
+                    <div class="descripteurs">
+                        {{#each pwrAlt.system.descripteurs as | kDesc desc |}}
+                        <span>{{#unless @first}}/{{/unless}} {{kDesc}}</span>
+                        {{/each}}
+                    </div>
+                    <div class="details">
+                        <span class="label">
+                            {{localize "MM4.Description"}}
+                        </span>
+                        <span class="text">
+                            {{{pwrAlt.system.notes}}}
+                        </span>
+                    </div>
+                    <div class="details">
+                        <span class="label">
+                            {{localize "MM4.Details"}}
+                        </span>
+                        <span class="text">
+                            {{{pwrAlt.system.effets}}}
+                        </span>
+                    </div>
+                    <div class="mod borderLeft">
+                        <span class="label">
+                            {{localize "MM4.Extras"}}
+                        </span>
+                        {{#each pwrAlt.system.extras as | kExt ext |}}
+                        <span class="text">
+                            {{kExt.name}}
+                            <i class="fa-solid fa-circle-info">
+                                <div class="infoExt">{{{kExt.data.description}}}</div>
+                            </i>
+                        </span>
+                        {{/each}}
+                    </div>
+                    <div class="mod borderRight borderLightLeft">
+                        <span class="label">
+                            {{localize "MM4.Defauts"}}
+                        </span>
+                        {{#each pwrAlt.system.defauts as | kExt ext |}}
+                        <span class="text">
+                            {{kExt.name}}
+                            <i class="fa-solid fa-circle-info">
+                                <div class="infoExt">{{{kExt.data.description}}}</div>
+                            </i>
+                        </span>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            {{#if (hasLink pwr._id @root/actor)}}
         </div>
-        {{/each}}
-    {{#if (hasLink key._id @root/actor)}}
-    </div>
     </div>
     {{else}}
-        {{#if (hasAlt key._id @root/actor)}}
-            </div>
-        </div>
-        {{/if}}
-    {{/if}}
+    {{#if (hasAlt pwr._id @root/actor)}}
+</div>
+</div>
+{{/if}}
+{{/if}}
 {{/each}}
 
 <a class="item-create" data-type="pouvoir">{{localize "MM4.BTN.AddPwr"}}</a>

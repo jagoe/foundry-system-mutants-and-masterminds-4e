@@ -571,6 +571,10 @@ div.qg {
                                 &.violet {
                                     background: $imgbg $violet;
                                 }
+
+                                &.light-orange {
+                                    background: $imgbg $lightOrange;
+                                }
                             }
 
                             span {
@@ -694,6 +698,24 @@ div.qg {
                                     background: $imgbg $violet;
                                 }
                             }
+
+                            &.light-orange {
+                                div.pwrheader {
+                                    background: $imgbg $lightOrange;
+                                }
+
+                                &::after {
+                                    content: '';
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    height: 0.5rem;
+                                    width: 100%;
+                                    border-width: 2px;
+                                    border-radius: 0 0 15px 15px;
+                                    background-blend-mode: overlay, multiply;
+                                    background: $imgbg $lightOrange;
+                                }
+                            }
                         }
 
                         &.bottom {
@@ -719,6 +741,10 @@ div.qg {
 
                             &.violet {
                                 background: $imgbg $violet;
+                            }
+
+                            &.light-orange {
+                                background: $imgbg $lightOrange;
                             }
                         }
 

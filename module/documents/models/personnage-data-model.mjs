@@ -974,7 +974,9 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
             .filter((item) => item.type === 'pouvoir')
             .reduce((acc, item) => {
                 const coutToAdd =
-                    item.system.special === 'dynamique' || item.system.special === 'alternatif'
+                    item.system.special === 'dynamique' ||
+                    item.system.special === 'alternatif' ||
+                    item.system.special === 'prepare'
                         ? item.system.cout.total
                         : item.system.cout.totalTheorique;
 

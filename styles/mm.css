@@ -1554,7 +1554,7 @@ div.pouvoirs div.submenu a.filtre.unselected {
 div.pouvoirs div.lPouvoirs {
   display: none;
   grid-template-columns: 1fr 1fr;
-  align-items: flex-start;
+  align-items: flex-end;
   align-content: flex-start;
   padding-top: 5px;
   gap: 5px;
@@ -1665,7 +1665,7 @@ div.pouvoirs div.lPouvoirs header.grpSep {
 }
 div.pouvoirs div.lPouvoirs header.grpSep span.deploy {
   position: absolute;
-  top: 0;
+  top: 5px;
   left: 10px;
   z-index: 999;
 }
@@ -1729,7 +1729,7 @@ div.pouvoirs div.lPouvoirs div.grpPwrAlt {
   grid-column: 1/3;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: flex-start;
+  align-items: flex-end;
   align-content: flex-start;
   gap: 5px;
   padding: 5px;
@@ -1742,7 +1742,7 @@ div.pouvoirs div.lPouvoirs div.pwr div.pwrheader {
   text-shadow: 2px 2px 0 #da3a2f, 1px 1px 0 #363b44;
   font-family: Bangers, sans-serif;
   border-width: 2px;
-  border-radius: 0;
+  border-radius: 15px 15px 0 0;
   background-blend-mode: overlay, multiply;
   background-size: 500px;
   background-repeat: no-repeat;
@@ -1771,6 +1771,9 @@ div.pouvoirs div.lPouvoirs div.pwr div.pwrheader.red {
 }
 div.pouvoirs div.lPouvoirs div.pwr div.pwrheader.violet {
   background: url("../assets/fond.webp") #7e627f;
+}
+div.pouvoirs div.lPouvoirs div.pwr div.pwrheader.light-orange {
+  background: url("../assets/fond.webp") #fe8412;
 }
 div.pouvoirs div.lPouvoirs div.pwr div.pwreffects {
   grid-column: 1/3;
@@ -1816,7 +1819,7 @@ div.pouvoirs div.lPouvoirs div.pwr header {
 }
 div.pouvoirs div.lPouvoirs div.pwr header span.deploy {
   position: absolute;
-  top: 27px;
+  top: 5px;
   left: 10px;
   z-index: 999;
 }
@@ -1839,11 +1842,17 @@ div.pouvoirs div.lPouvoirs div.pwr header span.deploy i.plus::before {
 div.pouvoirs div.lPouvoirs div.pwr header span.deploy i.minus::before {
   content: "-";
 }
-div.pouvoirs div.lPouvoirs div.pwr header.withoutVariante div.pwrheader {
-  border-radius: 15px 15px 0 0;
+div.pouvoirs div.lPouvoirs div.pwr header.withVariante div.pwrheader {
+  border-top-right-radius: 0;
 }
-div.pouvoirs div.lPouvoirs div.pwr header.withoutVariante span.deploy {
-  top: 3px;
+div.pouvoirs div.lPouvoirs div.pwr header.withVariante span.deploy {
+  top: 29px;
+}
+div.pouvoirs div.lPouvoirs div.pwr header.withActiver div.pwrheader {
+  border-top-left-radius: 0;
+}
+div.pouvoirs div.lPouvoirs div.pwr header.withActiver span.deploy {
+  top: 29px;
 }
 div.pouvoirs div.lPouvoirs div.pwr.blue div.pwrheader {
   background: url("../assets/fond.webp") #4e7fc8;
@@ -1886,6 +1895,20 @@ div.pouvoirs div.lPouvoirs div.pwr.violet::after {
   border-radius: 0 0 15px 15px;
   background-blend-mode: overlay, multiply;
   background: url("../assets/fond.webp") #7e627f;
+}
+div.pouvoirs div.lPouvoirs div.pwr.light-orange div.pwrheader {
+  background: url("../assets/fond.webp") #fe8412;
+}
+div.pouvoirs div.lPouvoirs div.pwr.light-orange::after {
+  content: "";
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 0.5rem;
+  width: 100%;
+  border-width: 2px;
+  border-radius: 0 0 15px 15px;
+  background-blend-mode: overlay, multiply;
+  background: url("../assets/fond.webp") #fe8412;
 }
 div.pouvoirs div.lPouvoirs div.pwr a.btnHeader {
   width: 150px;
@@ -1946,6 +1969,9 @@ div.pouvoirs div.lPouvoirs div.bottom.red {
 }
 div.pouvoirs div.lPouvoirs div.bottom.violet {
   background: url("../assets/fond.webp") #7e627f;
+}
+div.pouvoirs div.lPouvoirs div.bottom.light-orange {
+  background: url("../assets/fond.webp") #fe8412;
 }
 div.pouvoirs div.lPouvoirs div.allData {
   display: grid;
@@ -3738,6 +3764,9 @@ div.pouvoir section.header.red {
 }
 div.pouvoir section.header.violet {
   background: url("../assets/fond.webp") #7e627f;
+}
+div.pouvoir section.header.light-orange {
+  background: url("../assets/fond.webp") #fe8412;
 }
 div.pouvoir section.header input {
   font-size: 4rem;
@@ -6604,6 +6633,9 @@ div.vehicule section.sheet-body div.listpouvoir div.pwr div.pwrheader.red {
 div.vehicule section.sheet-body div.listpouvoir div.pwr div.pwrheader.violet {
   background: url("../assets/fond.webp") #7e627f;
 }
+div.vehicule section.sheet-body div.listpouvoir div.pwr div.pwrheader.light-orange {
+  background: url("../assets/fond.webp") #fe8412;
+}
 div.vehicule section.sheet-body div.listpouvoir div.pwr span.header {
   width: calc(100% - 95px);
   display: grid;
@@ -6698,6 +6730,20 @@ div.vehicule section.sheet-body div.listpouvoir div.pwr.violet::after {
   background-blend-mode: overlay, multiply;
   background: url("../assets/fond.webp") #7e627f;
 }
+div.vehicule section.sheet-body div.listpouvoir div.pwr.light-orange div.pwrheader {
+  background: url("../assets/fond.webp") #fe8412;
+}
+div.vehicule section.sheet-body div.listpouvoir div.pwr.light-orange::after {
+  content: "";
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 0.5rem;
+  width: 100%;
+  border-width: 2px;
+  border-radius: 0 0 15px 15px;
+  background-blend-mode: overlay, multiply;
+  background: url("../assets/fond.webp") #fe8412;
+}
 div.vehicule section.sheet-body div.listpouvoir div.bottom {
   display: grid;
   grid-template-columns: 1fr;
@@ -6718,6 +6764,9 @@ div.vehicule section.sheet-body div.listpouvoir div.bottom.red {
 }
 div.vehicule section.sheet-body div.listpouvoir div.bottom.violet {
   background: url("../assets/fond.webp") #7e627f;
+}
+div.vehicule section.sheet-body div.listpouvoir div.bottom.light-orange {
+  background: url("../assets/fond.webp") #fe8412;
 }
 div.vehicule section.sheet-body div.listpouvoir div.allData {
   display: grid;
@@ -8391,6 +8440,9 @@ div.qg section.sheet-body div.listpouvoirs div.pwr div.pwrheader.red {
 div.qg section.sheet-body div.listpouvoirs div.pwr div.pwrheader.violet {
   background: url("../assets/fond.webp") #7e627f;
 }
+div.qg section.sheet-body div.listpouvoirs div.pwr div.pwrheader.light-orange {
+  background: url("../assets/fond.webp") #fe8412;
+}
 div.qg section.sheet-body div.listpouvoirs div.pwr span.header {
   width: calc(100% - 95px);
   display: grid;
@@ -8485,6 +8537,20 @@ div.qg section.sheet-body div.listpouvoirs div.pwr.violet::after {
   background-blend-mode: overlay, multiply;
   background: url("../assets/fond.webp") #7e627f;
 }
+div.qg section.sheet-body div.listpouvoirs div.pwr.light-orange div.pwrheader {
+  background: url("../assets/fond.webp") #fe8412;
+}
+div.qg section.sheet-body div.listpouvoirs div.pwr.light-orange::after {
+  content: "";
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 0.5rem;
+  width: 100%;
+  border-width: 2px;
+  border-radius: 0 0 15px 15px;
+  background-blend-mode: overlay, multiply;
+  background: url("../assets/fond.webp") #fe8412;
+}
 div.qg section.sheet-body div.listpouvoirs div.bottom {
   display: grid;
   grid-template-columns: 1fr;
@@ -8505,6 +8571,9 @@ div.qg section.sheet-body div.listpouvoirs div.bottom.red {
 }
 div.qg section.sheet-body div.listpouvoirs div.bottom.violet {
   background: url("../assets/fond.webp") #7e627f;
+}
+div.qg section.sheet-body div.listpouvoirs div.bottom.light-orange {
+  background: url("../assets/fond.webp") #fe8412;
 }
 div.qg section.sheet-body div.listpouvoirs div.allData {
   display: grid;
