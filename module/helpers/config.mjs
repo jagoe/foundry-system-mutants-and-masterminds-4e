@@ -113,7 +113,13 @@ MM4.LIST = {
             carCanChange: true,
         },
     },
-    Defenses: ['esquive', 'parade', 'vigueur', 'robustesse', 'volonte'],
+    Defenses: [
+        { name: 'esquive', display: true },
+        { name: 'parade', display: false },
+        { name: 'vigueur', display: true },
+        { name: 'robustesse', display: true },
+        { name: 'volonte', display: true },
+    ],
     CarDefenses: {
         esquive: 'def',
         parade: 'def',

@@ -313,8 +313,8 @@
             },
             "DEFENSE": {
                 "Basedefense": "Rolagem de defesa base",
-                "Esquive": "Rolagem de Esquiva",
-                "Parade": "Rolagem de Aparar",
+                "Esquive": "Rolagem de Distância",
+                "Parade": "Rolagem de Acirrada",
                 "Vigueur": "Rolagem de Fortitude",
                 "Robustesse": "Rolagem de Resistência",
                 "Volonte": "Rolagem de Vontade"

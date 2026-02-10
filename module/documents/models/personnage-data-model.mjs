@@ -118,8 +118,10 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
         }
 
         for (let d of CONFIG.MM4.LIST.Defenses) {
-            defense[d] = new SchemaField({
-                car: new StringField({ initial: CONFIG.MM4.LIST.CarDefenses[d] }),
+            const defenseName = d.name;
+
+            defense[defenseName] = new SchemaField({
+                car: new StringField({ initial: CONFIG.MM4.LIST.CarDefenses[defenseName] }),
                 carac: new NumberField({ initial: 0 }),
                 base: new NumberField({ initial: 0 }),
                 divers: new NumberField({ initial: 0 }),
@@ -129,6 +131,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                 surcharge: new NumberField({ initial: 0 }),
                 ranks: new ObjectField(),
                 surchargeranks: new ObjectField(),
+                display: new BooleanField({ initial: d.display }),
             });
         }
 
@@ -819,10 +822,12 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
         let ppDef = 0;
 
         for (let d of CONFIG.MM4.LIST.Defenses) {
-            let currentDefense = defense[d];
+            const defenseName = d.name;
+
+            let currentDefense = defense[defenseName];
             const ranks = currentDefense.ranks;
             const defRang = currentDefense.base;
-            const carac = this.caracteristique[getFullCarac(CONFIG.MM4.LIST.CarDefenses[d])];
+            const carac = this.caracteristique[getFullCarac(CONFIG.MM4.LIST.CarDefenses[defenseName])];
             const isAbs = carac.absente;
             const surchargeRanks = currentDefense.surchargeranks;
             let total = 0;
@@ -865,13 +870,13 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                 }
             }
 
-            if (d === 'robustesse') {
+            if (defenseName === 'robustesse') {
                 mod -= this.blessure;
 
                 if (getSetting('stackeddmg')) mod -= this.blessureNL;
             }
-            if (d === 'esquive') mod += this.strategie.total.defense;
-            if (d === 'parade') mod += this.strategie.total.defense;
+            if (defenseName === 'esquive') mod += this.strategie.total.defense;
+            if (defenseName === 'parade') mod += this.strategie.total.defense;
             ppDef += defRang;
 
             Object.defineProperty(currentDefense, 'carac', {
@@ -882,7 +887,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                 const def = actor.effects.find((itm) => itm.origin === 'status' && itm.statuses.has('defenseless'));
 
                 for (let e of def.changes) {
-                    if (e.key === d) {
+                    if (e.key === defenseName) {
                         Object.defineProperty(currentDefense, 'defenseless', {
                             value: true,
                         });
@@ -904,12 +909,12 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
             if (effects.has('vulnerability') && !currentDefense.defenseless) {
                 const vul = actor.effects.find((itm) => itm.origin === 'status' && itm.statuses.has('vulnerability'));
                 for (let e of vul.changes) {
-                    if (e.key === d) total = total / e.value;
+                    if (e.key === defenseName) total = total / e.value;
                 }
             }
 
-            if (d === 'esquive') Object.defineProperty(this, 'ddesquive', { value: 10 + total });
-            else if (d === 'parade') Object.defineProperty(this, 'ddparade', { value: 10 + total });
+            if (defenseName === 'esquive') Object.defineProperty(this, 'ddesquive', { value: 10 + total });
+            else if (defenseName === 'parade') Object.defineProperty(this, 'ddparade', { value: 10 + total });
 
             Object.defineProperty(currentDefense, 'total', {
                 value: total,

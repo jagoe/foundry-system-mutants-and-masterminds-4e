@@ -313,8 +313,8 @@
             },
             "DEFENSE": {
                 "Basedefense": "Tiro di Difesa di base",
-                "Esquive": "Tiro di Schivare",
-                "Parade": "Tiro di Parare",
+                "Esquive": "Tiro di Distanza",
+                "Parade": "Tiro di Ravvicinato",
                 "Vigueur": "Tiro di Tempra",
                 "Robustesse": "Tiro di Robustezza",
                 "Volonte": "Tiro di Volontà"

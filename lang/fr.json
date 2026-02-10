@@ -313,8 +313,8 @@
             },
             "DEFENSE": {
                 "Basedefense": "Base du jet de défense",
-                "Esquive": "Jet d'esquive",
-                "Parade": "Jet de parade",
+                "Esquive": "Jet de distance",
+                "Parade": "Jet de rapproché",
                 "Vigueur": "Jet de vigueur",
                 "Robustesse": "Jet de robustesse",
                 "Volonte": "Jet de volonté"

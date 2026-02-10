@@ -69,18 +69,20 @@
 
                 <span class="header">{{localize "MM4.Divers"}}</span>
 
-                {{#each systemData.defense as | key def |}}
-                    <a class="roll draggable" data-what="{{def}}" data-type="defense" data-name="{{translate 'defenses' def}}" data-total="{{key.total}}">
-                        {{translate 'defenses' def}}
-                    </a>
-                    <span class="carac">{{translate 'caracteristiquesshort' key.car}}</span>
-                    <span class="score total">{{key.total}}</span>
-                    <span class="carac">=</span>
-                    <input type="number" name="system.defense.{{def}}.base" value="{{key.base}}" />
-                    <span class="carac">+</span>
-                    <span class="score">{{key.carac}}</span>
-                    <span class="carac">+</span>
-                    <input type="number" name="system.defense.{{def}}.divers" value="{{key.divers}}" />
+                {{#each systemData.defense as | def key |}}
+                    {{#if def.display}}
+                        <a class="roll draggable" data-what="{{key}}" data-type="defense" data-name="{{translate 'defenses' key}}" data-total="{{def.total}}">
+                            {{translate 'defenses' key}}
+                        </a>
+                        <span class="carac">{{translate 'caracteristiquesshort' def.car}}</span>
+                        <span class="score total">{{def.total}}</span>
+                        <span class="carac">=</span>
+                        <input type="number" name="system.defense.{{key}}.base" value="{{def.base}}" />
+                        <span class="carac">+</span>
+                        <span class="score">{{def.carac}}</span>
+                        <span class="carac">+</span>
+                        <input type="number" name="system.defense.{{key}}.divers" value="{{def.divers}}" />
+                    {{/if}}
                 {{/each}}
             </div>
 
