@@ -1222,6 +1222,10 @@ export async function processImport(actor, data, actorType = 'personnage') {
                 (label.includes('expertise') || label.includes('combatcontact') || label.includes('combatdistance'))
             ) {
                 const length = Object.keys(listSkill[label]).length;
+                const skillRanksPerPP = 2;
+                const expertiseRanksPerPP = 2;
+                console.error(1000, { label });
+
                 let lastLabel = skill.name.replace(`${skill.name.split(':')[0]}: `, '');
                 if (label.includes('expertise')) {
                     const searchcar = Object.keys(attributsShort).reduce((a, b) => {
@@ -1233,7 +1237,8 @@ export async function processImport(actor, data, actorType = 'personnage') {
                         label: lastLabel,
                         total: 0,
                         carac: 0,
-                        rang: Number(skill.cost.value) * 2,
+                        rang: Number(skill.cost.value) * expertiseRanksPerPP,
+                        parPP: expertiseRanksPerPP,
                         autre: 0,
                         carCanChange: true,
                         car: car,
@@ -1260,7 +1265,8 @@ export async function processImport(actor, data, actorType = 'personnage') {
                         label: lastLabel,
                         total: 0,
                         carac: 0,
-                        rang: Number(skill.cost.value) * 2,
+                        rang: Number(skill.cost.value) * skillRanksPerPP,
+                        parPP: skillRanksPerPP,
                         autre: 0,
                         idAtt: randAtk,
                     };

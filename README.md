@@ -8,8 +8,6 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Remove Parry, remove Dodge DC, add Defense DC
-* Set Expertise cost to 4 for 1 PP
 * Allow setting a Power as Prepared Effect (costing 0 PP)
 * Add Foundry document linking to Powers, Modifiers, Advantages, Actors, etc.
 * Rename Injuries to Hits & add as modifier to Toughness rolls instead of reducing Toughness

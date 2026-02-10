@@ -275,6 +275,7 @@ export class PersonnageActorSheet extends ActorSheet {
                 car: get.car,
                 rang: get.rang,
                 autre: get.autre,
+                parPP: get.parPP,
                 canAdd: canAdd,
                 carCanChange: carCanChange,
                 new: isNew,

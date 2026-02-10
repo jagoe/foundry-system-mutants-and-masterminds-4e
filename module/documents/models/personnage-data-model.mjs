@@ -3,6 +3,9 @@ import { getFullCarac } from '../../helpers/common.mjs';
 import { getSetting } from '../../helpers/foundry.mjs';
 
 export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
+    static skillRanksPerPP = 2;
+    static expertiseRanksPerPP = 4;
+
     static defineSchema() {
         const { SchemaField, StringField, NumberField, BooleanField, ObjectField, HTMLField } = foundry.data.fields;
         let base = {};
@@ -31,9 +34,11 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
 
         for (let c of CONFIG.MM4.LIST.Competences) {
             const dataCmp = CONFIG.MM4.LIST.DataCompetences[c];
+            const isExpertise = c === 'expertise';
 
             const baseSchema = {
                 rang: new NumberField({ initial: 0 }),
+                parPP: new NumberField({ initial: isExpertise ? this.expertiseRanksPerPP : this.skillRanksPerPP }),
                 autre: new NumberField({ initial: 0 }),
                 total: new NumberField({ initial: 0 }),
             };
@@ -764,7 +769,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                     }
                 }
             }
-            console.log(currentCmp);
+
             if (dataCmp.canAdd || currentCmp.new) {
                 const cList = currentCmp.list;
 
@@ -773,7 +778,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                         ? this.caracteristique[getFullCarac(cList[list].car)].total
                         : this.caracteristique[getFullCarac(dataCmp.car)].total;
 
-                    ppComp += cList[list].rang / 2;
+                    ppComp += cList[list].rang / (cList[list].parPP || PersonnageDataModel.skillRanksPerPP);
                     Object.defineProperty(cList[list], 'carac', {
                         value: getCarac,
                     });
@@ -790,7 +795,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                     });
                 }
             } else {
-                ppComp += currentCmp.rang / 2;
+                ppComp += currentCmp.rang / (currentCmp.parPP || PersonnageDataModel.skillRanksPerPP);
 
                 Object.defineProperty(currentCmp, 'carac', {
                     value: this.caracteristique[getFullCarac(dataCmp.car)].total,

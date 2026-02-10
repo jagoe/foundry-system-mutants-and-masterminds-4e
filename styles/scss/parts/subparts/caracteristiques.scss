@@ -79,7 +79,7 @@ div {
 
                     &.comp {
                         display: grid;
-                        grid-template-columns: 29px 1fr repeat(5, 42.55px) 12.25px;
+                        grid-template-columns: 29px 1fr repeat(6, 42.55px) 12.25px;
                         grid-template-rows: max-content;
                         border: 2px solid $black;
                         padding: 0 5px 5px;
@@ -101,9 +101,7 @@ div {
 
                         span {
                             &.title {
-                                grid-column-start: 1;
-                                grid-column-end: 9;
-
+                                grid-column: 1 / 10;
                                 text-align: center;
                                 font-size: 15px;
                                 letter-spacing: 1px;
@@ -161,8 +159,7 @@ div {
                         }
 
                         a.add {
-                            grid-column-start: 1;
-                            grid-column-end: 9;
+                            grid-column: 1 / 10;
                             text-align: center;
                             width: 100%;
                             border-bottom: 2px solid #666;
@@ -224,6 +221,8 @@ div {
                         div.subcomp,
                         div.list {
                             display: grid;
+                            grid-column: 1 / 10;
+                            grid-template-columns: 29px 1fr repeat(6, 42.55px) 12.25px;
                             grid-template-rows: max-content;
                             gap: 5px;
 
@@ -292,8 +291,7 @@ div {
                             }
 
                             a.add {
-                                grid-column-start: 1;
-                                grid-column-end: 9;
+                                grid-column: 1 / 10;
                                 text-align: center;
                                 width: 100%;
                                 border-bottom: 2px solid #666;
@@ -460,6 +458,7 @@ div {
 
                         div {
                             &.line {
+                                grid-column: 1 / 10;
                                 display: grid;
                                 grid-template-columns: max-content 45px 1fr max-content 45px;
                                 gap: 5px;
