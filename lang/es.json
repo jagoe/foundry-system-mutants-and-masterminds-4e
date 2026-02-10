@@ -184,6 +184,7 @@
             "Dynamique": "Efecto Dinámico",
             "Principal": "Poder Principal",
             "TYPE": {
+                "Alteration": "Transformación",
                 "Attaque": "Ataque",
                 "Controle": "Controle",
                 "Defense": "Defensa",

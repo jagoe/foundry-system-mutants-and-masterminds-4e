@@ -260,6 +260,7 @@ MM4.pouvoirs = {};
 
 MM4.pouvoirs.types = {
     attaque: 'MM4.POUVOIR.TYPE.Attaque',
+    alteration: 'MM4.POUVOIR.TYPE.Alteration',
     defense: 'MM4.POUVOIR.TYPE.Defense',
     mouvement: 'MM4.POUVOIR.TYPE.Mouvement',
     generaux: 'MM4.POUVOIR.TYPE.Generaux',

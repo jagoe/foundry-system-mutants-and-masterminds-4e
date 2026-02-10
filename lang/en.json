@@ -184,6 +184,7 @@
             "Dynamique": "Dynamic Effect",
             "Principal": "Main Power",
             "TYPE": {
+                "Alteration": "Alteration",
                 "Attaque": "Attack",
                 "Controle": "Control",
                 "Defense": "Defense",
