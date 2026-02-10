@@ -10,7 +10,7 @@ div {
             &.inner {
                 display:grid;
                 grid-template-columns: 1fr 1fr;
-                grid-gap:5px;
+                gap:5px;
                 align-items: flex-start;
             }
 
@@ -19,7 +19,7 @@ div {
                 width:100%;
                 grid-template-columns: 1fr;
                 grid-template-rows: max-content;
-                grid-gap: 5px;
+                gap: 5px;
                 border: 2px solid $black;
             }
 
@@ -38,8 +38,8 @@ div {
                     width:100%;
                     grid-template-columns: 1fr 1fr;
                     grid-template-rows: max-content;
-                    grid-gap: 5px;
-                    padding: 0px 5px 5px;
+                    gap: 5px;
+                    padding: 0 5px 5px;
                 }
 
                 span {
@@ -63,8 +63,8 @@ div {
                     width:100%;
                     grid-template-columns: 1fr;
                     grid-template-rows: max-content;
-                    grid-gap: 5px;
-                    padding: 0px 5px 5px;
+                    gap: 5px;
+                    padding: 0 5px 5px;
                 }
 
                 label {

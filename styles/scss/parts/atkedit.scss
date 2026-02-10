@@ -1,7 +1,7 @@
 div.dialog-edit {
     section.window-content {
-        background:$fond;
-        padding-bottom: 0px;
+        background: $fond;
+        padding-bottom: 0;
 
         form {
             display: grid;
@@ -12,17 +12,13 @@ div.dialog-edit {
 
         section {
             &.header {
-                width:100%;
+                width: 100%;
                 border-width: 2px;
-                border-radius: 15px 15px 0px 0px;
-
+                border-radius: 15px 15px 0 0;
                 background-blend-mode: overlay, multiply;
-                background-size:500px;
-                background-repeat:no-repeat;
-
-                display:grid;
+                display: grid;
                 grid-template-columns: 1fr;
-                background:$imgbg $blue;
+                background: 500px $imgbg $blue no-repeat;
 
                 input,
                 span {
@@ -30,21 +26,23 @@ div.dialog-edit {
                     height: 3rem;
                     line-height: 3rem;
                     color: $fond;
-                    text-shadow: 2px 2px 0px $orange, 1px 1px 0px $color;
-                    font-family: "Bangers";
+                    text-shadow:
+                        2px 2px 0 $orange,
+                        1px 1px 0 $color;
+                    font-family: Bangers, sans-serif;
                     text-align: center;
-                    border:0px;
+                    border: 0;
 
                     &::placeholder {
-                        color:$fond;
+                        color: $fond;
                     }
                 }
             }
 
             &.body {
-                display:grid;
+                display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-gap: 5px;
+                gap: 5px;
                 padding: 5px;
                 align-items: flex-start;
                 align-content: flex-start;
@@ -55,28 +53,24 @@ div.dialog-edit {
                 @include fakebutton('btn');
 
                 select {
-                    -webkit-appearance: none;
-                    -moz-appearance: none;
-                    -o-appearance: none;
                     appearance: none;
                     text-align: center;
-                    background:transparent;
+                    background: transparent;
                     text-transform: uppercase;
-                    width:100%;
-                    height:29px;
-                    font-weight:bold;
-                    color:$color;
+                    width: 100%;
+                    height: 29px;
+                    font-weight: bold;
+                    color: $color;
 
                     &.full {
-                        grid-column-start: 1;
-                        grid-column-end: 3;
+                        grid-column: 1 / 3;
                     }
                 }
 
                 label {
                     display: grid;
                     grid-template-columns: 1fr 42px;
-                    grid-gap: 2px;
+                    gap: 2px;
                 }
 
                 i {
@@ -84,15 +78,15 @@ div.dialog-edit {
                 }
 
                 a.btn {
-                    height:29px;
+                    height: 29px;
                     line-height: 29px;
                 }
 
                 a.selected {
                     color: $lightOrange;
-                    border-color:$red;
+                    border-color: $red;
                     letter-spacing: 1px;
-                    text-shadow:none;
+                    text-shadow: none;
 
                     i {
                         display: block;
@@ -105,15 +99,15 @@ div.dialog-edit {
                     font-weight: bold;
                     justify-content: right;
                     align-items: center;
-                    font-family: Sriracha;
+                    font-family: Sriracha, sans-serif;
                 }
 
-                input[type=number] {
+                input[type='number'] {
                     width: 100%;
-                    padding-right: 0px;
-                    padding-left: 0px;
+                    padding-right: 0;
+                    padding-left: 0;
                     text-align: center;
-                    font-family: Sriracha;
+                    font-family: Sriracha, sans-serif;
                     height: 100%;
                     background: transparent;
                 }
@@ -165,16 +159,15 @@ div.dialog-edit {
 
                                 &.minus {
                                     &::before {
-                                        content:"-";
+                                        content: '-';
                                     }
                                 }
 
                                 &.plus {
                                     &::before {
-                                        content:"+";
+                                        content: '+';
                                     }
                                 }
-
                             }
                         }
 
@@ -182,7 +175,7 @@ div.dialog-edit {
                             &.innerData {
                                 display: grid;
                                 grid-template-columns: 1fr 1fr;
-                                grid-gap: 5px;
+                                gap: 5px;
                                 padding: 5px;
                                 border-bottom: 1px solid $black;
                             }
@@ -190,7 +183,7 @@ div.dialog-edit {
                             &.data {
                                 display: grid;
                                 grid-template-columns: 1fr;
-                                grid-gap: 5px;
+                                gap: 5px;
                                 align-items: flex-start;
                                 align-content: flex-start;
 
@@ -206,7 +199,7 @@ div.dialog-edit {
                                     &.value {
                                         display: grid;
                                         grid-template-columns: 1fr 50px;
-                                        grid-gap: 2px;
+                                        gap: 2px;
 
                                         span {
                                             font-variant: small-caps;
@@ -217,7 +210,7 @@ div.dialog-edit {
                                     &.line {
                                         display: grid;
                                         grid-template-columns: 1fr 125px;
-                                        grid-gap: 5px;
+                                        gap: 5px;
                                         align-items: flex-start;
                                         align-content: flex-start;
                                         padding: 2px;
@@ -225,15 +218,14 @@ div.dialog-edit {
                                     }
 
                                     &.status {
-                                        display:flex;
+                                        display: flex;
                                         flex-wrap: wrap;
                                         grid-column: 1 / 3;
 
                                         span {
                                             display: grid;
                                             grid-template-columns: 1fr max-content;
-                                            grid-gap: 5px;
-
+                                            gap: 5px;
                                             position: relative;
                                             text-align: center;
                                             justify-content: center;
@@ -253,7 +245,7 @@ div.dialog-edit {
                                             cursor: pointer;
 
                                             &:hover {
-                                                text-shadow: 0px 0px 3px;
+                                                text-shadow: 0 0 3px;
                                             }
                                         }
                                     }
@@ -262,7 +254,7 @@ div.dialog-edit {
                                         grid-column: 1 / 3;
                                         display: grid;
                                         grid-template-columns: 1fr 125px;
-                                        grid-gap: 5px;
+                                        gap: 5px;
                                     }
                                 }
                             }
@@ -279,20 +271,20 @@ div.dialog-edit {
                 }
 
                 .hidden {
-                    display:none !important;
+                    display: none !important;
                 }
             }
         }
 
         div {
             &.dialog-content {
-                flex:0;
+                flex: 0;
             }
 
             &.dialog-buttons {
-                display:grid;
+                display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-gap: 5px;
+                gap: 5px;
                 margin-bottom: 10px;
                 padding-top: 10px;
 
@@ -305,28 +297,28 @@ div.dialog-edit {
                     border-right: 2px solid #999;
                     border-radius: 5px;
                     border-style: outset;
-                    font-family: "Bangers";
+                    font-family: Bangers, sans-serif;
                     font-size: 15px;
                     font-weight: normal;
-                    line-height: 18px;
                     cursor: pointer;
-                    color: #363B44;
+                    color: #363b44;
                     text-transform: uppercase;
                     padding: 2px 5px;
-                    box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 1px 2px rgb(0 0 0 / 5%);
+                    box-shadow:
+                        inset 0 1px 0 rgb(255 255 255 / 20%),
+                        0 1px 2px rgb(0 0 0 / 5%);
                     letter-spacing: 1px;
                     height: 29px;
                     line-height: 29px;
 
                     &:hover {
                         color: $lightOrange;
-                        border-color:$red;
+                        border-color: $red;
                         letter-spacing: 1px;
-                        text-shadow:none;
+                        text-shadow: none;
                     }
                 }
             }
         }
     }
-
 }

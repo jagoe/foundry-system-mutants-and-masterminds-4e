@@ -4,22 +4,19 @@ div.tabeffects {
     &.active {
         display: grid !important;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 5px;
-
+        gap: 5px;
         align-items: flex-start;
         align-content: flex-start;
 
         >span {
             &.label {
                 grid-column: 1 / 3;
-
                 display: grid;
                 grid-template-columns: 1fr;
-                justify-content: center;
+                place-content: center center;
                 position: relative;
                 text-align: center;
                 align-items: center;
-                align-content:center;
                 font-size: 16px;
     
                 a, i {
@@ -40,7 +37,7 @@ div.tabeffects {
                 }
     
                 i {
-                    right: 0px;
+                    right: 0;
                     font-size: 26px;
                     cursor: pointer;
     
@@ -67,11 +64,10 @@ div.tabeffects {
             &.header {
                 display: grid;
                 grid-template-columns: 1fr;
-                justify-content: center;
+                place-content: center center;
                 position: relative;
                 text-align: center;
                 align-items: center;
-                align-content:center;
                 font-size: 16px;
                 border-bottom: 1px solid;
                 margin-bottom: 5px;
@@ -79,8 +75,8 @@ div.tabeffects {
                 input {
                     text-align: center;
                     font-variant: small-caps;
-                    border: 0px;
-                    border-radius: 0px;
+                    border: 0;
+                    border-radius: 0;
                     padding-right: 25px;
                     padding-left: 25px;
                 }
@@ -112,7 +108,7 @@ div.tabeffects {
             &.effectsBlock {
                 display: grid;
                 grid-template-columns: 1fr;
-                grid-gap: 5px;
+                gap: 5px;
                 align-items: flex-start;
                 align-content: flex-start;
             }
@@ -135,7 +131,7 @@ div.tabeffects {
             &.toEdit {
                 display: none;
                 grid-template-columns: max-content 1fr 150px 50px;
-                grid-gap: 5px;
+                gap: 5px;
                 align-items: center;
                 align-content: center;
     
@@ -153,7 +149,7 @@ div.tabeffects {
                     display: grid;
                     align-items: center;
                     height: 27px;
-                    grid-gap: 13px;
+                    gap: 13px;
     
                     &.header {
                         grid-template-columns: max-content 1fr;

@@ -8,7 +8,7 @@
         &.flavor {
             box-shadow: none;
             background: $imgbg $blue;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             text-align: center;
             line-height: 36px;
             background-blend-mode: overlay, multiply;
@@ -19,19 +19,19 @@
             padding-left: 2px;
             padding-right: 2px;
             text-shadow:
-                2px 2px 0px $orange,
-                1px 1px 0px $color;
-            border: 0px;
-            border-radius: 15px 15px 0px 0px;
+                2px 2px 0 $orange,
+                1px 1px 0 $color;
+            border: 0;
+            border-radius: 15px 15px 0 0;
             letter-spacing: 1px;
         }
 
         &.formula {
             box-shadow: none;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             font-size: 1em;
-            border: 0px;
-            border-radius: 0px;
+            border: 0;
+            border-radius: 0;
             background: $color;
             color: $fond;
             letter-spacing: 1px;
@@ -44,37 +44,33 @@
 
         &.result {
             box-shadow: none;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             font-size: 1em;
-            border: 0px;
-            border-radius: 0px;
             background: transparent;
             color: $color;
             font-weight: bold;
-            border-radius: 0px;
-            border: 0px;
+            border-radius: 0;
+            border: 0;
             border-left: 1px solid $black;
             border-right: 1px solid $black;
         }
 
         &.attack {
             box-shadow: none;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             font-size: 1em;
-            border: 0px;
-            border-radius: 0px;
             background: transparent;
             color: $color;
             font-weight: bold;
-            border-radius: 0px;
-            border: 0px;
+            border-radius: 0;
+            border: 0;
             border-top: 1px solid $black;
             border-left: 1px solid $black;
             border-right: 1px solid $black;
         }
 
         &.bottom {
-            margin: 0px;
+            margin: 0;
 
             &::after {
                 content: '';
@@ -83,7 +79,7 @@
                 height: 0.5rem;
                 width: 100%;
                 border-width: 2px;
-                border-radius: 0px 0px 15px 15px;
+                border-radius: 0 0 15px 15px;
                 background-blend-mode: overlay, multiply;
                 background: $imgbg $blue;
             }
@@ -106,7 +102,7 @@
             }
 
             ol {
-                margin-bottom: 0px;
+                margin-bottom: 0;
                 padding-bottom: 5px;
                 padding-left: 5px;
                 border-bottom: 1px solid var(--color-border-light-primary);
@@ -114,9 +110,9 @@
 
             span {
                 &.part-total {
-                    border-right: 0px;
-                    border-top: 0px;
-                    border-bottom: 0px;
+                    border-right: 0;
+                    border-top: 0;
+                    border-bottom: 0;
                 }
             }
         }
@@ -131,10 +127,10 @@
 
                     span {
                         box-shadow: none;
-                        font-family: 'Sriracha';
+                        font-family: Sriracha, sans-serif;
                         font-size: 0.8em;
-                        border: 0px;
-                        border-radius: 0px;
+                        border: 0;
+                        border-radius: 0;
                         background: transparent;
                         color: $color;
                         letter-spacing: 1px;
@@ -145,15 +141,13 @@
 
         &.btn {
             box-shadow: none;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             font-size: 1em;
-            border: 0px;
-            border-radius: 0px;
             background: transparent;
             color: $color;
             font-weight: bold;
-            border-radius: 0px;
-            border: 0px;
+            border-radius: 0;
+            border: 0;
             border-top: 1px solid $black;
             border-left: 1px solid $black;
             border-right: 1px solid $black;
@@ -162,33 +156,31 @@
             button {
                 box-shadow: none;
                 width: max-content;
-                border: 0px;
-                background: $blue;
+                border: 0;
                 font-weight: bold;
                 margin-top: 2px;
                 margin-bottom: 2px;
                 font-variant: small-caps;
                 font-size: 1em;
-                font-family: 'Sriracha';
+                font-family: Sriracha, sans-serif;
                 color: $fond;
                 letter-spacing: 1px;
-
                 background: $imgbg $blue;
                 background-blend-mode: overlay, multiply;
                 text-shadow:
-                    2px 2px 0px $orange,
-                    1px 1px 0px $color;
+                    2px 2px 0 $orange,
+                    1px 1px 0 $color;
                 background-size: 500px;
             }
 
             &.special {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-gap: 5px;
+                gap: 5px;
 
                 button {
                     width: 100%;
-                    padding: 0px;
+                    padding: 0;
                 }
             }
         }
@@ -203,7 +195,7 @@
             border-right: 1px solid $black;
             padding-left: 5px;
             padding-right: 5px;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             border-top: 1px solid $black;
         }
     }
@@ -219,7 +211,7 @@
         &.flavor {
             box-shadow: none;
             background: $imgbg $blue;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             text-align: center;
             line-height: 36px;
             background-blend-mode: overlay, multiply;
@@ -230,19 +222,19 @@
             padding-left: 2px;
             padding-right: 2px;
             text-shadow:
-                2px 2px 0px $orange,
-                1px 1px 0px $color;
-            border: 0px;
-            border-radius: 15px 15px 0px 0px;
+                2px 2px 0 $orange,
+                1px 1px 0 $color;
+            border: 0;
+            border-radius: 15px 15px 0 0;
             letter-spacing: 1px;
         }
 
         &.formula {
             box-shadow: none;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             font-size: 1em;
-            border: 0px;
-            border-radius: 0px;
+            border: 0;
+            border-radius: 0;
             background: $color;
             color: $fond;
             letter-spacing: 1px;
@@ -250,40 +242,36 @@
 
         &.result {
             box-shadow: none;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             font-size: 1em;
-            border: 0px;
-            border-radius: 0px;
             background: transparent;
             color: $color;
             font-weight: bold;
-            border-radius: 0px;
-            border: 0px;
+            border-radius: 0;
+            border: 0;
             border-left: 1px solid $black;
             border-right: 1px solid $black;
         }
 
         &.header {
             box-shadow: none;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             font-size: 1.2em;
-            border: 0px;
-            border-radius: 0px;
             background: transparent;
             color: $color;
             font-weight: bold;
-            border-radius: 0px;
-            border: 0px;
+            border-radius: 0;
+            border: 0;
             border-left: 1px solid $black;
             border-right: 1px solid $black;
             border-top: 1px solid $black;
             text-transform: uppercase;
             text-align: center;
-            margin: 0px;
+            margin: 0;
         }
 
         &.bottom {
-            margin: 0px;
+            margin: 0;
 
             &::after {
                 content: '';
@@ -292,7 +280,7 @@
                 height: 0.5rem;
                 width: 100%;
                 border-width: 2px;
-                border-radius: 0px 0px 15px 15px;
+                border-radius: 0 0 15px 15px;
                 background-blend-mode: overlay, multiply;
                 background: $imgbg $blue;
             }
@@ -315,7 +303,7 @@
             }
 
             ol {
-                margin-bottom: 0px;
+                margin-bottom: 0;
                 padding-bottom: 5px;
                 padding-left: 5px;
                 border-bottom: 1px solid var(--color-border-light-primary);
@@ -323,9 +311,9 @@
 
             span {
                 &.part-total {
-                    border-right: 0px;
-                    border-top: 0px;
-                    border-bottom: 0px;
+                    border-right: 0;
+                    border-top: 0;
+                    border-bottom: 0;
                 }
             }
         }
@@ -339,15 +327,13 @@
             border-left: 1px solid $black;
             border-right: 1px solid $black;
             border-top: 1px solid $black;
-            grid-gap: 2px;
+            gap: 2px;
 
             span {
-                font-family: 'Sriracha';
+                font-family: Sriracha, sans-serif;
 
                 &:first-of-type {
-                    grid-column-start: 1;
-                    grid-column-end: 3;
-
+                    grid-column: 1 / 3;
                     text-align: center;
                 }
             }
@@ -362,12 +348,12 @@
             border-left: 1px solid $black;
             border-right: 1px solid $black;
             border-top: 1px solid $black;
-            grid-gap: 2px;
+            gap: 2px;
             min-height: 10px;
             text-align: justify;
 
             span {
-                font-family: 'Sriracha';
+                font-family: Sriracha, sans-serif;
             }
         }
     }
@@ -382,7 +368,7 @@
             padding-left: 5px;
             padding-right: 5px;
             padding-bottom: 1px;
-            font-family: 'Kalam';
+            font-family: Kalam, sans-serif;
             letter-spacing: 0.5px;
             border-top: 1px solid $black;
             min-height: 10px;
@@ -397,7 +383,7 @@
         &.flavor {
             box-shadow: none;
             background: $imgbg $blue;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             text-align: center;
             line-height: 36px;
             background-blend-mode: overlay, multiply;
@@ -408,29 +394,29 @@
             padding-left: 2px;
             padding-right: 2px;
             text-shadow:
-                2px 2px 0px $orange,
-                1px 1px 0px $color;
-            border: 0px;
-            border-radius: 15px 15px 0px 0px;
+                2px 2px 0 $orange,
+                1px 1px 0 $color;
+            border: 0;
+            border-radius: 15px 15px 0 0;
             letter-spacing: 1px;
-            margin: 0px;
+            margin: 0;
         }
 
         &.rank {
             box-shadow: none;
-            font-family: 'Sriracha';
+            font-family: Sriracha, sans-serif;
             font-size: 1em;
-            border: 0px;
-            border-radius: 0px;
+            border: 0;
+            border-radius: 0;
             background: $color;
             color: $fond;
             letter-spacing: 1px;
-            margin: 0px;
+            margin: 0;
             text-align: center;
         }
 
         &.bottom {
-            margin: 0px;
+            margin: 0;
 
             &::after {
                 content: '';
@@ -439,7 +425,7 @@
                 height: 0.5rem;
                 width: 100%;
                 border-width: 2px;
-                border-radius: 0px 0px 15px 15px;
+                border-radius: 0 0 15px 15px;
                 background-blend-mode: overlay, multiply;
                 background: $imgbg $blue;
             }
@@ -456,11 +442,11 @@
             padding-left: 5px;
             padding-right: 5px;
             padding-bottom: 1px;
-            font-family: 'Kalam';
+            font-family: Kalam, sans-serif;
             letter-spacing: 0.5px;
             border-top: 1px solid $black;
             min-height: 10px;
-            margin: 0px;
+            margin: 0;
         }
     }
 }

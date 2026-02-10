@@ -1,30 +1,35 @@
+@import 'subparts/nav';
+@import 'subparts/options';
+
 div.equipement {
     section.window-content {
-        background:$fond;
-        color:$color;
-        font-family: Sriracha;
+        background: $fond;
+        color: $color;
+        font-family: Sriracha, sans-serif;
         font-weight: bold;
 
         form {
             min-width: min-content;
 
             input.mainName {
-                width:100%;
+                width: 100%;
                 border-width: 2px;
-                border-radius: 15px 15px 0px 0px;
-                background:$imgbg $blue;
+                border-radius: 15px 15px 0 0;
+                background: $imgbg $blue;
                 background-blend-mode: overlay, multiply;
-                background-size:500px;
-                background-repeat:no-repeat;
+                background-size: 500px;
+                background-repeat: no-repeat;
                 font-size: 4rem;
                 height: 4rem;
                 color: $fond;
-                text-shadow: 2px 2px 0px $orange, 1px 1px 0px $color;
-                font-family: "Bangers";
+                text-shadow:
+                    2px 2px 0 $orange,
+                    1px 1px 0 $color;
+                font-family: Bangers, sans-serif;
                 text-align: center;
 
                 &::placeholder {
-                    color:$fond;
+                    color: $fond;
                 }
             }
 
@@ -35,31 +40,25 @@ div.equipement {
 
         div {
             &.editor-content {
-                font-family: "Kalam";
+                font-family: Kalam, sans-serif;
                 letter-spacing: 0.5px;
             }
         }
     }
 
     section.sheet-body {
-        div.tab >div.inner {
-            display:grid;
+        div.tab > div.inner {
+            display: grid;
             grid-template-columns: 300px 1fr;
             grid-template-rows: max-content;
-            grid-gap:5px;
+            gap: 5px;
             align-items: flex-start;
             align-content: flex-start;
-            margin-top:5px;
-
+            margin-top: 5px;
             border: 1px solid $grey;
             border-top-color: $black;
             padding: 5px;
         }
-
-        @import "subparts/nav";
-        @import "subparts/options";
-
-
 
         img.profile-img {
             object-fit: contain;
@@ -68,44 +67,42 @@ div.equipement {
 
         div {
             &.details {
-                display:grid;
+                display: grid;
                 grid-template-columns: 100%;
                 align-items: flex-start;
                 align-content: flex-start;
-                row-gap:5px;
+                row-gap: 5px;
 
                 div {
                     &.cout {
-                        display:grid;
+                        display: grid;
                         grid-template-columns: 1fr 1fr;
                         align-items: flex-start;
                         align-content: flex-start;
-                        border:2px solid $black;
-                        padding:5px;
-                        grid-gap:5px;
+                        border: 2px solid $black;
+                        padding: 5px;
+                        gap: 5px;
 
                         label {
-                            grid-column-start: 1;
-                            grid-column-end: 3;
-
-                            display:grid;
+                            grid-column: 1 / 3;
+                            display: grid;
                             grid-template-columns: 1fr 45px;
 
                             span {
-                                display:grid;
-                                width:100%;
+                                display: grid;
+                                width: 100%;
                                 justify-content: center;
                                 align-items: center;
                             }
 
                             input {
-                                width:100%;
-                                padding-right: 0px;
-                                padding-left: 0px;
+                                width: 100%;
+                                padding-right: 0;
+                                padding-left: 0;
                                 text-align: center;
-                                font-family: Sriracha;
-                                height:100%;
-                                background:transparent;
+                                font-family: Sriracha, sans-serif;
+                                height: 100%;
+                                background: transparent;
                             }
                         }
                     }
@@ -113,27 +110,27 @@ div.equipement {
             }
 
             &.description {
-                display:grid;
+                display: grid;
                 grid-template-columns: 100%;
                 grid-template-rows: max-content 1fr;
                 align-items: flex-start;
                 align-content: flex-start;
-                border:2px solid $black;
-                padding:0px 0px 5px;
-                min-height:100px;
+                border: 2px solid $black;
+                padding: 0 0 5px;
+                min-height: 100px;
 
                 span.label {
-                    display:grid;
+                    display: grid;
                     font-variant: small-caps;
-                    width:100%;
+                    width: 100%;
                     align-items: center;
-                    padding-left:15px;
+                    padding-left: 15px;
                     font-size: 15px;
                 }
 
                 div.editor {
-                    min-height:100%;
-                    border-top:1px solid;
+                    min-height: 100%;
+                    border-top: 1px solid;
                     border-top-color: $color;
 
                     a.editor-edit {
@@ -149,7 +146,7 @@ div.equipement {
                         }
 
                         &.tox-tinymce {
-                            min-height:300px;
+                            min-height: 300px;
                         }
                     }
                 }

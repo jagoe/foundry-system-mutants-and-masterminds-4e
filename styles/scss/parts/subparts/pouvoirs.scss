@@ -6,23 +6,22 @@ div {
 
         div {
             &.submenu {
-                display:grid;
-                grid-template-columns: repeat(auto-fit, minmax(0px, auto));
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(0, auto));
                 justify-content: left;
-                grid-gap: 5px;
+                gap: 5px;
 
                 a {
                     &.filtre {
-                        position:relative;
+                        position: relative;
                         border-bottom: 2px solid #666;
                         border-color: #aaa;
                         border-radius: 5px;
                         border-right: 3px solid #999;
                         border-style: outset;
-                        font-family: "Bangers";
+                        font-family: Bangers, sans-serif;
                         font-size: 13px;
                         font-weight: normal;
-                        line-height: 18px;
                         cursor: pointer;
                         color: $color;
                         text-transform: uppercase;
@@ -41,13 +40,12 @@ div {
                         }
 
                         &.selected {
-                            color:$color;
+                            color: $color;
                             justify-content: left;
-
                             border-color: $red;
                             letter-spacing: 1px;
                             text-shadow: none;
-                            border-width:2px;
+                            border-width: 2px;
 
                             i {
                                 position: absolute;
@@ -58,7 +56,7 @@ div {
 
                         &.unselected {
                             justify-content: center;
-                            color:$grey;
+                            color: $grey;
                             padding-right: 5px;
                         }
                     }
@@ -66,38 +64,37 @@ div {
             }
 
             &.lPouvoirs {
-                display:none;
+                display: none;
                 grid-template-columns: 1fr 1fr;
                 align-items: flex-start;
                 align-content: flex-start;
                 padding-top: 5px;
-                grid-gap: 5px;
+                gap: 5px;
 
                 @include fakebutton('item-create');
                 @include fakebutton('btnHeader');
 
                 a.item-create {
-                    grid-column-start: 1;
-                    grid-column-end: 3;
+                    grid-column: 1 / 3;
                 }
 
                 &.show {
-                    display:grid;
+                    display: grid;
                 }
 
                 header.grpSep {
-                    grid-column-start: 1;
-                    grid-column-end: 3;
-                    position:relative;
+                    grid-column: 1 / 3;
+                    position: relative;
 
                     span.deploy {
                         position: absolute;
-                        top: 0px;
+                        top: 0;
                         left: 10px;
                         z-index: 999;
 
                         i {
-                            cursor:pointer;
+                            cursor: pointer;
+
                             &::before {
                                 border: 2px solid $black;
                                 font-size: 13px;
@@ -111,13 +108,13 @@ div {
 
                             &.plus {
                                 &::before {
-                                    content: "+";
+                                    content: '+';
                                 }
                             }
 
                             &.minus {
                                 &::before {
-                                    content: "-";
+                                    content: '-';
                                 }
                             }
                         }
@@ -125,7 +122,7 @@ div {
 
                     h1 {
                         text-align: center;
-                        border: 0px;
+                        border: 0;
                         margin-bottom: -1px;
                         font-size: 20px;
                         line-height: 30px;
@@ -135,61 +132,55 @@ div {
 
                 div {
                     &.outerGrpPwr {
-                        grid-column-start: 1;
-                        grid-column-end: 3;
-
+                        grid-column: 1 / 3;
                         grid-template-columns: 1fr 1fr;
                         align-items: flex-start;
                         align-content: flex-start;
-                        grid-gap: 5px;
+                        gap: 5px;
                     }
 
                     &.grpPwr {
-                        grid-column-start: 1;
-                        grid-column-end: 3;
-
-                        display:grid;
+                        grid-column: 1 / 3;
+                        display: grid;
                         grid-template-columns: 1fr 1fr;
                         align-items: flex-start;
                         align-content: flex-start;
-                        grid-gap: 5px;
+                        gap: 5px;
                         padding: 5px;
                         border: 1px solid $grey;
 
                         &:nth-of-type(even) {
-                            &>div.pwr {
+                            & > div.pwr {
                                 div.pwrheader {
-                                    background:$imgbg $lightGreen;
+                                    background: $imgbg $lightGreen;
                                 }
 
                                 &::after {
-                                    background:$imgbg $lightGreen;
+                                    background: $imgbg $lightGreen;
                                 }
                             }
                         }
 
                         &:nth-of-type(odd) {
-                            &>div.pwr {
+                            & > div.pwr {
                                 div.pwrheader {
-                                    background:$imgbg $darkBlue;
+                                    background: $imgbg $darkBlue;
                                 }
-                                
+
                                 &::after {
-                                    background:$imgbg $darkBlue;
+                                    background: $imgbg $darkBlue;
                                 }
                             }
                         }
                     }
 
                     &.grpPwrAlt {
-                        grid-column-start: 1;
-                        grid-column-end: 3;
-
-                        display:grid;
+                        grid-column: 1 / 3;
+                        display: grid;
                         grid-template-columns: 1fr 1fr;
                         align-items: flex-start;
                         align-content: flex-start;
-                        grid-gap: 5px;
+                        gap: 5px;
                         padding: 5px;
                         border: 1px solid $grey;
                     }
@@ -197,75 +188,67 @@ div {
                     &.pwr {
                         div {
                             &.pwrheader {
-                                grid-column-start: 1;
-                                grid-column-end: 3;
-
-                                position:relative;
-                                width:100%;
-
-                                text-shadow: 2px 2px 0px $orange, 1px 1px 0px $color;
-                                font-family: "Bangers";
-
+                                grid-column: 1 / 3;
+                                position: relative;
+                                width: 100%;
+                                text-shadow:
+                                    2px 2px 0 $orange,
+                                    1px 1px 0 $color;
+                                font-family: Bangers, sans-serif;
                                 border-width: 2px;
-                                border-radius: 0px 0px 0px 0px;
-                                
+                                border-radius: 0;
                                 background-blend-mode: overlay, multiply;
-                                background-size:500px;
-                                background-repeat:no-repeat;
+                                background-size: 500px;
+                                background-repeat: no-repeat;
 
                                 i {
-                                    position:absolute;
+                                    position: absolute;
                                     font-size: 1rem;
-                                    color:$fond;
-                                    top: 8px;                                    
-                                    cursor:pointer;
+                                    color: $fond;
+                                    top: 8px;
+                                    cursor: pointer;
 
                                     &.item-edit {
-                                        right:25px;
+                                        right: 25px;
                                     }
-                                    
+
                                     &.item-delete {
-                                        right:5px;
+                                        right: 5px;
                                     }
 
                                     &:hover {
-                                        text-shadow: 0px 0px 3px;
+                                        text-shadow: 0 0 3px;
                                     }
                                 }
 
                                 &.blue {
-                                    background:$imgbg $blue;
+                                    background: $imgbg $blue;
                                 }
 
                                 &.red {
-                                    background:$imgbg $orange;
+                                    background: $imgbg $orange;
                                 }
 
                                 &.violet {
-                                    background:$imgbg $violet;
+                                    background: $imgbg $violet;
                                 }
                             }
-                            
+
                             &.pwreffects {
-                                grid-column-start: 1;
-                                grid-column-end: 3;
-
-                                position:relative;
-                                width:100%;
-
-                                font-family: "Bangers";
-
+                                grid-column: 1 / 3;
+                                position: relative;
+                                width: 100%;
+                                font-family: Bangers, sans-serif;
                                 border-width: 2px;
-                                
-                                background:$color;
+                                background: $color;
                                 background-blend-mode: overlay, multiply;
-                                background-size:500px;
-                                background-repeat:no-repeat;
+                                background-size: 500px;
+                                background-repeat: no-repeat;
                                 border-bottom: 1px solid var(--color-border-light-tertiary);
 
                                 span {
                                     width: 100%;
-                                    margin: 0px;
+                                    margin: 0;
                                     font-size: 1rem;
                                     font-weight: normal;
                                 }
@@ -288,18 +271,16 @@ div {
                                 margin-right: 50px;
                                 white-space: nowrap;
                                 align-items: center;
-                                align-content: center;                                
+                                align-content: center;
                             }
                         }
 
                         header {
-                            grid-column-start: 1;
-                            grid-column-end: 3;
-
+                            grid-column: 1 / 3;
                             display: grid;
-                            width:100%;
+                            width: 100%;
                             grid-template-columns: 1fr;
-                            position:relative;
+                            position: relative;
 
                             span {
                                 &.deploy {
@@ -309,7 +290,8 @@ div {
                                     z-index: 999;
 
                                     i {
-                                        cursor:pointer;
+                                        cursor: pointer;
+
                                         &::before {
                                             border: 2px solid $fond;
                                             font-size: 13px;
@@ -320,16 +302,16 @@ div {
                                             color: $fond;
                                             height: 23px;
                                         }
-    
+
                                         &.plus {
                                             &::before {
-                                                content: "+";
+                                                content: '+';
                                             }
                                         }
-    
+
                                         &.minus {
                                             &::before {
-                                                content: "-";
+                                                content: '-';
                                             }
                                         }
                                     }
@@ -338,9 +320,9 @@ div {
 
                             &.withoutVariante {
                                 div.pwrheader {
-                                    border-radius: 15px 15px 0px 0px;
+                                    border-radius: 15px 15px 0 0;
                                 }
-    
+
                                 span.deploy {
                                     top: 3px;
                                 }
@@ -349,74 +331,71 @@ div {
 
                         &.blue {
                             div.pwrheader {
-                                background:$imgbg $blue;
+                                background: $imgbg $blue;
                             }
 
                             &::after {
-                                content:"";
+                                content: '';
                                 display: grid;
                                 grid-template-columns: 1fr;
                                 height: 0.5rem;
                                 width: 100%;
                                 border-width: 2px;
-                                border-radius: 0px 0px 15px 15px;
+                                border-radius: 0 0 15px 15px;
                                 background-blend-mode: overlay, multiply;
-                                background:$imgbg $blue;
+                                background: $imgbg $blue;
                             }
                         }
 
                         &.red {
                             div.pwrheader {
-                                background:$imgbg $orange;
+                                background: $imgbg $orange;
                             }
 
                             &::after {
-                                content:"";
+                                content: '';
                                 display: grid;
                                 grid-template-columns: 1fr;
                                 height: 0.5rem;
                                 width: 100%;
                                 border-width: 2px;
-                                border-radius: 0px 0px 15px 15px;
+                                border-radius: 0 0 15px 15px;
                                 background-blend-mode: overlay, multiply;
-                                background:$imgbg $orange;
+                                background: $imgbg $orange;
                             }
                         }
 
                         &.violet {
                             div.pwrheader {
-                                background:$imgbg $violet;
+                                background: $imgbg $violet;
                             }
 
                             &::after {
-                                content:"";
+                                content: '';
                                 display: grid;
                                 grid-template-columns: 1fr;
                                 height: 0.5rem;
                                 width: 100%;
                                 border-width: 2px;
-                                border-radius: 0px 0px 15px 15px;
+                                border-radius: 0 0 15px 15px;
                                 background-blend-mode: overlay, multiply;
-                                background:$imgbg $violet;
+                                background: $imgbg $violet;
                             }
                         }
 
                         a {
                             &.btnHeader {
-                                width:150px;
+                                width: 150px;
                                 border-top: 2px solid #aaa;
                                 border-left: 2px solid #aaa;
                                 border-right: 2px solid #999;
                                 border-style: outset;
-                                border-bottom: 0px;
-                                border-radius: 15px 15px 0px 0px;
-                                padding-left: 15px;
-                                padding-right: 5px;
-                                padding-bottom: 0px;
+                                border-bottom: 0;
+                                border-radius: 15px 15px 0 0;
+                                padding: 4px 5px 0 15px;
                                 justify-content: left;
                                 font-size: 14px;
                                 opacity: 0.8;
-                                padding-top: 4px;
                                 height: 24px;
 
                                 &.selected {
@@ -438,110 +417,105 @@ div {
                                 border-top: 2px solid #aaa;
                                 border-left: 2px solid #aaa;
                                 border-right: 2px solid #999;
-                                border-bottom: 0px;
-                                border-radius: 15px 15px 0px 0px;
+                                border-bottom: 0;
+                                border-radius: 15px 15px 0 0;
                                 border-style: outset;
                                 width: 150px;
                                 text-align: right;
                                 color: $color;
                                 height: 24px;
-                                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-                                background-image:linear-gradient(180deg, white, #e6e6e6);
+                                box-shadow:
+                                    inset 0 1px 0 rgb(255 255 255 / 20%),
+                                    0 1px 2px rgb(0 0 0 / 5%);
+                                background-image: linear-gradient(180deg, white, #e6e6e6);
                             }
                         }
                     }
 
                     &.bottom {
-                        display:grid;
+                        display: grid;
                         grid-template-columns: 1fr;
                         height: 0.5rem;
-
-                        width:100%;
+                        width: 100%;
                         border-width: 2px;
-                        border-radius: 0px 0px 15px 15px;
-                        
+                        border-radius: 0 0 15px 15px;
                         background-blend-mode: overlay, multiply;
 
                         &.col2 {
-                            grid-column-start: 1;
-                            grid-column-end: 3;
+                            grid-column: 1 / 3;
                         }
 
                         &.blue {
-                            background:$imgbg $blue;
+                            background: $imgbg $blue;
                         }
 
                         &.red {
-                            background:$imgbg $orange;
+                            background: $imgbg $orange;
                         }
 
                         &.violet {
-                            background:$imgbg $violet;
+                            background: $imgbg $violet;
                         }
                     }
 
                     &.allData {
-                        display:grid;
+                        display: grid;
                         grid-template-columns: 1fr 1fr;
                         align-items: flex-start;
                         align-content: flex-start;
                     }
 
                     &.data {
-                        grid-column-start: 1;
-                        grid-column-end: 3;
-                        
-                        display:grid;
+                        grid-column: 1 / 3;
+                        display: grid;
                         grid-template-columns: repeat(3, max-content) 29px;
-                        grid-gap: 5px;
+                        gap: 5px;
                         justify-content: space-between;
-                        width:100%;
+                        width: 100%;
                         padding-left: 5px;
-                        border-left:1px solid $color;
-                        border-right:1px solid $color;
-                        min-height:29px;
+                        border-left: 1px solid $color;
+                        border-right: 1px solid $color;
+                        min-height: 29px;
 
                         span {
-                            display:flex;
+                            display: flex;
                             align-items: center;
                             align-content: center;
                             font-size: 0.8rem;
                             font-weight: normal;
 
                             &.col4 {
-                                grid-column-start: 2;
-                                grid-column-end: 5;
+                                grid-column: 2 / 5;
                                 justify-content: right;
                                 padding-right: 5px;
                             }
 
                             &.col4L {
-                                grid-column-start: 1;
-                                grid-column-end: 5;
+                                grid-column: 1 / 5;
                                 justify-content: left;
                             }
                         }
 
                         &.black {
-                            background:$color;
-                            border-left:0px;
-                            border-right:0px;
+                            background: $color;
+                            border-left: 0;
+                            border-right: 0;
 
                             span {
-                                color:$fond;
+                                color: $fond;
                             }
                         }
 
                         a {
                             display: flex;
                             justify-content: center;
-                            align-items:center;
+                            align-items: center;
                             background-image: linear-gradient(180deg, $white, $dwhite);
                             width: 100%;
                             height: 100%;
                             border: 1px solid #aaa;
                             border-style: outset;
-                            font-family: "Bangers";
+                            font-family: Bangers, sans-serif;
                             font-size: 16px;
                             font-weight: normal;
                             line-height: 18px;
@@ -549,8 +523,10 @@ div {
                             color: $color;
                             text-transform: uppercase;
                             padding: 2px 5px;
-                            box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 1px 2px rgb(0 0 0 / 5%);
-                            margin-right:1px;
+                            box-shadow:
+                                inset 0 1px 0 rgb(255 255 255 / 20%),
+                                0 1px 2px rgb(0 0 0 / 5%);
+                            margin-right: 1px;
 
                             &:hover {
                                 color: $lightOrange;
@@ -562,21 +538,19 @@ div {
                     }
 
                     &.dataSpecial {
-                        grid-column-start: 1;
-                        grid-column-end: 3;
-                        
-                        display:grid;
+                        grid-column: 1 / 3;
+                        display: grid;
                         grid-template-columns: 1fr 45px max-content;
-                        grid-gap: 5px;
+                        gap: 5px;
                         justify-content: space-between;
-                        width:100%;
+                        width: 100%;
                         padding-left: 5px;
                         padding-right: 5px;
                         border-top: 1px solid var(--color-border-light-tertiary);
 
                         span {
-                            display:flex;
-                            width:100%;
+                            display: flex;
+                            width: 100%;
                             align-items: center;
                             align-content: center;
                             font-size: 0.8rem;
@@ -588,29 +562,29 @@ div {
                         }
 
                         input {
-                            width:100%;
-                            padding-right: 0px;
-                            padding-left: 0px;
+                            width: 100%;
+                            padding-right: 0;
+                            padding-left: 0;
                             text-align: center;
-                            font-family: Sriracha;
-                            height:100%;
-                            background:transparent;
-                            border-top: 0px;
-                            border-bottom: 0px;
-                            border-radius:0px;
+                            font-family: Sriracha, sans-serif;
+                            height: 100%;
+                            background: transparent;
+                            border-top: 0;
+                            border-bottom: 0;
+                            border-radius: 0;
                         }
 
                         &.black {
-                            background:$color;
-                            border-left:0px;
-                            border-right:0px;
+                            background: $color;
+                            border-left: 0;
+                            border-right: 0;
 
                             span {
-                                color:$fond;
+                                color: $fond;
                             }
 
                             input {
-                                color:$fond;
+                                color: $fond;
                             }
                         }
 
@@ -623,7 +597,7 @@ div {
                             height: 100%;
                             border: 1px solid #aaa;
                             border-style: outset;
-                            font-family: "Bangers";
+                            font-family: Bangers, sans-serif;
                             font-size: 16px;
                             font-weight: normal;
                             line-height: 18px;
@@ -631,8 +605,10 @@ div {
                             color: $color;
                             text-transform: uppercase;
                             padding: 2px 5px;
-                            box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 1px 2px rgb(0 0 0 / 5%);
-                            margin-right:1px;
+                            box-shadow:
+                                inset 0 1px 0 rgb(255 255 255 / 20%),
+                                0 1px 2px rgb(0 0 0 / 5%);
+                            margin-right: 1px;
 
                             &:hover {
                                 color: $lightOrange;
@@ -645,75 +621,65 @@ div {
 
                     select {
                         &.link {
-                            grid-column-start: 1;
-                            grid-column-end: 5;
-
-                            width:100%;
+                            grid-column: 1 / 5;
+                            width: 100%;
                             color: $fond;
-                            font-family: "Bangers";
+                            font-family: Bangers, sans-serif;
                             text-align: center;
                             border-bottom: 1px solid var(--color-border-light-tertiary);
-                            background:$color;
-                            border-top: 0px;
-                            border-left:0px;
-                            border-right:0px;
-                            border-radius:0px;
-                            font-weight:normal;
+                            background: $color;
+                            border-top: 0;
+                            border-left: 0;
+                            border-right: 0;
+                            border-radius: 0;
+                            font-weight: normal;
                             letter-spacing: 1px;
-                            cursor:pointer;
-                            -webkit-appearance: none;
-                            -moz-appearance: none;
-                            -o-appearance: none;
+                            cursor: pointer;
                             appearance: none;
 
                             option {
-                                background:$color;
+                                background: $color;
                             }
                         }
-                        
                     }
 
                     &.details {
-                        grid-column-start: 1;
-                        grid-column-end: 3;
-
-                        display:grid;
+                        grid-column: 1 / 3;
+                        display: grid;
                         grid-template-columns: 1fr;
                         align-items: flex-start;
                         align-content: flex-start;
                         border-left: 1px solid $color;
-                        border-right:1px solid $color;
-                        border-top: 1px solid var(--color-border-light-primary);;
+                        border-right: 1px solid $color;
+                        border-top: 1px solid var(--color-border-light-primary);
 
                         span {
                             &.label {
-                                display:grid;
-                                width:100%;
+                                display: grid;
+                                width: 100%;
                                 align-items: center;
-                                align-content: center;
-                                justify-content: center;
+                                place-content: center center;
                                 font-size: 0.8rem;
-                                min-height:0.8rem;
+                                min-height: 0.8rem;
                                 padding-top: 2px;
                             }
 
                             &.text {
-                                display:grid;
+                                display: grid;
                                 word-break: keep-all;
-                                width:100%;
+                                width: 100%;
                                 align-items: flex-start;
-                                align-content: flex-start;
-                                justify-content: left;
+                                place-content: flex-start left;
                                 text-align: left;
-                                padding-left:5px;
-                                padding-right:5px;
+                                padding-left: 5px;
+                                padding-right: 5px;
                             }
                         }
                     }
 
                     &.mod {
-                        display:grid;
-                        height:100%;
+                        display: grid;
+                        height: 100%;
                         grid-template-columns: 1fr;
                         align-items: flex-start;
                         align-content: flex-start;
@@ -721,62 +687,56 @@ div {
 
                         span {
                             &.label {
-                                display:grid;
-                                width:100%;
+                                display: grid;
+                                width: 100%;
                                 align-items: center;
-                                align-content: center;
-                                justify-content: center;
+                                place-content: center center;
                                 font-size: 0.8rem;
-                                min-height:0.8rem;
+                                min-height: 0.8rem;
                                 padding-top: 2px;
                             }
 
                             &.text {
-                                position:relative;
-
-                                display:grid;
-                                width:100%;
+                                position: relative;
+                                display: grid;
+                                width: 100%;
                                 align-items: flex-start;
-                                align-content: flex-start;
-                                justify-content: left;
+                                place-content: flex-start left;
                                 text-align: left;
-                                padding-left:5px;
-                                padding-right:5px;
-                                padding-top: 2px;
-                                padding-bottom: 2px;
-                                min-height:19px;
-                                line-height:14px;
-                                border-top:1px dashed var(--color-border-light-primary);
-                                color:$color;
+                                padding: 2px 5px;
+                                min-height: 19px;
+                                line-height: 14px;
+                                border-top: 1px dashed var(--color-border-light-primary);
+                                color: $color;
 
                                 i {
-                                    position:absolute;
-                                    right:5px;
+                                    position: absolute;
+                                    right: 5px;
                                     top: 2px;
-                                    cursor:pointer;
+                                    cursor: pointer;
 
                                     div {
                                         &.infoExt {
-                                            display:none;
-                                            position:absolute;
-                                            width:175px;
-                                            min-height:20px;
-                                            padding:5px;
+                                            display: none;
+                                            position: absolute;
+                                            width: 175px;
+                                            min-height: 20px;
+                                            padding: 5px;
                                             text-align: justify;
-                                            border:1px solid $color;
+                                            border: 1px solid $color;
                                             border-radius: 5px;
-                                            background:$blue;
-                                            color:$fond;
-                                            font-family: Sriracha;
+                                            background: $blue;
+                                            color: $fond;
+                                            font-family: Sriracha, sans-serif;
                                             line-height: 12px;
-                                            text-shadow:none;
-                                            font-weight:normal;
+                                            text-shadow: none;
+                                            font-weight: normal;
                                             z-index: 999;
                                         }
                                     }
 
                                     &:hover {
-                                        text-shadow: 0px 0px 3px;
+                                        text-shadow: 0 0 3px;
                                     }
                                 }
                             }
@@ -784,27 +744,27 @@ div {
 
                         &.borderLeft {
                             border-left: 1px solid $color;
-                        }  
-                        
+                        }
+
                         &.borderRight {
                             border-right: 1px solid $color;
-                        } 
+                        }
+
                         &.borderLightLeft {
                             border-left: 1px solid var(--color-border-light-primary);
-                        }  
-                        
+                        }
+
                         &.borderLightRight {
                             border-right: 1px solid var(--color-border-light-primary);
-                        }   
+                        }
                     }
 
                     &.descripteurs {
-                        grid-column-start: 1;
-                        grid-column-end: 3;
+                        grid-column: 1 / 3;
                         border-left: 1px solid $color;
-                        border-right:1px solid $color;
-                        padding-left:5px;
-                        padding-right:5px;
+                        border-right: 1px solid $color;
+                        padding-left: 5px;
+                        padding-right: 5px;
                         font-size: 0.8rem;
                         text-align: justify;
                     }
@@ -812,26 +772,24 @@ div {
             }
 
             &.lTalents {
-                display:none;
+                display: none;
                 grid-template-columns: 1fr;
                 align-items: flex-start;
                 align-content: flex-start;
-                padding-top: 5px;
-                grid-gap: 5px;
-
+                gap: 5px;
                 border: 2px solid $black;
-                padding: 0px 5px 5px;
+                padding: 5px 5px 5px 0;
                 margin-top: 5px;
 
                 @include fakebutton('item-create');
 
                 &.show {
-                    display:grid;
+                    display: grid;
                 }
 
                 span {
                     &.title {
-                        width:100%;
+                        width: 100%;
                     }
 
                     &.deploy {
@@ -839,7 +797,7 @@ div {
                         align-items: center;
 
                         i {
-                            cursor:pointer;
+                            cursor: pointer;
 
                             &::before {
                                 border: 1px solid $black;
@@ -849,18 +807,18 @@ div {
                                 text-align: center;
                                 color: $black;
                                 height: 23px;
-                                display:block;
+                                display: block;
                             }
 
                             &.plus {
                                 &::before {
-                                    content: "+";
+                                    content: '+';
                                 }
                             }
 
                             &.minus {
                                 &::before {
-                                    content: "-";
+                                    content: '-';
                                 }
                             }
                         }
@@ -870,59 +828,59 @@ div {
                 div {
                     &.talent {
                         header {
-                            display:grid;
+                            display: grid;
                             grid-template-columns: 23px 29px 45px 1fr;
-                            grid-gap: 5px;
+                            gap: 5px;
 
                             @include fakebutton('sendInfos');
 
                             span {
                                 &.cout {
                                     width: 100%;
-                                    padding-right: 0px;
-                                    padding-left: 0px;
+                                    padding-right: 0;
+                                    padding-left: 0;
                                     text-align: center;
-                                    font-family: Sriracha;
+                                    font-family: Sriracha, sans-serif;
                                     height: 29px;
                                     background: transparent;
-                                    border:1px solid $black;
-                                } 
-                                
-                                &.header {
-                                    position:relative;
-                                    width: 100%;
-                                    padding-right: 0px;
-                                    padding-left: 0px;
-                                    text-align: left;
-                                    font-family: Sriracha;
-                                    height: 29px;
-                                    background: transparent;
-                                    border-bottom:1px solid $black;
-                                    
-                                    i.item-delete {
-                                        position:absolute;
-                                        right:5px;
-                                        top:5px;
-                                        cursor:pointer;
+                                    border: 1px solid $black;
+                                }
 
-                                        &:hover{
-                                            text-shadow: 0px 0px 3px;
+                                &.header {
+                                    position: relative;
+                                    width: 100%;
+                                    padding-right: 0;
+                                    padding-left: 0;
+                                    text-align: left;
+                                    font-family: Sriracha, sans-serif;
+                                    height: 29px;
+                                    background: transparent;
+                                    border-bottom: 1px solid $black;
+
+                                    i.item-delete {
+                                        position: absolute;
+                                        right: 5px;
+                                        top: 5px;
+                                        cursor: pointer;
+
+                                        &:hover {
+                                            text-shadow: 0 0 3px;
                                         }
                                     }
 
                                     i.item-edit {
-                                        position:absolute;
-                                        right:20px;
-                                        top:5px;
-                                        cursor:pointer;
+                                        position: absolute;
+                                        right: 20px;
+                                        top: 5px;
+                                        cursor: pointer;
 
-                                        &:hover{
-                                            text-shadow: 0px 0px 3px;
+                                        &:hover {
+                                            text-shadow: 0 0 3px;
                                         }
                                     }
                                 }
                             }
-                            
+
                             a {
                                 &.sendInfos {
                                     align-items: center;
@@ -936,51 +894,47 @@ div {
                         }
 
                         &:not(:first-of-type) {
-                        
-                            border-top:1px solid $black;
+                            border-top: 1px solid $black;
                             padding-top: 5px;
                             margin-top: 5px;
                         }
                     }
                 }
             }
-            
+
             &.lEquipements {
-                display:none;
+                display: none;
                 grid-template-columns: 1fr 1fr;
                 align-items: flex-start;
                 align-content: flex-start;
-                padding-top: 5px;
-                grid-gap: 5px;
-
+                gap: 5px;
                 border: 2px solid $black;
-                padding: 0px 5px 5px;
+                padding: 5px 5px 5px 0;
                 margin-top: 5px;
 
                 @include fakebutton('item-create');
-                
+
                 a.item-create {
-                    grid-column-start: 1;
-                    grid-column-end: 3;
+                    grid-column: 1 / 3;
                 }
 
                 &.show {
-                    display:grid;
+                    display: grid;
                 }
 
                 span {
                     &.title {
-                        display:block;
-                        width:100%;
+                        display: block;
+                        width: 100%;
                     }
 
                     &.score {
-                        display:block;
-                        width:100%;
+                        display: block;
+                        width: 100%;
                         text-align: right;
 
                         &.red {
-                            color:$red;
+                            color: $red;
                         }
                     }
 
@@ -989,7 +943,7 @@ div {
                         align-items: center;
 
                         i {
-                            cursor:pointer;
+                            cursor: pointer;
 
                             &::before {
                                 border: 1px solid $black;
@@ -999,18 +953,18 @@ div {
                                 text-align: center;
                                 color: $black;
                                 height: 23px;
-                                display:block;
+                                display: block;
                             }
 
                             &.plus {
                                 &::before {
-                                    content: "+";
+                                    content: '+';
                                 }
                             }
 
                             &.minus {
                                 &::before {
-                                    content: "-";
+                                    content: '-';
                                 }
                             }
                         }
@@ -1019,58 +973,57 @@ div {
 
                 div {
                     &.talent {
-                        grid-column-start: 1;
-                        grid-column-end: 3;
+                        grid-column: 1 / 3;
 
                         @include fakebutton('sendInfos');
 
                         header {
-                            display:grid;
+                            display: grid;
                             grid-template-columns: 23px 29px 45px 1fr;
-                            grid-gap: 5px;
+                            gap: 5px;
 
                             span {
                                 &.cout {
                                     width: 100%;
-                                    padding-right: 0px;
-                                    padding-left: 0px;
+                                    padding-right: 0;
+                                    padding-left: 0;
                                     text-align: center;
-                                    font-family: Sriracha;
+                                    font-family: Sriracha, sans-serif;
                                     height: 29px;
                                     background: transparent;
-                                    border:1px solid $black;
-                                } 
-                                
-                                &.header {
-                                    position:relative;
-                                    width: 100%;
-                                    padding-right: 0px;
-                                    padding-left: 0px;
-                                    text-align: left;
-                                    font-family: Sriracha;
-                                    height: 29px;
-                                    background: transparent;
-                                    border-bottom:1px solid $black;
-                                    
-                                    i.item-delete {
-                                        position:absolute;
-                                        right:5px;
-                                        top:5px;
-                                        cursor:pointer;
+                                    border: 1px solid $black;
+                                }
 
-                                        &:hover{
-                                            text-shadow: 0px 0px 3px;
+                                &.header {
+                                    position: relative;
+                                    width: 100%;
+                                    padding-right: 0;
+                                    padding-left: 0;
+                                    text-align: left;
+                                    font-family: Sriracha, sans-serif;
+                                    height: 29px;
+                                    background: transparent;
+                                    border-bottom: 1px solid $black;
+
+                                    i.item-delete {
+                                        position: absolute;
+                                        right: 5px;
+                                        top: 5px;
+                                        cursor: pointer;
+
+                                        &:hover {
+                                            text-shadow: 0 0 3px;
                                         }
                                     }
 
                                     i.item-edit {
-                                        position:absolute;
-                                        right:20px;
-                                        top:5px;
-                                        cursor:pointer;
+                                        position: absolute;
+                                        right: 20px;
+                                        top: 5px;
+                                        cursor: pointer;
 
-                                        &:hover{
-                                            text-shadow: 0px 0px 3px;
+                                        &:hover {
+                                            text-shadow: 0 0 3px;
                                         }
                                     }
                                 }
@@ -1089,8 +1042,7 @@ div {
                         }
 
                         &:not(:first-of-type) {
-                        
-                            border-top:1px solid $black;
+                            border-top: 1px solid $black;
                             padding-top: 5px;
                             margin-top: 5px;
                         }
