@@ -4,17 +4,37 @@ This is an unofficial Mutants & Masterminds 4E sheet.
 
 Credit for almost everything goes to the original developer, [Zakarik](https://github.com/Zakarik). I'm just trying to get a quick and dirty fork for 4E running for myself.
 
+Feel free to try and use the system yourself, but there will be no release and no guarantees.
+
 ## Todos
 
-* Add DEF
-* Rename FGHT to ATK
 * Combine DEX & AGI, including all derived stats
-* Remove Parry
+* Add missing skills
+  * Disguise
+  * Languages
+  * Magic
+  * Performance
+  * Survival
+* Remove Parry, remove Dodge DC, add Defense DC
 * Set Expertise cost to 4 for 1 PP
 * Allow setting a Power as Prepared Effect (costing 0 PP)
 * Add Foundry document linking to Powers, Modifiers, Advantages, Actors, etc.
 * Rename Injuries to Hits & add as modifier to Toughness rolls instead of reducing Toughness
 * Set manuever defaults to 5 instead of 2
+* Correct default attack damage conditions (when creating attacks)
+* Make sure existing conditions have correct effects
+* Add remaining conditions
+  * Broken
+  * Confused
+  * Delusion
+  * Destroyed
+  * Figment
+  * Frightened
+  * Hallucinating
+  * Hit*
+  * Phantasm
+  * Susceptible
+* Add effects capability w/ pre-defined effects for the conditions?
 
 I'll leave the rest of the readme as I found it.
 

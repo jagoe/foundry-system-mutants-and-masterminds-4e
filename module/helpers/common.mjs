@@ -711,20 +711,22 @@ export async function processImport(actor, data, actorType = 'personnage') {
         Stamina: 'endurance',
         Agility: 'agilite',
         Dexterity: 'dexterite',
-        Fighting: 'combativite',
         Awareness: 'sensibilite',
         Presence: 'presence',
         Intellect: 'intelligence',
+        Fighting: 'combativite',
+        Defense: 'defense',
     };
     const attributsShort = {
         STR: 'for',
         STA: 'end',
         AGI: 'agi',
         DEX: 'dex',
-        FGT: 'cbt',
         AWA: 'sns',
         PRE: 'prs',
         INT: 'int',
+        FGT: 'cbt',
+        DEF: 'def',
     };
     const skillsTRA = {
         Acrobaties: 'acrobaties',
@@ -791,6 +793,7 @@ export async function processImport(actor, data, actorType = 'personnage') {
     let listLangues = [];
     let endurance = 0;
     let combativite = 0;
+    let defense = 0;
     let sensibilite = 0;
     let agilite = 0;
     let totalAttrDef = {};
@@ -800,6 +803,7 @@ export async function processImport(actor, data, actorType = 'personnage') {
             if (attributsTRA[attr.name] === 'agilite') agilite = Number(attr.modified);
             if (attributsTRA[attr.name] === 'endurance') endurance = Number(attr.modified);
             if (attributsTRA[attr.name] === 'combativite') combativite = Number(attr.modified);
+            if (attributsTRA[attr.name] === 'defense') defense = Number(attr.modified);
             if (attributsTRA[attr.name] === 'sensibilite') sensibilite = Number(attr.modified);
 
             update[`system.caracteristique.${attributsTRA[attr.name]}.base`] = Math.max(Number(attr.base), -5);
@@ -809,7 +813,7 @@ export async function processImport(actor, data, actorType = 'personnage') {
                 attr.text === '-' && attr.cost.value === '-10' ? true : false;
         }
 
-        totalAttrDef['Dodge'] = agilite;
+        totalAttrDef['Dodge'] = defense;
         totalAttrDef['Parry'] = combativite;
         totalAttrDef['Fort'] = endurance;
         totalAttrDef['Tou'] = endurance;
@@ -1901,6 +1905,10 @@ export function getFullCarac(carac) {
 
         case 'cbt':
             result = 'combativite';
+            break;
+
+        case 'def':
+            result = 'defense';
             break;
 
         case 'sns':

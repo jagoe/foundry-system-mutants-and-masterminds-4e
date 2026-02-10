@@ -957,6 +957,7 @@ function parseAttributes(input) {
         stamina: { base: null, totalWithPowers: null },
         agility: { base: null, totalWithPowers: null },
         fighting: { base: null, totalWithPowers: null },
+        defense: { base: null, totalWithPowers: null },
         dexterity: { base: null, totalWithPowers: null },
         intelligence: { base: null, totalWithPowers: null },
         awareness: { base: null, totalWithPowers: null },

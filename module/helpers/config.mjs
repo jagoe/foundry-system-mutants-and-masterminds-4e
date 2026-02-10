@@ -9,12 +9,13 @@ MM4.LIST = {
     Caracteristiques: [
         'force',
         'agilite',
-        'combativite',
         'sensibilite',
         'endurance',
         'dexterite',
         'intelligence',
         'presence',
+        'combativite',
+        'defense',
     ],
     VehiculeCaracteristiques: ['force', 'vitesse', 'defense', 'robustesse'],
     Competences: [
@@ -96,8 +97,8 @@ MM4.LIST = {
     },
     Defenses: ['esquive', 'parade', 'vigueur', 'robustesse', 'volonte'],
     CarDefenses: {
-        esquive: 'agi',
-        parade: 'cbt',
+        esquive: 'def',
+        parade: 'def',
         vigueur: 'end',
         robustesse: 'end',
         volonte: 'sns',
@@ -165,23 +166,25 @@ MM4.qgtailles = {
 MM4.caracteristiques = {
     force: 'MM4.CARACTERISTIQUES.Force',
     agilite: 'MM4.CARACTERISTIQUES.Agilite',
-    combativite: 'MM4.CARACTERISTIQUES.Combativite',
     sensibilite: 'MM4.CARACTERISTIQUES.Sensibilite',
     endurance: 'MM4.CARACTERISTIQUES.Endurance',
     dexterite: 'MM4.CARACTERISTIQUES.Dexterite',
     intelligence: 'MM4.CARACTERISTIQUES.Intelligence',
     presence: 'MM4.CARACTERISTIQUES.Presence',
+    combativite: 'MM4.CARACTERISTIQUES.Combativite',
+    defense: 'MM4.CARACTERISTIQUES.Defense',
 };
 
 MM4.caracteristiquesshort = {
     for: 'MM4.CARACTERISTIQUES.Force-short',
     agi: 'MM4.CARACTERISTIQUES.Agilite-short',
-    cbt: 'MM4.CARACTERISTIQUES.Combativite-short',
     sns: 'MM4.CARACTERISTIQUES.Sensibilite-short',
     end: 'MM4.CARACTERISTIQUES.Endurance-short',
     dex: 'MM4.CARACTERISTIQUES.Dexterite-short',
     int: 'MM4.CARACTERISTIQUES.Intelligence-short',
     prs: 'MM4.CARACTERISTIQUES.Presence-short',
+    cbt: 'MM4.CARACTERISTIQUES.Combativite-short',
+    def: 'MM4.CARACTERISTIQUES.Defense-short',
 };
 
 MM4.competences = {
@@ -273,6 +276,7 @@ MM4.modsranks = {
     force: 'system.caracteristique.force',
     agilite: 'system.caracteristique.agilite',
     combativite: 'system.caracteristique.combativite',
+    defense: 'system.caracteristique.defense',
     sensibilite: 'system.caracteristique.sensibilite',
     endurance: 'system.caracteristique.endurance',
     dexterite: 'system.caracteristique.dexterite',
@@ -287,12 +291,13 @@ MM4.modsranks = {
 MM4.listmods = {
     'system.caracteristique.force': 'MM4.CARACTERISTIQUES.Force',
     'system.caracteristique.agilite': 'MM4.CARACTERISTIQUES.Agilite',
-    'system.caracteristique.combativite': 'MM4.CARACTERISTIQUES.Combativite',
     'system.caracteristique.sensibilite': 'MM4.CARACTERISTIQUES.Sensibilite',
     'system.caracteristique.endurance': 'MM4.CARACTERISTIQUES.Endurance',
     'system.caracteristique.dexterite': 'MM4.CARACTERISTIQUES.Dexterite',
     'system.caracteristique.intelligence': 'MM4.CARACTERISTIQUES.Intelligence',
     'system.caracteristique.presence': 'MM4.CARACTERISTIQUES.Presence',
+    'system.caracteristique.combativite': 'MM4.CARACTERISTIQUES.Combativite',
+    'system.caracteristique.defense': 'MM4.CARACTERISTIQUES.Defense',
     'system.defense.esquive': 'MM4.DEFENSE.Esquive',
     'system.defense.parade': 'MM4.DEFENSE.Parade',
     'system.defense.vigueur': 'MM4.DEFENSE.Vigueur',

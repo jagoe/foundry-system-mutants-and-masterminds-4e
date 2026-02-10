@@ -843,6 +843,14 @@ function convertToProcessableCharacterData(parsedData) {
         cost: {},
     });
     characterData.attributes.attribute.push({
+        name: 'Defense',
+        base: parsedData.defense.base,
+        text: parsedData.defense.base,
+        modified:
+            parsedData.defense.totalWithPowers == null ? parsedData.defense.base : parsedData.defense.totalWithPowers,
+        cost: {},
+    });
+    characterData.attributes.attribute.push({
         name: 'Intellect',
         base: parsedData.intelligence.base,
         text: parsedData.intelligence.base,
@@ -914,7 +922,7 @@ function convertToProcessableCharacterData(parsedData) {
         if (defenseModifiers.length == 0) {
             let defenseBaseStat;
             if (defense.defenseType == 'Dodge') {
-                defenseBaseStat = characterData.attributes.attribute.find((element) => element.name === 'Agility');
+                defenseBaseStat = characterData.attributes.attribute.find((element) => element.name === 'Defense');
             }
             if (defense.defenseType == 'Parry') {
                 defenseBaseStat = characterData.attributes.attribute.find((element) => element.name === 'Fighting');
