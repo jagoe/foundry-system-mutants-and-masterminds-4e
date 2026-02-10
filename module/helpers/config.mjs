@@ -24,13 +24,18 @@ MM4.LIST = {
         'acrobaties',
         'athletisme',
         'duperie',
+        'deguisement',
         'perspicacite',
         'intimidation',
         'investigation',
+        'langages',
+        'magie',
         'perception',
+        'performance',
         'persuasion',
         'habilete',
         'discretion',
+        'survie',
         'technologie',
         'soins',
         'vehicules',
@@ -43,8 +48,19 @@ MM4.LIST = {
         athletisme: {
             car: 'for',
         },
+        combatcontact: {
+            car: 'cbt',
+            canAdd: true,
+        },
         duperie: {
             car: 'prs',
+        },
+        deguisement: {
+            car: 'sns',
+        },
+        expertise: {
+            car: 'int',
+            canAdd: true,
         },
         perspicacite: {
             car: 'sns',
@@ -55,17 +71,33 @@ MM4.LIST = {
         investigation: {
             car: 'int',
         },
+        langages: {
+            car: 'int',
+        },
+        magie: {
+            car: 'int',
+        },
         perception: {
             car: 'sns',
         },
+        performance: {
+            car: 'prs',
+        },
         persuasion: {
             car: 'prs',
+        },
+        combatdistance: {
+            car: 'cbt',
+            canAdd: true,
         },
         habilete: {
             car: 'agi',
         },
         discretion: {
             car: 'agi',
+        },
+        survie: {
+            car: 'sns',
         },
         technologie: {
             car: 'int',
@@ -75,19 +107,6 @@ MM4.LIST = {
         },
         vehicules: {
             car: 'agi',
-        },
-        combatcontact: {
-            car: 'cbt',
-            canAdd: true,
-        },
-        combatdistance: {
-            car: 'cnt',
-            canAdd: true,
-        },
-        expertise: {
-            car: 'int',
-            canAdd: true,
-            carCanChange: true,
         },
         new: {
             car: 'int',
@@ -188,16 +207,21 @@ MM4.competences = {
     acrobaties: 'MM4.COMPETENCES.Acrobaties',
     athletisme: 'MM4.COMPETENCES.Athletisme',
     duperie: 'MM4.COMPETENCES.Duperie',
+    deguisement: 'MM4.COMPETENCES.Deguisement',
     expertise: 'MM4.COMPETENCES.Expertise',
     perspicacite: 'MM4.COMPETENCES.Perspicacite',
     combatcontact: 'MM4.COMPETENCES.Combatcontact',
     combatdistance: 'MM4.COMPETENCES.Combatdistance',
     intimidation: 'MM4.COMPETENCES.Intimidation',
     investigation: 'MM4.COMPETENCES.Investigation',
+    langages: 'MM4.COMPETENCES.Langages',
+    magie: 'MM4.COMPETENCES.Magie',
     perception: 'MM4.COMPETENCES.Perception',
+    performance: 'MM4.COMPETENCES.Performance',
     persuasion: 'MM4.COMPETENCES.Persuasion',
     habilete: 'MM4.COMPETENCES.Habilete',
     discretion: 'MM4.COMPETENCES.Discretion',
+    survie: 'MM4.COMPETENCES.Survie',
     technologie: 'MM4.COMPETENCES.Technologie',
     soins: 'MM4.COMPETENCES.Soins',
     vehicules: 'MM4.COMPETENCES.Vehicules',
@@ -301,11 +325,16 @@ MM4.listmods = {
     'system.competence.acrobaties': 'MM4.COMPETENCES.Acrobaties',
     'system.competence.athletisme': 'MM4.COMPETENCES.Athletisme',
     'system.competence.discretion': 'MM4.COMPETENCES.Discretion',
+    'system.competence.deguisement': 'MM4.COMPETENCES.Deguisement',
     'system.competence.duperie': 'MM4.COMPETENCES.Duperie',
+    'system.competence.langages': 'MM4.COMPETENCES.Langages',
     'system.competence.habilete': 'MM4.COMPETENCES.Habilete',
     'system.competence.intimidation': 'MM4.COMPETENCES.Intimidation',
     'system.competence.investigation': 'MM4.COMPETENCES.Investigation',
+    'system.competence.magie': 'MM4.COMPETENCES.Magie',
+    'system.competence.performance': 'MM4.COMPETENCES.Performance',
     'system.competence.perception': 'MM4.COMPETENCES.Perception',
+    'system.competence.survie': 'MM4.COMPETENCES.Survie',
     'system.competence.perspicacite': 'MM4.COMPETENCES.Perspicacite',
     'system.competence.persuasion': 'MM4.COMPETENCES.Persuasion',
     'system.competence.soins': 'MM4.COMPETENCES.Soins',
