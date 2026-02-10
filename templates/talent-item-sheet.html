@@ -1,5 +1,13 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <input name="name" class="mainName" type="text" value="{{data.name}}" placeholder="{{localize "MM4.Nom"}}" class="varianteName" data-single="true" />
+    <input
+        name="name"
+        class="mainName"
+        type="text"
+        value="{{data.name}}"
+        placeholder="{{localize 'MM4.Nom'}}"
+        class="varianteName"
+        data-single="true"
+    />
 
     <section class="sheet-body">
         {{!-- Sheet Tab Navigation --}}
@@ -20,7 +28,11 @@
 
                             <input type="number" name="system.rang" value="{{systemData.rang}}" />
                         </label>
-                        <a class="btn {{#if systemData.equipement}}selected{{/if}}" data-type="equipement" data-value="{{systemData.equipement}}">
+                        <a
+                            class="btn {{#if systemData.equipement}}selected{{/if}}"
+                            data-type="equipement"
+                            data-value="{{systemData.equipement}}"
+                        >
                             {{localize "MM4.TALENT.Equipement"}}
                         </a>
                     </div>
@@ -28,7 +40,8 @@
 
                 <div class="description">
                     <span class="label">{{localize "MM4.Description"}}</span>
-                    {{editor systemData.description target="system.description" button=true owner=owner editable=editable engine="prosemirror"}}
+                    {{editor systemData.description target="system.description" button=true owner=owner
+                    editable=editable engine="prosemirror"}}
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <input name="name" class="mainName" type="text" value="{{data.name}}" placeholder="{{localize "MM4.Nom"}}" />
+    <input name="name" class="mainName" type="text" value="{{data.name}}" placeholder="{{localize 'MM4.Nom'}}" />
 
     <section class="sheet-body">
         {{!-- Sheet Tab Navigation --}}
@@ -17,14 +17,15 @@
                         <label>
                             <span>{{localize "MM4.Cout"}}</span>
 
-                            <input type="number" name="system.cout" value="{{systemData.cout}}" min="0"/>
+                            <input type="number" name="system.cout" value="{{systemData.cout}}" min="0" />
                         </label>
                     </div>
                 </div>
 
                 <div class="description">
                     <span class="label">{{localize "MM4.Description"}}</span>
-                    {{editor systemData.description target="system.description" button=true owner=owner editable=editable engine="prosemirror"}}
+                    {{editor systemData.description target="system.description" button=true owner=owner
+                    editable=editable engine="prosemirror"}}
                 </div>
             </div>
         </div>

@@ -1,16 +1,16 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <input name="system.identite.name" class="identite" type="text" value="{{systemData.identite.name}}" placeholder="{{localize "MM4.Identite"}}" />
+        <input name="system.identite.name" class="identite" type="text" value="{{systemData.identite.name}}" placeholder="{{localize 'MM4.Identite'}}" />
 
-        <input name="name" class="hero" type="text" value="{{data.name}}" placeholder="{{localize "MM4.Hero"}}" />
+        <input name="name" class="hero" type="text" value="{{data.name}}" placeholder="{{localize 'MM4.Hero'}}" />
 
         <img class="logo-img" src="{{assetsPath}}/logo.webp" />
 
         <div class="block">
             {{#if systemData.identite.secret}}
-            <span class="switchIdentite" data-value="{{systemData.identite.secret}}" title="{{localize "MM4.TYPEIDENTITE.CliquePublique"}}">{{localize "MM4.TYPEIDENTITE.Secrete"}}</span>
+            <span class="switchIdentite" data-value="{{systemData.identite.secret}}" title="{{localize 'MM4.TYPEIDENTITE.CliquePublique'}}">{{localize "MM4.TYPEIDENTITE.Secrete"}}</span>
             {{else}}
-            <span class="switchIdentite" data-value="{{systemData.identite.secret}}" title="{{localize "MM4.TYPEIDENTITE.CliqueSecrete"}}">{{localize "MM4.TYPEIDENTITE.Publique"}}</span>
+            <span class="switchIdentite" data-value="{{systemData.identite.secret}}" title="{{localize 'MM4.TYPEIDENTITE.CliqueSecrete'}}">{{localize "MM4.TYPEIDENTITE.Publique"}}</span>
             {{/if}}
             <label>
                 <span>{{localize "MM4.Genre"}}:</span>
@@ -38,7 +38,7 @@
             </label>
         </div>
 
-        <input name="system.puissance" type="number" value="{{systemData.puissance}}" title="{{localize "MM4.Puissance"}}" min="0"/>
+        <input name="system.puissance" type="number" value="{{systemData.puissance}}" title="{{localize 'MM4.Puissance'}}" min="0"/>
     </header>
     <div class="totalpp">
         <details {{#if systemData.pp.opened}}open{{/if}}>

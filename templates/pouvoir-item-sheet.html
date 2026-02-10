@@ -4,13 +4,13 @@
     {{#if (isValue systemData.special 'alternatif')}}red{{/if}}
     {{#if (isValue systemData.special 'dynamique')}}violet{{/if}}
     ">
-        <input name="name" type="text" value="{{data.name}}" placeholder="{{localize " MM4.Nom"}}" />
-        <select name="system.type" title="{{localize " MM4.Type"}}">
+        <input name="name" type="text" value="{{data.name}}" placeholder="{{localize 'MM4.Nom'}}" />
+        <select name="system.type" title="{{localize 'MM4.Type'}}">
             {{selectOptions systemData.listTypes selected=systemData.type localize=true}}
         </select>
     </section>
     <input class="systemEffect" name="system.effetsprincipaux" type="text" value="{{systemData.effetsprincipaux}}"
-        placeholder="{{localize " MM4.EffetsPrincipaux"}}" />
+        placeholder="{{localize 'MM4.EffetsPrincipaux'}}" />
 
     <section class="sheet-body">
         {{!-- Sheet Tab Navigation --}}
@@ -167,7 +167,7 @@
                                 <div class="before" data-mod="extras" data-id="{{ext}}" data-value="{{key.details}}">
                                 </div>
                                 <input name="system.extras.{{ext}}.name" type="text" value="{{key.name}}"
-                                    placeholder="{{localize " MM4.Nom"}}" />
+                                    placeholder="{{localize 'MM4.Nom'}}" />
                                 <i class="fa-solid fa-trash-xmark delete" data-id="{{ext}}" data-type="extras"></i>
                             </summary>
 
@@ -217,7 +217,7 @@
                                 <div class="before" data-mod="defauts" data-id="{{ext}}" data-value="{{key.details}}">
                                 </div>
                                 <input name="system.defauts.{{ext}}.name" type="text" value="{{key.name}}"
-                                    placeholder="{{localize " MM4.Nom"}}" />
+                                    placeholder="{{localize 'MM4.Nom'}}" />
                                 <i class="fa-solid fa-trash-xmark delete" data-id="{{ext}}" data-type="defauts"></i>
                             </summary>
 

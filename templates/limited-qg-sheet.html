@@ -1,6 +1,6 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <input name="name" type="text" value="{{data.name}}" placeholder="{{localize "MM4.Hero"}}" />
+        <input name="name" type="text" value="{{data.name}}" placeholder="{{localize 'MM4.Hero'}}" />
 
         <img class="logo-img" src="{{assetsPath}}/logo.webp" />
     </header>
@@ -12,7 +12,8 @@
 
                 <div class="block">
                     <span>{{localize "MM4.Description"}}</span>
-                    {{editor systemData.description target="system.description" button=true owner=owner editable=editable engine="prosemirror"}}
+                    {{editor systemData.description target="system.description" button=true owner=owner
+                    editable=editable engine="prosemirror"}}
                 </div>
             </div>
         </div>

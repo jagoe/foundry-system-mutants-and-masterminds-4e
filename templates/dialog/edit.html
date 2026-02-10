@@ -1,32 +1,20 @@
 <section class="header">
-    <input class="label" type="text" value="{{label}}" placeholder="{{localize "MM4.Nom"}}" />
+    <input class="label" type="text" value="{{label}}" placeholder="{{localize 'MM4.Nom'}}" />
 </section>
 <section class="body">
-    {{#each data}}
-        {{#if (eq type 'check')}}
-            <a class="btn {{class}}" data-toggler="{{toggle}}">
-                {{label}}
-                <i class="fa-solid fa-hexagon-check"></i>
-            </a>
-        {{/if}}
-
-        {{#if (eq type 'input')}}
-            <label class="{{class}}">
-                <span>{{label}} : </span>
-                <input type="number" value="{{value}}" min="{{min}}" max="{{max}}" />
-            </label>
-        {{/if}}
-
-        {{#if (eq type 'select')}}
-            <select class="{{class}}" title="{{title}}">
-                {{selectOptions list selected=selected blank=blank nameAttr="key" labelAttr="label" sort=sort}}
-            </select>
-        {{/if}}
-
-        {{log this}}
-
-        {{#if (eq type 'repeat')}}
-            {{> (template 'dialog/parts/repeat.html') }}
-        {{/if}}
-    {{/each}}
+    {{#each data}} {{#if (eq type 'check')}}
+    <a class="btn {{class}}" data-toggler="{{toggle}}">
+        {{label}}
+        <i class="fa-solid fa-hexagon-check"></i>
+    </a>
+    {{/if}} {{#if (eq type 'input')}}
+    <label class="{{class}}">
+        <span>{{label}} : </span>
+        <input type="number" value="{{value}}" min="{{min}}" max="{{max}}" />
+    </label>
+    {{/if}} {{#if (eq type 'select')}}
+    <select class="{{class}}" title="{{title}}">
+        {{selectOptions list selected=selected blank=blank nameAttr="key" labelAttr="label" sort=sort}}
+    </select>
+    {{/if}} {{log this}} {{#if (eq type 'repeat')}} {{> (template 'dialog/parts/repeat.html') }} {{/if}} {{/each}}
 </section>

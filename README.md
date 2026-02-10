@@ -8,7 +8,6 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Add Foundry document linking to Powers, Modifiers, Advantages, Actors, etc.
 * Allow setting a Power as Prepared Effect (costing 0 PP)
 * Rename Injuries to Hits & add as modifier to Toughness rolls instead of reducing Toughness
 * Set manuever defaults to 5 instead of 2

@@ -1,5 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <input name="name" class="mainName" type="text" value="{{data.name}}" placeholder="{{localize "MM4.Nom"}}" />
+    <input name="name" class="mainName" type="text" value="{{data.name}}" placeholder="{{localize 'MM4.Nom'}}" />
 
     <section class="sheet-body">
         {{!-- Sheet Tab Navigation --}}
@@ -27,11 +27,19 @@
                             <input type="number" name="system.cout.value" value="{{systemData.cout.value}}" />
                         </label>
 
-                        <a class="btn {{#if systemData.cout.rang}}selected{{/if}}" data-type="rang" data-value="{{systemData.cout.rang}}">
+                        <a
+                            class="btn {{#if systemData.cout.rang}}selected{{/if}}"
+                            data-type="rang"
+                            data-value="{{systemData.cout.rang}}"
+                        >
                             {{localize "MM4.Parrang"}}
                         </a>
 
-                        <a class="btn {{#if systemData.cout.fixe}}selected{{/if}}" data-type="fixe" data-value="{{systemData.cout.fixe}}">
+                        <a
+                            class="btn {{#if systemData.cout.fixe}}selected{{/if}}"
+                            data-type="fixe"
+                            data-value="{{systemData.cout.fixe}}"
+                        >
                             {{localize "MM4.Fixe"}}
                         </a>
                     </div>
@@ -39,7 +47,8 @@
 
                 <div class="description">
                     <span class="label">{{localize "MM4.Description"}}</span>
-                    {{editor systemData.description target="system.description" button=true owner=owner editable=editable engine="prosemirror"}}
+                    {{editor systemData.description target="system.description" button=true owner=owner
+                    editable=editable engine="prosemirror"}}
                 </div>
             </div>
         </div>
