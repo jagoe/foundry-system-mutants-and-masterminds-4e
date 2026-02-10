@@ -8,7 +8,7 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Combine DEX & AGI, including all derived stats
+* Combine DEX & AGI into AGI, including all derived stats
 * Add missing skills
   * Disguise
   * Languages

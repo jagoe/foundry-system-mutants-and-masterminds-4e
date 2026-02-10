@@ -823,16 +823,6 @@ function convertToProcessableCharacterData(parsedData) {
         cost: {},
     });
     characterData.attributes.attribute.push({
-        name: 'Dexterity',
-        base: parsedData.dexterity.base,
-        text: parsedData.dexterity.base,
-        modified:
-            parsedData.dexterity.totalWithPowers == null
-                ? parsedData.dexterity.base
-                : parsedData.dexterity.totalWithPowers,
-        cost: {},
-    });
-    characterData.attributes.attribute.push({
         name: 'Fighting',
         base: parsedData.fighting.base,
         text: parsedData.fighting.base,

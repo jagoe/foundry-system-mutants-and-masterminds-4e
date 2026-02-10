@@ -11,7 +11,6 @@ MM4.LIST = {
         'agilite',
         'sensibilite',
         'endurance',
-        'dexterite',
         'intelligence',
         'presence',
         'combativite',
@@ -63,7 +62,7 @@ MM4.LIST = {
             car: 'prs',
         },
         habilete: {
-            car: 'dex',
+            car: 'agi',
         },
         discretion: {
             car: 'agi',
@@ -75,14 +74,14 @@ MM4.LIST = {
             car: 'int',
         },
         vehicules: {
-            car: 'dex',
+            car: 'agi',
         },
         combatcontact: {
             car: 'cbt',
             canAdd: true,
         },
         combatdistance: {
-            car: 'dex',
+            car: 'cnt',
             canAdd: true,
         },
         expertise: {
@@ -168,7 +167,6 @@ MM4.caracteristiques = {
     agilite: 'MM4.CARACTERISTIQUES.Agilite',
     sensibilite: 'MM4.CARACTERISTIQUES.Sensibilite',
     endurance: 'MM4.CARACTERISTIQUES.Endurance',
-    dexterite: 'MM4.CARACTERISTIQUES.Dexterite',
     intelligence: 'MM4.CARACTERISTIQUES.Intelligence',
     presence: 'MM4.CARACTERISTIQUES.Presence',
     combativite: 'MM4.CARACTERISTIQUES.Combativite',
@@ -180,7 +178,6 @@ MM4.caracteristiquesshort = {
     agi: 'MM4.CARACTERISTIQUES.Agilite-short',
     sns: 'MM4.CARACTERISTIQUES.Sensibilite-short',
     end: 'MM4.CARACTERISTIQUES.Endurance-short',
-    dex: 'MM4.CARACTERISTIQUES.Dexterite-short',
     int: 'MM4.CARACTERISTIQUES.Intelligence-short',
     prs: 'MM4.CARACTERISTIQUES.Presence-short',
     cbt: 'MM4.CARACTERISTIQUES.Combativite-short',
@@ -279,7 +276,6 @@ MM4.modsranks = {
     defense: 'system.caracteristique.defense',
     sensibilite: 'system.caracteristique.sensibilite',
     endurance: 'system.caracteristique.endurance',
-    dexterite: 'system.caracteristique.dexterite',
     intelligence: 'system.caracteristique.intelligence',
     presence: 'system.caracteristique.presence',
     esquive: 'system.defense.esquive',
@@ -293,7 +289,6 @@ MM4.listmods = {
     'system.caracteristique.agilite': 'MM4.CARACTERISTIQUES.Agilite',
     'system.caracteristique.sensibilite': 'MM4.CARACTERISTIQUES.Sensibilite',
     'system.caracteristique.endurance': 'MM4.CARACTERISTIQUES.Endurance',
-    'system.caracteristique.dexterite': 'MM4.CARACTERISTIQUES.Dexterite',
     'system.caracteristique.intelligence': 'MM4.CARACTERISTIQUES.Intelligence',
     'system.caracteristique.presence': 'MM4.CARACTERISTIQUES.Presence',
     'system.caracteristique.combativite': 'MM4.CARACTERISTIQUES.Combativite',

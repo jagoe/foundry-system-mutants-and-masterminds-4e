@@ -710,7 +710,6 @@ export async function processImport(actor, data, actorType = 'personnage') {
         Strength: 'force',
         Stamina: 'endurance',
         Agility: 'agilite',
-        Dexterity: 'dexterite',
         Awareness: 'sensibilite',
         Presence: 'presence',
         Intellect: 'intelligence',
@@ -721,7 +720,6 @@ export async function processImport(actor, data, actorType = 'personnage') {
         STR: 'for',
         STA: 'end',
         AGI: 'agi',
-        DEX: 'dex',
         AWA: 'sns',
         PRE: 'prs',
         INT: 'int',
@@ -1917,10 +1915,6 @@ export function getFullCarac(carac) {
 
         case 'end':
             result = 'endurance';
-            break;
-
-        case 'dex':
-            result = 'dexterite';
             break;
 
         case 'int':
