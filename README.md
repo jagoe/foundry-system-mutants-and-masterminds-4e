@@ -10,7 +10,6 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 * Allow setting a Power as Prepared Effect (costing 0 PP)
 * Rename Injuries to Hits & add as modifier to Toughness rolls instead of reducing Toughness
-* Set manuever defaults to 5 instead of 2
 * Correct default attack damage conditions (when creating attacks)
 * Make sure existing conditions have correct effects
 * Add remaining conditions

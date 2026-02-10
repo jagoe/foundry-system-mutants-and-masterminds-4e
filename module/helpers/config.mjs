@@ -130,24 +130,24 @@ MM4.LIST = {
     Strategie: ['attaqueprecision', 'attaqueoutrance', 'attaquedefensive', 'attaquepuissance'],
     LimiteStrategie: {
         attaqueprecision: {
-            attaque: 2,
+            attaque: 5,
             defense: 0,
-            effet: -2,
+            effet: -5,
         },
         attaqueoutrance: {
-            attaque: 2,
-            defense: -2,
+            attaque: 5,
+            defense: -5,
             effet: 0,
         },
         attaquedefensive: {
-            attaque: -2,
-            defense: 2,
+            attaque: -5,
+            defense: 5,
             effet: 0,
         },
         attaquepuissance: {
-            attaque: -2,
+            attaque: -5,
             defense: 0,
-            effet: 2,
+            effet: 5,
         },
     },
 };
