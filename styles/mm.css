@@ -9837,6 +9837,10 @@ div.tabeffects div.effects.edit div.show {
   display: none;
 }
 
+.editor.prosemirror .editor-container {
+  min-height: 100px;
+}
+
 img#logo {
   content: url("../assets/logo.webp");
   width: 115px;

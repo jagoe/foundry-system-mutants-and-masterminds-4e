@@ -8,8 +8,8 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Allow setting a Power as Prepared Effect (costing 0 PP)
 * Add Foundry document linking to Powers, Modifiers, Advantages, Actors, etc.
+* Allow setting a Power as Prepared Effect (costing 0 PP)
 * Rename Injuries to Hits & add as modifier to Toughness rolls instead of reducing Toughness
 * Set manuever defaults to 5 instead of 2
 * Correct default attack damage conditions (when creating attacks)
@@ -25,6 +25,8 @@ Feel free to try and use the system yourself, but there will be no release and n
   * Hit*
   * Phantasm
   * Susceptible
+* Skill checkbox: Untrained?
+  * If not set & no ranks, deactive rolling
 * Add effects capability w/ pre-defined effects for the conditions?
 
 I'll leave the rest of the readme as I found it.

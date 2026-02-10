@@ -4,7 +4,8 @@
 
         <div class="block">
             <span>{{localize "MM4.Description"}}</span>
-            {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
+            {{editor systemData.description target="system.description" button=true owner=owner editable=editable
+            engine="prosemirror"}}
         </div>
 
         <div class="complications twoBlock">
@@ -17,7 +18,7 @@
                     <i class="fa-solid fa-trash-xmark delete" data-id="{{complication}}" data-type="complications"></i>
                 </div>
                 {{editor key.description target=(mm4concat 'system.complications' complication 'description')
-                button=true owner=owner editable=@root/editable}}
+                button=true owner=owner editable=@root/editable engine="prosemirror"}}
             </div>
             {{/each}}
 
@@ -26,7 +27,8 @@
 
         <div class="block twoBlock">
             <span>{{localize "MM4.Historique"}}</span>
-            {{editor systemData.historique target="system.historique" button=true owner=owner editable=editable}}
+            {{editor systemData.historique target="system.historique" button=true owner=owner editable=editable
+            engine="prosemirror"}}
         </div>
     </div>
 </div>

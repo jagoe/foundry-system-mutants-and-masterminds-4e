@@ -1,4 +1,5 @@
 import { accessibility } from '../helpers/common.mjs';
+import { enrichContext } from '../helpers/foundry.mjs';
 import { templatesPath } from '../system.mjs';
 
 /**
@@ -10,8 +11,8 @@ export class ModificateurItemSheet extends ItemSheet {
         return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ['mm4', 'sheet', 'item', 'modificateur'],
             template: `${templatesPath}/modificateur-item-sheet.html`,
-            width: 850,
-            height: 500,
+            width: 1050,
+            height: 1250,
             tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'modificateur' }],
             dragDrop: [{ dragSelector: '.draggable', dropSelector: null }],
         });
@@ -20,10 +21,12 @@ export class ModificateurItemSheet extends ItemSheet {
     /* -------------------------------------------- */
 
     /** @inheritdoc */
-    getData() {
+    async getData() {
         const context = super.getData();
 
         context.systemData = context.data.system;
+
+        await enrichContext(this, context, 'data.system.description');
 
         return context;
     }

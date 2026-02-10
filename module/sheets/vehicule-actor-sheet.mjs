@@ -1,6 +1,6 @@
 import toggler from '../helpers/toggler.js';
 import { accessibility, speedCalc, commonHTML } from '../helpers/common.mjs';
-import { getSetting } from '../helpers/foundry.mjs';
+import { enrichContext, getSetting } from '../helpers/foundry.mjs';
 import { assetsPath, templatesPath } from '../system.mjs';
 
 /**
@@ -12,8 +12,8 @@ export class VehiculeActorSheet extends ActorSheet {
         return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ['mm4', 'sheet', 'actor', 'vehicule'],
             template: `${templatesPath}/vehicule-actor-sheet.html`,
-            width: 850,
-            height: 450,
+            width: 725,
+            height: 970,
             tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'details' }],
             dragDrop: [{ dragSelector: ['.draggable', '.reorder', '.item'], dropSelector: null }],
         });
@@ -22,7 +22,7 @@ export class VehiculeActorSheet extends ActorSheet {
     /* -------------------------------------------- */
 
     /** @inheritdoc */
-    getData() {
+    async getData() {
         const context = super.getData();
 
         this._prepareCharacterItems(context);
@@ -30,6 +30,15 @@ export class VehiculeActorSheet extends ActorSheet {
 
         context.systemData = context.data.system;
         this._prepareList(context);
+
+        const pouvoirs = this.document.pouvoirs;
+        const modificateurs = pouvoirs.flatMap((pouvoir) =>
+            Object.values(pouvoir.system.extras).concat(Object.values(pouvoir.system.defauts)),
+        );
+
+        await enrichContext(this, context, 'data.system.description', 'data.system.particularite');
+        await Promise.all(pouvoirs.map((pouvoir) => enrichContext(this, pouvoir, 'system.effets', 'system.notes')));
+        await Promise.all(modificateurs.map((mod) => enrichContext(this, mod, 'data.description')));
 
         return context;
     }
@@ -54,7 +63,7 @@ export class VehiculeActorSheet extends ActorSheet {
         toggler.init(this.id, html);
         accessibility(this.actor, html);
 
-        html.find('.pouvoirs .mod i').hover(
+        html.find('.lPouvoirs .mod i').hover(
             (ev) => {
                 const hover = ev.currentTarget;
                 const target = $(hover).find('div.infoExt');
@@ -274,20 +283,20 @@ export class VehiculeActorSheet extends ActorSheet {
 
         if (li.classList.contains('reorder')) {
             const sort = li.dataset.sort === undefined ? li.parentNode.dataset.sort : li.dataset.sort;
-            const attaque = this.actor.system[li.dataset.type][sort];
-            const competence = this.actor.system[li.dataset.type][li.dataset.comp].list[sort];
-            const basecompetence = this.actor.system.competence[sort];
 
             switch (li.dataset.type) {
                 case 'attaque':
-                case 'complications':
+                case 'complications': {
+                    const attaque = this.actor.system[li.dataset.type][sort];
                     dragData = {
                         type: li.dataset.type,
                         data: attaque,
                         sort: sort,
                     };
                     break;
-                case 'competence':
+                }
+                case 'competence': {
+                    const competence = this.actor.system[li.dataset.type][li.dataset.comp].list[sort];
                     dragData = {
                         type: li.dataset.type,
                         comp: li.dataset.comp,
@@ -295,13 +304,16 @@ export class VehiculeActorSheet extends ActorSheet {
                         sort: sort,
                     };
                     break;
-                case 'basecompetence':
+                }
+                case 'basecompetence': {
+                    const basecompetence = this.actor.system.competence[sort];
                     dragData = {
                         type: li.dataset.type,
                         data: basecompetence,
                         sort: sort,
                     };
                     break;
+                }
             }
         }
 

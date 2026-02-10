@@ -16,7 +16,7 @@
     "main": "index.js",
     "scripts": {
         "build": "sass styles/scss/mm.scss styles/mm.css",
-        "watch": "npx sass -w styles/scss/mm.scss styles/mm.css",
+        "watch": "sass -w styles/scss/mm.scss styles/mm.css",
         "lint": "eslint; stylelint \"**/*.scss\"",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

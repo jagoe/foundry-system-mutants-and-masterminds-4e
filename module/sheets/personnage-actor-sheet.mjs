@@ -8,7 +8,7 @@ import {
     speedCalc,
     commonHTML,
 } from '../helpers/common.mjs';
-import { getSetting } from '../helpers/foundry.mjs';
+import { enrichContext, getSetting } from '../helpers/foundry.mjs';
 import { assetsPath, templatesPath } from '../system.mjs';
 
 /**
@@ -20,8 +20,8 @@ export class PersonnageActorSheet extends ActorSheet {
         return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ['mm4', 'sheet', 'actor', 'personnage'],
             template: `${templatesPath}/personnage-actor-sheet.html`,
-            width: 850,
-            height: 720,
+            width: 1064,
+            height: 1750,
             tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'caracteristiques' }],
             dragDrop: [{ dragSelector: ['.draggable', '.item', '.reorder'], dropSelector: null }],
         });
@@ -30,7 +30,7 @@ export class PersonnageActorSheet extends ActorSheet {
     /* -------------------------------------------- */
 
     /** @inheritdoc */
-    getData() {
+    async getData() {
         const context = super.getData();
 
         this._prepareCharacterItems(context);
@@ -40,6 +40,20 @@ export class PersonnageActorSheet extends ActorSheet {
         this._prepareCompetences(context);
 
         if (getSetting('stackeddmg')) context.systemData.stackeddmg = true;
+
+        const complications = Object.values(context.data.system.complications);
+        const talents = this.document.talents;
+        const equipements = this.document.equipements;
+        const pouvoirs = this.document.pouvoirs;
+        const modificateurs = pouvoirs.flatMap((pouvoir) =>
+            Object.values(pouvoir.system.extras).concat(Object.values(pouvoir.system.defauts)),
+        );
+        await enrichContext(this, context, 'data.system.description', 'data.system.historique');
+        await Promise.all(complications.map(async (extra) => await enrichContext(this, extra, 'description')));
+        await Promise.all(talents.map((talent) => enrichContext(this, talent, 'system.description')));
+        await Promise.all(equipements.map((equipement) => enrichContext(this, equipement, 'system.description')));
+        await Promise.all(pouvoirs.map((pouvoir) => enrichContext(this, pouvoir, 'system.effets', 'system.notes')));
+        await Promise.all(modificateurs.map((mod) => enrichContext(this, mod, 'data.description')));
 
         return context;
     }
@@ -465,20 +479,20 @@ export class PersonnageActorSheet extends ActorSheet {
         if (li.classList.contains('reorder')) {
             const sort = li.dataset.sort === undefined ? li.parentNode.dataset.sort : li.dataset.sort;
             let type = li.dataset.type;
-            const attaque = this.actor.system[li.dataset.type][sort];
-            const competence = this.actor.system[li.dataset.type][li.dataset.comp].list[sort];
-            const basecompetence = this.actor.system.competence[sort];
 
             switch (type) {
                 case 'attaque':
-                case 'complications':
+                case 'complications': {
+                    const attaque = this.actor.system[li.dataset.type][sort];
                     dragData = {
                         type: type,
                         data: attaque,
                         sort: sort,
                     };
                     break;
-                case 'competence':
+                }
+                case 'competence': {
+                    const competence = this.actor.system[li.dataset.type][li.dataset.comp].list[sort];
                     dragData = {
                         type: li.dataset.type,
                         comp: li.dataset.comp,
@@ -486,13 +500,16 @@ export class PersonnageActorSheet extends ActorSheet {
                         sort: sort,
                     };
                     break;
-                case 'basecompetence':
+                }
+                case 'basecompetence': {
+                    const basecompetence = this.actor.system.competence[sort];
                     dragData = {
                         type: li.dataset.type,
                         data: basecompetence,
                         sort: sort,
                     };
                     break;
+                }
             }
         }
 

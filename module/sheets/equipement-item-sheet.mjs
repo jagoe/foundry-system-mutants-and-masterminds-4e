@@ -1,4 +1,5 @@
 import { accessibility } from '../helpers/common.mjs';
+import { enrichContext } from '../helpers/foundry.mjs';
 import { templatesPath } from '../system.mjs';
 
 /**
@@ -20,10 +21,12 @@ export class EquipementItemSheet extends ItemSheet {
     /* -------------------------------------------- */
 
     /** @inheritdoc */
-    getData() {
+    async getData() {
         const context = super.getData();
 
         context.systemData = context.data.system;
+
+        await enrichContext(this, context, 'data.system.description');
 
         return context;
     }

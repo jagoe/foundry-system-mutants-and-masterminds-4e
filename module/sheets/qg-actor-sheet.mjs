@@ -1,6 +1,6 @@
 import toggler from '../helpers/toggler.js';
 import { accessibility, speedCalc, commonHTML } from '../helpers/common.mjs';
-import { getSetting } from '../helpers/foundry.mjs';
+import { enrichContext, getSetting } from '../helpers/foundry.mjs';
 import { assetsPath, templatesPath } from '../system.mjs';
 
 /**
@@ -12,8 +12,8 @@ export class QGActorSheet extends ActorSheet {
         return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ['mm4', 'sheet', 'actor', 'qg'],
             template: `${templatesPath}/qg-actor-sheet.html`,
-            width: 850,
-            height: 500,
+            width: 725,
+            height: 850,
             tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'details' }],
             dragDrop: [{ dragSelector: ['.draggable', '.item', '.reorder'], dropSelector: null }],
         });
@@ -22,7 +22,7 @@ export class QGActorSheet extends ActorSheet {
     /* -------------------------------------------- */
 
     /** @inheritdoc */
-    getData() {
+    async getData() {
         const context = super.getData();
 
         this._prepareCharacterItems(context);
@@ -30,6 +30,15 @@ export class QGActorSheet extends ActorSheet {
 
         context.systemData = context.data.system;
         this._prepareList(context);
+
+        const pouvoirs = this.document.pouvoirs;
+        const modificateurs = pouvoirs.flatMap((pouvoir) =>
+            Object.values(pouvoir.system.extras).concat(Object.values(pouvoir.system.defauts)),
+        );
+
+        await enrichContext(this, context, 'data.system.description', 'data.system.particularite');
+        await Promise.all(pouvoirs.map((pouvoir) => enrichContext(this, pouvoir, 'system.effets', 'system.notes')));
+        await Promise.all(modificateurs.map((mod) => enrichContext(this, mod, 'data.description')));
 
         return context;
     }
@@ -53,6 +62,27 @@ export class QGActorSheet extends ActorSheet {
 
         toggler.init(this.id, html);
         accessibility(this.actor, html);
+
+        html.find('.lPouvoirs .mod i').hover(
+            (ev) => {
+                const hover = ev.currentTarget;
+                const target = $(hover).find('div.infoExt');
+                const parent = $(hover).parents('span.text');
+                target.css({
+                    display: 'block',
+                    'margin-top': `-${target.height() + 10}px`,
+                    'margin-left': `-${parent.width() - 10}px`,
+                    width: `${parent.width() - 10}px`,
+                });
+            },
+            (ev) => {
+                const hover = ev.currentTarget;
+                const target = $(hover).find('div.infoExt');
+                target.css({
+                    display: 'none',
+                });
+            },
+        );
 
         // Everything below here is only needed if the sheet is editable
         if (!this.isEditable) return;
@@ -253,20 +283,20 @@ export class QGActorSheet extends ActorSheet {
 
         if (li.classList.contains('reorder')) {
             const sort = li.dataset.sort === undefined ? li.parentNode.dataset.sort : li.dataset.sort;
-            const attaque = this.actor.system[li.dataset.type][sort];
-            const competence = this.actor.system[li.dataset.type][li.dataset.comp].list[sort];
-            const basecompetence = this.actor.system.competence[sort];
 
             switch (li.dataset.type) {
                 case 'attaque':
-                case 'complications':
+                case 'complications': {
+                    const attaque = this.actor.system[li.dataset.type][sort];
                     dragData = {
                         type: li.dataset.type,
                         data: attaque,
                         sort: sort,
                     };
                     break;
-                case 'competence':
+                }
+                case 'competence': {
+                    const competence = this.actor.system[li.dataset.type][li.dataset.comp].list[sort];
                     dragData = {
                         type: li.dataset.type,
                         comp: li.dataset.comp,
@@ -274,13 +304,16 @@ export class QGActorSheet extends ActorSheet {
                         sort: sort,
                     };
                     break;
-                case 'basecompetence':
+                }
+                case 'basecompetence': {
+                    const basecompetence = this.actor.system.competence[sort];
                     dragData = {
                         type: li.dataset.type,
                         data: basecompetence,
                         sort: sort,
                     };
                     break;
+                }
             }
         }
 

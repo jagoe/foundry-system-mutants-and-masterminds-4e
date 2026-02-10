@@ -53,7 +53,7 @@
 
                 <div class="block">
                     <span>{{localize "MM4.Description"}}</span>
-                    {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
+                    {{editor systemData.description target="system.description" button=true owner=owner editable=editable engine="prosemirror"}}
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                 <span class="header">{{localize "MM4.Particularites"}}</span>
                 <span class="label">{{localize "MM4.Cout"}} :</span>
                 <input type="number" name="system.cout.particularite" value="{{systemData.cout.particularite}}" min="0" />
-                {{editor systemData.particularite target="system.particularite" button=true owner=owner editable=editable}}
+                {{editor systemData.particularite target="system.particularite" button=true owner=owner editable=editable engine="prosemirror"}}
             </div>
 
             <div class="inner">

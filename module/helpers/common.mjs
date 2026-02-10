@@ -1224,7 +1224,6 @@ export async function processImport(actor, data, actorType = 'personnage') {
                 const length = Object.keys(listSkill[label]).length;
                 const skillRanksPerPP = 2;
                 const expertiseRanksPerPP = 2;
-                console.error(1000, { label });
 
                 let lastLabel = skill.name.replace(`${skill.name.split(':')[0]}: `, '');
                 if (label.includes('expertise')) {
@@ -3388,20 +3387,11 @@ export function commonHTML(html, origin, data = {}) {
 
             const update = {};
 
-            const dataComplication = Object.keys(origin.system.complications);
-            const maxKeysComplication = dataComplication.length ? Math.max(...dataComplication) : 0;
-            const comp = origin.system.competence[what];
-            const dataComp = Object.keys(comp.list);
-            const maxKeysComp = dataComp.length > 0 ? Math.max(...dataComp) : 0;
-            const modele = comp.modele;
-            const attaque = origin.system?.attaque || {};
-            const dataAttaque = Object.keys(attaque);
-            const maxKeysAtt = dataAttaque.length > 0 ? Math.max(...dataAttaque) : 0;
-            const vitesse = origin.system?.vitesse.list || {};
-            const dataLength = Object.keys(vitesse).length;
-
             switch (type) {
-                case 'complications':
+                case 'complications': {
+                    const dataComplication = Object.keys(origin.system.complications);
+                    const maxKeysComplication = dataComplication.length ? Math.max(...dataComplication) : 0;
+
                     origin.update({
                         [`system.complications.${maxKeysComplication + 1}`]: {
                             label: '',
@@ -3409,16 +3399,27 @@ export function commonHTML(html, origin, data = {}) {
                         },
                     });
                     break;
+                }
 
-                case 'competence':
+                case 'competence': {
+                    const comp = origin.system.competence[what];
+                    const dataComp = Object.keys(comp.list);
+                    const maxKeysComp = dataComp.length > 0 ? Math.max(...dataComp) : 0;
+                    const modele = comp.modele;
+
                     update[`system.competence.${what}.list.${maxKeysComp + 1}`] = foundry.utils.mergeObject(modele, {
                         _id: foundry.utils.randomID(),
                     });
 
                     origin.update(update);
                     break;
+                }
 
-                case 'attaque':
+                case 'attaque': {
+                    const attaque = origin.system?.attaque || {};
+                    const dataAttaque = Object.keys(attaque);
+                    const maxKeysAtt = dataAttaque.length > 0 ? Math.max(...dataAttaque) : 0;
+
                     update[`system.attaque.${maxKeysAtt + 1}`] = foundry.utils.mergeObject(
                         foundry.utils.deepClone(CONFIG.MM4.StdAtk),
                         {
@@ -3429,8 +3430,12 @@ export function commonHTML(html, origin, data = {}) {
 
                     origin.update(update);
                     break;
+                }
 
-                case 'vitesse':
+                case 'vitesse': {
+                    const vitesse = origin.system?.vitesse.list || {};
+                    const dataLength = Object.keys(vitesse).length;
+
                     update[`system.vitesse.list.v${dataLength + 1}`] = {
                         canDel: true,
                         label: '',
@@ -3441,6 +3446,7 @@ export function commonHTML(html, origin, data = {}) {
 
                     origin.update(update);
                     break;
+                }
             }
         });
 

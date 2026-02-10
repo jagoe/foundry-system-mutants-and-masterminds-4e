@@ -5,6 +5,7 @@ import {
     loadEffectsHTML,
     loadEffectsClose,
 } from '../helpers/common.mjs';
+import { enrichContext } from '../helpers/foundry.mjs';
 import { templatesPath } from '../system.mjs';
 
 /**
@@ -26,7 +27,7 @@ export class PouvoirItemSheet extends ItemSheet {
     /* -------------------------------------------- */
 
     /** @inheritdoc */
-    getData() {
+    async getData() {
         const context = super.getData();
 
         prepareEffects(this.item, context);
@@ -34,6 +35,14 @@ export class PouvoirItemSheet extends ItemSheet {
         loadEffectsContext(context);
         context.systemData = context.data.system;
         this._prepareList(context);
+
+        const extras = Object.values(context.data.system.extras);
+        const flaws = Object.values(context.data.system.defauts);
+
+        await enrichContext(this, context, 'data.system.effets', 'data.system.notes');
+        await Promise.all(
+            extras.concat(flaws).map(async (extra) => await enrichContext(this, extra, 'data.description')),
+        );
 
         return context;
     }

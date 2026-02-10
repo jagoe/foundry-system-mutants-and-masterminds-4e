@@ -4,12 +4,13 @@
     {{#if (isValue systemData.special 'alternatif')}}red{{/if}}
     {{#if (isValue systemData.special 'dynamique')}}violet{{/if}}
     ">
-        <input name="name" type="text" value="{{data.name}}" placeholder="{{localize "MM4.Nom"}}" />
-        <select name="system.type" title="{{localize "MM4.Type"}}">
+        <input name="name" type="text" value="{{data.name}}" placeholder="{{localize " MM4.Nom"}}" />
+        <select name="system.type" title="{{localize " MM4.Type"}}">
             {{selectOptions systemData.listTypes selected=systemData.type localize=true}}
         </select>
     </section>
-    <input class="systemEffect" name="system.effetsprincipaux" type="text" value="{{systemData.effetsprincipaux}}" placeholder="{{localize "MM4.EffetsPrincipaux"}}" />
+    <input class="systemEffect" name="system.effetsprincipaux" type="text" value="{{systemData.effetsprincipaux}}"
+        placeholder="{{localize " MM4.EffetsPrincipaux"}}" />
 
     <section class="sheet-body">
         {{!-- Sheet Tab Navigation --}}
@@ -23,13 +24,16 @@
             <div class="inner">
                 <div class="details">
                     <div class="special">
-                        <a class="special {{#if (isValue systemData.special 'standard')}}selected{{else}}unselected{{/if}}" data-type="standard">
+                        <a class="special {{#if (isValue systemData.special 'standard')}}selected{{else}}unselected{{/if}}"
+                            data-type="standard">
                             {{localize "MM4.POUVOIR.Standard"}}
                         </a>
-                        <a class="special {{#if (isValue systemData.special 'alternatif')}}selected{{else}}unselected{{/if}}" data-type="alternatif">
+                        <a class="special {{#if (isValue systemData.special 'alternatif')}}selected{{else}}unselected{{/if}}"
+                            data-type="alternatif">
                             {{localize "MM4.POUVOIR.Alternatif"}}
                         </a>
-                        <a class="special {{#if (isValue systemData.special 'dynamique')}}selected{{else}}unselected{{/if}}" data-type="dynamique">
+                        <a class="special {{#if (isValue systemData.special 'dynamique')}}selected{{else}}unselected{{/if}}"
+                            data-type="dynamique">
                             {{localize "MM4.POUVOIR.Dynamique"}}
                         </a>
                     </div>
@@ -129,8 +133,9 @@
                         <div>
                             {{#each systemData.descripteurs as | key desc|}}
                             <div>
-                                <input type="text" name="system.descripteurs.{{desc}}" value="{{key}}"/>
-                                <i class="fa-solid fa-trash-xmark delete" data-id="{{desc}}" data-type="descripteurs"></i>
+                                <input type="text" name="system.descripteurs.{{desc}}" value="{{key}}" />
+                                <i class="fa-solid fa-trash-xmark delete" data-id="{{desc}}"
+                                    data-type="descripteurs"></i>
                             </div>
                             {{/each}}
                         </div>
@@ -141,11 +146,13 @@
                     </div>
                     <div class="description">
                         <span class="label">{{localize "MM4.Description"}}</span>
-                        {{editor systemData.notes target="system.notes" button=true owner=owner editable=editable}}
+                        {{editor systemData.notes target="system.notes" button=true owner=owner editable=editable
+                        engine="prosemirror"}}
                     </div>
                     <div class="description">
                         <span class="label">{{localize "MM4.Details"}}</span>
-                        {{editor systemData.effets target="system.effets" button=true owner=owner editable=editable}}
+                        {{editor systemData.effets target="system.effets" button=true owner=owner
+                        editable=editable engine="prosemirror"}}
                     </div>
                 </div>
                 <div class="modificateurs">
@@ -155,38 +162,47 @@
                             <i class="fa-solid fa-plus create" data-mod="extras"></i>
                         </span>
                         {{#each systemData.extras as | key ext |}}
-                            <details {{#if key.details}}open{{/if}} class="reorder" data-type="extras" data-id="{{ext}}">
-                                <summary>
-                                    <div class="before" data-mod="extras" data-id="{{ext}}" data-value="{{key.details}}"></div>
-                                    <input name="system.extras.{{ext}}.name" type="text" value="{{key.name}}" placeholder="{{localize "MM4.Nom"}}" />
-                                    <i class="fa-solid fa-trash-xmark delete" data-id="{{ext}}" data-type="extras"></i>
-                                </summary>
+                        <details {{#if key.details}}open{{/if}} class="reorder" data-type="extras" data-id="{{ext}}">
+                            <summary>
+                                <div class="before" data-mod="extras" data-id="{{ext}}" data-value="{{key.details}}">
+                                </div>
+                                <input name="system.extras.{{ext}}.name" type="text" value="{{key.name}}"
+                                    placeholder="{{localize " MM4.Nom"}}" />
+                                <i class="fa-solid fa-trash-xmark delete" data-id="{{ext}}" data-type="extras"></i>
+                            </summary>
 
-                                <section class="ext">
-                                    <div class="extDetails">
-                                        <div class="extcout">
-                                            <label>
-                                                <span>{{localize "MM4.Cout"}}</span>
+                            <section class="ext">
+                                <div class="extDetails">
+                                    <div class="extcout">
+                                        <label>
+                                            <span>{{localize "MM4.Cout"}}</span>
 
-                                                <input type="number" name="system.extras.{{ext}}.data.cout.value" value="{{key.data.cout.value}}" />
-                                            </label>
+                                            <input type="number" name="system.extras.{{ext}}.data.cout.value"
+                                                value="{{key.data.cout.value}}" />
+                                        </label>
 
-                                            <a class="btn {{#if key.data.cout.rang}}selected{{else}}unselected{{/if}}" data-mod="extras" data-id="{{ext}}" data-type="rang" data-value="{{key.data.cout.rang}}">
-                                                {{localize "MM4.Parrang"}}
-                                            </a>
+                                        <a class="btn {{#if key.data.cout.rang}}selected{{else}}unselected{{/if}}"
+                                            data-mod="extras" data-id="{{ext}}" data-type="rang"
+                                            data-value="{{key.data.cout.rang}}">
+                                            {{localize "MM4.Parrang"}}
+                                        </a>
 
-                                            <a class="btn {{#if key.data.cout.fixe}}selected{{else}}unselected{{/if}}" data-mod="extras" data-id="{{ext}}" data-type="fixe" data-value="{{key.data.cout.fixe}}">
-                                                {{localize "MM4.Fixe"}}
-                                            </a>
-                                        </div>
+                                        <a class="btn {{#if key.data.cout.fixe}}selected{{else}}unselected{{/if}}"
+                                            data-mod="extras" data-id="{{ext}}" data-type="fixe"
+                                            data-value="{{key.data.cout.fixe}}">
+                                            {{localize "MM4.Fixe"}}
+                                        </a>
                                     </div>
+                                </div>
 
-                                    <div class="extdescription">
-                                        <span class="label">{{localize "MM4.Description"}}</span>
-                                        {{editor key.data.description target=(mm4concat 'system.extras' ext 'data.description') button=true owner=owner editable=@root/editable}}
-                                    </div>
-                                </section>
-                            </details>
+                                <div class="extdescription">
+                                    <span class="label">{{localize "MM4.Description"}}</span>
+                                    {{editor key.data.description target=(mm4concat 'system.extras' ext
+                                    'data.description') button=true owner=owner editable=@root/editable
+                                    engine="prosemirror"}}
+                                </div>
+                            </section>
+                        </details>
                         {{/each}}
                     </div>
                     <div class="defauts">
@@ -196,38 +212,47 @@
                         </span>
 
                         {{#each systemData.defauts as | key ext |}}
-                            <details {{#if key.details}}open{{/if}} class="reorder" data-type="defauts" data-id="{{ext}}">
-                                <summary>
-                                    <div class="before" data-mod="defauts" data-id="{{ext}}" data-value="{{key.details}}"></div>
-                                    <input name="system.defauts.{{ext}}.name" type="text" value="{{key.name}}" placeholder="{{localize "MM4.Nom"}}" />
-                                    <i class="fa-solid fa-trash-xmark delete" data-id="{{ext}}" data-type="defauts"></i>
-                                </summary>
+                        <details {{#if key.details}}open{{/if}} class="reorder" data-type="defauts" data-id="{{ext}}">
+                            <summary>
+                                <div class="before" data-mod="defauts" data-id="{{ext}}" data-value="{{key.details}}">
+                                </div>
+                                <input name="system.defauts.{{ext}}.name" type="text" value="{{key.name}}"
+                                    placeholder="{{localize " MM4.Nom"}}" />
+                                <i class="fa-solid fa-trash-xmark delete" data-id="{{ext}}" data-type="defauts"></i>
+                            </summary>
 
-                                <section class="ext">
-                                    <div class="extDetails">
-                                        <div class="extcout">
-                                            <label>
-                                                <span>{{localize "MM4.Cout"}}</span>
+                            <section class="ext">
+                                <div class="extDetails">
+                                    <div class="extcout">
+                                        <label>
+                                            <span>{{localize "MM4.Cout"}}</span>
 
-                                                <input type="number" name="system.defauts.{{ext}}.data.cout.value" value="{{key.data.cout.value}}" />
-                                            </label>
+                                            <input type="number" name="system.defauts.{{ext}}.data.cout.value"
+                                                value="{{key.data.cout.value}}" />
+                                        </label>
 
-                                            <a class="btn {{#if key.data.cout.rang}}selected{{else}}unselected{{/if}}" data-mod="defauts" data-id="{{ext}}" data-type="rang" data-value="{{key.data.cout.rang}}">
-                                                {{localize "MM4.Parrang"}}
-                                            </a>
+                                        <a class="btn {{#if key.data.cout.rang}}selected{{else}}unselected{{/if}}"
+                                            data-mod="defauts" data-id="{{ext}}" data-type="rang"
+                                            data-value="{{key.data.cout.rang}}">
+                                            {{localize "MM4.Parrang"}}
+                                        </a>
 
-                                            <a class="btn {{#if key.data.cout.fixe}}selected{{else}}unselected{{/if}}" data-mod="defauts" data-id="{{ext}}" data-type="fixe" data-value="{{key.data.cout.fixe}}">
-                                                {{localize "MM4.Fixe"}}
-                                            </a>
-                                        </div>
+                                        <a class="btn {{#if key.data.cout.fixe}}selected{{else}}unselected{{/if}}"
+                                            data-mod="defauts" data-id="{{ext}}" data-type="fixe"
+                                            data-value="{{key.data.cout.fixe}}">
+                                            {{localize "MM4.Fixe"}}
+                                        </a>
                                     </div>
+                                </div>
 
-                                    <div class="extdescription">
-                                        <span class="label">{{localize "MM4.Description"}}</span>
-                                        {{editor key.data.description target=(mm4concat 'system.defauts' ext 'data.description') button=true owner=owner editable=@root/editable}}
-                                    </div>
-                                </section>
-                            </details>
+                                <div class="extdescription">
+                                    <span class="label">{{localize "MM4.Description"}}</span>
+                                    {{editor key.data.description target=(mm4concat 'system.defauts' ext
+                                    'data.description') button=true owner=owner editable=@root/editable
+                                    engine="prosemirror"}}
+                                </div>
+                            </section>
+                        </details>
                         {{/each}}
                     </div>
                 </div>
