@@ -2204,13 +2204,13 @@ export async function rollStd(actor, name, score, dataKey = {}) {
     let pRoll;
     let ask;
     let dd = 0;
-    let mod = 0;
+    let mod = dataKey.mod ?? 0;
 
     if (useShift || alt) {
         ask = await dialogAsk({ dd: useShift, mod: alt });
 
         dd = ask?.dd ?? 0;
-        mod = ask?.mod ?? 0;
+        mod += ask?.mod ?? 0;
     }
 
     const roll = new Roll(`${dicesBase} + ${total} + ${mod}`);
@@ -2275,12 +2275,12 @@ export async function rollVs(actor, name, score, vs, data = {}, dataKey = {}) {
     const isStacked = isStackedDmg();
     const alt = dataKey?.alt ?? false;
     let ask;
-    let mod = 0;
+    let mod = data.mod ?? 0;
 
     if (alt) {
         ask = await dialogAsk({ mod: alt });
 
-        mod = ask?.mod ?? 0;
+        mod += ask?.mod ?? 0;
     }
 
     let toRoll = mod === 0 ? `${optDices.dices} + ${score}` : `${optDices.dices} + ${score} + ${mod}`;
@@ -3334,6 +3334,7 @@ export function commonHTML(html, origin, data = {}) {
                 const id = target.data('id');
                 const strattaque = target.data('strattaque');
                 const streffet = target.data('streffet');
+                const what = target.data('what');
 
                 const atk = game.mm4.getAtk(origin, id)?.data ?? { noAtk: true };
                 const hasShift = ev.shiftKey;
@@ -3372,9 +3373,13 @@ export function commonHTML(html, origin, data = {}) {
                         { attaque: atk, strategie: { attaque: strattaque, effet: streffet } },
                         { alt: hasAlt },
                     );
-                else if (type === 'attaque' && atk.settings.noatk)
+                else if (type === 'attaque' && atk.settings.noatk) {
                     rollWAtk(origin, name, { attaque: atk, strategie: { attaque: strattaque, effet: streffet } });
-                else rollStd(origin, name, total, { shift: hasShift, alt: hasAlt });
+                } else if (type === 'defense' && what === 'robustesse') {
+                    rollStd(origin, name, total, { shift: hasShift, alt: hasAlt, mod: -origin.system.blessure });
+                } else {
+                    rollStd(origin, name, total, { shift: hasShift, alt: hasAlt });
+                }
             }
         });
     }

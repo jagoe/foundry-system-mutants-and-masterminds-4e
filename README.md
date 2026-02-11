@@ -8,8 +8,7 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Allow setting a Power as Prepared Effect (costing 0 PP)
-* Rename Injuries to Hits & add as modifier to Toughness rolls instead of reducing Toughness
+* Critical hits add one DoS & critical miss adds one DoF
 * Correct default attack damage conditions (when creating attacks)
 * Make sure existing conditions have correct effects
 * Add remaining conditions
@@ -27,6 +26,7 @@ Feel free to try and use the system yourself, but there will be no release and n
   * If not set & no ranks, deactive rolling
 * Add effects capability w/ pre-defined effects for the conditions?
 * Deleting effect variants removes them from owner's tracker
+* Set max Power Points based on Power Level
 
 I'll leave the rest of the readme as I found it.
 

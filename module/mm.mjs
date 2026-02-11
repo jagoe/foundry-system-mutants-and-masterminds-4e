@@ -1299,13 +1299,18 @@ Hooks.on('renderChatMessage', (message, html, _data) => {
                 ? tokenData.caracteristique[savetype].total
                 : tokenData.defense[savetype].total;
         const name = `${game.i18n.localize(CONFIG.MM4.defenses[savetype])}`;
+        let mod = 0;
+
+        if (savetype === 'robustesse') {
+            mod -= tokenData.blessure ?? 0;
+        }
 
         rollVs(
             tokenActor,
             name,
             saveScore,
             vs,
-            { typeAtk: typeAtk, atk: dataAtk, str: dataStr, tkn: token },
+            { typeAtk: typeAtk, atk: dataAtk, str: dataStr, tkn: token, mod },
             { alt: hasAlt },
         );
     });

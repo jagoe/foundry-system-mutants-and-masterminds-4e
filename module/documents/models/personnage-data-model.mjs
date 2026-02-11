@@ -875,11 +875,6 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                 }
             }
 
-            if (defenseName === 'robustesse') {
-                mod -= this.blessure;
-
-                if (getSetting('stackeddmg')) mod -= this.blessureNL;
-            }
             if (defenseName === 'esquive') mod += this.strategie.total.defense;
             if (defenseName === 'parade') mod += this.strategie.total.defense;
             ppDef += defRang;
