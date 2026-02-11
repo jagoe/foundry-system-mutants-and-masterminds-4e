@@ -8,18 +8,6 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Make sure existing conditions have correct effects
-* Add remaining conditions
-  * Broken
-  * Confused
-  * Delusion
-  * Destroyed
-  * Figment
-  * Frightened
-  * Hallucinating
-  * Hit*
-  * Phantasm
-  * Susceptible
 * Easy: Set max Power Points based on Power Level
 * Optional:Allow upgrading conditions via attacks
 * Optional: Skill checkbox: Untrained?

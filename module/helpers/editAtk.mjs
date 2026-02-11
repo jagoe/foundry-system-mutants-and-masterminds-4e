@@ -658,66 +658,6 @@ export class editAtk {
                 result = `EFFECT.StatusDead`;
                 break;
 
-            case 'Dying':
-                result = `MM4.STATUS.Dying`;
-                break;
-
-            case 'Impaired':
-                result = `MM4.STATUS.Decreased`;
-                break;
-
-            case 'Fatigued':
-                result = `MM4.STATUS.Tired`;
-                break;
-
-            case 'Immobile':
-                result = `MM4.STATUS.Stuck`;
-                break;
-
-            case 'Unaware':
-                result = `MM4.STATUS.Insensitive`;
-                break;
-
-            case 'Debilitated':
-                result = `MM4.STATUS.Invalid`;
-                break;
-
-            case 'Vulnerable':
-                result = `MM4.STATUS.Vulnerability`;
-                break;
-
-            case 'Staggered':
-                result = `MM4.STATUS.Chanceling`;
-                break;
-
-            case 'Entranced':
-                result = `MM4.STATUS.Enthralled`;
-                break;
-
-            case 'Compelled':
-                result = `MM4.STATUS.Influenced`;
-                break;
-
-            case 'Bound':
-                result = `MM4.STATUS.Tied`;
-                break;
-
-            case 'Incapacitated':
-                result = `MM4.STATUS.Neutralized`;
-                break;
-
-            case 'Weakened':
-                result = `MM4.STATUS.Downgrade`;
-                break;
-
-            case 'Paralyzed':
-                result = `MM4.STATUS.Paralysis`;
-                break;
-
-            case 'Stunned':
-                result = `MM4.STATUS.Stunned`;
-                break;
-
             default:
                 result = `MM4.STATUS.${result}`;
                 break;

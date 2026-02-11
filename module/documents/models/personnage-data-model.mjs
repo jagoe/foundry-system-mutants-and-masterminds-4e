@@ -349,16 +349,16 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                                 },
                                 {
                                     value: dmg2,
-                                    status: ['stunned', 'chanceling'],
+                                    status: ['stunned', 'staggered'],
                                     upgrades: {
                                         dying: 'dead',
                                     },
                                 },
                                 {
                                     value: dmg3,
-                                    status: ['chanceling', 'neutralized'],
+                                    status: ['staggered', 'incapacitated'],
                                     upgrades: {
-                                        neutralized: 'dying',
+                                        incapacitated: 'dying',
                                         dying: 'dead',
                                     },
                                 },
@@ -917,8 +917,15 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                     ranksValue,
                 );
 
-            if (effects.has('vulnerability') && !currentDefense.defenseless) {
-                const vul = actor.effects.find((itm) => itm.origin === 'status' && itm.statuses.has('vulnerability'));
+            if (effects.has('vulnerable') && !currentDefense.defenseless) {
+                const vul = actor.effects.find((itm) => itm.origin === 'status' && itm.statuses.has('vulnerable'));
+                for (let e of vul.changes) {
+                    if (e.key === defenseName) total = total / e.value;
+                }
+            }
+
+            if (effects.has('stunned') && !effects.has('vulnerable') && !currentDefense.defenseless) {
+                const vul = actor.effects.find((itm) => itm.origin === 'status' && itm.statuses.has('stunned'));
                 for (let e of vul.changes) {
                     if (e.key === defenseName) total = total / e.value;
                 }

@@ -430,16 +430,16 @@ MM4.StdAtk = {
             },
             {
                 value: 1,
-                status: ['stunned', 'chanceling'],
+                status: ['stunned', 'staggered'],
                 upgrades: {
                     dying: 'dead',
                 },
             },
             {
                 value: 1,
-                status: ['chanceling', 'neutralized'],
+                status: ['staggered', 'incapacitated'],
                 upgrades: {
-                    neutralized: 'dying',
+                    incapacitated: 'dying',
                     dying: 'dead',
                 },
             },

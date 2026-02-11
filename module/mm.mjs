@@ -127,15 +127,90 @@ Hooks.once('init', async function () {
 
     CONFIG.statusEffects = [
         {
-            id: 'dead',
-            label: 'EFFECT.StatusDead',
-            icon: 'icons/svg/skull.svg',
+            id: 'asleep',
+            label: 'MM4.STATUS.Asleep',
+            icon: 'icons/svg/sleep.svg',
+            origin: 'status',
+            changes: [
+                {
+                    key: 'defenseless',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'stunned',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'unaware',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'blind',
+            label: 'MM4.STATUS.Blind',
+            icon: 'icons/svg/blind.svg',
+            origin: 'status',
+            changes: [
+                {
+                    key: 'hindered',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'unaware',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'vulnerable',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'bound',
+            label: 'MM4.STATUS.Bound',
+            icon: `${assetsPath}/icons/tied.svg`,
+            origin: 'status',
+            changes: [
+                {
+                    key: 'defenseless',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'immobile',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'impaired',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'broken',
+            label: 'MM4.STATUS.Broken',
+            icon: 'icons/svg/ruins.svg',
             origin: 'status',
         },
         {
-            id: 'downgrade',
-            label: 'MM4.STATUS.Downgrade',
-            icon: 'icons/svg/downgrade.svg',
+            id: 'compelled',
+            label: 'MM4.STATUS.Compelled',
+            icon: 'icons/svg/eye.svg',
+            origin: 'status',
+        },
+        {
+            id: 'confused',
+            label: 'MM4.STATUS.Confused',
+            icon: 'icons/svg/stoned.svg',
             origin: 'status',
         },
         {
@@ -145,57 +220,34 @@ Hooks.once('init', async function () {
             origin: 'status',
         },
         {
-            id: 'decreased',
-            label: 'MM4.STATUS.Decreased',
-            icon: 'icons/svg/degen.svg',
-            origin: 'status',
-        },
-        {
-            id: 'tired',
-            label: 'MM4.STATUS.Tired',
-            icon: `${assetsPath}/icons/tired.svg`,
-            origin: 'status',
-            changes: [
-                {
-                    key: 'slow',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
             id: 'dazed',
             label: 'MM4.STATUS.Dazed',
             icon: 'icons/svg/daze.svg',
             origin: 'status',
         },
         {
-            id: 'stuck',
-            label: 'MM4.STATUS.Stuck',
-            icon: `${assetsPath}/icons/stuck.svg`,
-        },
-        {
-            id: 'eye',
-            label: 'MM4.STATUS.Influenced',
-            icon: 'icons/svg/eye.svg',
+            id: 'dead',
+            label: 'EFFECT.StatusDead',
+            icon: 'icons/svg/skull.svg',
             origin: 'status',
         },
         {
-            id: 'insensitive',
-            label: 'MM4.STATUS.Insensitive',
-            icon: 'icons/svg/invisible.svg',
+            id: 'deaf',
+            label: 'MM4.STATUS.Deaf',
+            icon: 'icons/svg/deaf.svg',
             origin: 'status',
+            changes: [
+                {
+                    key: `unaware`,
+                    mode: 0,
+                    value: 0,
+                },
+            ],
         },
         {
-            id: 'invalid',
-            label: 'MM4.STATUS.Invalid',
+            id: 'debilitated',
+            label: 'MM4.STATUS.Debilitated',
             icon: `${assetsPath}/icons/invalid.svg`,
-            origin: 'status',
-        },
-        {
-            id: 'slow',
-            label: 'MM4.STATUS.Slow',
-            icon: `${assetsPath}/icons/slow.svg`,
             origin: 'status',
         },
         {
@@ -205,18 +257,259 @@ Hooks.once('init', async function () {
             origin: 'status',
             changes: [
                 {
+                    key: `parade`,
+                    mode: 0,
+                    priority: 1,
+                    value: 0,
+                },
+                {
+                    key: `distance`,
+                    mode: 0,
+                    priority: 1,
+                    value: 0,
+                },
+                {
+                    key: `esquive`,
+                    mode: 0,
+                    priority: 1,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'delusion',
+            label: 'MM4.STATUS.Delusion',
+            icon: 'icons/svg/portal.svg',
+            origin: 'status',
+            changes: [
+                {
+                    key: `unaware`,
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'destroyed',
+            label: 'MM4.STATUS.Destroyed',
+            icon: 'icons/svg/cancel.svg',
+            origin: 'status',
+        },
+        {
+            id: 'disabled',
+            label: 'MM4.STATUS.Disabled',
+            icon: `${assetsPath}/icons/disabled.svg`,
+            origin: 'status',
+        },
+        {
+            id: 'dying',
+            label: 'MM4.STATUS.Dying',
+            icon: `${assetsPath}/icons/dying.svg`,
+            origin: 'status',
+            changes: [
+                {
+                    key: 'incapacitated',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'exhausted',
+            label: 'MM4.STATUS.Exhausted',
+            icon: 'icons/svg/unconscious.svg',
+            origin: 'status',
+            changes: [
+                {
+                    key: 'hindered',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'disabled',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'fatigued',
+            label: 'MM4.STATUS.Fatigued',
+            icon: `${assetsPath}/icons/tired.svg`,
+            origin: 'status',
+            changes: [
+                {
+                    key: 'hindered',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'impaired',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'figment',
+            label: 'MM4.STATUS.Figment',
+            icon: 'icons/svg/sun.svg',
+            origin: 'status',
+        },
+        {
+            id: 'frightened',
+            label: 'MM4.STATUS.Frightened',
+            icon: 'icons/svg/terror.svg',
+            origin: 'status',
+        },
+        {
+            id: 'hindered',
+            label: 'MM4.STATUS.Hindered',
+            icon: `${assetsPath}/icons/slow.svg`,
+            origin: 'status',
+        },
+        {
+            id: 'immobile',
+            label: 'MM4.STATUS.Immobile',
+            icon: `${assetsPath}/icons/stuck.svg`,
+        },
+        {
+            id: 'impaired',
+            label: 'MM4.STATUS.Impaired',
+            icon: 'icons/svg/degen.svg',
+            origin: 'status',
+        },
+        {
+            id: 'incapacitated',
+            label: 'MM4.STATUS.Incapacitated',
+            icon: `${assetsPath}/icons/neutralized.svg`,
+            origin: 'status',
+            changes: [
+                {
+                    key: 'defenseless',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'stunned',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'unaware',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'paralyzed',
+            label: 'MM4.STATUS.Paralyzed',
+            icon: 'icons/svg/paralysis.svg',
+            origin: 'status',
+            changes: [
+                {
+                    key: 'defenseless',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'immobile',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'stunned',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'phantasm',
+            label: 'MM4.STATUS.Phantasm',
+            icon: 'icons/svg/ice-aura.svg',
+            origin: 'status',
+        },
+        {
+            id: 'prone',
+            label: 'MM4.STATUS.Prone',
+            icon: 'icons/svg/falling.svg',
+            origin: 'status',
+        },
+        {
+            id: 'restrained',
+            label: 'MM4.STATUS.Restrained',
+            icon: 'icons/svg/net.svg',
+            origin: 'status',
+            changes: [
+                {
+                    key: 'hindered',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'vulnerable',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'staggered',
+            label: 'MM4.STATUS.Staggered',
+            icon: `${assetsPath}/icons/chanceling.svg`,
+            origin: 'status',
+            changes: [
+                {
+                    key: 'hindered',
+                    mode: 0,
+                    value: 0,
+                },
+                {
+                    key: 'dazed',
+                    mode: 0,
+                    value: 0,
+                },
+            ],
+        },
+        {
+            id: 'stunned',
+            label: 'MM4.STATUS.Stunned',
+            icon: `${assetsPath}/icons/stunned.svg`,
+            origin: 'status',
+            changes: [
+                {
                     key: `esquive`,
                     mode: 0,
                     priority: 1,
                     value: 2,
                 },
+            ],
+        },
+        {
+            id: 'surprised',
+            label: 'MM4.STATUS.Surprised',
+            icon: `${assetsPath}/icons/surprised.svg`,
+            origin: 'status',
+            changes: [
                 {
-                    key: `parade`,
+                    key: 'vulnerable',
                     mode: 0,
-                    priority: 1,
-                    value: 2,
+                    value: 0,
+                },
+                {
+                    key: 'stunned',
+                    mode: 0,
+                    value: 0,
                 },
             ],
+        },
+        {
+            id: 'susceptible',
+            label: 'MM4.STATUS.Susceptible',
+            icon: 'icons/svg/fire.svg',
+            origin: 'status',
         },
         {
             id: 'transformed',
@@ -225,8 +518,14 @@ Hooks.once('init', async function () {
             origin: 'status',
         },
         {
-            id: 'vulnerability',
-            label: 'MM4.STATUS.Vulnerability',
+            id: 'unaware',
+            label: 'MM4.STATUS.Unaware',
+            icon: 'icons/svg/invisible.svg',
+            origin: 'status',
+        },
+        {
+            id: 'vulnerable',
+            label: 'MM4.STATUS.Vulnerable',
             icon: `${assetsPath}/icons/vulnerability.svg`,
             origin: 'status',
             changes: [
@@ -242,268 +541,36 @@ Hooks.once('init', async function () {
                     priority: 1,
                     value: 2,
                 },
-            ],
-        },
-        {
-            id: 'prone',
-            label: 'MM4.STATUS.Prone',
-            icon: 'icons/svg/falling.svg',
-            origin: 'status',
-            changes: [
                 {
-                    key: 'slow',
+                    key: `distance`,
                     mode: 0,
-                    value: 0,
+                    priority: 1,
+                    value: 2,
                 },
             ],
         },
         {
-            id: 'blind',
-            label: 'MM4.STATUS.Blind',
-            icon: 'icons/svg/blind.svg',
-            origin: 'status',
-            changes: [
-                {
-                    key: 'slow',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'insensitive',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'vulnerability',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'chanceling',
-            label: 'MM4.STATUS.Chanceling',
-            icon: `${assetsPath}/icons/chanceling.svg`,
-            origin: 'status',
-            changes: [
-                {
-                    key: 'slow',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'dazed',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'sleep',
-            label: 'MM4.STATUS.Asleep',
-            icon: 'icons/svg/sleep.svg',
-            origin: 'status',
-            changes: [
-                {
-                    key: 'defenseless',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'insensitive',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'stunned',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'restrain',
-            label: 'MM4.STATUS.Restrained',
-            icon: 'icons/svg/net.svg',
-            origin: 'status',
-            changes: [
-                {
-                    key: 'slow',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'vulnerability',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'enthralled',
-            label: 'MM4.STATUS.Enthralled',
-            icon: 'icons/svg/sun.svg',
-            origin: 'status',
-            changes: [
-                {
-                    key: 'stunned',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'exhausted',
-            label: 'MM4.STATUS.Exhausted',
-            icon: 'icons/svg/unconscious.svg',
-            origin: 'status',
-            changes: [
-                {
-                    key: 'slow',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'decreased',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'tied',
-            label: 'MM4.STATUS.Tied',
-            icon: `${assetsPath}/icons/tied.svg`,
-            origin: 'status',
-            changes: [
-                {
-                    key: 'defenseless',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'decreased',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'stuck',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'dying',
-            label: 'MM4.STATUS.Dying',
-            icon: `${assetsPath}/icons/dying.svg`,
-            origin: 'status',
-            changes: [
-                {
-                    key: 'neutralized',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'neutralized',
-            label: 'MM4.STATUS.Neutralized',
-            icon: `${assetsPath}/icons/neutralized.svg`,
-            origin: 'status',
-            changes: [
-                {
-                    key: 'defenseless',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'stunned',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'insensitive',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'paralysis',
-            label: 'MM4.STATUS.Paralysis',
-            icon: 'icons/svg/paralysis.svg',
-            origin: 'status',
-            changes: [
-                {
-                    key: 'defenseless',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'stuck',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'stunned',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'deaf',
-            label: 'MM4.STATUS.Deaf',
-            icon: 'icons/svg/deaf.svg',
-            origin: 'status',
-        },
-        {
-            id: 'surprised',
-            label: 'MM4.STATUS.Surprised',
-            icon: `${assetsPath}/icons/surprised.svg`,
-            origin: 'status',
-            changes: [
-                {
-                    key: 'vulnerability',
-                    mode: 0,
-                    value: 0,
-                },
-                {
-                    key: 'stunned',
-                    mode: 0,
-                    value: 0,
-                },
-            ],
-        },
-        {
-            id: 'stunned',
-            label: 'MM4.STATUS.Stunned',
-            icon: `${assetsPath}/icons/stunned.svg`,
-            origin: 'status',
-        },
-        {
-            id: 'disabled',
-            label: 'MM4.STATUS.Disabled',
-            icon: `${assetsPath}/icons/disabled.svg`,
+            id: 'weakness',
+            label: 'MM4.STATUS.Weakness',
+            icon: 'icons/svg/downgrade.svg',
             origin: 'status',
         },
     ];
 
     CONFIG.specialStatusEffects = {
         BLIND: 'blind',
-        DEFEATED: 'neutralized',
+        DEFEATED: 'incapacitated',
         INVISIBLE: 'invisible',
-        ASLEEP: 'sleep',
-        BOUND: 'tied',
+        ASLEEP: 'asleep',
+        BOUND: 'bound',
         DYING: 'dying',
         ENTRANCED: 'enthralled',
         EXHAUSTED: 'exhausted',
-        INCAPACITATED: 'neutralized',
-        PARALYZED: 'paralysis',
+        INCAPACITATED: 'incapacitated',
+        PARALYZED: 'paralyzed',
         PRONE: 'prone',
-        RESTRAINED: 'restrain',
-        STAGGERED: 'chanceling',
+        RESTRAINED: 'restrained',
+        STAGGERED: 'staggered',
         SURPRISED: 'surprised',
     };
 
