@@ -42,12 +42,16 @@ export class editAtk {
         const listSkill = [];
         const defenses = [
             {
-                key: 'esquive',
-                label: `${game.i18n.localize('MM4.DEFENSE.Esquive')}`,
-            },
-            {
                 key: 'parade',
                 label: `${game.i18n.localize('MM4.DEFENSE.Parade')}`,
+            },
+            {
+                key: 'distance',
+                label: `${game.i18n.localize('MM4.DEFENSE.Distance')}`,
+            },
+            {
+                key: 'esquive',
+                label: `${game.i18n.localize('MM4.DEFENSE.Esquive')}`,
             },
             {
                 key: 'vigueur',
@@ -299,6 +303,10 @@ export class editAtk {
                     {
                         key: 'parade',
                         label: `${game.i18n.localize('MM4.DEFENSE.Jetattaquevs')} ${game.i18n.localize('MM4.DEFENSE.Parade')}`,
+                    },
+                    {
+                        key: 'distance',
+                        label: `${game.i18n.localize('MM4.DEFENSE.Jetattaquevs')} ${game.i18n.localize('MM4.DEFENSE.Distance')}`,
                     },
                     {
                         key: 'volonte',

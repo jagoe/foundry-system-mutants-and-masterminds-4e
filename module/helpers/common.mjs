@@ -768,6 +768,7 @@ export async function processImport(actor, data, actorType = 'personnage') {
         Defense: 'defense',
         Dodge: 'esquive',
         Parry: 'parade',
+        Distance: 'distance',
         Fortitude: 'vigueur',
         Toughness: 'robustesse',
         Will: 'volonte',
@@ -1194,6 +1195,7 @@ export async function processImport(actor, data, actorType = 'personnage') {
     const resistVO = {
         dodge: 'esquive',
         parry: 'parade',
+        ranged: 'distance',
         fortitude: 'vigueur',
         toughness: 'robustesse',
         will: 'volonte',
@@ -1202,6 +1204,7 @@ export async function processImport(actor, data, actorType = 'personnage') {
     const resistVF = {
         esquive: 'esquive',
         parade: 'parade',
+        distance: 'distance',
         vigueur: 'vigueur',
         robustesse: 'robustesse',
         volonté: 'volonte',
@@ -2574,13 +2577,22 @@ export async function rollAtkTgt(actor, name, score, data, tgt, dataKey = {}) {
     const roll = new Roll(`${dicesBase} + ${total} + ${dataStr.attaque} + ${mod}`);
     await roll.evaluate();
 
-    const tokenActor = token?.actor ?? {};
-    const tokenData = tokenActor?.system ?? { ddparade: 0, ddesquive: 0 };
+    const tokenActor = token?.actor ?? null;
+    if (!tokenActor) {
+        ui.notifications.error(`The targeted token's actor does not exist anymore.`, { permanent: true });
+        return;
+    }
+
+    const tokenData = tokenActor?.system ?? { ddparade: 0, dddistance: 0 };
     const resultDie = roll.total - total - dataStr.attaque;
     const parade =
         tokenActor.type === 'vehicule' ? Number(tokenData.caracteristique.defense.total) : Number(tokenData.ddparade);
+    const distance =
+        tokenActor.type === 'vehicule' ? Number(tokenData.caracteristique.defense.total) : Number(tokenData.dddistance);
     const esquive =
-        tokenActor.type === 'vehicule' ? Number(tokenData.caracteristique.defense.total) : Number(tokenData.ddesquive);
+        tokenActor.type === 'vehicule'
+            ? Number(tokenData.caracteristique.defense.total)
+            : Number(tokenData.defense.esquive.total) + 10;
     const robustesse =
         tokenActor.type === 'vehicule'
             ? Number(tokenData.caracteristique.defense.total)
@@ -2615,6 +2627,11 @@ export async function rollAtkTgt(actor, name, score, data, tgt, dataKey = {}) {
             traType = game.i18n.localize('MM4.DEFENSE.DDParade');
             break;
 
+        case 'esquive':
+            ddDefense = esquive;
+            traType = game.i18n.localize('MM4.DEFENSE.Esquive');
+            break;
+
         case 'robustesse':
             ddDefense = robustesse;
             traType = game.i18n.localize('MM4.DEFENSE.Robustesse');
@@ -2631,8 +2648,8 @@ export async function rollAtkTgt(actor, name, score, data, tgt, dataKey = {}) {
             break;
 
         default:
-            ddDefense = esquive;
-            traType = game.i18n.localize('MM4.DEFENSE.DDEsquive');
+            ddDefense = distance;
+            traType = game.i18n.localize('MM4.DEFENSE.DDDistance');
             break;
     }
 
@@ -3950,7 +3967,7 @@ export function createEffects(item, name, variante) {
     let updateItemEffects = {
         name: name,
         flags: {
-            systemId: {
+            [systemId]: {
                 variante: variante,
             },
         },
@@ -3966,7 +3983,7 @@ export function createEffects(item, name, variante) {
         let updateActorEffects = {
             name: name,
             flags: {
-                systemId: {
+                [systemId]: {
                     variante: variante,
                 },
             },
@@ -3985,7 +4002,7 @@ export function createEffectsWithChanges(item, name, changes, disabled) {
     let updateItemEffects = {
         name: name,
         flags: {
-            systemId: {
+            [systemId]: {
                 variante: 'e0',
             },
         },
@@ -4001,7 +4018,7 @@ export function createEffectsWithChanges(item, name, changes, disabled) {
         let updateActorEffects = {
             name: name,
             flags: {
-                systemId: {
+                [systemId]: {
                     variante: 'e0',
                 },
             },

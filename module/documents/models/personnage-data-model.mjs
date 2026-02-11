@@ -205,7 +205,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
             blessure: new NumberField({ initial: 0, min: 0 }),
             blessureNL: new NumberField({ initial: 0, min: 0 }),
             ddparade: new NumberField({ initial: 0, min: 0 }),
-            ddesquive: new NumberField({ initial: 0, min: 0 }),
+            dddistance: new NumberField({ initial: 0, min: 0 }),
             ptsEquipements: new SchemaField({
                 max: new NumberField({ initial: 0 }),
                 use: new NumberField({ initial: 0 }),
@@ -918,7 +918,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                 }
             }
 
-            if (defenseName === 'esquive') Object.defineProperty(this, 'ddesquive', { value: 10 + total });
+            if (defenseName === 'distance') Object.defineProperty(this, 'dddistance', { value: 10 + total });
             else if (defenseName === 'parade') Object.defineProperty(this, 'ddparade', { value: 10 + total });
 
             Object.defineProperty(currentDefense, 'total', {

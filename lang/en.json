@@ -131,10 +131,11 @@
             "Label": "Defense",
             "Jetattaquevs": "Attack roll vs.",
             "DDDefense": "Defense DC",
-            "DDEsquive": "Ranged DC",
+            "DDDistance": "Ranged DC",
             "DDParade": "Close DC",
             "Esquive": "Dodge",
-            "Parade": "Parry",
+            "Distance": "Ranged",
+            "Parade": "Close",
             "Vigueur": "Fortitude",
             "Robustesse": "Toughness",
             "Volonte": "Will"

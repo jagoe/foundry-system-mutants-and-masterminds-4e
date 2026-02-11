@@ -8,7 +8,6 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Bug: Modifying Dodge modifies Ranged DC
 * Correct default attack damage conditions (when creating attacks)
 * Make sure existing conditions have correct effects
 * Add remaining conditions

@@ -116,6 +116,7 @@ MM4.LIST = {
     Defenses: [
         { name: 'esquive', display: true },
         { name: 'parade', display: false },
+        { name: 'distance', display: false },
         { name: 'vigueur', display: true },
         { name: 'robustesse', display: true },
         { name: 'volonte', display: true },
@@ -123,6 +124,7 @@ MM4.LIST = {
     CarDefenses: {
         esquive: 'def',
         parade: 'def',
+        distance: 'def',
         vigueur: 'end',
         robustesse: 'end',
         volonte: 'sns',
@@ -237,6 +239,7 @@ MM4.competences = {
 MM4.defenses = {
     esquive: 'MM4.DEFENSE.Esquive',
     parade: 'MM4.DEFENSE.Parade',
+    distance: 'MM4.DEFENSE.Distance',
     vigueur: 'MM4.DEFENSE.Vigueur',
     robustesse: 'MM4.DEFENSE.Robustesse',
     volonte: 'MM4.DEFENSE.Volonte',
@@ -245,6 +248,7 @@ MM4.defenses = {
 MM4.jetdefenses = {
     esquive: 'MM4.ROLL.DEFENSE.Esquive',
     parade: 'MM4.ROLL.DEFENSE.Parade',
+    distance: 'MM4.ROLL.DEFENSE.Distance',
     vigueur: 'MM4.ROLL.DEFENSE.Vigueur',
     robustesse: 'MM4.ROLL.DEFENSE.Robustesse',
     volonte: 'MM4.ROLL.DEFENSE.Volonte',
@@ -311,6 +315,7 @@ MM4.modsranks = {
     presence: 'system.caracteristique.presence',
     esquive: 'system.defense.esquive',
     parade: 'system.defense.parade',
+    distance: 'system.defense.distance',
     vigueur: 'system.defense.vigueur',
     robustesse: 'system.defense.robustesse',
 };
@@ -326,6 +331,7 @@ MM4.listmods = {
     'system.caracteristique.defense': 'MM4.CARACTERISTIQUES.Defense',
     'system.defense.esquive': 'MM4.DEFENSE.Esquive',
     'system.defense.parade': 'MM4.DEFENSE.Parade',
+    'system.defense.distance': 'MM4.DEFENSE.Distance',
     'system.defense.vigueur': 'MM4.DEFENSE.Vigueur',
     'system.defense.robustesse': 'MM4.DEFENSE.Robustesse',
     'system.defense.volonte': 'MM4.DEFENSE.Volonte',

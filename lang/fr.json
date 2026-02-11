@@ -131,10 +131,11 @@
             "Label": "Défense",
             "Jetattaquevs": "Jet d'attaque vs",
             "DDDefense": "DD de défense",
-            "DDEsquive": "DD d'Esquive",
+            "DDDistance": "DD de Distance",
             "DDParade": "DD de Parade",
             "Esquive": "Esquive",
-            "Parade": "Parade",
+            "Distance": "Distance",
+            "Parade": "Rapprochée",
             "Vigueur": "Vigueur",
             "Robustesse": "Robustesse",
             "Volonte": "Volonté"

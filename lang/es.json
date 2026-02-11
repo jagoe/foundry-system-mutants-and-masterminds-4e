@@ -131,10 +131,11 @@
             "Label": "Defensa",
             "Jetattaquevs": "Tirada de ataque vs.",
             "DDDefense": "CD Defensa",
-            "DDEsquive": "CD Distancia",
+            "DDDistance": "CD Distancia",
             "DDParade": "CD Cercana",
             "Esquive": "Esquiva",
-            "Parade": "Bloqueo",
+            "Distance": "Distancia",
+            "Parade": "Cercano",
             "Vigueur": "fortaleza",
             "Robustesse": "Dureza",
             "Volonte": "Voluntad"
