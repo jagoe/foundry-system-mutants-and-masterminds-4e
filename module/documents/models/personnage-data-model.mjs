@@ -983,6 +983,12 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
     }
 
     #_pp() {
+        if (!this.pp.base) {
+            Object.defineProperty(this.pp, 'base', {
+                value: this.puissance * 15,
+            });
+        }
+
         const pouvoir = this.items
             .filter((item) => item.type === 'pouvoir')
             .reduce((acc, item) => {

@@ -8,7 +8,6 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Easy: Set max Power Points based on Power Level
 * Optional:Allow upgrading conditions via attacks
 * Optional: Skill checkbox: Untrained?
   * If not set & no ranks, deactive rolling
