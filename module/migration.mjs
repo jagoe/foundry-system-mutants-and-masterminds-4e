@@ -5,17 +5,20 @@ export class MigrationMM4 {
     static PLACEHOLDER_VERSION = '#{VERSION}#';
 
     static needUpdate(version) {
+        // I did not take care of migration logic, so this would probably just do some weird stuff and/or break things
+        return false;
+
         const currentVersion = getSetting('systemVersion');
+
+        if (version === this.PLACEHOLDER_VERSION) {
+            return false;
+        }
+
         return !currentVersion || foundry.utils.isNewerVersion(version, currentVersion);
     }
 
     static async migrateWorld(options = { force: false }) {
         if (!game.user.isFirstGM) {
-            return;
-        }
-
-        if (game.system.version === this.PLACEHOLDER_VERSION) {
-            // No release; no need to migrate
             return;
         }
 
