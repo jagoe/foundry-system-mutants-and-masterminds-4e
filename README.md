@@ -12,8 +12,10 @@ Feel free to try and use the system yourself, but there will be no release and n
 * Optional: Skill checkbox: Untrained?
   * If not set & no ranks, deactive rolling
 * Optional: Deleting effect variants should removes them from owner's tracker
-* Optional: Maneuvers can't lower lowered stat below 0 and boost heightened more than double the original
+* Optional: Power variants should not be required to apply (Foundry) effects to a power
+* Optional: Maneuvers shouldn't lower lowered stat below 0 or boost heightened stat more than double the original
 * Optional: Implement hardenend, impervious, penetraing, & impenetrable toughness
+* When minimizing a power, the description (but not the details) should still be visible OR details should be toggleable when not minimized
 
 I'll leave the rest of the readme as I found it.
 
