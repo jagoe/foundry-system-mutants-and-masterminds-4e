@@ -1,4 +1,4 @@
-/* stylelint-disable no-invalid-position-at-import-rule */
+/* stylelint-disable no-invalid-position-at-import-rule,import-notation */
 @import url("https://fonts.googleapis.com/css?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Sriracha&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Kalam&display=swap");
@@ -22,14 +22,14 @@
 @import url("https://fonts.googleapis.com/css?family=Quantico&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Secular+One&display=swap");
-nav.tabs {
+.mm4.sheet nav.tabs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, auto));
   gap: 5px;
   border: 0;
   justify-content: left;
 }
-nav.tabs a {
+.mm4.sheet nav.tabs a {
   position: relative;
   border-bottom: 2px solid #666;
   border-color: #aaa;
@@ -50,13 +50,13 @@ nav.tabs a {
   padding-right: 5px;
   letter-spacing: 1px;
 }
-nav.tabs a:hover {
+.mm4.sheet nav.tabs a:hover {
   color: #fe8412;
   border-color: #fe1611;
   letter-spacing: 1px;
   text-shadow: none;
 }
-nav.tabs a.active {
+.mm4.sheet nav.tabs a.active {
   color: #363b44;
   border-color: #fe1611;
   letter-spacing: 1px;
@@ -65,7 +65,7 @@ nav.tabs a.active {
   padding-right: 30px;
   justify-content: left;
 }
-nav.tabs a.active i {
+.mm4.sheet nav.tabs a.active i {
   position: absolute;
   right: 0;
   font-size: 16px;
@@ -3067,14 +3067,14 @@ div.personnage div.totalpp div.btnOC {
   top: 5px;
 }
 
-nav.tabs {
+.mm4.sheet nav.tabs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, auto));
   gap: 5px;
   border: 0;
   justify-content: left;
 }
-nav.tabs a {
+.mm4.sheet nav.tabs a {
   position: relative;
   border-bottom: 2px solid #666;
   border-color: #aaa;
@@ -3095,13 +3095,13 @@ nav.tabs a {
   padding-right: 5px;
   letter-spacing: 1px;
 }
-nav.tabs a:hover {
+.mm4.sheet nav.tabs a:hover {
   color: #fe8412;
   border-color: #fe1611;
   letter-spacing: 1px;
   text-shadow: none;
 }
-nav.tabs a.active {
+.mm4.sheet nav.tabs a.active {
   color: #363b44;
   border-color: #fe1611;
   letter-spacing: 1px;
@@ -3110,7 +3110,7 @@ nav.tabs a.active {
   padding-right: 30px;
   justify-content: left;
 }
-nav.tabs a.active i {
+.mm4.sheet nav.tabs a.active i {
   position: absolute;
   right: 0;
   font-size: 16px;
@@ -3502,14 +3502,14 @@ div.modificateur section.sheet-body div.description div.editor div.tox-tinymce {
   min-height: 300px;
 }
 
-nav.tabs {
+.mm4.sheet nav.tabs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, auto));
   gap: 5px;
   border: 0;
   justify-content: left;
 }
-nav.tabs a {
+.mm4.sheet nav.tabs a {
   position: relative;
   border-bottom: 2px solid #666;
   border-color: #aaa;
@@ -3530,13 +3530,13 @@ nav.tabs a {
   padding-right: 5px;
   letter-spacing: 1px;
 }
-nav.tabs a:hover {
+.mm4.sheet nav.tabs a:hover {
   color: #fe8412;
   border-color: #fe1611;
   letter-spacing: 1px;
   text-shadow: none;
 }
-nav.tabs a.active {
+.mm4.sheet nav.tabs a.active {
   color: #363b44;
   border-color: #fe1611;
   letter-spacing: 1px;
@@ -3545,7 +3545,7 @@ nav.tabs a.active {
   padding-right: 30px;
   justify-content: left;
 }
-nav.tabs a.active i {
+.mm4.sheet nav.tabs a.active i {
   position: absolute;
   right: 0;
   font-size: 16px;
@@ -4372,14 +4372,14 @@ div.pouvoir section.sheet-body div.modificateurs div.extras > details section di
   min-height: 300px;
 }
 
-nav.tabs {
+.mm4.sheet nav.tabs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, auto));
   gap: 5px;
   border: 0;
   justify-content: left;
 }
-nav.tabs a {
+.mm4.sheet nav.tabs a {
   position: relative;
   border-bottom: 2px solid #666;
   border-color: #aaa;
@@ -4400,13 +4400,13 @@ nav.tabs a {
   padding-right: 5px;
   letter-spacing: 1px;
 }
-nav.tabs a:hover {
+.mm4.sheet nav.tabs a:hover {
   color: #fe8412;
   border-color: #fe1611;
   letter-spacing: 1px;
   text-shadow: none;
 }
-nav.tabs a.active {
+.mm4.sheet nav.tabs a.active {
   color: #363b44;
   border-color: #fe1611;
   letter-spacing: 1px;
@@ -4415,7 +4415,7 @@ nav.tabs a.active {
   padding-right: 30px;
   justify-content: left;
 }
-nav.tabs a.active i {
+.mm4.sheet nav.tabs a.active i {
   position: absolute;
   right: 0;
   font-size: 16px;
@@ -4777,14 +4777,14 @@ div.talent section.sheet-body div.description div.editor div.tox-tinymce {
   min-height: 300px;
 }
 
-nav.tabs {
+.mm4.sheet nav.tabs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, auto));
   gap: 5px;
   border: 0;
   justify-content: left;
 }
-nav.tabs a {
+.mm4.sheet nav.tabs a {
   position: relative;
   border-bottom: 2px solid #666;
   border-color: #aaa;
@@ -4805,13 +4805,13 @@ nav.tabs a {
   padding-right: 5px;
   letter-spacing: 1px;
 }
-nav.tabs a:hover {
+.mm4.sheet nav.tabs a:hover {
   color: #fe8412;
   border-color: #fe1611;
   letter-spacing: 1px;
   text-shadow: none;
 }
-nav.tabs a.active {
+.mm4.sheet nav.tabs a.active {
   color: #363b44;
   border-color: #fe1611;
   letter-spacing: 1px;
@@ -4820,7 +4820,7 @@ nav.tabs a.active {
   padding-right: 30px;
   justify-content: left;
 }
-nav.tabs a.active i {
+.mm4.sheet nav.tabs a.active i {
   position: absolute;
   right: 0;
   font-size: 16px;
@@ -5126,14 +5126,14 @@ div.equipement section.sheet-body div.description div.editor div.tox-tinymce {
   min-height: 300px;
 }
 
-nav.tabs {
+.mm4.sheet nav.tabs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, auto));
   gap: 5px;
   border: 0;
   justify-content: left;
 }
-nav.tabs a {
+.mm4.sheet nav.tabs a {
   position: relative;
   border-bottom: 2px solid #666;
   border-color: #aaa;
@@ -5154,13 +5154,13 @@ nav.tabs a {
   padding-right: 5px;
   letter-spacing: 1px;
 }
-nav.tabs a:hover {
+.mm4.sheet nav.tabs a:hover {
   color: #fe8412;
   border-color: #fe1611;
   letter-spacing: 1px;
   text-shadow: none;
 }
-nav.tabs a.active {
+.mm4.sheet nav.tabs a.active {
   color: #363b44;
   border-color: #fe1611;
   letter-spacing: 1px;
@@ -5169,7 +5169,7 @@ nav.tabs a.active {
   padding-right: 30px;
   justify-content: left;
 }
-nav.tabs a.active i {
+.mm4.sheet nav.tabs a.active i {
   position: absolute;
   right: 0;
   font-size: 16px;
@@ -7033,14 +7033,14 @@ div.vehicule section.sheet-body div.listpouvoir div.descripteurs {
   text-align: justify;
 }
 
-nav.tabs {
+.mm4.sheet nav.tabs {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, auto));
   gap: 5px;
   border: 0;
   justify-content: left;
 }
-nav.tabs a {
+.mm4.sheet nav.tabs a {
   position: relative;
   border-bottom: 2px solid #666;
   border-color: #aaa;
@@ -7061,13 +7061,13 @@ nav.tabs a {
   padding-right: 5px;
   letter-spacing: 1px;
 }
-nav.tabs a:hover {
+.mm4.sheet nav.tabs a:hover {
   color: #fe8412;
   border-color: #fe1611;
   letter-spacing: 1px;
   text-shadow: none;
 }
-nav.tabs a.active {
+.mm4.sheet nav.tabs a.active {
   color: #363b44;
   border-color: #fe1611;
   letter-spacing: 1px;
@@ -7076,7 +7076,7 @@ nav.tabs a.active {
   padding-right: 30px;
   justify-content: left;
 }
-nav.tabs a.active i {
+.mm4.sheet nav.tabs a.active i {
   position: absolute;
   right: 0;
   font-size: 16px;
