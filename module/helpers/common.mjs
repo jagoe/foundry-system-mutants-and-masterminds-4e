@@ -799,7 +799,6 @@ export async function processImport(actor, data, actorType = 'personnage') {
     let powerDetails = {};
     let listLangues = [];
     let endurance = 0;
-    let combativite = 0;
     let defense = 0;
     let sensibilite = 0;
     let agilite = 0;
@@ -809,7 +808,6 @@ export async function processImport(actor, data, actorType = 'personnage') {
         for (let attr of attributes) {
             if (attributsTRA[attr.name] === 'agilite') agilite = Number(attr.modified);
             if (attributsTRA[attr.name] === 'endurance') endurance = Number(attr.modified);
-            if (attributsTRA[attr.name] === 'combativite') combativite = Number(attr.modified);
             if (attributsTRA[attr.name] === 'defense') defense = Number(attr.modified);
             if (attributsTRA[attr.name] === 'sensibilite') sensibilite = Number(attr.modified);
 
@@ -821,7 +819,7 @@ export async function processImport(actor, data, actorType = 'personnage') {
         }
 
         totalAttrDef['Dodge'] = defense;
-        totalAttrDef['Parry'] = combativite;
+        totalAttrDef['Parry'] = defense;
         totalAttrDef['Fort'] = endurance;
         totalAttrDef['Tou'] = endurance;
         totalAttrDef['Fortitude'] = endurance;

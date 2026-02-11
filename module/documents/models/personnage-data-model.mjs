@@ -703,6 +703,13 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                     }
                 }
 
+                let strategieBonus = 0;
+                if (c === 'defense') {
+                    strategieBonus = this.strategie.total.defense;
+                } else if (c === 'combativite') {
+                    strategieBonus = this.strategie.total.attaque;
+                }
+
                 Object.defineProperty(carac, 'total', {
                     value: isSurcharge(
                         Math.max(carac.surcharge, surchargeRanksValue),
@@ -710,6 +717,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                         carac.divers,
                         carac.bonuses,
                         ranksValue,
+                        strategieBonus,
                     ),
                 });
             }
@@ -874,9 +882,6 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                     }
                 }
             }
-
-            if (defenseName === 'esquive') mod += this.strategie.total.defense;
-            if (defenseName === 'parade') mod += this.strategie.total.defense;
             ppDef += defRang;
 
             Object.defineProperty(currentDefense, 'carac', {
@@ -1084,6 +1089,8 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                     effet += rang + modEff;
                 }
             }
+
+            effet += this.strategie.total.effet;
 
             if (effet) {
                 Object.defineProperty(atkData, 'effet', {

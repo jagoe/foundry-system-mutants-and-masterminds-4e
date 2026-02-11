@@ -9,7 +9,6 @@ Feel free to try and use the system yourself, but there will be no release and n
 ## Todos
 
 * Bug: Modifying Dodge modifies Ranged DC
-* All-out Attack & Defensive Attack affect Defense, not the derived stats
 * Correct default attack damage conditions (when creating attacks)
 * Make sure existing conditions have correct effects
 * Add remaining conditions
@@ -28,6 +27,7 @@ Feel free to try and use the system yourself, but there will be no release and n
 * Add effects capability w/ pre-defined effects for the conditions?
 * Deleting effect variants removes them from owner's tracker
 * Set max Power Points based on Power Level
+* Optional: Maneuvers can't lower lowered stat below 0 and boost heightened more than double the original
 
 I'll leave the rest of the readme as I found it.
 
