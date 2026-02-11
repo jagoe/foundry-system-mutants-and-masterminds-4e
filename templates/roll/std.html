@@ -8,9 +8,15 @@
         <h4 class="dice-total formula">{{formula}}</h4>
         {{/if}} {{#if tooltip}} {{{tooltip}}} {{/if}} {{#if result}}
         <h4 class="dice-total result">{{result}}</h4>
-        {{/if}} {{#if isCritique}}
+        {{/if}}
+        {{#if isCritique}}
         <h4 class="dice-total result critique">{{localize "MM4.ROLL.Critique"}} !</h4>
-        {{/if}} {{#if isCombat}} {{#if result}}
+        {{/if}}
+        {{#if isNat1}}
+        <h4 class="dice-total result nat1">{{localize "MM4.ROLL.Nat1"}} !</h4>
+        {{/if}}
+        {{#if isCombat}}
+        {{#if result includeZero=true}}
         <h4 class="dice-total attack">
             {{#if isSuccess}} {{localize "MM4.ROLL.AttSuccess"}} {{else}} {{localize "MM4.ROLL.AttFail"}} {{/if}}
         </h4>
@@ -19,48 +25,45 @@
                 <span>{{type}} : {{defense}}</span>
             </div>
         </div>
-        {{/if}} {{#if isSuccess}} {{#if degreSuccess}}
+        {{/if}}
+        {{#if degreSuccess includeZero=true}}
         <div class="dice-tooltip dataAttack">
             <div class="inner">
-                <span>{{singularOrPlural degreSuccess 'success'}} : {{degreSuccess}}</span>
+                {{#if isSuccess}}
+                <span>{{singularOrPlural degreSuccess 'success'}}: {{degreSuccess}}</span>
+                {{else}}
+                <span>{{singularOrPlural degreSuccess 'failure'}}: {{degreSuccess}}</span>
+                {{/if}}
             </div>
         </div>
-        {{/if}} {{#each btn as | key dBtn |}}
+        {{/if}}
+        {{#if isSuccess}}
+        {{#each btn as | key dBtn |}}
         <div class="btn">
-            <button
-                class="btnRoll"
-                data-type="{{key.typeAtk}}"
-                data-target="{{key.target}}"
-                data-savetype="{{key.saveType}}"
-                data-vs="{{key.vs}}"
-                data-dAtk="{{@root/dataAtk}}"
-                data-dStr="{{@root/dataStr}}"
-            >
+            <button class="btnRoll" data-type="{{key.typeAtk}}" data-target="{{key.target}}"
+                data-savetype="{{key.saveType}}" data-vs="{{key.vs}}" data-dAtk="{{@root/dataAtk}}"
+                data-dStr="{{@root/dataStr}}">
                 {{translate 'jetdefenses' key.saveType}}
             </button>
         </div>
-        {{/each}} {{/if}} {{/if}} {{#if vs}}
+        {{/each}}
+        {{/if}}
+        {{/if}}
+        {{#if hasMarge}}
         <h4 class="dice-total attack">
             {{#if isSuccess}} {{localize "MM4.ROLL.Success"}} {{else}} {{localize "MM4.ROLL.Fail"}} {{/if}}
         </h4>
         <div class="dice-tooltip dataAttack toHide">
             <div class="inner">
-                <span>{{localize "MM4.ROLL.DD"}} : {{vs}}</span>
+                <span>{{localize "MM4.ROLL.DD"}}: {{vs}}</span>
             </div>
         </div>
-        {{#if hasMarge}}
-        <h4 class="dice-total attack">{{singularOrPlural resultMarge successOrFail}} : {{resultMarge}}</h4>
-        {{/if}} {{#each btn as | key dBtn |}}
+        <h4 class="dice-total attack">{{singularOrPlural resultMarge successOrFail}}: {{resultMarge}}</h4>
+        {{#each btn as | key dBtn |}}
         <div class="btn">
-            <button
-                class="btnRoll"
-                data-type="{{key.typeAtk}}"
-                data-target="{{key.target}}"
-                data-savetype="{{key.saveType}}"
-                data-vs="{{key.vs}}"
-                data-dAtk="{{@root/dataAtk}}"
-                data-dStr="{{@root/dataStr}}"
-            >
+            <button class="btnRoll" data-type="{{key.typeAtk}}" data-target="{{key.target}}"
+                data-savetype="{{key.saveType}}" data-vs="{{key.vs}}" data-dAtk="{{@root/dataAtk}}"
+                data-dStr="{{@root/dataStr}}">
                 {{translate 'jetdefenses' key.saveType}}
             </button>
         </div>

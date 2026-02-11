@@ -28,7 +28,7 @@ export const RegisterHandlebars = function () {
     Handlebars.registerHelper('singularOrPlural', function (count, successOrFail) {
         let result;
 
-        if (count > 1) {
+        if (Math.abs(count) > 1) {
             if (successOrFail === 'success') result = game.i18n.localize('MM4.ROLL.DegresReussite');
             else result = game.i18n.localize('MM4.ROLL.DegresEchec');
         } else {

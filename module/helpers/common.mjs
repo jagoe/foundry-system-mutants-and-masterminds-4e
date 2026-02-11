@@ -2220,13 +2220,22 @@ export async function rollStd(actor, name, score, dataKey = {}) {
     let formula = mod === 0 ? `${dicesFormula} + ${total}` : `${dicesFormula} + ${total} + ${mod}`;
 
     if (useShift) {
-        let resultMarge = 0;
-        let isCritique = false;
+        let resultMarge = Math.floor((roll.total - dd) / 5) + 1;
+        let isCritique = resultDie >= dicesCrit;
+        let isNat1 = resultDie === 1;
 
-        if (dd > 0) resultMarge = (roll.total - dd) / 5;
-        if (resultDie >= dicesCrit) isCritique = true;
+        if (isCritique) {
+            resultMarge += 1;
+        }
+        if (isNat1) {
+            resultMarge -= 1;
+        }
 
-        const finalMarge = resultMarge < 0 ? Math.abs(resultMarge) + 1 : resultMarge + 1;
+        if (resultMarge <= 0) {
+            resultMarge -= 1;
+        }
+
+        const finalMarge = Math.abs(resultMarge);
 
         pRoll = {
             flavor: name === '' ? ' - ' : `${name}`,
@@ -2234,10 +2243,10 @@ export async function rollStd(actor, name, score, dataKey = {}) {
             formula: formula,
             result: roll.total,
             isCritique: isCritique,
-            vs: dd > 0 ? dd : false,
-            isSuccess: roll.total >= dd ? true : false,
-            hasMarge: dd > 0 ? true : false,
-            resultMarge: isCritique ? Math.floor(finalMarge) + 1 : Math.floor(finalMarge),
+            vs: dd,
+            isSuccess: resultMarge > 0,
+            hasMarge: true,
+            resultMarge: finalMarge,
             successOrFail: resultMarge < 0 ? 'fail' : 'success',
         };
     } else {
@@ -2586,7 +2595,6 @@ export async function rollAtkTgt(actor, name, score, data, tgt, dataKey = {}) {
         tokenActor.type === 'vehicule'
             ? Number(tokenData.caracteristique.defense.total)
             : Number(tokenData.defense.volonte.total) + 10;
-    const sCritique = dataCbt.critique;
     const noCrit = dataCbt.settings.nocrit ? true : false;
     const isArea = dataCbt?.area?.has ?? false;
     const defpassive = dataCbt?.save.passive?.type ?? 'parade';
@@ -2631,14 +2639,25 @@ export async function rollAtkTgt(actor, name, score, data, tgt, dataKey = {}) {
     }
 
     let result = {
-        hit: roll.total >= ddDefense && resultDie !== 1 ? true : false,
-        crit: resultDie >= dataCbt.critique && !noCrit ? true : false,
+        hit: roll.total >= ddDefense ? true : false,
+        critHit: resultDie >= dataCbt.critique && !noCrit ? true : false,
+        critMiss: resultDie === 1 && !noCrit ? true : false,
+        dos: Math.floor((roll.total - ddDefense) / 5) + 1,
     };
+
+    if (result.critHit) {
+        result.dos += 1;
+    } else if (result.critMiss) {
+        result.dos -= 1;
+    }
+
+    if (result.dos <= 0) {
+        result.dos -= 1;
+    }
+
     let pRoll;
 
-    if (result.hit || result.crit) {
-        let dSuccess = Math.floor((roll.total - ddDefense) / 5) + 1;
-
+    if (result.dos >= 1) {
         let btn = [];
 
         if (isArea && tokenActor.type !== 'vehicule') {
@@ -2727,8 +2746,9 @@ export async function rollAtkTgt(actor, name, score, data, tgt, dataKey = {}) {
             isCombat: true,
             isSuccess: true,
             defense: ddDefense,
-            isCritique: resultDie >= sCritique && !noCrit ? true : false,
-            degreSuccess: dSuccess,
+            isCritique: result.critHit,
+            isNat1: result.critMiss,
+            degreSuccess: result.dos,
             type: traType,
             text: dataCbt.text,
             tgtName: token.actor.name,
@@ -2744,6 +2764,9 @@ export async function rollAtkTgt(actor, name, score, data, tgt, dataKey = {}) {
             result: roll.total,
             isCombat: true,
             isSuccess: false,
+            isCritique: result.critHit,
+            isNat1: result.critMiss,
+            degreSuccess: Math.abs(result.dos),
             defense: ddDefense,
             type: traType,
             text: dataCbt.text,

@@ -89,6 +89,11 @@
             border-top: 1px solid $black;
             color: $green;
         }
+
+        &.nat1 {
+            border-top: 1px solid $black;
+            color: $red;
+        }
     }
 
     div {
@@ -289,6 +294,11 @@
         &.critique {
             border-top: 1px solid $black;
             color: $green;
+        }
+
+        &.nat1 {
+            border-top: 1px solid $black;
+            color: $red;
         }
     }
 

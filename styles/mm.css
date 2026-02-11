@@ -8931,6 +8931,10 @@ section.sheet-bottom {
   border-top: 1px solid black;
   color: #0fb002;
 }
+.mm4-roll h4.nat1 {
+  border-top: 1px solid black;
+  color: #fe1611;
+}
 .mm4-roll div.dice-tooltip {
   grid-template-rows: auto;
   border-left: 1px solid black;
@@ -9098,6 +9102,10 @@ section.sheet-bottom {
 .mm4-rollpwr h4.critique {
   border-top: 1px solid black;
   color: #0fb002;
+}
+.mm4-rollpwr h4.nat1 {
+  border-top: 1px solid black;
+  color: #fe1611;
 }
 .mm4-rollpwr div.dice-tooltip {
   grid-template-rows: auto;
