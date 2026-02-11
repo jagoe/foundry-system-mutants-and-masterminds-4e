@@ -89,7 +89,7 @@ export class MigrationMM4 {
                         break;
 
                     case 'robustesse':
-                        update[`system.attaque.${a}.basedef`] = 15;
+                        update[`system.attaque.${a}.basedef`] = 10;
                         break;
 
                     case 'volonte':
@@ -470,45 +470,58 @@ export class MigrationMM4 {
                     const dmg1 = dAtt.dmgechec?.v1 ?? 1;
                     const dmg2 = dAtt.dmgechec?.v2 ?? 1;
                     const dmg3 = dAtt.dmgechec?.v3 ?? 1;
-                    const dmg4 = dAtt.dmgechec?.v4 ?? 1;
 
                     update[`system.attaque.${a}.-=dmgechec`] = null;
 
                     update[`system.attaque.${a}.repeat.dmg`] = [
                         {
                             value: dmg1,
-                            status: [],
+                            status: ['dazed'],
+                            upgrades: {
+                                dazed: 'stunned',
+                                dying: 'dead',
+                            },
                         },
                         {
                             value: dmg2,
-                            status: ['dazed'],
+                            status: ['stunned', 'chanceling'],
+                            upgrades: {
+                                dying: 'dead',
+                            },
                         },
                         {
                             value: dmg3,
-                            status: ['chanceling'],
-                        },
-                        {
-                            value: dmg4,
-                            status: ['neutralized'],
+                            status: ['chanceling', 'neutralized'],
+                            upgrades: {
+                                neutralized: 'dying',
+                                dying: 'dead',
+                            },
                         },
                     ];
                 } else if (!dAtt.repeat) {
                     update[`system.attaque.${a}.repeat.dmg`] = [
                         {
                             value: 1,
-                            status: [],
-                        },
-                        {
-                            value: 1,
                             status: ['dazed'],
+                            upgrades: {
+                                dazed: 'stunned',
+                                dying: 'dead',
+                            },
                         },
                         {
                             value: 1,
-                            status: ['chanceling'],
+                            status: ['stunned', 'chanceling'],
+                            upgrades: {
+                                dying: 'dead',
+                            },
                         },
                         {
                             value: 1,
-                            status: ['neutralized'],
+                            status: ['chanceling', 'neutralized'],
+                            upgrades: {
+                                neutralized: 'dying',
+                                dying: 'dead',
+                            },
                         },
                     ];
                 }
@@ -589,8 +602,8 @@ export class MigrationMM4 {
                     update[`system.attaque.${a}.save.dmg.defense`] = dAtt.basedef;
                     update[`system.attaque.${a}.save.other.defense`] = dAtt.basedef;
                 } else if (!dAtt.basedef) {
-                    update[`system.attaque.${a}.save.dmg.defense`] = 15;
-                    update[`system.attaque.${a}.save.other.defense`] = 15;
+                    update[`system.attaque.${a}.save.dmg.defense`] = 10;
+                    update[`system.attaque.${a}.save.other.defense`] = 10;
                 }
 
                 if (dAtt.effet) {
@@ -627,7 +640,7 @@ export class MigrationMM4 {
                     update[`system.attaque.${a}.area.esquive`] = dAtt?.mod?.area ?? 0;
                 } else if (!dAtt?.mod?.area) update[`system.attaque.${a}.area.esquive`] = 0;
 
-                update[`system.attaque.${a}.save.other.defense`] = 15;
+                update[`system.attaque.${a}.save.other.defense`] = 10;
                 update[`system.attaque.${a}.links.ability`] = '';
             }
         }

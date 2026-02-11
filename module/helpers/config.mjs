@@ -376,7 +376,7 @@ MM4.StdAtk = {
     save: {
         dmg: {
             type: 'robustesse',
-            defense: 15,
+            defense: 10,
             effet: 0,
         },
         affliction: {
@@ -386,7 +386,7 @@ MM4.StdAtk = {
         },
         other: {
             type: 'robustesse',
-            defense: 15,
+            defense: 10,
         },
         passive: {
             type: 'parade',
@@ -422,19 +422,26 @@ MM4.StdAtk = {
         dmg: [
             {
                 value: 1,
-                status: [],
-            },
-            {
-                value: 1,
                 status: ['dazed'],
+                upgrades: {
+                    dazed: 'stunned',
+                    dying: 'dead',
+                },
             },
             {
                 value: 1,
-                status: ['chanceling'],
+                status: ['stunned', 'chanceling'],
+                upgrades: {
+                    dying: 'dead',
+                },
             },
             {
                 value: 1,
-                status: ['neutralized'],
+                status: ['chanceling', 'neutralized'],
+                upgrades: {
+                    neutralized: 'dying',
+                    dying: 'dead',
+                },
             },
         ],
     },

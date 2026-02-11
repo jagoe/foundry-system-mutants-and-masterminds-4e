@@ -10,7 +10,6 @@ export class editAtk {
     - Effets de zone : area
     - Bouton "Pas de jet d'attaque" : noatk
     - Bouton "Pas de critique" : nocrit
-    - Base du jet de défense : baseDef
     - Jet de sauvegarde : save
     - Gestion des dégâts : dmg
     */
@@ -350,7 +349,7 @@ export class editAtk {
                 label: game.i18n.localize('MM4.ROLL.TYPE.Degats'),
                 selected: dataAtk?.save?.dmg?.type ?? 'robustesse',
                 defenses: defenses,
-                basedefense: dataAtk?.save?.dmg?.defense ?? 15,
+                basedefense: dataAtk?.save?.dmg?.defense ?? 10,
                 effet: dataAtk?.save?.dmg?.effet ?? 0,
                 list: dataAtk.repeat.dmg.map((dmg) => ({
                     value: dmg?.value ?? 1,
@@ -659,6 +658,10 @@ export class editAtk {
                 result = `EFFECT.StatusDead`;
                 break;
 
+            case 'Dying':
+                result = `MM4.STATUS.Dying`;
+                break;
+
             case 'Impaired':
                 result = `MM4.STATUS.Decreased`;
                 break;
@@ -711,7 +714,7 @@ export class editAtk {
                 result = `MM4.STATUS.Paralysis`;
                 break;
 
-            case 'Stun':
+            case 'Stunned':
                 result = `MM4.STATUS.Stunned`;
                 break;
 

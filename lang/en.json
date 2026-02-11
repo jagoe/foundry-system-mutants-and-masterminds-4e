@@ -27,6 +27,7 @@
         "STATUS": {
             "Controlled": "Controlled",
             "Decreased": "Impaired",
+            "Dying": "Dying",
             "Tired": "Fatigued",
             "Disabled": "Disabled",
             "Dazed": "Dazed",
@@ -42,7 +43,6 @@
             "Influenced": "Compelled",
             "Exhausted": "Exhausted",
             "Tied": "Bound",
-            "Dying": "Dying",
             "Neutralized": "Incapacitated",
             "Surprised": "Surprised",
             "Downgrade": "Weakened",

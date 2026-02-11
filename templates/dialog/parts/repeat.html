@@ -6,8 +6,7 @@
         <span class="main"> {{label}} </span>
     </header>
 
-    <div class="innerData">
-        <label class="rbasedefense">
+    <div class="innerData"><label class="rbasedefense">
             <span>{{localize 'MM4.ROLL.DEFENSE.Basedefense'}} : </span>
             <input type="number" value="{{basedefense}}" min="0" />
         </label>
@@ -25,10 +24,8 @@
     <div class="data" style="display: grid">
         {{#each list}}
         <div class="line l{{@index}}" data-index="{{@index}}">
-            <span class="header"
-                >{{numRepeat @index}} {{#if @first}}{{localize "MM4.ROLL.DegreEchec"}}{{else}}{{localize
-                "MM4.ROLL.DegresEchec"}}{{/if}}</span
-            >
+            <span class="header">{{numRepeat @index}} {{#if @first}}{{localize "MM4.ROLL.DegreEchec"}}{{else}}{{localize
+                "MM4.ROLL.DegresEchec"}}{{/if}}</span>
             <div class="value">
                 <span>{{localize "MM4.ROLL.TYPE.Degats"}} :</span>
                 <input type="number" value="{{value}}" min="0" />

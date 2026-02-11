@@ -326,7 +326,6 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                 const dmg1 = dAtt.dmgechec?.v1 ?? 1;
                 const dmg2 = dAtt.dmgechec?.v2 ?? 1;
                 const dmg3 = dAtt.dmgechec?.v3 ?? 1;
-                const dmg4 = dAtt.dmgechec?.v4 ?? 1;
 
                 if (!dAtt?.repeat) {
                     let update = {
@@ -342,19 +341,26 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                             dmg: [
                                 {
                                     value: dmg1,
-                                    status: [],
+                                    status: ['dazed'],
+                                    upgrades: {
+                                        dazed: 'stunned',
+                                        dying: 'dead',
+                                    },
                                 },
                                 {
                                     value: dmg2,
-                                    status: ['dazed'],
+                                    status: ['stunned', 'chanceling'],
+                                    upgrades: {
+                                        dying: 'dead',
+                                    },
                                 },
                                 {
                                     value: dmg3,
-                                    status: ['chanceling'],
-                                },
-                                {
-                                    value: dmg4,
-                                    status: ['neutralized'],
+                                    status: ['chanceling', 'neutralized'],
+                                    upgrades: {
+                                        neutralized: 'dying',
+                                        dying: 'dead',
+                                    },
                                 },
                             ],
                             affliction: [

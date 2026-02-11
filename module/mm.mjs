@@ -315,7 +315,7 @@ Hooks.once('init', async function () {
                     value: 0,
                 },
                 {
-                    key: 'stun',
+                    key: 'stunned',
                     mode: 0,
                     value: 0,
                 },
@@ -346,7 +346,7 @@ Hooks.once('init', async function () {
             origin: 'status',
             changes: [
                 {
-                    key: 'stun',
+                    key: 'stunned',
                     mode: 0,
                     value: 0,
                 },
@@ -418,7 +418,7 @@ Hooks.once('init', async function () {
                     value: 0,
                 },
                 {
-                    key: 'stun',
+                    key: 'stunned',
                     mode: 0,
                     value: 0,
                 },
@@ -446,7 +446,7 @@ Hooks.once('init', async function () {
                     value: 0,
                 },
                 {
-                    key: 'stun',
+                    key: 'stunned',
                     mode: 0,
                     value: 0,
                 },
@@ -470,14 +470,14 @@ Hooks.once('init', async function () {
                     value: 0,
                 },
                 {
-                    key: 'stun',
+                    key: 'stunned',
                     mode: 0,
                     value: 0,
                 },
             ],
         },
         {
-            id: 'stun',
+            id: 'stunned',
             label: 'MM4.STATUS.Stunned',
             icon: `${assetsPath}/icons/stunned.svg`,
             origin: 'status',
@@ -594,8 +594,6 @@ Hooks.once('ready', async function () {
     if (game.user.isFirstGM && MigrationMM4.needUpdate(MigrationMM4.NEEDED_VERSION)) {
         MigrationMM4.migrateWorld({ force: false }).then();
     }
-
-    Hooks.on('hotbarDrop', (bar, data, slot) => createMacro(bar, data, slot));
 
     const whatMenu = getSetting('menu');
     $('div#interface').removeClass(listBg);
@@ -1475,36 +1473,6 @@ Hooks.on('updateActor', async (actor, data, _id) => {
     }
   }*/
 });
-
-async function createMacro(bar, data, slot) {
-    if (data.type === 'Item' || foundry.utils.isEmpty(data)) return;
-    // Create the macro command
-    const type = data.type;
-    const label = data.label;
-    const actorId = data.actorId;
-    const sceneId = data.sceneId;
-    const tokenId = data.tokenId;
-    const what = data?.what ?? '';
-    const id = data?.id ?? -1;
-    const author = data?.author ?? 'personnage';
-    const command =
-        type === 'pouvoir'
-            ? `game.mm4.RollMacroPwr("${actorId}", "${sceneId}", "${tokenId}", "${id}", "${author}");`
-            : `game.mm4.RollMacro("${actorId}", "${sceneId}", "${tokenId}", "${type}", "${what}", "${id}", "${author}", event);`;
-
-    let img = data.img;
-    if (img === '') img = `${assetsPath}/icons/dice.svg`;
-
-    let macro = await Macro.create({
-        name: label,
-        type: 'script',
-        img: img,
-        command: command,
-        flags: { 'mm4.attributMacro': true },
-    });
-    game.user.assignHotbarMacro(macro, slot);
-    return false;
-}
 
 async function RollMacro(actorId, sceneId, tokenId, type, what, id, author, event) {
     const actor =

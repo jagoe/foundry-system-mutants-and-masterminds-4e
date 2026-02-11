@@ -193,6 +193,11 @@ export const RegisterHandlebars = function () {
                     result = `EFFECT.StatusDead`;
                     break;
 
+                case 'Dying':
+                case 'dying':
+                    result = `MM4.STATUS.Dying`;
+                    break;
+
                 case 'Impaired':
                     result = `MM4.STATUS.Decreased`;
                     break;
@@ -245,7 +250,7 @@ export const RegisterHandlebars = function () {
                     result = `MM4.STATUS.Paralysis`;
                     break;
 
-                case 'Stun':
+                case 'Stunned':
                     result = `MM4.STATUS.Stunned`;
                     break;
 

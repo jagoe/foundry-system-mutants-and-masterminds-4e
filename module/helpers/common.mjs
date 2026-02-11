@@ -1158,7 +1158,7 @@ export async function processImport(actor, data, actorType = 'personnage') {
         restrained: 'restrain',
         paralyzed: 'paralysis',
         deaf: 'deaf',
-        stunned: 'stun',
+        stunned: 'stunned',
     };
 
     const conditionsVFId = {
@@ -1189,7 +1189,7 @@ export async function processImport(actor, data, actorType = 'personnage') {
         entravé: 'restrain',
         paralysé: 'paralysis',
         sourd: 'deaf',
-        étourdi: 'stun',
+        étourdi: 'stunned',
     };
 
     const resistVO = {
@@ -2326,10 +2326,11 @@ export async function rollVs(actor, name, score, vs, data = {}, dataKey = {}) {
         successOrFail: 'fail',
     };
 
+    let blessures = {};
+    const blessure = Number(actor.system.blessure);
+
     if (typeAtk !== false && !isSuccess) {
-        const blessure = Number(actor.system.blessure);
         let update = [];
-        let blessures = {};
 
         if (typeAtk === 'area') {
             const isDmg = dataAtk.isDmg;
@@ -2431,13 +2432,13 @@ export async function rollVs(actor, name, score, vs, data = {}, dataKey = {}) {
                     }
                 } else valueDmg = dataAtk.repeat.dmg[marge - 1].value;
             } else if (marge > dataAtk.repeat.dmg.length) {
-                status = dataAtk.repeat.dmg[dataAtk.repeat.affliction.length - 1].status;
+                status = dataAtk.repeat.dmg[dataAtk.repeat.dmg.length - 1].status;
 
                 if (isStacked) {
                     for (let n = 0; n < marge; n++) {
                         valueDmg += dataAtk.repeat.dmg?.[n]?.value ?? 0;
                     }
-                } else valueDmg = dataAtk.repeat.dmg[dataAtk.repeat.affliction.length - 1].value;
+                } else valueDmg = dataAtk.repeat.dmg[dataAtk.repeat.dmg.length - 1].value;
             }
 
             for (let s of status) {
@@ -2449,25 +2450,6 @@ export async function rollVs(actor, name, score, vs, data = {}, dataKey = {}) {
             blessures[`system.blessure`] = blessure + Number(valueDmg);
 
             if (update.length > 0) await token.actor.createEmbeddedDocuments('ActiveEffect', update);
-        }
-
-        if (!foundry.utils.isEmpty(blessures) && !isStacked) await token.actor.update(blessures);
-        else if (!foundry.utils.isEmpty(blessures) && isStacked) {
-            const tgt = token.id;
-            flags[`${assetsPath}.blessures`] = true;
-            flags[`${assetsPath}.value`] = blessures['system.blessure'];
-            pRollSave.specialBtn = [
-                {
-                    type: 'NL',
-                    label: game.i18n.localize('MM4.DegatsNL'),
-                    tgt: tgt,
-                },
-                {
-                    type: 'L',
-                    label: game.i18n.localize('MM4.DegatsL'),
-                    tgt: tgt,
-                },
-            ];
         }
     } else if (typeAtk !== false && typeAtk === 'area' && isSuccess) {
         const isDmg = dataAtk.isDmg;
@@ -2533,6 +2515,29 @@ export async function rollVs(actor, name, score, vs, data = {}, dataKey = {}) {
         pRollSave.dataStr = JSON.stringify(dataStr);
     }
 
+    if (typeAtk === 'dmg' && isSuccess) {
+        blessures[`system.blessure`] = blessure + Number(1);
+    }
+
+    if (!foundry.utils.isEmpty(blessures) && !isStacked) await token.actor.update(blessures);
+    else if (!foundry.utils.isEmpty(blessures) && isStacked) {
+        const tgt = token.id;
+        flags[`${assetsPath}.blessures`] = true;
+        flags[`${assetsPath}.value`] = blessures['system.blessure'];
+        pRollSave.specialBtn = [
+            {
+                type: 'NL',
+                label: game.i18n.localize('MM4.DegatsNL'),
+                tgt: tgt,
+            },
+            {
+                type: 'L',
+                label: game.i18n.localize('MM4.DegatsL'),
+                tgt: tgt,
+            },
+        ];
+    }
+
     const saveMsgData = {
         speaker: {
             actor: actor?.id || null,
@@ -2556,6 +2561,7 @@ export async function rollVs(actor, name, score, vs, data = {}, dataKey = {}) {
 //ROLL ATTAQUE AVEC CIBLE
 export async function rollAtkTgt(actor, name, score, data, tgt, dataKey = {}) {
     if (tgt === undefined) return;
+
     const optDices = getDices();
     const dicesBase = optDices.dices;
     const dicesFormula = optDices.formula;

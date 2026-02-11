@@ -8,7 +8,6 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Correct default attack damage conditions (when creating attacks)
 * Make sure existing conditions have correct effects
 * Add remaining conditions
   * Broken
@@ -21,12 +20,13 @@ Feel free to try and use the system yourself, but there will be no release and n
   * Hit*
   * Phantasm
   * Susceptible
-* Skill checkbox: Untrained?
+* Easy: Set max Power Points based on Power Level
+* Optional:Allow upgrading conditions via attacks
+* Optional: Skill checkbox: Untrained?
   * If not set & no ranks, deactive rolling
-* Add effects capability w/ pre-defined effects for the conditions?
-* Deleting effect variants removes them from owner's tracker
-* Set max Power Points based on Power Level
+* Optional: Deleting effect variants should removes them from owner's tracker
 * Optional: Maneuvers can't lower lowered stat below 0 and boost heightened more than double the original
+* Optional: Implement hardenend, impervious, penetraing, & impenetrable toughness
 
 I'll leave the rest of the readme as I found it.
 
