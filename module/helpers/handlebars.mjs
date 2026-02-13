@@ -286,5 +286,5 @@ export const RegisterHandlebars = function () {
         return actorIsCharacter;
     });
 
-    Handlebars.registerHelper('variantName', (effect) => effect.flags[systemId].variante);
+    Handlebars.registerHelper('variantName', (effect) => effect?.flags[systemId]?.variante ?? '');
 };
