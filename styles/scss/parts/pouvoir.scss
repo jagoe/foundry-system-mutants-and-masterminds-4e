@@ -646,6 +646,10 @@ div.pouvoir {
                                                 &.editor-content {
                                                     padding-left: 5px;
                                                     padding-right: 5px;
+
+                                                    &.ProseMirror {
+                                                        position: relative;
+                                                    }
                                                 }
 
                                                 &.tox-tinymce {

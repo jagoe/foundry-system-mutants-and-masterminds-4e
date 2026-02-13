@@ -2191,13 +2191,13 @@ div.pouvoirs div.lPouvoirs div.mod span.text {
   border-top: 1px dashed var(--color-border-light-primary);
   color: #363b44;
 }
-div.pouvoirs div.lPouvoirs div.mod span.text i {
+div.pouvoirs div.lPouvoirs div.mod span.text > i {
   position: absolute;
   right: 5px;
   top: 2px;
   cursor: pointer;
 }
-div.pouvoirs div.lPouvoirs div.mod span.text i div.infoExt {
+div.pouvoirs div.lPouvoirs div.mod span.text > i div.infoExt {
   display: none;
   position: absolute;
   width: 175px;
@@ -2209,12 +2209,12 @@ div.pouvoirs div.lPouvoirs div.mod span.text i div.infoExt {
   background: #4e7fc8;
   color: #ebebeb;
   font-family: Sriracha, sans-serif;
-  line-height: 12px;
+  line-height: 1.5em;
   text-shadow: none;
   font-weight: normal;
   z-index: 999;
 }
-div.pouvoirs div.lPouvoirs div.mod span.text i:hover {
+div.pouvoirs div.lPouvoirs div.mod span.text > i:hover {
   text-shadow: 0 0 3px;
 }
 div.pouvoirs div.lPouvoirs div.mod.borderLeft {
@@ -4367,6 +4367,9 @@ div.pouvoir section.sheet-body div.modificateurs div.extras > details section di
 div.pouvoir section.sheet-body div.modificateurs div.extras > details section div.extdescription div.editor div.editor-content, div.pouvoir section.sheet-body div.modificateurs div.defauts > details section div.extdescription div.editor div.editor-content {
   padding-left: 5px;
   padding-right: 5px;
+}
+div.pouvoir section.sheet-body div.modificateurs div.extras > details section div.extdescription div.editor div.editor-content.ProseMirror, div.pouvoir section.sheet-body div.modificateurs div.defauts > details section div.extdescription div.editor div.editor-content.ProseMirror {
+  position: relative;
 }
 div.pouvoir section.sheet-body div.modificateurs div.extras > details section div.extdescription div.editor div.tox-tinymce, div.pouvoir section.sheet-body div.modificateurs div.defauts > details section div.extdescription div.editor div.tox-tinymce {
   min-height: 300px;
@@ -9916,6 +9919,9 @@ div.tabeffects div.effects.edit div.show {
 
 .editor.prosemirror .editor-container {
   min-height: 100px;
+}
+.editor.prosemirror .editor-container .editor-content.ProseMirror {
+  position: relative;
 }
 
 img#logo {

@@ -745,7 +745,7 @@ div {
                                 border-top: 1px dashed var(--color-border-light-primary);
                                 color: $color;
 
-                                i {
+                                & > i {
                                     position: absolute;
                                     right: 5px;
                                     top: 2px;
@@ -764,7 +764,7 @@ div {
                                             background: $blue;
                                             color: $fond;
                                             font-family: Sriracha, sans-serif;
-                                            line-height: 12px;
+                                            line-height: 1.5em;
                                             text-shadow: none;
                                             font-weight: normal;
                                             z-index: 999;

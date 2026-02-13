@@ -8,4 +8,5 @@ export default {
         'scss/at-mixin-pattern': null,
         'scss/dollar-variable-pattern': null,
     },
+    ignoreFiles: ['styles/mm.css'],
 };
