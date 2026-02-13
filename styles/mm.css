@@ -9907,6 +9907,7 @@ div.tabeffects div.effects.edit div.show {
 
 .editor.prosemirror .editor-container {
   min-height: 100px;
+  overflow: hidden auto;
 }
 .editor.prosemirror .editor-container .editor-content.ProseMirror {
   position: relative;

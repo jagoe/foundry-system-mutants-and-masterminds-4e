@@ -1,6 +1,7 @@
 .editor.prosemirror {
     .editor-container {
         min-height: 100px;
+        overflow: hidden auto;
 
         .editor-content.ProseMirror {
             position: relative;
