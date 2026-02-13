@@ -192,9 +192,9 @@ MM4.qgtailles = {
 MM4.caracteristiques = {
     force: 'MM4.CARACTERISTIQUES.Force',
     agilite: 'MM4.CARACTERISTIQUES.Agilite',
-    sensibilite: 'MM4.CARACTERISTIQUES.Sensibilite',
     endurance: 'MM4.CARACTERISTIQUES.Endurance',
     intelligence: 'MM4.CARACTERISTIQUES.Intelligence',
+    sensibilite: 'MM4.CARACTERISTIQUES.Sensibilite',
     presence: 'MM4.CARACTERISTIQUES.Presence',
     combativite: 'MM4.CARACTERISTIQUES.Combativite',
     defense: 'MM4.CARACTERISTIQUES.Defense',
