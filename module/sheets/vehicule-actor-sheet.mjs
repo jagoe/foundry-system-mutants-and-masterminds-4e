@@ -31,7 +31,10 @@ export class VehiculeActorSheet extends ActorSheet {
         context.systemData = context.data.system;
         this._prepareList(context);
 
-        const pouvoirs = this.document.pouvoirs;
+        const pouvoirs = this.document.pouvoirs
+            .concat(Object.values(this.document.pwrLink).flat())
+            .concat(Object.values(this.document.pwrAlternatif).flat())
+            .concat(Object.values(this.document.pwrDynamique).flat());
         const modificateurs = pouvoirs.flatMap((pouvoir) =>
             Object.values(pouvoir.system.extras).concat(Object.values(pouvoir.system.defauts)),
         );

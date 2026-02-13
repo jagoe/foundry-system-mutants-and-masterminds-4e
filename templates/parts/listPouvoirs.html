@@ -27,16 +27,18 @@
                 <header
                     class="js-toggler {{#if (pwrCanBeActivated system.listEffectsVariantes pwr ../actor)}}withActiver{{/if}} {{#if (pwrHasVariants system.listEffectsVariantes ../actor)}}withVariante{{/if}}">
                     {{#if (actorIsCharacter ../actor)}}
-                    {{#if (pwrCanBeActivated system.listEffectsVariantes pwr ../actor)}}
-                    <a class="btn btnHeader pwrActivate {{#if pwr.system.activate}}selected{{/if}}">
+
+                    <a
+                        class="btn btnHeader pwrActivate {{#if pwr.system.activate}}selected{{/if}} {{#unless (pwrCanBeActivated system.listEffectsVariantes pwr ../actor)}}invisible{{/unless}}">
                         {{localize "MM4.BTN.Activer"}}
                     </a>
-                    {{/if}}
-                    {{#if (pwrHasVariants system.listEffectsVariantes)}}
-                    <select class="variantepwr">
+
+
+                    <select
+                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes)}}invisible{{/unless}}">
                         {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
                     </select>
-                    {{/if}}
+
                     {{/if}}
                     <span class="deploy"><i class="minus"></i></span>
                     <div class="pwrheader">
@@ -173,16 +175,15 @@
                 <header
                     class="js-toggler {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}withActiver{{/if}} {{#if (pwrHasVariants system.listEffectsVariantes ../../actor)}}withVariante{{/if}}">
                     {{#if (actorIsCharacter ../../actor)}}
-                    {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}
-                    <a class="btn btnHeader pwrActivate {{#if pwrAlt.system.activate}}selected{{/if}}">
+                    <a
+                        class="btn btnHeader pwrActivate {{#if pwrAlt.system.activate}}selected{{/if}} {{#unless (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}invisible{{/unless}}">
                         {{localize "MM4.BTN.Activer"}}
                     </a>
-                    {{/if}}
-                    {{#if (pwrHasVariants system.listEffectsVariantes)}}
-                    <select class="variantepwr">
+                    <select
+                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes)}}invisible{{/unless}}">
                         {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
                     </select>
-                    {{/if}}
+
                     {{/if}}
                     <span class="deploy "><i class="minus"></i></span>
                     <div class="pwrheader">
@@ -231,11 +232,11 @@
                     <div class="data">
                         <span class="typePwr">{{localize "MM4.Type"}} : {{translate 'pouvoirs.types'
                             pwr.system.type}}</span>
-                        <span class="col4">{{localize "MM4.Rang"}} : {{kPA.system.cout.rang}} / {{localize
-                            "MM4.Couttotal"}} : {{kPA.system.cout.total}}</span>
+                        <span class="col4">{{localize "MM4.Rang"}} : {{pwrAlt.system.cout.rang}} / {{localize
+                            "MM4.Couttotal"}} : {{pwrAlt.system.cout.total}}</span>
                     </div>
                     <div class="descripteurs">
-                        {{#each kPA.system.descripteurs as | kDesc desc |}}
+                        {{#each pwrAlt.system.descripteurs as | kDesc desc |}}
                         <span>{{#unless @first}}/{{/unless}} {{kDesc}}</span>
                         {{/each}}
                     </div>
@@ -244,7 +245,7 @@
                             {{localize "MM4.Description"}}
                         </span>
                         <span class="text">
-                            {{{kPA.system.notes}}}
+                            {{{pwrAlt.system.notes}}}
                         </span>
                     </div>
                     <div class="details">
@@ -252,14 +253,14 @@
                             {{localize "MM4.Details"}}
                         </span>
                         <span class="text">
-                            {{{kPA.system.effets}}}
+                            {{{pwrAlt.system.effets}}}
                         </span>
                     </div>
                     <div class="mod borderLeft">
                         <span class="label">
                             {{localize "MM4.Extras"}}
                         </span>
-                        {{#each kPA.system.extras as | kExt ext |}}
+                        {{#each pwrAlt.system.extras as | kExt ext |}}
                         <span class="text">
                             {{kExt.name}}
                             <i class="fa-solid fa-circle-info">
@@ -272,7 +273,7 @@
                         <span class="label">
                             {{localize "MM4.Defauts"}}
                         </span>
-                        {{#each kPA.system.defauts as | kExt ext |}}
+                        {{#each pwrAlt.system.defauts as | kExt ext |}}
                         <span class="text">
                             {{kExt.name}}
                             <i class="fa-solid fa-circle-info">
@@ -296,16 +297,14 @@
                 <header
                     class="js-toggler {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}withActiver{{/if}} {{#if (pwrHasVariants system.listEffectsVariantes ../../actor)}}withVariante{{/if}}">
                     {{#if (actorIsCharacter ../../actor)}}
-                    {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}
-                    <a class="btn btnHeader pwrActivate {{#if pwrAlt.system.activate}}selected{{/if}}">
+                    <a
+                        class="btn btnHeader pwrActivate {{#if pwrAlt.system.activate}}selected{{/if}} {{#unless (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}invisible{{/unless}}">
                         {{localize "MM4.BTN.Activer"}}
                     </a>
-                    {{/if}}
-                    {{#if (pwrHasVariants system.listEffectsVariantes)}}
-                    <select class="variantepwr">
+                    <select
+                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes)}}invisible{{/unless}}">
                         {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
                     </select>
-                    {{/if}}
                     {{/if}}
                     <span class="deploy "><i class="minus"></i></span>
                     <div class="pwrheader">
@@ -414,16 +413,14 @@
                 <header
                     class="js-toggler {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}withActiver{{/if}} {{#if (pwrHasVariants system.listEffectsVariantes ../../actor)}}withVariante{{/if}}">
                     {{#if (actorIsCharacter ../../actor)}}
-                    {{#if (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}
-                    <a class="btn btnHeader pwrActivate {{#if pwrAlt.system.activate}}selected{{/if}}">
+                    <a
+                        class="btn btnHeader pwrActivate {{#if pwrAlt.system.activate}}selected{{/if}} {{#unless (pwrCanBeActivated system.listEffectsVariantes pwrAlt ../../actor)}}invisible{{/unless}}">
                         {{localize "MM4.BTN.Activer"}}
                     </a>
-                    {{/if}}
-                    {{#if (pwrHasVariants system.listEffectsVariantes)}}
-                    <select class="variantepwr">
+                    <select
+                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes)}}invisible{{/unless}}">
                         {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
                     </select>
-                    {{/if}}
                     {{/if}}
                     <span class="deploy "><i class="minus"></i></span>
                     <div class="pwrheader">
@@ -469,7 +466,6 @@
                         <input class="rangDyn" type="number" name="system.pwr.{{pwrAlt._id}}.cout.rang"
                             value="{{getPwr @root pwrAlt._id 'rang'}}" min="0"
                             max="{{pwrAlt.system.cout.rangDynMax}}" />
-                        {{log (getPwr @root pwrAlt._id 'rang')}}
                         <span>({{localize "MM4.Max-short"}} {{pwrAlt.system.cout.rangDynMax}}) / {{localize
                             "MM4.Coutactuel"}} : {{ifThen (gte (getPwr @root pwrAlt._id 'rang') 1) (getPwr @root
                             pwrAlt._id

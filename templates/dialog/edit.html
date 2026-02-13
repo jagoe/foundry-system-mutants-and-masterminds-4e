@@ -16,5 +16,5 @@
     <select class="{{class}}" title="{{title}}">
         {{selectOptions list selected=selected blank=blank nameAttr="key" labelAttr="label" sort=sort}}
     </select>
-    {{/if}} {{log this}} {{#if (eq type 'repeat')}} {{> (template 'dialog/parts/repeat.html') }} {{/if}} {{/each}}
+    {{/if}} {{#if (eq type 'repeat')}} {{> (template 'dialog/parts/repeat.html') }} {{/if}} {{/each}}
 </section>

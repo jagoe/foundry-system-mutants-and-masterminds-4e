@@ -88,7 +88,7 @@ div {
 
                     span.deploy {
                         position: absolute;
-                        top: 5px;
+                        top: 3px;
                         left: 10px;
                         z-index: 999;
 
@@ -178,7 +178,7 @@ div {
                         grid-column: 1 / 3;
                         display: grid;
                         grid-template-columns: 1fr 1fr;
-                        align-items: flex-end;
+                        align-items: flex-start;
                         align-content: flex-start;
                         gap: 5px;
                         padding: 5px;
@@ -289,7 +289,7 @@ div {
                             span {
                                 &.deploy {
                                     position: absolute;
-                                    top: 5px;
+                                    top: 29px;
                                     left: 10px;
                                     z-index: 999;
 
@@ -326,19 +326,11 @@ div {
                                 div.pwrheader {
                                     border-top-right-radius: 0;
                                 }
-
-                                span.deploy {
-                                    top: 29px;
-                                }
                             }
 
                             &.withActiver {
                                 div.pwrheader {
                                     border-top-left-radius: 0;
-                                }
-
-                                span.deploy {
-                                    top: 29px;
                                 }
                             }
                         }

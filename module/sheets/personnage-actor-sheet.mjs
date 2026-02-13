@@ -44,10 +44,14 @@ export class PersonnageActorSheet extends ActorSheet {
         const complications = Object.values(context.data.system.complications);
         const talents = this.document.talents;
         const equipements = this.document.equipements;
-        const pouvoirs = this.document.pouvoirs;
+        const pouvoirs = this.document.pouvoirs
+            .concat(Object.values(this.document.pwrLink).flat())
+            .concat(Object.values(this.document.pwrAlternatif).flat())
+            .concat(Object.values(this.document.pwrDynamique).flat());
         const modificateurs = pouvoirs.flatMap((pouvoir) =>
             Object.values(pouvoir.system.extras).concat(Object.values(pouvoir.system.defauts)),
         );
+
         await enrichContext(this, context, 'data.system.description', 'data.system.historique');
         await Promise.all(complications.map(async (extra) => await enrichContext(this, extra, 'description')));
         await Promise.all(talents.map((talent) => enrichContext(this, talent, 'system.description')));
