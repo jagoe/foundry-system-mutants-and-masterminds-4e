@@ -8,7 +8,7 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Optional:Allow upgrading conditions via attacks
+* Optional: Allow upgrading conditions via attacks
 * Optional: Skill checkbox: Untrained?
   * If not set & no ranks, deactive rolling
 * Optional: Deleting effect variants should removes them from owner's tracker

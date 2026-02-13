@@ -35,7 +35,7 @@
 
 
                     <select
-                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes)}}invisible{{/unless}}">
+                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes ../actor)}}invisible{{/unless}}">
                         {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
                     </select>
 
@@ -180,7 +180,7 @@
                         {{localize "MM4.BTN.Activer"}}
                     </a>
                     <select
-                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes)}}invisible{{/unless}}">
+                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes ../../actor)}}invisible{{/unless}}">
                         {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
                     </select>
 
@@ -302,7 +302,7 @@
                         {{localize "MM4.BTN.Activer"}}
                     </a>
                     <select
-                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes)}}invisible{{/unless}}">
+                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes ../../actor)}}invisible{{/unless}}">
                         {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
                     </select>
                     {{/if}}
@@ -418,7 +418,7 @@
                         {{localize "MM4.BTN.Activer"}}
                     </a>
                     <select
-                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes)}}invisible{{/unless}}">
+                        class="variantepwr {{#unless (pwrHasVariants system.listEffectsVariantes ../../actor)}}invisible{{/unless}}">
                         {{selectOptions system.listEffectsVariantes selected=system.effectsVarianteSelected}}
                     </select>
                     {{/if}}

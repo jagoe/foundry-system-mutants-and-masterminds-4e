@@ -4169,7 +4169,10 @@ export function loadEffectsHTML(html, item, permanent = false, single = false) {
 
             deleteEffects(item, id, name);
 
-            if (name === selected) update['system.effectsVarianteSelected'] = 'e0';
+            if (name === selected) {
+                update['system.effectsVarianteSelected'] = 'e0';
+            }
+
             update[`system.listEffectsVariantes.-=${name}`] = null;
 
             item.update(update);

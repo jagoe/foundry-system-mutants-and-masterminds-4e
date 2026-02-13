@@ -1,4 +1,4 @@
-import { assetsPath, templatesPath } from '../system.mjs';
+import { assetsPath, systemId, templatesPath } from '../system.mjs';
 import { getDataSubSkill, listFont } from './common.mjs';
 import { getSetting } from './foundry.mjs';
 
@@ -274,7 +274,7 @@ export const RegisterHandlebars = function () {
     });
 
     Handlebars.registerHelper('pwrHasVariants', (ownerEffectVariantList, actor) => {
-        const hasVariants = Object.keys(ownerEffectVariantList).length > 0;
+        const hasVariants = Object.keys(ownerEffectVariantList).length > 1;
         const actorIsCharacter = actor.type;
 
         return hasVariants && actorIsCharacter;
@@ -285,4 +285,6 @@ export const RegisterHandlebars = function () {
 
         return actorIsCharacter;
     });
+
+    Handlebars.registerHelper('variantName', (effect) => effect.flags[systemId].variante);
 };
