@@ -1,20 +1,20 @@
-import { getSetting, setSetting } from './helpers/foundry.mjs';
+import { setSetting } from './helpers/foundry.mjs';
 
 export class MigrationMM4 {
     static NEEDED_VERSION = '1.39.13';
     static PLACEHOLDER_VERSION = '#{VERSION}#';
 
-    static needUpdate(version) {
+    static needUpdate(_version) {
         // I did not take care of migration logic, so this would probably just do some weird stuff and/or break things
         return false;
 
-        const currentVersion = getSetting('systemVersion');
+        // const currentVersion = getSetting('systemVersion');
 
-        if (version === this.PLACEHOLDER_VERSION) {
-            return false;
-        }
+        // if (version === this.PLACEHOLDER_VERSION) {
+        //     return false;
+        // }
 
-        return !currentVersion || foundry.utils.isNewerVersion(version, currentVersion);
+        // return !currentVersion || foundry.utils.isNewerVersion(version, currentVersion);
     }
 
     static async migrateWorld(options = { force: false }) {
