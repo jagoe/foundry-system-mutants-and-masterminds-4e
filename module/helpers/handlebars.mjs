@@ -256,7 +256,7 @@ export const RegisterHandlebars = function () {
     Handlebars.registerHelper('pwrCanBeActivated', (ownerEffectVariantList, power, actor) => {
         const hasVariants = Object.keys(ownerEffectVariantList).length > 0;
         const isPreparedEffect = power.system.special === 'prepare';
-        const hasDuration = power.system.duree !== 'instantane' && power.system.duree !== 'permanent';
+        const hasDuration = power.system.duree !== 'instantane';
         const actorIsCharacter = actor.type;
 
         const isArray = power.system.special === 'alternatif';

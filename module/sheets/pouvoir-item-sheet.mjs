@@ -72,8 +72,11 @@ export class PouvoirItemSheet extends ItemSheet {
             const target = $(ev.currentTarget);
             const value = target.val();
 
-            if (value === 'permanent') this.item.update({ [`system.activate`]: true });
-            else this.item.update({ [`system.activate`]: false });
+            if (value === 'permanent') {
+                this.item.update({ [`system.activate`]: true });
+            } else {
+                this.item.update({ [`system.activate`]: false });
+            }
         });
 
         html.find('.cout details summary').click(async (ev) => {

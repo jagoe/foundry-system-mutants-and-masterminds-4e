@@ -85,21 +85,12 @@ export class PouvoirDataModel extends foundry.abstract.TypeDataModel {
     }
 
     prepareBaseData() {
-        this.#_activate();
         this.#_cout();
     }
 
     prepareDerivedData() {
         this.#_dyn();
         this.#_effects();
-    }
-
-    #_activate() {
-        if (this.duree === 'permanent') {
-            Object.defineProperty(this, 'activate', {
-                value: true,
-            });
-        }
     }
 
     #_cout() {
