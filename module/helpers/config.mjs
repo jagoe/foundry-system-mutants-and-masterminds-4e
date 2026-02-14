@@ -9,9 +9,9 @@ MM4.LIST = {
     Caracteristiques: [
         'force',
         'agilite',
-        'sensibilite',
         'endurance',
         'intelligence',
+        'sensibilite',
         'presence',
         'combativite',
         'defense',
