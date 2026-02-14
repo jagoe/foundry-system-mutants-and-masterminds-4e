@@ -245,21 +245,21 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                     initial: {
                         base: {
                             autotrade: 'base',
-                            rang: 0,
+                            rang: 2,
                             round: 0,
                             kmh: 0,
                             selected: true,
                         },
                         course: {
                             autotrade: 'course',
-                            rang: 1,
+                            rang: 3,
                             round: 0,
                             kmh: 0,
                             selected: false,
                         },
                         natation: {
                             autotrade: 'natation',
-                            rang: -2,
+                            rang: 0,
                             round: 0,
                             kmh: 0,
                             selected: false,
