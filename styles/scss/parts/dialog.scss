@@ -3,7 +3,6 @@ div.mm4-dialog {
         background: $fond;
         color: $color;
         font-family: Sriracha, sans-serif;
-        font-weight: bold;
 
         div {
             &.dialog-content {
@@ -56,7 +55,6 @@ div.mm4-import-all {
         background: $fond;
         color: $color;
         font-family: Sriracha, sans-serif;
-        font-weight: bold;
 
         div.dialog-content {
             display: grid;

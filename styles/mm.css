@@ -325,7 +325,6 @@ div.caracteristiques div.inner div.attaque > div.line {
 div.caracteristiques div.inner div.attaque > div.line span {
   display: grid;
   width: 100%;
-  font-weight: bold;
   justify-content: center;
   align-items: center;
   font-family: Sriracha, sans-serif;
@@ -448,7 +447,6 @@ div.caracteristiques div.inner div.attaque div.reorderDrop div.line {
 div.caracteristiques div.inner div.attaque div.reorderDrop div.line span {
   display: grid;
   width: 100%;
-  font-weight: bold;
   justify-content: center;
   align-items: center;
   font-family: Sriracha, sans-serif;
@@ -1433,7 +1431,6 @@ div.caracteristiques div.inner div.defense div.line {
 div.caracteristiques div.inner div.defense div.line span {
   display: grid;
   width: 100%;
-  font-weight: bold;
   justify-content: center;
   align-items: center;
   font-family: Sriracha, sans-serif;
@@ -2831,7 +2828,6 @@ div.personnage section.window-content {
   background: #ebebeb;
   color: #363b44;
   font-family: Sriracha, sans-serif;
-  font-weight: bold;
 }
 div.personnage section.window-content form {
   min-width: min-content;
@@ -3296,7 +3292,6 @@ div.modificateur section.window-content {
   background: #ebebeb;
   color: #363b44;
   font-family: Sriracha, sans-serif;
-  font-weight: bold;
 }
 div.modificateur section.window-content form {
   min-width: min-content;
@@ -3731,7 +3726,6 @@ div.pouvoir section.window-content {
   background: #ebebeb;
   color: #363b44;
   font-family: Sriracha, sans-serif;
-  font-weight: bold;
 }
 div.pouvoir section.window-content form {
   min-width: min-content;
@@ -4604,7 +4598,6 @@ div.talent section.window-content {
   background: #ebebeb;
   color: #363b44;
   font-family: Sriracha, sans-serif;
-  font-weight: bold;
 }
 div.talent section.window-content form {
   min-width: min-content;
@@ -5005,7 +4998,6 @@ div.equipement section.window-content {
   background: #ebebeb;
   color: #363b44;
   font-family: Sriracha, sans-serif;
-  font-weight: bold;
 }
 div.equipement section.window-content form {
   min-width: min-content;
@@ -5354,7 +5346,6 @@ div.vehicule section.window-content {
   background: #ebebeb;
   color: #363b44;
   font-family: Sriracha, sans-serif;
-  font-weight: bold;
 }
 div.vehicule section.window-content form {
   min-width: min-content;
@@ -5629,7 +5620,6 @@ div.vehicule section.sheet-body div div.attaque > div.line {
 div.vehicule section.sheet-body div div.attaque > div.line span {
   display: grid;
   width: 100%;
-  font-weight: bold;
   justify-content: center;
   align-items: center;
   font-family: Sriracha, sans-serif;
@@ -5752,7 +5742,6 @@ div.vehicule section.sheet-body div div.attaque div.reorderDrop div.line {
 div.vehicule section.sheet-body div div.attaque div.reorderDrop div.line span {
   display: grid;
   width: 100%;
-  font-weight: bold;
   justify-content: center;
   align-items: center;
   font-family: Sriracha, sans-serif;
@@ -7258,7 +7247,6 @@ div.qg section.window-content {
   background: #ebebeb;
   color: #363b44;
   font-family: Sriracha, sans-serif;
-  font-weight: bold;
 }
 div.qg section.window-content form {
   min-width: min-content;
@@ -7533,7 +7521,6 @@ div.qg section.sheet-body div div.attaque > div.line {
 div.qg section.sheet-body div div.attaque > div.line span {
   display: grid;
   width: 100%;
-  font-weight: bold;
   justify-content: center;
   align-items: center;
   font-family: Sriracha, sans-serif;
@@ -7656,7 +7643,6 @@ div.qg section.sheet-body div div.attaque div.reorderDrop div.line {
 div.qg section.sheet-body div div.attaque div.reorderDrop div.line span {
   display: grid;
   width: 100%;
-  font-weight: bold;
   justify-content: center;
   align-items: center;
   font-family: Sriracha, sans-serif;
@@ -9247,7 +9233,6 @@ div.mm4-dialog section.window-content {
   background: #ebebeb;
   color: #363b44;
   font-family: Sriracha, sans-serif;
-  font-weight: bold;
 }
 div.mm4-dialog section.window-content div.dialog-content {
   display: grid;
@@ -9288,7 +9273,6 @@ div.mm4-import-all section.window-content {
   background: #ebebeb;
   color: #363b44;
   font-family: Sriracha, sans-serif;
-  font-weight: bold;
 }
 div.mm4-import-all section.window-content div.dialog-content {
   display: grid;
@@ -9537,7 +9521,6 @@ div.dialog-edit section.window-content section.body a.selected i {
 div.dialog-edit section.window-content section.body span {
   display: grid;
   width: 100%;
-  font-weight: bold;
   justify-content: right;
   align-items: center;
   font-family: Sriracha, sans-serif;
