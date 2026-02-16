@@ -159,6 +159,16 @@ div {
                                     background: $imgbg $lightGreen;
                                 }
                             }
+
+                            & > div.pwr.red {
+                                div.pwrheader {
+                                    background: $imgbg $darkRed;
+                                }
+
+                                &::after {
+                                    background: $imgbg $darkRed;
+                                }
+                            }
                         }
 
                         &:nth-of-type(odd) {
@@ -169,6 +179,16 @@ div {
 
                                 &::after {
                                     background: $imgbg $darkBlue;
+                                }
+                            }
+
+                            & > div.pwr.red {
+                                div.pwrheader {
+                                    background: $imgbg $darkRed;
+                                }
+
+                                &::after {
+                                    background: $imgbg $darkRed;
                                 }
                             }
                         }

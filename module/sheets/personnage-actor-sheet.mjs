@@ -125,26 +125,37 @@ export class PersonnageActorSheet extends ActorSheet {
             const id = header.data('item-id');
             const item = this.actor.items.get(id);
             const isActive = item.system?.activate ?? false;
-            const value = isActive ? false : true;
+            const value = !isActive;
             const link = item.system?.link ?? '';
+            const mainPower = link ? this.actor.items.get(link) : item;
 
-            if (value) {
-                const linksFilter = this.actor.items.filter(
-                    (linked) =>
-                        (linked.system.link === link &&
-                            linked._id !== id &&
-                            link !== '' &&
-                            (item.system.special === 'alternatif' || linked.system.special === 'alternatif')) ||
-                        (linked._id === item.system.link && item.system.special === 'alternatif') ||
-                        (linked.system.link === item._id && linked.system.special === 'alternatif'),
-                );
+            const linkedPowers = this.actor.items.filter(
+                (linked) =>
+                    linked._id !== id &&
+                    (linked.system.link === mainPower._id || !link || linked._id === mainPower._id) &&
+                    linked.system.special !== 'alternatif' &&
+                    linked.system.special !== 'dynamique',
+            );
 
-                for (let l of linksFilter) {
-                    l.update({ ['system.activate']: false });
-                }
-            }
+            const alternateEffects = value
+                ? this.actor.items.filter(
+                      (linked) =>
+                          (linked.system.link === link &&
+                              linked._id !== id &&
+                              link !== '' &&
+                              (item.system.special === 'alternatif' || linked.system.special === 'alternatif')) ||
+                          (linked._id === item.system.link && item.system.special === 'alternatif') ||
+                          (linked.system.link === item._id && linked.system.special === 'alternatif'),
+                  )
+                : []; // We only want to deactive activate alternate effects if we activate a power
 
-            await item.update({ [`system.activate`]: value });
+            const updates = [
+                item.update({ [`system.activate`]: value }),
+                ...linkedPowers.map((pwr) => pwr.update({ [`system.activate`]: value })),
+                ...alternateEffects.map((pwr) => pwr.update({ [`system.activate`]: false })),
+            ];
+
+            await Promise.all(updates);
         });
 
         html.find('.variantepwr').change(async (ev) => {

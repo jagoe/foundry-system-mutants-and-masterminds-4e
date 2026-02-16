@@ -1716,11 +1716,23 @@ div.pouvoirs div.lPouvoirs div.grpPwr:nth-of-type(even) > div.pwr div.pwrheader 
 div.pouvoirs div.lPouvoirs div.grpPwr:nth-of-type(even) > div.pwr::after {
   background: url("../assets/fond.webp") #7fc84e;
 }
+div.pouvoirs div.lPouvoirs div.grpPwr:nth-of-type(even) > div.pwr.red div.pwrheader {
+  background: url("../assets/fond.webp") rgba(254, 21, 17, 0.5019607843);
+}
+div.pouvoirs div.lPouvoirs div.grpPwr:nth-of-type(even) > div.pwr.red::after {
+  background: url("../assets/fond.webp") rgba(254, 21, 17, 0.5019607843);
+}
 div.pouvoirs div.lPouvoirs div.grpPwr:nth-of-type(odd) > div.pwr div.pwrheader {
   background: url("../assets/fond.webp") #274064;
 }
 div.pouvoirs div.lPouvoirs div.grpPwr:nth-of-type(odd) > div.pwr::after {
   background: url("../assets/fond.webp") #274064;
+}
+div.pouvoirs div.lPouvoirs div.grpPwr:nth-of-type(odd) > div.pwr.red div.pwrheader {
+  background: url("../assets/fond.webp") rgba(254, 21, 17, 0.5019607843);
+}
+div.pouvoirs div.lPouvoirs div.grpPwr:nth-of-type(odd) > div.pwr.red::after {
+  background: url("../assets/fond.webp") rgba(254, 21, 17, 0.5019607843);
 }
 div.pouvoirs div.lPouvoirs div.grpPwrAlt {
   grid-column: 1/3;

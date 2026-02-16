@@ -3277,18 +3277,35 @@ export function commonHTML(html, origin, data = {}) {
             const cout = target.data('cout') - 1;
             const val = target.val();
 
-            if (val === '') origin.items.get(header.data('item-id')).update({ [`system.link`]: val });
-            else {
-                const toLink = origin.items.get(val);
-                const isDynamique = toLink.system.special === 'dynamique' ? true : false;
-                const coutTotal = isDynamique ? toLink.system.cout.totalTheorique - 1 : toLink.system.cout.total;
+            if (val === '') {
+                origin.items.get(header.data('item-id')).update({ [`system.link`]: val });
 
-                if (val === 'principal') origin.items.get(header.data('item-id')).update({ [`system.link`]: val });
-                else if (coutTotal >= cout) origin.items.get(header.data('item-id')).update({ [`system.link`]: val });
-                else {
-                    origin.items.get(header.data('item-id')).update({ [`system.link`]: '' });
-                    target.val('');
-                }
+                return;
+            }
+
+            const toLink = origin.items.get(val);
+            const type = toLink.system.special;
+            let coutTotal;
+
+            if (type === 'dynamique') {
+                coutTotal = toLink.system.cout.totalTheorique - 1;
+            } else {
+                const linkedPowers = origin.items.filter(
+                    (item) => item.type === 'pouvoir' && item.system.link === toLink._id,
+                );
+                const linkedTotalCost = linkedPowers.reduce(
+                    (total, power) => total + (power.system.cout.total || power.system.cout.totalTheorique),
+                    0,
+                );
+
+                coutTotal = toLink.system.cout.total + linkedTotalCost;
+            }
+
+            if (val === 'principal') origin.items.get(header.data('item-id')).update({ [`system.link`]: val });
+            else if (coutTotal >= cout) origin.items.get(header.data('item-id')).update({ [`system.link`]: val });
+            else {
+                origin.items.get(header.data('item-id')).update({ [`system.link`]: '' });
+                target.val('');
             }
         });
 
