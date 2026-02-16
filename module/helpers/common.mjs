@@ -3922,9 +3922,31 @@ export function prepareEffects(item, context) {
     system.effects = item.effects;
 }
 
+export async function importItemEffects(item, oldItem) {
+    if (!item.effects) {
+        return;
+    }
+
+    const effects = (Array.isArray(item.effects) ? item.effects : [...item.effects.values()]).filter(
+        (effect) => effect?.disabled === false,
+    );
+
+    for (const effect of effects) {
+        effect.changes = effect.changes.map((change) => ({
+            ...change,
+            key: change.key.replace(oldItem._id, item._id),
+        }));
+    }
+
+    await Promise.all(
+        effects.map((effect) => updateEffects(item, effect._id, effect.flags[systemId].variante, effect.changes)),
+    );
+}
+
 export async function updateEffects(item, id, name, changes) {
     const actor = getActor(item);
 
+    console.error(100, { item, id, name, changes });
     await item.updateEmbeddedDocuments('ActiveEffect', [
         {
             _id: id,

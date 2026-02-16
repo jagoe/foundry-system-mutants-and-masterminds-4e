@@ -7,6 +7,7 @@ import {
     processMinions,
     speedCalc,
     commonHTML,
+    importItemEffects,
 } from '../helpers/common.mjs';
 import { enrichContext, getSetting } from '../helpers/foundry.mjs';
 import { assetsPath, templatesPath } from '../system.mjs';
@@ -480,6 +481,8 @@ export class PersonnageActorSheet extends ActorSheet {
                 },
             });
         }
+
+        await Promise.all(toCreate.map((item, i) => importItemEffects(item, itemData[i])));
 
         return toCreate;
     }
