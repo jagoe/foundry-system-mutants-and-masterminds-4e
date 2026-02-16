@@ -116,9 +116,9 @@
                 {{#each comp.list as | kscomp subcomp |}}
                 <div class="list {{#if comp.new}}reorderDrop{{/if}}" {{#if comp.new}}data-type="basecompetence"
                     data-sort="{{subcomp}}" {{/if}} data-comp="{{key}}">
-
-                    <a class="roll twoRoll draggable" data-what="{{key}}" data-id="{{subcomp}}" data-type="competence"
-                        data-name="{{kscomp.label}}" data-total="{{kscomp.total}}">
+                    <a class="roll twoRoll draggable {{#unless kscomp.canRoll}}disabled{{/unless}}" data-what="{{key}}"
+                        data-id="{{subcomp}}" data-type="competence" data-name="{{kscomp.label}}"
+                        data-total="{{kscomp.total}}">
                         <i class="fa-solid fa-dice-d20"></i>
                         <input type="text" name="system.competence.{{key}}.list.{{subcomp}}.label"
                             value="{{kscomp.label}}" />
@@ -155,8 +155,8 @@
                 {{#if comp.new}}
                 {{#each comp.list as | kscomp subcomp |}}
                 <div class="list" {{#if comp.new}}data-type="basecompetence" data-sort="{{key}}" {{/if}}>
-                    <a class="roll twoRoll draggable" data-what="{{key}}" data-id="new" data-type="competence"
-                        data-name="{{kscomp.label}}" data-total="{{kscomp.total}}">
+                    <a class="roll twoRoll draggable {{#unless kscomp.canRoll}}disabled{{/unless}}" data-what="{{key}}"
+                        data-id="new" data-type="competence" data-name="{{kscomp.label}}" data-total="{{kscomp.total}}">
                         <i class="fa-solid fa-dice-d20"></i>
                         <input type="text" name="system.competence.{{key}}.list.{{subcomp}}.label"
                             value="{{kscomp.label}}" />
@@ -183,8 +183,8 @@
                 {{else}}
                 <div class="list {{#if comp.new}}reorderDrop{{/if}}" {{#if comp.new}}data-type="basecompetence"
                     data-sort="{{key}}" {{/if}}>
-                    <a class="roll twoRoll draggable" data-what="{{key}}" data-type="competence"
-                        data-name="{{comp.label}}" data-total="{{comp.total}}">
+                    <a class="roll twoRoll draggable {{#unless comp.canRoll}}disabled{{/unless}}" data-what="{{key}}"
+                        data-type="competence" data-name="{{comp.label}}" data-total="{{comp.total}}">
                         {{comp.label}}
                     </a>
                     {{#if carCanChange}}

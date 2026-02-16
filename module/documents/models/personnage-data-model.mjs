@@ -53,6 +53,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                                     carCanChange: new BooleanField({ initial: true }),
                                     label: new StringField({ initial: '' }),
                                     carac: new NumberField({ initial: 0 }),
+                                    untrained: new BooleanField({ initial: dataCmp.untrained }),
                                 },
                                 baseSchema,
                             ),
@@ -72,6 +73,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                                 {
                                     label: new StringField({ initial: '' }),
                                     carac: new NumberField({ initial: 0 }),
+                                    untrained: new BooleanField({ initial: dataCmp.untrained }),
                                 },
                                 baseSchema,
                             ),
@@ -93,6 +95,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                                     car: new StringField({ initial: dataCmp.car }),
                                     label: new StringField({ initial: '' }),
                                     carac: new NumberField({ initial: 0 }),
+                                    untrained: new BooleanField({ initial: dataCmp.untrained }),
                                 },
                                 baseSchema,
                             ),
@@ -114,6 +117,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                                 surcharge: new NumberField({ initial: 0 }),
                                 ranks: new ObjectField(),
                                 surchargeranks: new ObjectField(),
+                                untrained: new BooleanField({ initial: dataCmp.untrained }),
                             },
                             baseSchema,
                         ),
@@ -784,6 +788,7 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                 }
             }
 
+            const totalRanks = currentCmp.rang + ranksValue;
             if (dataCmp.canAdd || currentCmp.new) {
                 const cList = currentCmp.list;
 
@@ -791,22 +796,25 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                     const getCarac = cList[list].carCanChange
                         ? this.caracteristique[getFullCarac(cList[list].car)].total
                         : this.caracteristique[getFullCarac(dataCmp.car)].total;
+                    const totalRanks = cList[list].rang + ranksValue;
 
                     ppComp += cList[list].rang / (cList[list].parPP || PersonnageDataModel.skillRanksPerPP);
                     Object.defineProperty(cList[list], 'carac', {
                         value: getCarac,
                     });
 
-                    Object.defineProperty(cList[list], 'total', {
-                        value: isSurcharge(
-                            Math.max(currentCmp.surcharge, surchargeRanksValue),
-                            getCarac,
-                            cList[list].rang,
-                            cList[list].autre,
-                            currentCmp.bonuses,
-                            ranksValue,
-                        ),
-                    });
+                    if (dataCmp.untrained || totalRanks) {
+                        Object.defineProperty(cList[list], 'total', {
+                            value: isSurcharge(
+                                Math.max(currentCmp.surcharge, surchargeRanksValue),
+                                getCarac,
+                                cList[list].rang,
+                                cList[list].autre,
+                                currentCmp.bonuses,
+                                ranksValue,
+                            ),
+                        });
+                    }
                 }
             } else {
                 ppComp += currentCmp.rang / (currentCmp.parPP || PersonnageDataModel.skillRanksPerPP);
@@ -815,15 +823,23 @@ export class PersonnageDataModel extends foundry.abstract.TypeDataModel {
                     value: this.caracteristique[getFullCarac(dataCmp.car)].total,
                 });
 
+                if (dataCmp.untrained || totalRanks) {
+                    Object.defineProperty(currentCmp, 'total', {
+                        value: isSurcharge(
+                            Math.max(currentCmp.surcharge, surchargeRanksValue),
+                            this.caracteristique[getFullCarac(dataCmp.car)].total,
+                            currentCmp.rang,
+                            currentCmp.autre,
+                            currentCmp.bonuses,
+                            ranksValue,
+                        ),
+                    });
+                }
+            }
+
+            if (!dataCmp.untrained && !totalRanks) {
                 Object.defineProperty(currentCmp, 'total', {
-                    value: isSurcharge(
-                        Math.max(currentCmp.surcharge, surchargeRanksValue),
-                        this.caracteristique[getFullCarac(dataCmp.car)].total,
-                        currentCmp.rang,
-                        currentCmp.autre,
-                        currentCmp.bonuses,
-                        ranksValue,
-                    ),
+                    value: 0,
                 });
             }
         }

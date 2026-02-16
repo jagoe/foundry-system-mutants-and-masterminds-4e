@@ -1045,6 +1045,12 @@ div.caracteristiques div.inner div.comp a.roll:hover {
 div.caracteristiques div.inner div.comp a.roll {
   font-size: 14px;
 }
+div.caracteristiques div.inner div.comp a.roll.disabled {
+  color: #a8a8a8;
+}
+div.caracteristiques div.inner div.comp a.roll.disabled input {
+  pointer-events: initial;
+}
 div.caracteristiques div.inner div.comp a.oneRoll {
   align-items: center;
 }

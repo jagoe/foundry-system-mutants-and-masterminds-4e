@@ -44,73 +44,95 @@ MM4.LIST = {
     DataCompetences: {
         acrobaties: {
             car: 'agi',
+            untrained: true,
         },
         athletisme: {
             car: 'for',
+            untrained: true,
         },
         combatcontact: {
             car: 'cbt',
             canAdd: true,
+            untrained: true,
         },
         duperie: {
             car: 'prs',
+            untrained: true,
         },
         deguisement: {
             car: 'sns',
+            untrained: true,
         },
         expertise: {
             car: 'int',
             canAdd: true,
+            untrained: false,
         },
         perspicacite: {
             car: 'sns',
+            untrained: true,
         },
         intimidation: {
             car: 'prs',
+            untrained: true,
         },
         investigation: {
             car: 'int',
+            untrained: false,
         },
         langages: {
             car: 'int',
+            untrained: false,
         },
         magie: {
             car: 'int',
+            untrained: false,
         },
         perception: {
             car: 'sns',
+            untrained: true,
         },
         performance: {
             car: 'prs',
+            untrained: false,
         },
         persuasion: {
             car: 'prs',
+            untrained: true,
         },
         combatdistance: {
             car: 'cbt',
             canAdd: true,
+            untrained: true,
         },
         habilete: {
             car: 'agi',
+            untrained: false,
         },
         discretion: {
             car: 'agi',
+            untrained: true,
         },
         survie: {
             car: 'sns',
+            untrained: false,
         },
         technologie: {
             car: 'int',
+            untrained: false,
         },
         soins: {
             car: 'int',
+            untrained: false,
         },
         vehicules: {
             car: 'agi',
+            untrained: false,
         },
         new: {
             car: 'int',
             carCanChange: true,
+            untrained: true,
         },
     },
     Defenses: [

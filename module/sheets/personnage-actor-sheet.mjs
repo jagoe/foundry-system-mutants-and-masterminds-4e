@@ -298,7 +298,6 @@ export class PersonnageActorSheet extends ActorSheet {
         keys.forEach((key) => {
             const get = data[key];
             const canAdd = get?.canAdd || false;
-            const carCanChange = get?.carCanChange || false;
             const isNew = get?.new || false;
 
             list[key] = {
@@ -311,12 +310,20 @@ export class PersonnageActorSheet extends ActorSheet {
                 autre: get.autre,
                 parPP: get.parPP,
                 canAdd: canAdd,
-                carCanChange: carCanChange,
+                carCanChange: get?.carCanChange || false,
+                untrained: get?.untrained || false,
+                canRoll: !!get?.total || get?.untrained || false,
                 new: isNew,
             };
 
             if (canAdd || isNew) {
-                list[key].list = get?.list || {};
+                const subSkills = get?.list || {};
+
+                Object.values(subSkills).forEach((skill) => {
+                    skill.canRoll = skill.untrained || !!skill.total;
+                });
+
+                list[key].list = subSkills;
             }
         });
 

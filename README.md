@@ -9,9 +9,7 @@ Feel free to try and use the system yourself, but there will be no release and n
 ## Todos
 
 * Nice to have: Flag for advantage that says the advantage is part of a power (so 0 cost)
-* Optional: Skill checkbox: Untrained?
-  * If not set & no ranks, deactive rolling
-* Bug: Modifiers don't get applied when adding Power/Advantage to Character
+* Bug: Modifiers/effects don't get applied when adding Power/Advantage to Character
 * Optional: Allow Powers to consume Equipment Points instead of Power Points (treating them as having the Equipment flaw by default) OR display and maintain equipment the same as powers (since it can have effects, change stats, etc.)
 * Optional: Maneuvers shouldn't lower lowered stat below 0 or boost heightened stat more than double the original
 * Optional: Add effect for modifying base speed

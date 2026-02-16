@@ -89,6 +89,14 @@ div {
 
                         a.roll {
                             font-size: 14px;
+
+                            &.disabled {
+                                color: $grey;
+
+                                input {
+                                    pointer-events: initial;
+                                }
+                            }
                         }
 
                         a.oneRoll {
