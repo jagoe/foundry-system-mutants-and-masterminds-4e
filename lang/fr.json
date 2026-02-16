@@ -239,7 +239,8 @@
             "Equipements": "Equipements"
         },
         "TALENT": {
-            "Equipement": "Donne des points d'équipements"
+            "Equipement": "Donne des points d'équipements",
+            "ZeroCost": "Sans frais"
         },
         "TAILLE": {
             "Insignifiante": "Insignifiante",

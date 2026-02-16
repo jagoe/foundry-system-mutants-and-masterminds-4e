@@ -239,7 +239,8 @@
             "Equipements": "Equipamento"
         },
         "TALENT": {
-            "Equipement": "Concede pontos de equipamento"
+            "Equipement": "Concede pontos de equipamento",
+            "ZeroCost": "Sem custo"
         },
         "TAILLE": {
             "Insignifiante": "Minúsculo",

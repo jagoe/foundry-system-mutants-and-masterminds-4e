@@ -1,48 +1,40 @@
 <div class="tab pouvoirs" data-group="primary" data-tab="pouvoirs">
     <div class="submenu">
-        <a class="filtre {{#if (isValue systemData.filtre 'tous')}}selected{{else}}unselected{{/if}}" data-type="tous"
-            >{{localize "MM4.FILTRE.Tous"}}</a
-        >
-        <a
-            class="filtre {{#if (isValue systemData.filtre 'pouvoirs')}}selected{{else}}unselected{{/if}}"
-            data-type="pouvoirs"
-            >{{localize "MM4.FILTRE.Pouvoirs"}}</a
-        >
-        <a
-            class="filtre {{#if (isValue systemData.filtre 'talents')}}selected{{else}}unselected{{/if}}"
-            data-type="talents"
-            >{{localize "MM4.FILTRE.Talents"}}</a
-        >
-        <a
-            class="filtre {{#if (isValue systemData.filtre 'equipements')}}selected{{else}}unselected{{/if}}"
-            data-type="equipements"
-            >{{localize "MM4.FILTRE.Equipements"}}</a
-        >
+        <a class="filtre {{#if (isValue systemData.filtre 'tous')}}selected{{else}}unselected{{/if}}"
+            data-type="tous">{{localize "MM4.FILTRE.Tous"}}</a>
+        <a class="filtre {{#if (isValue systemData.filtre 'pouvoirs')}}selected{{else}}unselected{{/if}}"
+            data-type="pouvoirs">{{localize "MM4.FILTRE.Pouvoirs"}}</a>
+        <a class="filtre {{#if (isValue systemData.filtre 'talents')}}selected{{else}}unselected{{/if}}"
+            data-type="talents">{{localize "MM4.FILTRE.Talents"}}</a>
+        <a class="filtre {{#if (isValue systemData.filtre 'equipements')}}selected{{else}}unselected{{/if}}"
+            data-type="equipements">{{localize "MM4.FILTRE.Equipements"}}</a>
     </div>
 
     <div
-        class="lPouvoirs {{#if (isValue systemData.filtre 'tous')}}show{{/if}}  {{#if (isValue systemData.filtre 'pouvoirs')}}show{{/if}} item-list"
-    >
+        class="lPouvoirs {{#if (isValue systemData.filtre 'tous')}}show{{/if}}  {{#if (isValue systemData.filtre 'pouvoirs')}}show{{/if}} item-list">
         {{> (template 'parts/listPouvoirs.html') }}
     </div>
 
     <div
-        class="lTalents item-list {{#if (isValue systemData.filtre 'tous')}}show{{/if}}  {{#if (isValue systemData.filtre 'talents')}}show{{/if}}"
-    >
+        class="lTalents item-list {{#if (isValue systemData.filtre 'tous')}}show{{/if}}  {{#if (isValue systemData.filtre 'talents')}}show{{/if}}">
         <span class="title">{{localize "MM4.Talents"}}</span>
-        {{#each actor.talents as | key pwr |}}
-        <div class="talent summary item" data-item-id="{{key._id}}">
+        {{#each actor.talents as | talent key |}}
+        <div class="talent summary item" data-item-id="{{talent._id}}">
             <header class="js-toggler">
                 <span class="deploy"><i class="minus"></i></span>
                 <a class="sendInfos"><i class="fa-solid fa-comment"></i></a>
-                <span class="cout">{{key.system.rang}}</span>
-                <span class="header"
-                    >{{key.name}}
+                <span class="cout">{{talent.system.rang}}</span>
+                <span class="header">
+                    {{#if talent.system.zeroCost}}
+                    <em>{{talent.name}} ({{localize "MM4.TALENT.ZeroCost"}})</em>
+                    {{else}}
+                    {{talent.name}}
+                    {{/if}}
                     <i class="fa-solid fa-pen-to-square item-edit"></i>
                     <i class="fa-solid fa-trash-xmark item-delete"></i>
                 </span>
             </header>
-            <span class="text">{{{key.system.description}}}</span>
+            <span class="text">{{{talent.system.description}}}</span>
         </div>
         {{/each}}
 
@@ -50,21 +42,19 @@
     </div>
 
     <div
-        class="lEquipements item-list {{#if (isValue systemData.filtre 'tous')}}show{{/if}}  {{#if (isValue systemData.filtre 'equipements')}}show{{/if}}"
-    >
+        class="lEquipements item-list {{#if (isValue systemData.filtre 'tous')}}show{{/if}}  {{#if (isValue systemData.filtre 'equipements')}}show{{/if}}">
         <span class="title">{{localize "MM4.Equipements"}}</span>
-        <span class="score {{#if (isHigherThan systemData.ptsEquipements.use systemData.ptsEquipements.max)}}red{{/if}}"
-            >{{localize "MM4.Pointsequipementsused"}} : {{systemData.ptsEquipements.use}} /
-            {{systemData.ptsEquipements.max}}</span
-        >
+        <span
+            class="score {{#if (isHigherThan systemData.ptsEquipements.use systemData.ptsEquipements.max)}}red{{/if}}">{{localize
+            "MM4.Pointsequipementsused"}} : {{systemData.ptsEquipements.use}} /
+            {{systemData.ptsEquipements.max}}</span>
         {{#each actor.equipements as | key pwr |}}
         <div class="talent summary item" data-item-id="{{key._id}}">
             <header class="js-toggler">
                 <span class="deploy"><i class="minus"></i></span>
                 <a class="sendInfos"><i class="fa-solid fa-comment"></i></a>
                 <span class="cout">{{key.system.cout}}</span>
-                <span class="header"
-                    >{{key.name}}
+                <span class="header">{{key.name}}
                     <i class="fa-solid fa-pen-to-square item-edit"></i>
                     <i class="fa-solid fa-trash-xmark item-delete"></i>
                 </span>

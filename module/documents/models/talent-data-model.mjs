@@ -10,6 +10,7 @@ export class TalentDataModel extends foundry.abstract.TypeDataModel {
             rang: new NumberField({ initial: 0 }),
             edit: new BooleanField({ initial: false }),
             listEffectsVariantes: new ObjectField(),
+            zeroCost: new BooleanField({ initial: false }),
         };
     }
 

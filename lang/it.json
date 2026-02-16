@@ -239,7 +239,8 @@
             "Equipements": "Equipaggiamento"
         },
         "TALENT": {
-            "Equipement": "Fornisce punti equipaggiamento"
+            "Equipement": "Fornisce punti equipaggiamento",
+            "ZeroCost": "Nessun costo"
         },
         "TAILLE": {
             "Insignifiante": "Trascurabile",
