@@ -133,9 +133,13 @@ export class PersonnageActorSheet extends ActorSheet {
             const linkedPowers = this.actor.items.filter(
                 (linked) =>
                     linked._id !== id &&
-                    (linked.system.link === mainPower._id || !link || linked._id === mainPower._id) &&
+                    (linked.system.link === mainPower._id ||
+                        (!link && linked.id === mainPower._id) ||
+                        linked._id === mainPower._id) &&
                     linked.system.special !== 'alternatif' &&
-                    linked.system.special !== 'dynamique',
+                    linked.system.special !== 'dynamique' &&
+                    item.system.special !== 'alternatif' &&
+                    item.system.special !== 'dynamique',
             );
 
             const alternateEffects = value
