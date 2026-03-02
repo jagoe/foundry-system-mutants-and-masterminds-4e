@@ -194,7 +194,7 @@ export const RegisterHandlebars = function () {
                     break;
 
                 default:
-                    result = `MM4.STATUS.${str.charAt(0).toUpperCase() + str.slice(1)}`;
+                    result = `MM4.STATUS.${str.charAt(0).toUpperCase() + str.slice(1)}.label`;
                     break;
             }
         }

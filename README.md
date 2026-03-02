@@ -8,14 +8,21 @@ Feel free to try and use the system yourself, but there will be no release and n
 
 ## Todos
 
-* Optional: Allow Powers to consume Equipment Points instead of Power Points (treating them as having the Equipment flaw by default) OR display and maintain equipment the same as powers (since it can have effects, change stats, etc.)
-* Optional: Maneuvers shouldn't lower lowered stat below 0 or boost heightened stat more than double the original
+* Bug: Attack notes keep getting filled with spaces
+* Bug: Setting Fatigued adds sub-conditions twice
+* Add mechanisms to allow all conditions affecting stats (e.g. impaired)
+* Add rolling w/ Advantage/Disadvantage
+  * Roll shortcuts should be re-bindable
+* Allow upgrading conditions via attacks
+* Implement hardenend, impervious, penetraing, & impenetrable toughness
+* Implement Power Level Limits → Can't raise above without first lowering the opposite (at least for the defenses)
+  * Attacks could be highlighted if they go above the limit
+* Maneuvers shouldn't lower lowered stat below 0 or boost heightened stat more than double the original
 * Optional: Add effect for modifying base speed
-* Optional: Implement hardenend, impervious, penetraing, & impenetrable toughness
-* Optional: When minimizing a power, the description (but not the details) should still be visible OR details should be toggleable when not minimized
 * Optional: Effect modifiers should be sortable
 * Optional: Add new Combat tab, move attacks & maneuvers there & duplicate abilities & speed
-* Optional: Allow upgrading conditions via attacks
+* Optional: Allow Powers to consume Equipment Points instead of Power Points (treating them as having the Equipment flaw by default) OR display and maintain equipment the same as powers (since it can have effects, change stats, etc.)
+* Optional: When minimizing a power, the description (but not the details) should still be visible OR details should be toggleable when not minimized
 
 I'll leave the rest of the readme as I found it.
 

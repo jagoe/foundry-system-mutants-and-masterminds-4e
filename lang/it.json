@@ -25,42 +25,153 @@
     },
     "MM4": {
         "STATUS": {
-            "Asleep": "Addormentato",
-            "Blind": "Accecato",
-            "Bound": "Legato",
-            "Broken": "Rotto",
-            "Compelled": "Sottomesso",
-            "Confused": "Confuso",
-            "Controlled": "Controllato",
-            "Dazed": "Frastornato",
-            "Deaf": "Assordato",
-            "Debilitated": "Debilitato",
-            "Defenseless": "Indifeso",
-            "Delusion": "Illusione",
-            "Destroyed": "Distrutto",
-            "Disabled": "Inabile",
-            "Dying": "Morente",
-            "Exhausted": "Esausto",
-            "Fatigued": "Affaticato",
-            "Figment": "Invenzione",
-            "Frightened": "Spaventato",
-            "Hallucinating": "Allucinante",
-            "Hindered": "Intralciato",
-            "Immobile": "Immobilizzato",
-            "Impaired": "Fiaccato",
-            "Incapacitated": "Incapacitato",
-            "Paralyzed": "Paralizzato",
-            "Phantasm": "Fantasma",
-            "Prone": "Prono",
-            "Restrained": "Bloccato",
-            "Staggered": "Barcollante",
-            "Stunned": "Stordito",
-            "Surprised": "Sorpreso",
-            "Susceptible": "Suscettibile",
-            "Transformed": "Trasformato",
-            "Unaware": "Insensibile",
-            "Vulnerable": "Vulnerabile",
-            "Weakness": "Indebolito"
+            "Asleep": {
+                "label": "Addormentato",
+                "description": "<p>While <strong>Asleep</strong>, a character is <strong>Defenseless</strong>, <strong>Stunned</strong>, and <strong>Unaware</strong>.</p><p>A hearing Perception check with three or more degrees of success wakes the character and removes all these conditions, as does any sudden movement, such as shaking the sleeping character, or any noticeable effect allowing the sleeping character a resistance check.</p>"
+            },
+            "Blind": {
+                "label": "Accecato",
+                "description": "<p>The character cannot see. They are <strong>Hindered</strong>, <strong>Sight Unaware</strong>, and <strong>Vulnerable</strong>, and may be <strong>Impaired</strong> or <strong>Disabled</strong> for activities where vision is a factor.</p><p>Blind characters who have an Accurate sense other than vision are only <strong>Sight Unaware</strong>, but have none of the other conditions.</p>"
+            },
+            "Bound": {
+                "label": "Legato",
+                "description": "A <strong>Bound</strong> character is <strong>Defenseless</strong>, <strong>Immobile</strong>, and <strong>Impaired</strong>."
+            },
+            "Broken": {
+                "label": "Rotto",
+                "description": "A <strong>Broken</strong> object no longer functions, including simply as a barrier for a broken door or wall, for example."
+            },
+            "Compelled": {
+                "label": "Sottomesso",
+                "description": "<p>A <strong>Compelled</strong> character is directed by an outside force.</p><p>The character is limited to a single standard action each turn, chosen by another, controlling, character. As usual, this standard action can be traded for a simple action.</p><p>Compelled characters cannot take simple or free actions otherwise but can take reactions, if the controlling character uses their own reaction to compel them to do so.</p>"
+            },
+            "Confused": {
+                "label": "Confuso",
+                "description": "<p>A <strong>Confused</strong> character acts randomly each turn. At the start of each of the character's turns, roll a die:</p><table><tr><th>[[/r d20]]</th><th>Action</th></tr><tr><td>1-2</td><td>The character attacks the source of their Confusion.</td></tr><tr><td>3-5</td><td>The character can act normally, but remains Confused.</td></tr><tr><td>6-10</td><td>The character does nothing, effectively <strong>Stunned</strong> for that turn.</td></tr><tr><td>11-14</td><td>The character is <strong>Frightened</strong> of the source of their Confusion.</td></tr><tr><td>15-20</td><td>The character attacks the nearest other character.</td></tr></table>"
+            },
+            "Controlled": {
+                "label": "Controllato",
+                "description": "<p>A <strong>Controlled</strong> character's actions each turn are dictated by another, controlling, character, but the character otherwise has their normal capabilities and range of actions.</p>"
+            },
+            "Dazed": {
+                "label": "Frastornato",
+                "description": "<p>A <strong>Dazed</strong> character is limited to free actions and a single standard action per Round, although the character may trade it for a simple action, as usual. Dazed characters cannot take reactions.</p><p>A character Dazed by Damage can make a DC 10 Stamina check each round (time rank 0) at the end of their turn. Success removes the condition, failure means it remains.</p><p>A character Dazed by a non-damage effect may need to make a different check to overcome the condition.</p>"
+            },
+            "Dead": {
+                "description": "<p>A <strong>Dead</strong> character is <strong>Defenseless</strong>, <strong>Stunned</strong>, <strong>Unaware</strong>, and unable to recover (effectively having no Stamina rank).</p><p>The Dead condition is normally the end of someone's mortal existence, but some effects interact with Dead characters and allow them to recover!</p>"
+            },
+            "Deaf": {
+                "label": "Assordato",
+                "description": "<p>The character cannot hear and is <strong>Hearing Unaware</strong>.</p><p>This may allow for <strong>Surprise Attacks</strong> on the character.</p>"
+            },
+            "Debilitated": {
+                "label": "Debilitato",
+                "description": "<p>A <strong>Debilitated</strong> character has effectively lost the use of a trait, and may gain other conditions, while the Debilitated condition remains.</p><p>See <strong>Debilitated Abilities</strong> for details.</p>"
+            },
+            "Defenseless": {
+                "label": "Indifeso",
+                "description": "<p>A <strong>Defenseless</strong> character has a Defense rank of 0 and automatically fails Dodge resistance checks.</p><p>Attackers can make attacks on Defenseless opponents as routine checks. If the attacker chooses to forgo the routine check and make a normal attack check, any hit is treated as a critical hit, and can be a <strong>Finishing Attack</strong>.</p>"
+            },
+            "Delusion": {
+                "label": "Illusione",
+                "description": "<p>A degree of <strong>Hallucinating</strong> involving complete control over the subject's sensory impressions, able to change anything about their environment, from blank nothingness or total darkness to making the subject perceive and interact with a complete setting that exists solely in their mind.</p><p>A Delusion degree of Hallucinating means the subject is <strong>Unaware</strong> of the real world.</p>"
+            },
+            "Destroyed": {
+                "label": "Distrutto",
+                "description": "<p>A <strong>Destroyed</strong> object has been completely broken apart, usually into pieces, perhaps even reduced to fragments or dust.</p>"
+            },
+            "Disabled": {
+                "label": "Inabile",
+                "description": "<p>A <strong>Disabled</strong> character has a -5 penalty on all checks.</p><p>If the Penalty applies only to specific checks, they are added to the name of the condition, such as <strong>Attack Disabled</strong>, <strong>Fighting Disabled</strong>, <strong>Perception Disabled</strong>, etc.</p>"
+            },
+            "Dying": {
+                "label": "Morente",
+                "description": "<p>A <strong>Dying</strong> character is <strong>Incapacitated</strong> and near death.</p><p>When the character gains this condition, immediately make a DC 10 Stamina check. If the check succeeds, nothing happens. With two or more degrees of success, the character stabilizes, becoming <strong>Incapacitated</strong>. If the check fails, the character remains dying.<p></p>Three or more total degrees of failure mean the character is <strong>Dead</strong>.</p><p>Dying characters make a Stamina check at the start of each of their turns until they either die or stabilize.</p><p>Another character can stabilize a dying character with a successful DC 15 <strong>Treatment</strong> check.</p><p>Characters lacking a Stamina rank automatically gain the Dead condition when their condition becomes Dying.</p>"
+            },
+            "Exhausted": {
+                "label": "Esausto",
+                "description": "<p><strong>Exhausted</strong> characters are <strong>Disabled</strong> and <strong>Hindered</strong>.</p><p>Characters recover from an Exhausted condition after four hours of rest (time rank 11), becoming <strong>Fatigued</strong>.</p>"
+            },
+            "Fatigued": {
+                "label": "Affaticato",
+                "description": "<p>Fatigued characters are <strong>Impaired</strong> and <strong>Hindered</strong>.</p><p>Characters recover from a Fatigued condition after an hour of rest (time rank 9).</p>"
+            },
+            "Figment": {
+                "label": "Invenzione",
+                "description": "<p>A degree of the <strong>Hallucinating</strong> condition involving minor changes in how a character perceives things: Making people look like someone else, altering or editing details like colors, the presence or absence of small objects, background noises, and so forth.</p>"
+            },
+            "Frightened": {
+                "label": "Spaventato",
+                "description": "<p>Frightened characters have a -5 penalty for action checks related to the object of their fear and cannot willingly move closer to the object of their fear.</p>"
+            },
+            "Hallucinating": {
+                "label": "Allucinante",
+                "description": "<p>A <strong>Hallucinating</strong> character is experiencing sensory impressions that do not actually exist outside of their own awareness.</p><p>The extent of the hallucinations depends on the degree of this condition, from a <strong>Figment</strong> to a <strong>Phantasm</strong> or <strong>Delusion</strong>.</p>"
+            },
+            "Hindered": {
+                "label": "Intralciato",
+                "description": "<p>A Hindered character moves at half normal speed (-1 to speed rank).</p>"
+            },
+            "Immobile": {
+                "label": "Immobilizzato",
+                "description": "<p><strong>Immobile</strong> characters have no movement speed and cannot move from where they are, although they are still capable of taking actions unless prohibited by another condition.</p>"
+            },
+            "Impaired": {
+                "label": "Fiaccato",
+                "description": "<p>An <strong>Impaired</strong> character is at a -2 penalty on checks.</p><p>If the impairment applies to specific checks, they are added to the name of the condition, such as <strong>Attack Impaired</strong>, <strong>Fighting Impaired</strong>, <strong>Perception Impaired</strong>, and so forth.</p>"
+            },
+            "Incapacitated": {
+                "label": "Incapacitato",
+                "description": "<p>An <strong>ncapacitated</strong> character is <strong>Defenseless</strong>, <strong>Stunned</strong>, and <strong>Unaware</strong> of their surroundings. Incapacitated characters generally also fall <strong>Prone</strong>, unless some outside aid keeps them standing.</p><p>An Incapacitated character can make a DC 10 Stamina check each minute (time rank 3). Success removes the condition, failure means it remains.</p>"
+            },
+            "Paralyzed": {
+                "label": "Paralizzato",
+                "description": "<p>A <strong>Paralyzed</strong> character is <strong>Defenseless</strong>, <strong>Immobile</strong>, and physically <strong>Stunned</strong>—frozen and unable to take physical actions, but still aware and able to take purely mental actions that involve no physical movement.</p>"
+            },
+            "Phantasm": {
+                "label": "Fantasma",
+                "description": "<p>A degree of the <strong>Hallucinating</strong> condition involving fairly major changes in perception including adding a large or complex element like an explosion, symphony, or fully interactive person, the presence or absence of large or significant objects, or making one thing look, sound, and otherwise seem like something else.</p>"
+            },
+            "Prone": {
+                "label": "Prono",
+                "description": "<p>A <strong>Prone</strong> character is lying on the ground and has a -5 penalty on close attack checks. Opponents receive a +5 bonus on close attack checks against the character but a -5 penalty on ranged attack checks against them.</p><p>A Prone character has a ground speed of rank 0. The <strong>Stand</strong> action removes the Prone condition.</p>"
+            },
+            "Restrained": {
+                "label": "Bloccato",
+                "description": "<p>A <strong>Restrained</strong> character is <strong>Hindered</strong> and <strong>Vulnerable</strong>.</p><p>If the restraints are anchored to an immobile object, the character is <strong>Immobile</strong> rather than Hindered. If restrained by another character, the restrained character is Immobile but may be moved by the restraining character.</p>"
+            },
+            "Staggered": {
+                "label": "Barcollante",
+                "description": "<p>A <strong>Staggered</strong> character is <strong>Dazed</strong> and <strong>Hindered</strong>.</p><p>A Staggered character with no other damage conditions can make a DC 10 Stamina check once per minute. Success removes the condition, failure means it remains.</p>"
+            },
+            "Stunned": {
+                "label": "Stordito",
+                "description": "<p>A <strong>Stunned</strong> character cannot take any actions, including free actions or reactions, and halves their Dodge rank.</p><p>A character Stunned by Damage can make a DC 10 Stamina check each round (time rank 0) at the end of their turn. Success removes the condition, failure means it remains.</p><p>A character Stunned by a non-damage effect may need to make a different check to overcome the condition.</p>"
+            },
+            "Surprised": {
+                "label": "Sorpreso",
+                "description": "<p>A surprised character is <strong>Stunned</strong> and <strong>Vulnerable</strong>, caught off-guard and unable to act.</p><p>Surprised normally only lasts for one round.</p>"
+            },
+            "Susceptible": {
+                "label": "Suscettibile",
+                "description": "<p>A <strong>Susceptible</strong> character has a penalty on resistance checks against certain effects or descriptors equal to half the effect rank, such as being Susceptible to Fire Damage or Susceptible to Mind Control.</p>"
+            },
+            "Transformed": {
+                "label": "Trasformato",
+                "description": "<p><strong>Transformed</strong> characters have some or all of their traits altered. This may range from a change in the character's appearance to a complete change in trait ranks, even the removal of some traits and the addition of others! The primary limit on the Transformed condition is the character's Power Point total cannot normally increase, although it can effectively decrease for the duration of the transformation.</p>"
+            },
+            "Unaware": {
+                "label": "Insensibile",
+                "description": "<p>The character is oblivious to their surroundings.</p><p>If the condition applies to a specific sense, it is added to the name of the condition, such as <strong>Sight Unaware</strong> (or <strong>Blind</strong>), <strong>Touch Unaware</strong> (or numb), etc.</p><p>Everything effectively has total concealment from all of a character's Unaware senses and they automatically fail Perception checks reliant on them (see <strong>Concealment</strong>).</p><p>A completely Unaware character is also <strong>Defenseless</strong> and <strong>Disabled</strong>.</p>"
+            },
+            "Vulnerable": {
+                "label": "Vulnerabile",
+                "description": "<p><strong>Vulnerable</strong> characters are limited in their ability to defend themselves, reducing their Defense and Dodge ranks by half and rounding down.</p>"
+            },
+            "Weakness": {
+                "label": "Indebolito",
+                "description": "<p>A <strong>Weakness</strong> condition means a character has a penalty on resistance checks against certain effects or descriptors equal to half the effect rank and their best possible result on the resistance check is one degree of failure, regardless of the check result.</p>"
+            }
         },
         "TYPEIDENTITE": {
             "Secrete": "Identità Segreta",

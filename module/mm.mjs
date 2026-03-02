@@ -128,7 +128,8 @@ Hooks.once('init', async function () {
     CONFIG.statusEffects = [
         {
             id: 'asleep',
-            label: 'MM4.STATUS.Asleep',
+            label: 'MM4.STATUS.Asleep.label',
+            description: 'MM4.STATUS.Asleep.description',
             icon: 'icons/svg/sleep.svg',
             origin: 'status',
             changes: [
@@ -151,7 +152,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'blind',
-            label: 'MM4.STATUS.Blind',
+            label: 'MM4.STATUS.Blind.label',
+            description: 'MM4.STATUS.Blind.description',
             icon: 'icons/svg/blind.svg',
             origin: 'status',
             changes: [
@@ -174,7 +176,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'bound',
-            label: 'MM4.STATUS.Bound',
+            label: 'MM4.STATUS.Bound.label',
+            description: 'MM4.STATUS.Bound.description',
             icon: `${assetsPath}/icons/tied.svg`,
             origin: 'status',
             changes: [
@@ -197,43 +200,50 @@ Hooks.once('init', async function () {
         },
         {
             id: 'broken',
-            label: 'MM4.STATUS.Broken',
+            label: 'MM4.STATUS.Broken.label',
+            description: 'MM4.STATUS.Broken.description',
             icon: 'icons/svg/ruins.svg',
             origin: 'status',
         },
         {
             id: 'compelled',
-            label: 'MM4.STATUS.Compelled',
+            label: 'MM4.STATUS.Compelled.label',
+            description: 'MM4.STATUS.Compelled.description',
             icon: 'icons/svg/eye.svg',
             origin: 'status',
         },
         {
             id: 'confused',
-            label: 'MM4.STATUS.Confused',
+            label: 'MM4.STATUS.Confused.label',
+            description: 'MM4.STATUS.Confused.description',
             icon: 'icons/svg/stoned.svg',
             origin: 'status',
         },
         {
             id: 'controlled',
-            label: 'MM4.STATUS.Controlled',
+            label: 'MM4.STATUS.Controlled.label',
+            description: 'MM4.STATUS.Controlled.description',
             icon: `${assetsPath}/icons/controlled.svg`,
             origin: 'status',
         },
         {
             id: 'dazed',
-            label: 'MM4.STATUS.Dazed',
+            label: 'MM4.STATUS.Dazed.label',
+            description: 'MM4.STATUS.Dazed.description',
             icon: 'icons/svg/daze.svg',
             origin: 'status',
         },
         {
             id: 'dead',
             label: 'EFFECT.StatusDead',
+            description: 'MM4.STATUS.Dead.description',
             icon: 'icons/svg/skull.svg',
             origin: 'status',
         },
         {
             id: 'deaf',
-            label: 'MM4.STATUS.Deaf',
+            label: 'MM4.STATUS.Deaf.label',
+            description: 'MM4.STATUS.Deaf.description',
             icon: 'icons/svg/deaf.svg',
             origin: 'status',
             changes: [
@@ -246,13 +256,15 @@ Hooks.once('init', async function () {
         },
         {
             id: 'debilitated',
-            label: 'MM4.STATUS.Debilitated',
+            label: 'MM4.STATUS.Debilitated.label',
+            description: 'MM4.STATUS.Debilitated.description',
             icon: `${assetsPath}/icons/invalid.svg`,
             origin: 'status',
         },
         {
             id: 'defenseless',
-            label: 'MM4.STATUS.Defenseless',
+            label: 'MM4.STATUS.Defenseless.label',
+            description: 'MM4.STATUS.Defenseless.description',
             icon: `${assetsPath}/icons/defenseless.svg`,
             origin: 'status',
             changes: [
@@ -278,7 +290,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'delusion',
-            label: 'MM4.STATUS.Delusion',
+            label: 'MM4.STATUS.Delusion.label',
+            description: 'MM4.STATUS.Delusion.description',
             icon: 'icons/svg/portal.svg',
             origin: 'status',
             changes: [
@@ -291,19 +304,22 @@ Hooks.once('init', async function () {
         },
         {
             id: 'destroyed',
-            label: 'MM4.STATUS.Destroyed',
+            label: 'MM4.STATUS.Destroyed.label',
+            description: 'MM4.STATUS.Destroyed.description',
             icon: 'icons/svg/cancel.svg',
             origin: 'status',
         },
         {
             id: 'disabled',
-            label: 'MM4.STATUS.Disabled',
+            label: 'MM4.STATUS.Disabled.label',
+            description: 'MM4.STATUS.Disabled.description',
             icon: `${assetsPath}/icons/disabled.svg`,
             origin: 'status',
         },
         {
             id: 'dying',
-            label: 'MM4.STATUS.Dying',
+            label: 'MM4.STATUS.Dying.label',
+            description: 'MM4.STATUS.Dying.description',
             icon: `${assetsPath}/icons/dying.svg`,
             origin: 'status',
             changes: [
@@ -316,7 +332,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'exhausted',
-            label: 'MM4.STATUS.Exhausted',
+            label: 'MM4.STATUS.Exhausted.label',
+            description: 'MM4.STATUS.Exhausted.description',
             icon: 'icons/svg/unconscious.svg',
             origin: 'status',
             changes: [
@@ -334,7 +351,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'fatigued',
-            label: 'MM4.STATUS.Fatigued',
+            label: 'MM4.STATUS.Fatigued.label',
+            description: 'MM4.STATUS.Fatigued.description',
             icon: `${assetsPath}/icons/tired.svg`,
             origin: 'status',
             changes: [
@@ -352,36 +370,42 @@ Hooks.once('init', async function () {
         },
         {
             id: 'figment',
-            label: 'MM4.STATUS.Figment',
+            label: 'MM4.STATUS.Figment.label',
+            description: 'MM4.STATUS.Figment.description',
             icon: 'icons/svg/sun.svg',
             origin: 'status',
         },
         {
             id: 'frightened',
-            label: 'MM4.STATUS.Frightened',
+            label: 'MM4.STATUS.Frightened.label',
+            description: 'MM4.STATUS.Frightened.description',
             icon: 'icons/svg/terror.svg',
             origin: 'status',
         },
         {
             id: 'hindered',
-            label: 'MM4.STATUS.Hindered',
+            label: 'MM4.STATUS.Hindered.label',
+            description: 'MM4.STATUS.Hindered.description',
             icon: `${assetsPath}/icons/slow.svg`,
             origin: 'status',
         },
         {
             id: 'immobile',
-            label: 'MM4.STATUS.Immobile',
+            label: 'MM4.STATUS.Immobile.label',
+            description: 'MM4.STATUS.Immobile.description',
             icon: `${assetsPath}/icons/stuck.svg`,
         },
         {
             id: 'impaired',
-            label: 'MM4.STATUS.Impaired',
+            label: 'MM4.STATUS.Impaired.label',
+            description: 'MM4.STATUS.Impaired.description',
             icon: 'icons/svg/degen.svg',
             origin: 'status',
         },
         {
             id: 'incapacitated',
-            label: 'MM4.STATUS.Incapacitated',
+            label: 'MM4.STATUS.Incapacitated.label',
+            description: 'MM4.STATUS.Incapacitated.description',
             icon: `${assetsPath}/icons/neutralized.svg`,
             origin: 'status',
             changes: [
@@ -404,7 +428,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'paralyzed',
-            label: 'MM4.STATUS.Paralyzed',
+            label: 'MM4.STATUS.Paralyzed.label',
+            description: 'MM4.STATUS.Paralyzed.description',
             icon: 'icons/svg/paralysis.svg',
             origin: 'status',
             changes: [
@@ -427,19 +452,22 @@ Hooks.once('init', async function () {
         },
         {
             id: 'phantasm',
-            label: 'MM4.STATUS.Phantasm',
+            label: 'MM4.STATUS.Phantasm.label',
+            description: 'MM4.STATUS.Phantasm.description',
             icon: 'icons/svg/ice-aura.svg',
             origin: 'status',
         },
         {
             id: 'prone',
-            label: 'MM4.STATUS.Prone',
+            label: 'MM4.STATUS.Prone.label',
+            description: 'MM4.STATUS.Prone.description',
             icon: 'icons/svg/falling.svg',
             origin: 'status',
         },
         {
             id: 'restrained',
-            label: 'MM4.STATUS.Restrained',
+            label: 'MM4.STATUS.Restrained.label',
+            description: 'MM4.STATUS.Restrained.description',
             icon: 'icons/svg/net.svg',
             origin: 'status',
             changes: [
@@ -457,7 +485,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'staggered',
-            label: 'MM4.STATUS.Staggered',
+            label: 'MM4.STATUS.Staggered.label',
+            description: 'MM4.STATUS.Staggered.description',
             icon: `${assetsPath}/icons/chanceling.svg`,
             origin: 'status',
             changes: [
@@ -475,7 +504,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'stunned',
-            label: 'MM4.STATUS.Stunned',
+            label: 'MM4.STATUS.Stunned.label',
+            description: 'MM4.STATUS.Stunned.description',
             icon: `${assetsPath}/icons/stunned.svg`,
             origin: 'status',
             changes: [
@@ -489,7 +519,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'surprised',
-            label: 'MM4.STATUS.Surprised',
+            label: 'MM4.STATUS.Surprised.label',
+            description: 'MM4.STATUS.Surprised.description',
             icon: `${assetsPath}/icons/surprised.svg`,
             origin: 'status',
             changes: [
@@ -507,25 +538,29 @@ Hooks.once('init', async function () {
         },
         {
             id: 'susceptible',
-            label: 'MM4.STATUS.Susceptible',
+            label: 'MM4.STATUS.Susceptible.label',
+            description: 'MM4.STATUS.Susceptible.description',
             icon: 'icons/svg/fire.svg',
             origin: 'status',
         },
         {
             id: 'transformed',
-            label: 'MM4.STATUS.Transformed',
+            label: 'MM4.STATUS.Transformed.label',
+            description: 'MM4.STATUS.Transformed.description',
             icon: `${assetsPath}/icons/transformed.svg`,
             origin: 'status',
         },
         {
             id: 'unaware',
-            label: 'MM4.STATUS.Unaware',
+            label: 'MM4.STATUS.Unaware.label',
+            description: 'MM4.STATUS.Unaware.description',
             icon: 'icons/svg/invisible.svg',
             origin: 'status',
         },
         {
             id: 'vulnerable',
-            label: 'MM4.STATUS.Vulnerable',
+            label: 'MM4.STATUS.Vulnerable.label',
+            description: 'MM4.STATUS.Vulnerable.description',
             icon: `${assetsPath}/icons/vulnerability.svg`,
             origin: 'status',
             changes: [
@@ -551,7 +586,8 @@ Hooks.once('init', async function () {
         },
         {
             id: 'weakness',
-            label: 'MM4.STATUS.Weakness',
+            label: 'MM4.STATUS.Weakness.label',
+            description: 'MM4.STATUS.Weakness.description',
             icon: 'icons/svg/downgrade.svg',
             origin: 'status',
         },
@@ -1496,9 +1532,8 @@ Hooks.on('deleteActiveEffect', async (effect) => {
 
 Hooks.on('createActiveEffect', async (effect, _data, _id) => {
     if (effect.parent.permission !== 3) return;
-    let statuses;
 
-    statuses = effect.statuses;
+    const statuses = effect.statuses;
 
     setCombinedEffects(effect.parent, statuses, true);
 });

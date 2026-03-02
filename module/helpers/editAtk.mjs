@@ -659,7 +659,7 @@ export class editAtk {
                 break;
 
             default:
-                result = `MM4.STATUS.${result}`;
+                result = `MM4.STATUS.${result}.label`;
                 break;
         }
 

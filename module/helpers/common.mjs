@@ -2114,6 +2114,7 @@ export function setCombinedEffects(token, statusId, active) {
                             let nEffect = {
                                 name: game.i18n.localize(tSE.label),
                                 label: game.i18n.localize(tSE.label),
+                                description: game.i18n.localize(tSE.description),
                                 icon: tSE.icon,
                                 statuses: [idSE],
                                 origin: 'status',
@@ -3639,6 +3640,7 @@ export async function setStatus(actor, statusId, autoAdd = true) {
             update = {
                 name: game.i18n.localize(status.label),
                 label: game.i18n.localize(status.label),
+                description: game.i18n.localize(status.description),
                 icon: status.icon,
                 'flags.core.statusId': status.id,
             };
@@ -3652,6 +3654,7 @@ export async function setStatus(actor, statusId, autoAdd = true) {
             update = {
                 name: game.i18n.localize(status.label),
                 label: game.i18n.localize(status.label),
+                description: game.i18n.localize(status.description),
                 icon: status.icon,
                 statuses: [status.id],
             };
@@ -3706,6 +3709,7 @@ export function getStatusData(statusId) {
         update = {
             name: game.i18n.localize(status.label),
             label: game.i18n.localize(status.label),
+            description: game.i18n.localize(status.description),
             icon: status.icon,
             statuses: [status.id],
         };
@@ -3946,7 +3950,6 @@ export async function importItemEffects(item, oldItem) {
 export async function updateEffects(item, id, name, changes) {
     const actor = getActor(item);
 
-    console.error(100, { item, id, name, changes });
     await item.updateEmbeddedDocuments('ActiveEffect', [
         {
             _id: id,
