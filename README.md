@@ -9,8 +9,12 @@ Feel free to try and use the system yourself, but there will be no release and n
 ## Todos
 
 * Bug: Attack notes keep getting filled with spaces
-* Bug: Setting Fatigued adds sub-conditions twice
-* Add mechanisms to allow all conditions affecting stats (e.g. impaired)
+* Add mechanisms to allow all conditions affecting stats
+  * Disabled: -5 on all checks, meaning everything (no differentiation between different kinds of disabled; for that we'd need the ability to create custom effects)
+  * Frightened? -5 on all checks "related to the object of their fear"
+  * Hindered: -1 speed rank
+  * Impaired: -2 on all checks, meaning everything
+  * Prone: -5 on close attack checks, -5 on close defense, +5 on ranged defense (should already be possible)
 * Add rolling w/ Advantage/Disadvantage
   * Roll shortcuts should be re-bindable
 * Allow upgrading conditions via attacks
